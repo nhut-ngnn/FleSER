@@ -1,1 +1,1 @@
-# FuzzyLSystem-for-SER
+# FuzzySystem-for-SER
