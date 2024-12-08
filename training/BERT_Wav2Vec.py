@@ -48,7 +48,7 @@ class FlexibleMMSER(nn.Module):
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy) 
         
         concat_embed = torch.cat((text_embed, audio_embed), dim=1) 
-        
+
         x = self.linear(concat_embed) 
         x = F.relu(x)
         x = self.dropout(x)

@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 
 from training.CustomizedDataset import CustomizedDataset
 from training.BERT_Wav2Vec import FlexibleMMSER
+# from training.BERT_ECAPA import FlexibleMMSER
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -56,13 +57,9 @@ def eval_step(model, dataloader, loss_fn):
     return eval_loss / len(dataloader), eval_wa / len(dataloader), eval_ua / len(dataloader)
 
 def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.001, save_path=None):
-    # optimizer = optim.Adam(params=model.parameters(), lr=lr)
-    # criterion = nn.CrossEntropyLoss()
-    # lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.05)
-    
-    optimizer = optim.Adam(params=model.parameters(), lr=0.001)
+    optimizer = optim.Adam(params=model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
-    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.3)
+    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.2)
 
     train_loss_hist, val_loss_hist = [], []
     train_wa_hist, val_wa_hist = [], []
@@ -85,12 +82,17 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.001, sa
         train_ua_hist.append(train_ua * 100)
         val_ua_hist.append(val_ua * 100)
 
+        # Check if validation loss decreased and print accuracy if so
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             best_wa = val_wa
             best_ua = val_ua
             if save_path:
                 torch.save(model.state_dict(), save_path)
+            
+            # Print accuracy when validation loss decreases
+            print(f"Validation loss reduced. Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Learning rate: {lr_scheduler.get_last_lr()}")
+            print("-" * 50)
 
         print(f"Train Loss: {train_loss:.4f}, Train WA: {train_wa:.4f}, Train UA: {train_ua:.4f}")
         print(f"Val Loss: {val_loss:.4f}, Val WA: {val_wa:.4f}, Val UA: {val_ua:.4f}")
@@ -109,8 +111,8 @@ def plot_metrics(epochs, train_hist, val_hist, metric_name):
     plt.show()
 
 # Paths
-train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
-val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_WAV2VEC_test.pkl"
+train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_train.pkl"
+val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
 
 # Datasets and Dataloaders
 BATCH_SIZE = 64
@@ -122,7 +124,7 @@ val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # Model Training
 model = FlexibleMMSER(num_classes=4).to(device)
-save_path = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/IEMOCAP_CMN_BERT_wav2vec.pt"
+save_path = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/IEMOCAP_CMN_BERT_Wav2Vec.pt"
 train_hist, val_hist, train_wa_hist, val_wa_hist, train_ua_hist, val_ua_hist = train_and_evaluate(
     model, train_dataloader, val_dataloader, num_epochs=200, save_path=save_path)
 

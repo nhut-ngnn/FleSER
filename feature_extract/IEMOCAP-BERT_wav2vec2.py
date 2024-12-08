@@ -17,7 +17,7 @@ IEMOCAP_TRAIN_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Mult
 IEMOCAP_VAL_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_val.csv"
 IEMOCAP_TEST_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_test.csv"
 
-OUTPUT_DIR = "c:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/"
+OUTPUT_DIR = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/"
 
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BertModel.from_pretrained('bert-base-uncased').to(device)
