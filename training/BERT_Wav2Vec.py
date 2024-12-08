@@ -7,7 +7,7 @@ class FlexibleMMSER(nn.Module):
         super(FlexibleMMSER, self).__init__()
         self.num_classes = num_classes
         self.dropout = nn.Dropout(.2)
-        self.linear = nn.Linear(768 * 2, 512)
+        self.linear = nn.Linear(768*2, 512)
         self.linear1 = nn.Linear(512, 256)
         self.linear2 = nn.Linear(256, 64)
         self.linear3 = nn.Linear(64, num_classes)
