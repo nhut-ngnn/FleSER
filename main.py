@@ -56,10 +56,16 @@ def eval_step(model, dataloader, loss_fn):
 
     return eval_loss / len(dataloader), eval_wa / len(dataloader), eval_ua / len(dataloader)
 
+def print_model_parameters(model):
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"Total Parameters: {total_params}")
+    print(f"Trainable Parameters: {trainable_params}")
+        
 def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.001, save_path=None):
     optimizer = optim.Adam(params=model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
-    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.4)
+    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=6, gamma=0.4)
 
     # # For BERT_Wav2Vec
     # optimizer = optim.Adam(params=model.parameters(), lr=lr)
@@ -87,7 +93,6 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.001, sa
         train_ua_hist.append(train_ua * 100)
         val_ua_hist.append(val_ua * 100)
 
-        # Check if validation loss decreased and print accuracy if so
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             best_wa = val_wa
@@ -95,7 +100,6 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.001, sa
             if save_path:
                 torch.save(model.state_dict(), save_path)
             
-            # Print accuracy when validation loss decreases
             print(f"Validation loss reduced. Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Learning rate: {lr_scheduler.get_last_lr()}")
             print("-" * 50)
 
@@ -126,9 +130,14 @@ val_dataset = CustomizedDataset(val_metadata)
 
 train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+for text_embed, audio_embed, label in train_dataloader:
+    print(f"Text Embed Shape: {text_embed.shape}")
+    print(f"Audio Embed Shape: {audio_embed.shape}")
+    print(f"Label Shape: {label.shape}")
+    break
 
-# Model Training
 model = FlexibleMMSER(num_classes=4).to(device)
+print_model_parameters(model)
 save_path = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/IEMOCAP_CMN_BERT_ECAPA.pt"
 train_hist, val_hist, train_wa_hist, val_wa_hist, train_ua_hist, val_ua_hist = train_and_evaluate(
     model, train_dataloader, val_dataloader, num_epochs=200, save_path=save_path)
