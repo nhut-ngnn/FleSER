@@ -32,7 +32,6 @@ class FlexibleMMSER(nn.Module):
             nn.Sigmoid()
         )
         
-        # Fully connected layers
         self.fc = nn.Sequential(
             nn.Linear(256 * 2, 256),
             nn.BatchNorm1d(256),

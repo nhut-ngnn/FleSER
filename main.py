@@ -7,8 +7,8 @@ from collections import Counter
 import matplotlib.pyplot as plt
 
 from training.CustomizedDataset import CustomizedDataset
-# from training.BERT_Wav2Vec import FlexibleMMSER
-from training.BERT_ECAPA import FlexibleMMSER
+from training.BERT_Wav2Vec import FlexibleMMSER
+# from training.BERT_ECAPA import FlexibleMMSER
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -63,14 +63,14 @@ def print_model_parameters(model):
     print(f"Trainable Parameters: {trainable_params}")
         
 def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.001, save_path=None):
-    optimizer = optim.Adam(params=model.parameters(), lr=lr)
-    criterion = nn.CrossEntropyLoss()
-    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=6, gamma=0.4)
-
-    # # For BERT_Wav2Vec
     # optimizer = optim.Adam(params=model.parameters(), lr=lr)
     # criterion = nn.CrossEntropyLoss()
-    # lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1)
+    # lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=6, gamma=0.4)
+
+    # For BERT_Wav2Vec
+    optimizer = optim.Adam(params=model.parameters(), lr=lr)
+    criterion = nn.CrossEntropyLoss()
+    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1)
 
     train_loss_hist, val_loss_hist = [], []
     train_wa_hist, val_wa_hist = [], []
@@ -120,8 +120,8 @@ def plot_metrics(epochs, train_hist, val_hist, metric_name):
     plt.show()
 
 # Paths
-train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_ECAPA_train.pkl"
-val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_ECAPA_val.pkl"
+train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
+val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
 
 # Datasets and Dataloaders
 BATCH_SIZE = 128            #64 for BERT_Wav2Vec
@@ -138,7 +138,7 @@ for text_embed, audio_embed, label in train_dataloader:
 
 model = FlexibleMMSER(num_classes=4).to(device)
 print_model_parameters(model)
-save_path = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/IEMOCAP_CMN_BERT_ECAPA.pt"
+save_path = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/IEMOCAP_CMN_BERT_WAV2VEC.pt"
 train_hist, val_hist, train_wa_hist, val_wa_hist, train_ua_hist, val_ua_hist = train_and_evaluate(
     model, train_dataloader, val_dataloader, num_epochs=200, save_path=save_path)
 
