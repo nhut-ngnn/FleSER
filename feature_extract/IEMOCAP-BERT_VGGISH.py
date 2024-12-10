@@ -8,13 +8,12 @@ import torchaudio
 import pickle
 import pandas as pd
 from transformers import BertTokenizer, BertModel
-from tqdm import tqdm  # For progress tracking
+from tqdm import tqdm  
 from torchvggish import vggish, vggish_input
 from torch.nn.functional import pad
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Constants
 IEMOCAP_TRAIN_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_train.csv"
 IEMOCAP_VAL_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_val.csv"
 IEMOCAP_TEST_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_test.csv"
@@ -25,49 +24,27 @@ TEXT_MODEL = BertModel.from_pretrained('bert-base-uncased').to(device)
 AUDIO_MODEL = vggish(postprocess=False).to(device)  # Load pretrained VGGish model
 
 def preprocess_audio(audio_file):
-    """
-    Preprocesses audio file for VGGish model.
-    Ensures the waveform is mono, resampled to 16 kHz, and converted to log-mel spectrogram.
-
-    Args:
-        audio_file (str): Path to the audio file.
-
-    Returns:
-        torch.Tensor: Preprocessed log-mel spectrogram tensor.
-    """
     try:
-        # Load audio
         waveform, sample_rate = torchaudio.load(audio_file)
-
-        # Check if waveform is empty
         if waveform.numel() == 0:
             raise ValueError(f"Audio file {audio_file} is empty.")
 
-        # Convert to mono if necessary
         if waveform.size(0) > 1:
             waveform = waveform.mean(dim=0).unsqueeze(0)
 
-        # Resample to 16 kHz
         if sample_rate != 16000:
             resampler = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)
             waveform = resampler(waveform)
 
-        # Ensure the waveform has at least 1 second of data (16,000 samples)
         if waveform.size(1) < 16000:
             padding = 16000 - waveform.size(1)
             waveform = pad(waveform, (0, padding), "constant", 0)
 
-        # Convert waveform to numpy array for VGGish preprocessing
         waveform_np = waveform.squeeze(0).numpy()
-
-        # Generate log-mel spectrogram
         log_mel_spectrogram = vggish_input.waveform_to_examples(waveform_np, sample_rate=16000)
-
-        # Ensure the spectrogram has the expected dimensions [batch_size, channels, height, width]
-        if log_mel_spectrogram.ndim == 3:  # [1, channels, height, width]
+        if log_mel_spectrogram.ndim == 3:  
             log_mel_spectrogram = log_mel_spectrogram.unsqueeze(0)
 
-        # Convert back to torch tensor and return
         return torch.tensor(log_mel_spectrogram)
 
     except Exception as e:
