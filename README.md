@@ -1,1 +1,1 @@
-[![Apple Music GitHub profile](https://music-profile.rayriffy.com/theme/light.svg?uid=000945.0d29adbe544747b48315bd6069a486f2.1338)]()
+# FuzzySystem-for-SER
