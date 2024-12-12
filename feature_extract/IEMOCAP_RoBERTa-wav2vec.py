@@ -7,7 +7,7 @@ import torch
 import torchaudio
 import pickle
 import pandas as pd
-from transformers import RobertaTokenizer, RobertaModel, Wav2Vec2Processor, HubertModel
+from transformers import RobertaTokenizer, RobertaModel, Wav2Vec2Processor, Wav2Vec2Model
 from tqdm import tqdm  # For progress tracking
 
 

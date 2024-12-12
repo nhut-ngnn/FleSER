@@ -6,6 +6,7 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 import torch
 import torchaudio
 import pickle
+from speechbrain.pretrained import EncoderClassifier
 import pandas as pd
 from transformers import RobertaTokenizer, RobertaModel, Wav2Vec2Processor, HubertModel
 from tqdm import tqdm  # For progress tracking
