@@ -9,11 +9,10 @@ import pickle
 import pandas as pd
 from transformers import BertTokenizer, BertModel
 from speechbrain.pretrained import EncoderClassifier
-from tqdm import tqdm  # For progress tracking
+from tqdm import tqdm  
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Constants
 IEMOCAP_TRAIN_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_train.csv"
 IEMOCAP_VAL_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_val.csv"
 IEMOCAP_TEST_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_test.csv"
