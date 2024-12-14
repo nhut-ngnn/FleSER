@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import balanced_accuracy_score, accuracy_score
 from collections import Counter
 import matplotlib.pyplot as plt
-
+import wandb
 from training.CustomizedDataset import CustomizedDataset
 # from training.BERT_Wav2Vec import FlexibleMMSER
 # from training.BERT_ECAPA import FlexibleMMSER
@@ -64,15 +64,11 @@ def print_model_parameters(model):
     print(f"Total Parameters: {total_params}")
     print(f"Trainable Parameters: {trainable_params}")
         
+
 def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, save_path=None):
     optimizer = optim.Adam(params=model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
     lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.1)
-
-
-    train_loss_hist, val_loss_hist = [], []
-    train_wa_hist, val_wa_hist = [], []
-    train_ua_hist, val_ua_hist = [], []
 
     best_val_loss = float('inf')
     best_wa, best_ua = 0.0, 0.0
@@ -84,12 +80,17 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
 
         lr_scheduler.step()
 
-        train_loss_hist.append(train_loss)
-        val_loss_hist.append(val_loss)
-        train_wa_hist.append(train_wa * 100)
-        val_wa_hist.append(val_wa * 100)
-        train_ua_hist.append(train_ua * 100)
-        val_ua_hist.append(val_ua * 100)
+        # Log metrics to wandb
+        wandb.log({
+            "train_loss": train_loss,
+            "val_loss": val_loss,
+            "train_wa": train_wa * 100,
+            "val_wa": val_wa * 100,
+            "train_ua": train_ua * 100,
+            "val_ua": val_ua * 100,
+            "learning_rate": lr_scheduler.get_last_lr()[0],
+            "epoch": epoch + 1,
+        })
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
@@ -97,8 +98,9 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
             best_ua = val_ua
             if save_path:
                 torch.save(model.state_dict(), save_path)
-            
-            print(f"Validation loss reduced. Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Learning rate: {lr_scheduler.get_last_lr()}")
+                wandb.save(save_path)  # Save model to wandb
+
+            print(f"Validation loss reduced. Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}")
             print("-" * 50)
 
         print(f"Train Loss: {train_loss:.4f}, Train WA: {train_wa:.4f}, Train UA: {train_ua:.4f}")
@@ -106,8 +108,7 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
         print("-" * 50)
 
     print(f"Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}")
-    return train_loss_hist, val_loss_hist, train_wa_hist, val_wa_hist, train_ua_hist, val_ua_hist
-
+    
 def plot_metrics(epochs, train_hist, val_hist, metric_name):
     plt.plot(epochs, train_hist, label=f'Train {metric_name}')
     plt.plot(epochs, val_hist, label=f'Validation {metric_name}')
@@ -117,30 +118,34 @@ def plot_metrics(epochs, train_hist, val_hist, metric_name):
     plt.title(f"Training and Validation {metric_name} Over Epochs")
     plt.show()
 
-# Paths
-train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/ESD_ENG_CMN_BERT_HuBERT_train.pkl"
-val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/ESD_ENG_CMN_BERT_HuBERT_train.pkl"
+
+wandb.init(
+    project="FlexibleMMSER", 
+    config={
+        "batch_size": 128,
+        "learning_rate": 0.0001,
+        "num_epochs": 200,
+        "model": "FlexibleMMSER",
+        "dataset": "IEMOCAP",
+    }
+)
+train_metadata = "/kaggle/input/feature/IEMOCAP_BERT_ECAPA_train.pkl"
+val_metadata = "/kaggle/input/feature/IEMOCAP_BERT_ECAPA_val.pkl"
 
 # Datasets and Dataloaders
-BATCH_SIZE = 128   
+BATCH_SIZE = 128
 train_dataset = CustomizedDataset(train_metadata)
 val_dataset = CustomizedDataset(val_metadata)
 
 train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
-for text_embed, audio_embed, label in train_dataloader:
-    print(f"Text Embed Shape: {text_embed.shape}")
-    print(f"Audio Embed Shape: {audio_embed.shape}")
-    print(f"Label Shape: {label.shape}")
-    break
 
 model = FlexibleMMSER(num_classes=4).to(device)
 print_model_parameters(model)
-save_path = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/ESD_ENG_CMN_BERT_HuBERT.pt"
-train_hist, val_hist, train_wa_hist, val_wa_hist, train_ua_hist, val_ua_hist = train_and_evaluate(
-    model, train_dataloader, val_dataloader, num_epochs=200, save_path=save_path)
 
-epochs = list(range(1, 201))
-plot_metrics(epochs, train_hist, val_hist, "Loss")
-plot_metrics(epochs, train_wa_hist, val_wa_hist, "Weighted Accuracy")
-plot_metrics(epochs, train_ua_hist, val_ua_hist, "Unweighted Accuracy")
+save_path = "/kaggle/working/ESD_ENG_CMN_BERT_HuBERT.pt"
+train_and_evaluate(
+    model, train_dataloader, val_dataloader, num_epochs=200, save_path=save_path
+)
+
+wandb.finish()
