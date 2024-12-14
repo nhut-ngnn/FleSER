@@ -7,7 +7,7 @@ import torch
 import torchaudio
 import pickle
 import pandas as pd
-from transformers import RobertaTokenizer, RobertaModel, Wav2Vec2Processor, HubertModel
+from transformers import RobertaModel,AutoTokenizer, Wav2Vec2Processor, HubertModel
 from tqdm import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -19,7 +19,7 @@ ESD_TEST_PATH = "/kaggle/input/metadata/metadata/ESD_metadata_test.csv"
 OUTPUT_DIR = "/kaggle/working/"
 
 # Load text model
-TOKENIZER_CMN = RobertaTokenizer.from_pretrained('hfl/chinese-roberta-wwm-ext')
+TOKENIZER_CMN = AutoTokenizer.from_pretrained('hfl/chinese-roberta-wwm-ext')
 TEXT_MODEL_CMN = RobertaModel.from_pretrained('hfl/chinese-roberta-wwm-ext').to(device)
 
 # Load HuBERT audio model
