@@ -2,8 +2,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from training.CustomizedDataset import CustomizedDataset
 from training.BERT_ECAPA import FlexibleMMSER
-from config import model_prediction, calculate_accuracy
-# Device configuration
+from ultis import model_prediction, calculate_accuracy
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 BATCH_SIZE = 128

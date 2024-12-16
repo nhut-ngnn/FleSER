@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.5):
+    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
         
         # Model parameters

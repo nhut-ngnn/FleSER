@@ -1,20 +1,15 @@
 import torch
 from torch.utils.data import DataLoader
-
 import wandb
 from training.CustomizedDataset import CustomizedDataset
-from config import *
-
-# from training.BERT_Wav2Vec import FlexibleMMSER
-from training.BERT_ECAPA import FlexibleMMSER
-# from training.BERT_HuBERT import FlexibleMMSER
-# from training.BERT_VGGish import FlexibleMMSER
+from ultis import *
+from training.BERT_Wav2Vec import FlexibleMMSER
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-alpha_values = [0.1, 0.3, 0.5, 0.7, 0.9]
+alpha_values = [0.5]
 
-train_metadata = "/kaggle/input/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
-val_metadata = "/kaggle/input/feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
+train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
+val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
 
 BATCH_SIZE = 128
 train_dataset = CustomizedDataset(train_metadata)
@@ -27,6 +22,7 @@ for alpha in alpha_values:
     wandb.init(
         project="FlexibleMMSER-Alpha-Experiment",
         config={
+            "name": "BERT-Wav2Vec",
             "batch_size": 128,
             "learning_rate": 0.0001,
             "num_epochs": 200,
@@ -42,9 +38,12 @@ for alpha in alpha_values:
     print(f"Training with alpha = {alpha}")
     print_model_parameters(model)
 
-    save_path = f"/kaggle/working/IEMOCAP_BERT_WAV2VEC_alpha_{alpha}.pt"
+    save_path = f"C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/model/IEMOCAP_BERT_WAV2VEC_alpha_{alpha}.pt"
+    
     train_and_evaluate(
         model, train_dataloader, val_dataloader, num_epochs=200, save_path=save_path
     )
+    
+    wandb.save(save_path)
 
     wandb.finish()

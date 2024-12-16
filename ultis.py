@@ -1,0 +1,125 @@
+from collections import Counter
+from sklearn.metrics import balanced_accuracy_score, accuracy_score, f1_score
+import torch
+from torch import nn, optim
+import wandb
+
+import torch.nn as nn
+from torch.utils.data import DataLoader
+
+import matplotlib.pyplot as plt
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+def calculate_metrics(y_pred, y_true):
+    class_weights = {cls: 1.0 / count for cls, count in Counter(y_true).items()}
+    wa = balanced_accuracy_score(y_true, y_pred, sample_weight=[class_weights[cls] for cls in y_true])
+    ua = accuracy_score(y_true, y_pred)
+    mf1 = f1_score(y_true, y_pred, average='macro')
+    wf1 = f1_score(y_true, y_pred, average='weighted')
+    return wa, ua, mf1, wf1
+
+# Training step
+def train_step(model, dataloader, optim, loss_fn):
+    model.train()
+    train_loss, train_wa, train_ua, train_mf1, train_wf1 = 0.0, 0.0, 0.0, 0.0, 0.0
+    
+    for text_embed, audio_embed, label in dataloader:
+        text_embed, audio_embed, label = text_embed.to(device), audio_embed.to(device), label.to(device)
+        y_logits, y_softmax = model(text_embed, audio_embed)
+        y_preds = y_softmax.argmax(dim=1)
+
+        wa, ua, mf1, wf1 = calculate_metrics(y_preds.cpu().numpy(), label.cpu().numpy())
+        loss = loss_fn(y_logits, label)
+
+        optim.zero_grad()
+        loss.backward()
+        optim.step()
+
+        train_loss += loss.item()
+        train_wa += wa
+        train_ua += ua
+        train_mf1 += mf1
+        train_wf1 += wf1
+
+    return (train_loss / len(dataloader), 
+            train_wa / len(dataloader), 
+            train_ua / len(dataloader), 
+            train_mf1 / len(dataloader), 
+            train_wf1 / len(dataloader))
+
+def print_model_parameters(model):
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"Total Parameters: {total_params}")
+    print(f"Trainable Parameters: {trainable_params}")
+    
+def eval_step(model, dataloader, loss_fn):
+    model.eval()
+    eval_loss, eval_wa, eval_ua, eval_mf1, eval_wf1 = 0.0, 0.0, 0.0, 0.0, 0.0
+    
+    with torch.no_grad():
+        for text_embed, audio_embed, label in dataloader:
+            text_embed, audio_embed, label = text_embed.to(device), audio_embed.to(device), label.to(device)
+            y_logits, y_softmax = model(text_embed, audio_embed)
+            y_preds = y_softmax.argmax(dim=1)
+
+            wa, ua, mf1, wf1 = calculate_metrics(y_preds.cpu().numpy(), label.cpu().numpy())
+            loss = loss_fn(y_logits, label)
+
+            eval_loss += loss.item()
+            eval_wa += wa
+            eval_ua += ua
+            eval_mf1 += mf1
+            eval_wf1 += wf1
+
+    return (eval_loss / len(dataloader), 
+            eval_wa / len(dataloader), 
+            eval_ua / len(dataloader), 
+            eval_mf1 / len(dataloader), 
+            eval_wf1 / len(dataloader))
+
+def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, save_path=None):
+    optimizer = optim.Adam(params=model.parameters(), lr=lr)
+    criterion = nn.CrossEntropyLoss()
+    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.1)
+
+    best_val_loss = float('inf')
+    best_wa, best_ua, best_mf1, best_wf1 = 0.0, 0.0, 0.0, 0.0
+
+    for epoch in range(num_epochs):
+        print(f"Epoch {epoch + 1}/{num_epochs}")
+        train_loss, train_wa, train_ua, train_mf1, train_wf1 = train_step(model, train_loader, optimizer, criterion)
+        val_loss, val_wa, val_ua, val_mf1, val_wf1 = eval_step(model, val_loader, criterion)
+
+        lr_scheduler.step()
+
+        wandb.log({
+            "train_loss": train_loss,
+            "val_loss": val_loss,
+            "train_wa": train_wa * 100,
+            "val_wa": val_wa * 100,
+            "train_ua": train_ua * 100,
+            "val_ua": val_ua * 100,
+            "train_mf1": train_mf1 * 100,
+            "val_mf1": val_mf1 * 100,
+            "train_wf1": train_wf1 * 100,
+            "val_wf1": val_wf1 * 100,
+            "learning_rate": lr_scheduler.get_last_lr()[0],
+            "epoch": epoch + 1,
+        })
+
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            best_wa, best_ua = val_wa, val_ua
+            best_mf1, best_wf1 = val_mf1, val_wf1
+            if save_path:
+                torch.save(model.state_dict(), save_path)
+                wandb.save(save_path)
+
+            print(f"Validation loss reduced. Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Best MF1: {best_mf1:.4f}, Best WF1: {best_wf1:.4f}")
+            print("-" * 50)
+
+        print(f"Train Loss: {train_loss:.4f}, Train WA: {train_wa:.4f}, Train UA: {train_ua:.4f}, Train MF1: {train_mf1:.4f}, Train WF1: {train_wf1:.4f}")
+        print(f"Val Loss: {val_loss:.4f}, Val WA: {val_wa:.4f}, Val UA: {val_ua:.4f}, Val MF1: {val_mf1:.4f}, Val WF1: {val_wf1:.4f}")
+        print("-" * 50)
+
+    print(f"Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Best Val MF1: {best_mf1:.4f}, Best Val WF1: {best_wf1:.4f}")
