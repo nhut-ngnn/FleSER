@@ -1,0 +1,74 @@
+Training with alpha = 0.5
+Total Parameters: 708421
+Trainable Parameters: 708421
+Epoch 1/200
+Validation loss reduced. Best Val WA: 0.4377, Best Val UA: 0.4874, Best MF1: 0.4285, Best WF1: 0.4575
+--------------------------------------------------
+Train Loss: 1.3199, Train WA: 0.3508, Train UA: 0.3712, Train MF1: 0.3451, Train WF1: 0.3602
+Val Loss: 1.3078, Val WA: 0.4377, Val UA: 0.4874, Val MF1: 0.4285, Val WF1: 0.4575
+--------------------------------------------------
+Epoch 2/200
+Validation loss reduced. Best Val WA: 0.6360, Best Val UA: 0.6452, Best MF1: 0.6381, Best WF1: 0.6448
+--------------------------------------------------
+Train Loss: 1.1711, Train WA: 0.5166, Train UA: 0.5337, Train MF1: 0.5222, Train WF1: 0.5301
+Val Loss: 1.1096, Val WA: 0.6360, Val UA: 0.6452, Val MF1: 0.6381, Val WF1: 0.6448
+--------------------------------------------------
+Epoch 3/200
+Validation loss reduced. Best Val WA: 0.6805, Best Val UA: 0.6728, Best MF1: 0.6694, Best WF1: 0.6734
+--------------------------------------------------
+Train Loss: 1.0455, Train WA: 0.5959, Train UA: 0.5992, Train MF1: 0.5989, Train WF1: 0.6003
+Val Loss: 0.9765, Val WA: 0.6805, Val UA: 0.6728, Val MF1: 0.6694, Val WF1: 0.6734
+--------------------------------------------------
+Epoch 4/200
+Validation loss reduced. Best Val WA: 0.6902, Best Val UA: 0.6847, Best MF1: 0.6807, Best WF1: 0.6861
+--------------------------------------------------
+Train Loss: 0.9283, Train WA: 0.6482, Train UA: 0.6396, Train MF1: 0.6422, Train WF1: 0.6407
+Val Loss: 0.8845, Val WA: 0.6902, Val UA: 0.6847, Val MF1: 0.6807, Val WF1: 0.6861
+--------------------------------------------------
+Epoch 5/200
+Validation loss reduced. Best Val WA: 0.7095, Best Val UA: 0.7007, Best MF1: 0.6971, Best WF1: 0.7021
+--------------------------------------------------
+Train Loss: 0.8471, Train WA: 0.6826, Train UA: 0.6714, Train MF1: 0.6737, Train WF1: 0.6720
+Val Loss: 0.8217, Val WA: 0.7095, Val UA: 0.7007, Val MF1: 0.6971, Val WF1: 0.7021
+--------------------------------------------------
+Epoch 6/200
+Validation loss reduced. Best Val WA: 0.7176, Best Val UA: 0.7050, Best MF1: 0.7029, Best WF1: 0.7074
+--------------------------------------------------
+Train Loss: 0.7873, Train WA: 0.7018, Train UA: 0.6918, Train MF1: 0.6940, Train WF1: 0.6924
+Val Loss: 0.7819, Val WA: 0.7176, Val UA: 0.7050, Val MF1: 0.7029, Val WF1: 0.7074
+--------------------------------------------------
+Epoch 7/200
+Validation loss reduced. Best Val WA: 0.7277, Best Val UA: 0.7233, Best MF1: 0.7192, Best WF1: 0.7259
+--------------------------------------------------
+Train Loss: 0.7394, Train WA: 0.7171, Train UA: 0.7089, Train MF1: 0.7104, Train WF1: 0.7101
+Val Loss: 0.7461, Val WA: 0.7277, Val UA: 0.7233, Val MF1: 0.7192, Val WF1: 0.7259
+--------------------------------------------------
+Epoch 8/200
+Traceback (most recent call last):
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\main.py", line 44, in <module>
+    train_and_evaluate(
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\ultis.py", line 90, in train_and_evaluate
+    train_loss, train_wa, train_ua, train_mf1, train_wf1 = train_step(model, train_loader, optimizer, criterion)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\ultis.py", line 35, in train_step
+    optim.step()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\lr_scheduler.py", line 137, in wrapper
+    return func.__get__(opt, opt.__class__)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\optimizer.py", line 487, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\optimizer.py", line 91, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\adam.py", line 223, in step
+    adam(
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\optimizer.py", line 154, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\adam.py", line 784, in adam
+    func(
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\optim\adam.py", line 430, in _single_tensor_adam
+    denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

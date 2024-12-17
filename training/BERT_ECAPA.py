@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.3):
+    def __init__(self, num_classes=4, fusion_method='MHA', dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
         
         # Model parameters
@@ -31,6 +31,7 @@ class FlexibleMMSER(nn.Module):
             nn.Linear(128, 1),
             nn.Sigmoid()
         )
+        self.multihead_attention = nn.MultiheadAttention(embed_dim=256, num_heads=4, batch_first=True)
         
         self.fc = nn.Sequential(
             nn.Linear(256 * 2, 256),
@@ -64,6 +65,12 @@ class FlexibleMMSER(nn.Module):
             concat_embed = torch.cat((text_fuzzy, audio_fuzzy), dim=1)
             attention_weights = self.attention(concat_embed)
             return attention_weights * text_fuzzy + (1 - attention_weights) * audio_fuzzy
+        elif self.fusion_method == 'MHA':
+            text_fuzzy = text_fuzzy.unsqueeze(1)
+            audio_fuzzy = audio_fuzzy.unsqueeze(1)
+            attn_output, _ = self.multihead_attention(text_fuzzy, audio_fuzzy, audio_fuzzy)
+            fused_output = self.fuzzy_membership(attn_output.mean(dim=1))
+            return fused_output
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
 
