@@ -1,0 +1,7 @@
+Training with alpha = 0.5
+Total Parameters: 609093
+Trainable Parameters: 609093
+Traceback (most recent call last):
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\main.py", line 43, in <module>
+    train_and_evaluate(
+TypeError: train_and_evaluate() got an unexpected keyword argument 'save_path'

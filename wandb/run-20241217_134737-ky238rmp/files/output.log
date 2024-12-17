@@ -1,0 +1,23 @@
+Training with alpha = 0.5
+Total Parameters: 872261
+Trainable Parameters: 872261
+Epoch 1/200
+Traceback (most recent call last):
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\main.py", line 43, in <module>
+    train_and_evaluate(
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\ultis.py", line 116, in train_and_evaluate
+    wandb.save(save_path)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_run.py", line 392, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_run.py", line 382, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_run.py", line 1963, in save
+    return self._save(
+           ^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_run.py", line 2022, in _save
+    target_path.symlink_to(source_path)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1198, in symlink_to
+    os.symlink(target, self, target_is_directory)
+OSError: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\admin\\Documents\\FuzzyMachineLearning\\mymodel\\FuzzySystem-for-SER\\model\\IEMOCAP_BERT_WAV2VEC_alpha_0.5.pt' -> 'C:\\Users\\admin\\Documents\\FuzzyMachineLearning\\mymodel\\FuzzySystem-for-SER\\wandb\\run-20241217_134737-ky238rmp\\files\\model\\IEMOCAP_BERT_WAV2VEC_alpha_0.5.pt'
