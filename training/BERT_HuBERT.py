@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method='MHA', dropout_rate=0.3):
+    def __init__(self, num_classes=4, fusion_method='weighted', dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
         
         # Model parameters
@@ -62,15 +62,22 @@ class FlexibleMMSER(nn.Module):
         elif self.fusion_method == 'sum':
             return text_fuzzy + audio_fuzzy - text_fuzzy * audio_fuzzy
         elif self.fusion_method == 'attention':
+            weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
             concat_embed = torch.cat((text_fuzzy, audio_fuzzy), dim=1)
             attention_weights = self.attention(concat_embed)
-            return attention_weights * text_fuzzy + (1 - attention_weights) * audio_fuzzy
+            attended_weighted_input = attention_weights * weighted_input
+            return attended_weighted_input
         elif self.fusion_method == 'MHA':
+            weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
+        
+            weighted_input = weighted_input.unsqueeze(1)  
             text_fuzzy = text_fuzzy.unsqueeze(1)
             audio_fuzzy = audio_fuzzy.unsqueeze(1)
-            attn_output, _ = self.multihead_attention(text_fuzzy, audio_fuzzy, audio_fuzzy)
-            fused_output = self.fuzzy_membership(attn_output.mean(dim=1))
-            return fused_output
+            
+            attn_output, _ = self.multihead_attention(weighted_input, text_fuzzy, audio_fuzzy)
+            
+            fused_output = self.alpha * attn_output.mean(dim=1) + (1 - self.alpha) * audio_fuzzy
+            return self.fuzzy_membership(fused_output)
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
 
