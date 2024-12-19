@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method='MHA', dropout_rate=0.3):
+    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
         
         self.num_classes = num_classes
@@ -66,7 +66,7 @@ class FlexibleMMSER(nn.Module):
             attention_weights = self.attention(concat_embed)
             attended_weighted_input = attention_weights * weighted_input
             return attended_weighted_input
-        elif self.fusion_method == 'MHA':
+        elif self.fusion_method == 'attention':
             weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
         
             weighted_input = weighted_input.unsqueeze(1)  

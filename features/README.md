@@ -1,1 +1,0 @@
-The feature of text and audio after embeding will be stored here.

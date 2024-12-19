@@ -2,17 +2,17 @@ import torch
 from torch.utils.data import DataLoader
 from training.CustomizedDataset import CustomizedDataset
 from training.BERT_HuBERT import FlexibleMMSER
+# from training.BERT_Wav2Vec import FlexibleMMSER
 from ultis import model_prediction, calculate_accuracy
 import csv
 
-# Configuration
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 128
-TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_WAV2VEC_test.pkl"
-MODEL_BASE_PATH = "model/IEMOCAP_RoBERTa_WAV2VEC_MHA_alpha_{}.pt"
+TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_HUBERT_test.pkl"
+MODEL_BASE_PATH = "model/IEMOCAP_RoBERTa_HUBERT_attention_alpha_{}.pt"
 ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
-NUM_CLASSES = 4
-RESULTS_CSV_PATH = "result/RoBERTa_WAV2VEC_MHA.csv"
+NUM_CLASSES = 4 
+RESULTS_CSV_PATH = "result/IEMOCAP_RoBERTa_HUBERT_attention.csv"
 
 def load_model(model_path, num_classes, device):
     """Load the model from the given path and move it to the specified device."""
@@ -38,7 +38,7 @@ def main():
     test_dataset = CustomizedDataset(TEST_METADATA_PATH)
     test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
     
-    results = []  # List to store results for all alpha values
+    results = [] 
 
     for alpha in ALPHA_VALUES:
         model_path = MODEL_BASE_PATH.format(alpha)
@@ -61,7 +61,6 @@ def main():
         except FileNotFoundError:
             print(f"Model file not found for alpha = {alpha}. Skipping...\n")
 
-    # Save all results to CSV
     save_results_to_csv(results, RESULTS_CSV_PATH)
     print(f"Results saved to {RESULTS_CSV_PATH}")
 
