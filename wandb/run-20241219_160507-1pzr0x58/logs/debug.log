@@ -1,0 +1,29 @@
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_setup.py:_flush():68] Current SDK version is 0.19.1
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_setup.py:_flush():68] Configure stats pid to 6804
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_setup.py:_flush():68] Loading settings from C:\Users\admin\.config\wandb\settings
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_setup.py:_flush():68] Loading settings from C:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\wandb\settings
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\wandb\run-20241219_160507-1pzr0x58\logs\debug.log
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\wandb\run-20241219_160507-1pzr0x58\logs\debug-internal.log
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_init.py:init():644] calling init triggers
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_init.py:init():650] wandb.init called with sweep_config: {}
+config: {'name': 'BERT_VGGish', 'batch_size': 128, 'learning_rate': 0.0001, 'num_epochs': 100, 'model': 'FlexibleMMSER', 'dataset': 'IEMOCAP', 'feature': 'BERT_VGGish', 'alpha': 0.5}
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_init.py:init():680] starting backend
+2024-12-19 16:05:07,376 INFO    MainThread:6804 [wandb_init.py:init():684] sending inform_init request
+2024-12-19 16:05:07,380 INFO    MainThread:6804 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=spawn, using: spawn
+2024-12-19 16:05:07,381 INFO    MainThread:6804 [wandb_init.py:init():697] backend started and connected
+2024-12-19 16:05:07,383 INFO    MainThread:6804 [wandb_init.py:init():790] updated telemetry
+2024-12-19 16:05:07,424 INFO    MainThread:6804 [wandb_init.py:init():822] communicating run to backend with 90.0 second timeout
+2024-12-19 16:05:08,139 INFO    MainThread:6804 [wandb_init.py:init():874] starting run threads in backend
+2024-12-19 16:05:08,409 INFO    MainThread:6804 [wandb_run.py:_console_start():2374] atexit reg
+2024-12-19 16:05:08,409 INFO    MainThread:6804 [wandb_run.py:_redirect():2224] redirect: wrap_raw
+2024-12-19 16:05:08,409 INFO    MainThread:6804 [wandb_run.py:_redirect():2289] Wrapping output streams.
+2024-12-19 16:05:08,409 INFO    MainThread:6804 [wandb_run.py:_redirect():2314] Redirects installed.
+2024-12-19 16:05:08,410 INFO    MainThread:6804 [wandb_init.py:init():916] run started, returning control to user process
+2024-12-19 16:05:54,258 INFO    MainThread:6804 [wandb_run.py:_finish():2100] finishing run minhnhut05032004-aita-lab/FlexibleMMSER-Alpha-Experiment/1pzr0x58
+2024-12-19 16:05:54,259 INFO    MainThread:6804 [wandb_run.py:_atexit_cleanup():2339] got exitcode: 0
+2024-12-19 16:05:54,259 INFO    MainThread:6804 [wandb_run.py:_restore():2321] restore
+2024-12-19 16:05:54,259 INFO    MainThread:6804 [wandb_run.py:_restore():2327] restore done
+2024-12-19 16:05:57,886 INFO    MainThread:6804 [wandb_run.py:_footer_history_summary_info():3892] rendering history
+2024-12-19 16:05:57,887 INFO    MainThread:6804 [wandb_run.py:_footer_history_summary_info():3924] rendering summary
+2024-12-19 16:05:57,891 INFO    MainThread:6804 [wandb_run.py:_footer_sync_info():3853] logging synced files
