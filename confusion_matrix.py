@@ -4,6 +4,10 @@ from training.CustomizedDataset import CustomizedDataset
 from training.BERT_Wav2Vec import FlexibleMMSER
 from ultis import model_prediction, calculate_accuracy
 import csv
+from sklearn.metrics import confusion_matrix, balanced_accuracy_score, accuracy_score
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 128
@@ -45,13 +49,26 @@ def main():
             print(f"Evaluating model with alpha = {alpha}")
 
             eval_metrics = evaluate_model(model, test_dataloader, calculate_accuracy)
-            eval_wa, eval_ua, eval_wf1, eval_uf1, _, _ = eval_metrics
+            eval_wa, eval_ua, eval_wf1, eval_uf1, y_true_ls, y_pred_ls = eval_metrics
             
             print(f"Alpha: {alpha}")
-            print(f"  Weighted Accuracy (WA): {eval_wa:.4f}")
-            print(f"  Unweighted Accuracy (UA): {eval_ua:.4f}")
-            print(f"  Weighted F1-Score (WF1): {eval_wf1:.4f}")
-            print(f"  Unweighted F1-Score (UF1): {eval_uf1:.4f}\n")
+            y_true_ls = np.concatenate(y_true_ls, axis=0)
+            y_pred_ls = np.concatenate(y_pred_ls, axis=0)
+            cm = confusion_matrix(np.array(y_true_ls), np.array(y_pred_ls))
+            print(cm)
+            
+            
+            cmn = (cm.astype('float') / cm.sum(axis=1)[:, np.newaxis])*100
+
+            ax = plt.subplots(figsize=(8, 5.5))[1]
+            sns.heatmap(cmn, cmap='flare', annot=True, square=True, linecolor='black', linewidths=0.75, ax = ax, fmt = '.2f', annot_kws={'size': 16})
+            ax.set_xlabel('Predicted', fontsize=18, fontweight='bold')
+            ax.xaxis.set_label_position('bottom')
+            ax.xaxis.set_ticklabels(["Anger", "Happiness", "Neutral", "Sadness"], fontsize=16)
+            ax.set_ylabel('Ground Truth', fontsize=18, fontweight='bold')
+            ax.yaxis.set_ticklabels(["Anger", "Happiness", "Neutral", "Sadness"], fontsize=16)
+            plt.tight_layout()
+            plt.show()
         except FileNotFoundError:
             print(f"Model file not found for alpha = {alpha}. Skipping...\n")
 
