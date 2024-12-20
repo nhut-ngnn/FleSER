@@ -2,20 +2,20 @@ import torch
 from torch.utils.data import DataLoader
 import wandb
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_HuBERT import FlexibleMMSER
+from training.BERT_Wav2Vec import FlexibleMMSER
 from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_HUBERT_train.pkl"
-val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_HUBERT_val.pkl"
-test_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_HUBERT_test.pkl"
+train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_train.pkl"
+val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_val.pkl"
+test_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 100
-ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
+ALPHA_VALUES = [1]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
-MODEL_NAME = "RoBERTa_Wav2Vec"
+MODEL_NAME = "BERT_Wav2Vec"
 DATASET_NAME = "IEMOCAP"
 
 train_dataset = CustomizedDataset(train_metadata)

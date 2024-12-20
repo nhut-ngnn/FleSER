@@ -7,11 +7,11 @@ import csv
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 128
-TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_HUBERT_test.pkl"
-MODEL_BASE_PATH = "model/IEMOCAP_RoBERTa_Wav2Vec_concat_alpha_{}.pt"
-ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
+TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
+MODEL_BASE_PATH = "model/IEMOCAP_BERT_Wav2Vec_concat_alpha_{}.pt"
+ALPHA_VALUES = [1]
 NUM_CLASSES = 4 
-RESULTS_CSV_PATH = "performance-analysics/IEMOCAP_RoBERTa_Wav2Vec_concat.csv"
+RESULTS_CSV_PATH = "performance-analysics/IEMOCAP_BERT_Wav2Vec_concat.csv"
 
 def load_model(model_path, num_classes, device):
     """Load the model from the given path and move it to the specified device."""
