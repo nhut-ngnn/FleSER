@@ -1,7 +1,8 @@
 import torch
 from torch.utils.data import DataLoader
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_Wav2Vec import FlexibleMMSER
+# from training.BERT_Wav2Vec import FlexibleMMSER
+from training.BERT_HuBERT import FlexibleMMSER
 from ultis import model_prediction, calculate_accuracy
 import csv
 from sklearn.metrics import confusion_matrix
@@ -11,9 +12,9 @@ import matplotlib.pyplot as plt
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 128
-TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
-MODEL_BASE_PATH = "model/IEMOCAP_BERT_Wav2Vec_concat_alpha_{}.pt"
-ALPHA_VALUES = [1]
+TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_HUBERT_test.pkl"
+MODEL_BASE_PATH = "model/IEMOCAP_RoBERTa_HuBERT_attention_alpha_{}.pt"
+ALPHA_VALUES = [0.1]
 NUM_CLASSES = 4 
 
 def load_model(model_path, num_classes, device):

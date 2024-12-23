@@ -8,7 +8,7 @@ class FlexibleMMSER(nn.Module):
         self.num_classes = num_classes
         self.fusion_method = fusion_method
         self.alpha = 0.5
-        
+
         self.text_projection = nn.Sequential(
             nn.Linear(768, 256),
             nn.BatchNorm1d(256),
@@ -21,7 +21,7 @@ class FlexibleMMSER(nn.Module):
             nn.ReLU(),
             nn.Dropout(dropout_rate)
         )
-        
+
         self.attention = nn.Sequential(
             nn.Linear(256 * 2, 128),
             nn.ReLU(),
@@ -30,7 +30,7 @@ class FlexibleMMSER(nn.Module):
             nn.Sigmoid()
         )
         self.multihead_attention = nn.MultiheadAttention(embed_dim=256, num_heads=4, batch_first=True)
-        
+
         self.fc = nn.Sequential(
             nn.Linear(256 * 2, 256),
             nn.BatchNorm1d(256),
@@ -43,12 +43,67 @@ class FlexibleMMSER(nn.Module):
         )
         self.softmax = nn.Softmax(dim=1)
 
-    def fuzzy_membership(self, x):
-        """Apply a fuzzy membership function."""
-        return torch.sigmoid(x)
+    def fuzzy_membership(self, x, method='sigmoid'):
+        """
+        Apply a fuzzy membership function based on the selected method.
+
+        Parameters:
+        - x: Input tensor.
+        - method: The type of fuzzy membership function ('sigmoid', 'tanh', 'linear', 'gaussian', 'piecewise').
+
+        Returns:
+        - Tensor after applying the membership function.
+        """
+        if method == 'sigmoid':
+            # Domain: Typically used for inputs in range [-6, 6].
+            x = torch.clamp(x, -6, 6)
+            return torch.sigmoid(x)
+        elif method == 'tanh':
+            # Domain: Inputs generally range from [-3, 3].
+            x = torch.clamp(x, -3, 3)
+            return torch.tanh(x)
+        elif method == 'linear':
+            # Domain: Inputs are non-negative, clipped to [0, 1].
+            x = F.relu(x)
+            x = torch.clamp(x, 0, 1)
+            return x
+        elif method == 'gaussian':
+            # Domain: Inputs in [0, 1].
+            mean = 0.5
+            std = 0.1
+            x = torch.clamp(x, 0, 1)
+            return torch.exp(-torch.pow(x - mean, 2) / (2 * std**2))
+        elif method == 'piecewise':
+            # Domain: Inputs in [0, 1].
+            x = torch.clamp(x, 0, 1)
+            return torch.where(
+                x < 0.3, 0.2 * x,
+                torch.where(x < 0.7, 0.5 + 0.5 * x, 0.9)
+            )
+        else:
+            raise ValueError(f"Unknown fuzzy membership method: {method}")
+
+    def select_fuzzy_type(self, input_data):
+        mean_value = input_data.mean().item()
+        std_dev = input_data.std().item()
+        min_val, max_val = input_data.min().item(), input_data.max().item()
+
+        # Rule-based selection
+        if min_val < 0 and max_val > 0:  # Both negative and positive values
+            return 'tanh'
+        elif 0 <= min_val < max_val <= 1:  # Normalized inputs
+            if std_dev < 0.1:  # Data is tightly concentrated
+                return 'linear'
+            else:  # Spread data, emphasize the mean
+                return 'gaussian'
+        elif mean_value > 1 or std_dev > 1:  # Large spread or high mean
+            return 'sigmoid'
+        elif 0 <= min_val < max_val:  # Custom ranges
+            return 'piecewise'
+        else:
+            return 'sigmoid'  # Default fallback
 
     def fuzzy_fusion(self, text_fuzzy, audio_fuzzy):
-        """Perform fuzzy fusion based on the specified method."""
         if self.fusion_method == 'weighted':
             return self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
         elif self.fusion_method == 'min':
@@ -67,13 +122,10 @@ class FlexibleMMSER(nn.Module):
             return attended_weighted_input
         elif self.fusion_method == 'MHA':
             weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
-        
-            weighted_input = weighted_input.unsqueeze(1)  
+            weighted_input = weighted_input.unsqueeze(1)
             text_fuzzy = text_fuzzy.unsqueeze(1)
             audio_fuzzy = audio_fuzzy.unsqueeze(1)
-            
             attn_output, _ = self.multihead_attention(weighted_input, text_fuzzy, audio_fuzzy)
-            
             fused_output = self.alpha * attn_output.mean(dim=1) + (1 - self.alpha) * audio_fuzzy
             return self.fuzzy_membership(fused_output)
         else:
@@ -82,16 +134,16 @@ class FlexibleMMSER(nn.Module):
     def forward(self, text_embed, audio_embed):
         text_proj = self.text_projection(text_embed)
         audio_proj = self.audio_projection(audio_embed)
-        
-        text_fuzzy = self.fuzzy_membership(text_proj)
-        audio_fuzzy = self.fuzzy_membership(audio_proj)
+
+        text_fuzzy_type = self.select_fuzzy_type(text_proj)
+        audio_fuzzy_type = self.select_fuzzy_type(audio_proj)
+
+        text_fuzzy = self.fuzzy_membership(text_proj, method=text_fuzzy_type)
+        audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)
-
         concat_embed = torch.cat((text_proj, audio_proj), dim=1)
-
         y_logits = self.fc(concat_embed)
-
         y_softmax = self.softmax(y_logits)
-        
+
         return y_logits, y_softmax

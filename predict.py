@@ -1,17 +1,17 @@
 import torch
 from torch.utils.data import DataLoader
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_Wav2Vec import FlexibleMMSER
+from training.BERT_ECAPA import FlexibleMMSER
 from ultis import model_prediction, calculate_accuracy
 import csv
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 128
-TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
-MODEL_BASE_PATH = "model/IEMOCAP_BERT_Wav2Vec_concat_alpha_{}.pt"
-ALPHA_VALUES = [1]
+TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_ECAPA_test.pkl"
+MODEL_BASE_PATH = "model/IEMOCAP_BERT_ECAPA_concat_alpha_{}.pt"
+ALPHA_VALUES = [0.5]
 NUM_CLASSES = 4 
-RESULTS_CSV_PATH = "performance-analysics/IEMOCAP_BERT_Wav2Vec_concat.csv"
+RESULTS_CSV_PATH = "performance-analysics/IEMOCAP_BERT_ECAPA_concat.csv"
 
 def load_model(model_path, num_classes, device):
     """Load the model from the given path and move it to the specified device."""
