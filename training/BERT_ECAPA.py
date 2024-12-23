@@ -44,37 +44,22 @@ class FlexibleMMSER(nn.Module):
         self.softmax = nn.Softmax(dim=1)
 
     def fuzzy_membership(self, x, method='sigmoid'):
-        """
-        Apply a fuzzy membership function based on the selected method.
-
-        Parameters:
-        - x: Input tensor.
-        - method: The type of fuzzy membership function ('sigmoid', 'tanh', 'linear', 'gaussian', 'piecewise').
-
-        Returns:
-        - Tensor after applying the membership function.
-        """
         if method == 'sigmoid':
-            # Domain: Typically used for inputs in range [-6, 6].
             x = torch.clamp(x, -6, 6)
             return torch.sigmoid(x)
         elif method == 'tanh':
-            # Domain: Inputs generally range from [-3, 3].
             x = torch.clamp(x, -3, 3)
             return torch.tanh(x)
         elif method == 'linear':
-            # Domain: Inputs are non-negative, clipped to [0, 1].
             x = F.relu(x)
             x = torch.clamp(x, 0, 1)
             return x
         elif method == 'gaussian':
-            # Domain: Inputs in [0, 1].
             mean = 0.5
             std = 0.1
             x = torch.clamp(x, 0, 1)
             return torch.exp(-torch.pow(x - mean, 2) / (2 * std**2))
         elif method == 'piecewise':
-            # Domain: Inputs in [0, 1].
             x = torch.clamp(x, 0, 1)
             return torch.where(
                 x < 0.3, 0.2 * x,
@@ -88,20 +73,19 @@ class FlexibleMMSER(nn.Module):
         std_dev = input_data.std().item()
         min_val, max_val = input_data.min().item(), input_data.max().item()
 
-        # Rule-based selection
-        if min_val < 0 and max_val > 0:  # Both negative and positive values
+        if min_val < 0 and max_val > 0:  
             return 'tanh'
-        elif 0 <= min_val < max_val <= 1:  # Normalized inputs
-            if std_dev < 0.1:  # Data is tightly concentrated
+        elif 0 <= min_val < max_val <= 1:  
+            if std_dev < 0.1:  
                 return 'linear'
-            else:  # Spread data, emphasize the mean
+            else:  
                 return 'gaussian'
-        elif mean_value > 1 or std_dev > 1:  # Large spread or high mean
+        elif mean_value > 1 or std_dev > 1: 
             return 'sigmoid'
-        elif 0 <= min_val < max_val:  # Custom ranges
+        elif 0 <= min_val < max_val:  
             return 'piecewise'
         else:
-            return 'sigmoid'  # Default fallback
+            return 'sigmoid' 
 
     def fuzzy_fusion(self, text_fuzzy, audio_fuzzy):
         if self.fusion_method == 'weighted':
