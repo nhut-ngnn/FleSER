@@ -8,37 +8,31 @@ from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Paths to metadata
 train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_train.pkl"
 val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_val.pkl"
 test_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
 
-# Hyperparameters
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 200
 ALPHA_VALUES = [0.1]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
 MODEL_NAME = "BERT_Wav2Vec"
-DATASET_NAME = "IEMOCAP"
+DATASET_NAME = "IEMOCAP" 
 K_FOLDS = 5
 
-# Load datasets
 train_dataset = CustomizedDataset(train_metadata)
 val_dataset = CustomizedDataset(val_metadata)
 test_dataset = CustomizedDataset(test_metadata)
 
-# Concatenate training and validation datasets
 combined_dataset = ConcatDataset([train_dataset, val_dataset])
 
-# K-Fold Cross-Validation
 kfold = KFold(n_splits=K_FOLDS, shuffle=True, random_state=42)
 
-# Iterate through alpha values
 for alpha in ALPHA_VALUES:
     fold_results = []
+    test_results = []
 
-    # Initialize W&B for the experiment
     wandb.init(
         project=PROJECT_NAME,
         config={
@@ -54,24 +48,21 @@ for alpha in ALPHA_VALUES:
         }
     )
     
+    # Training, Validation, and Test in One Loop
     for fold, (train_idx, val_idx) in enumerate(kfold.split(combined_dataset)):
         print(f"Fold {fold + 1}/{K_FOLDS} - Training with alpha = {alpha}")
         
-        # Create datasets for the current fold
         train_subset = Subset(combined_dataset, train_idx)
         val_subset = Subset(combined_dataset, val_idx)
         train_loader = DataLoader(train_subset, batch_size=BATCH_SIZE, shuffle=True)
         val_loader = DataLoader(val_subset, batch_size=BATCH_SIZE, shuffle=False)
 
-        # Initialize model
         model = FlexibleMMSER(num_classes=4).to(device)
         model.alpha = alpha
         print_model_parameters(model)
 
-        # Save path for the current fold
         save_path = f"model/{DATASET_NAME}_{MODEL_NAME}_fold{fold + 1}_alpha_{alpha}.pt"
 
-        # Train and evaluate
         train_and_evaluate(
             model=model,
             train_loader=train_loader,
@@ -81,30 +72,51 @@ for alpha in ALPHA_VALUES:
             save_path=save_path
         )
         
-        # Evaluate the final performance on the validation set
         val_wa, val_ua, val_wf1, val_uf1, _, _ = model_prediction(model, val_loader, calculate_accuracy)
         fold_results.append((val_wa, val_ua, val_wf1, val_uf1))
         print(f"Fold {fold + 1} Results: WA: {val_wa:.4f}, UA: {val_ua:.4f}, WF1: {val_wf1:.4f}, UF1: {val_uf1:.4f}")
         print("=" * 50)
 
-    # Aggregate fold results
-    mean_wa = sum([res[0] for res in fold_results]) / K_FOLDS
-    mean_ua = sum([res[1] for res in fold_results]) / K_FOLDS
-    mean_wf1 = sum([res[2] for res in fold_results]) / K_FOLDS
-    mean_uf1 = sum([res[3] for res in fold_results]) / K_FOLDS
+        # Test evaluation for the current fold
+        test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+        model.load_state_dict(torch.load(save_path, map_location=device))
+        model.eval()
 
-    print(f"Alpha = {alpha} - K-Fold Results Summary:")
-    print(f"Mean WA: {mean_wa:.4f}, Mean UA: {mean_ua:.4f}, Mean WF1: {mean_wf1:.4f}, Mean UF1: {mean_uf1:.4f}")
+        test_wa, test_ua, test_wf1, test_uf1, _, _ = model_prediction(model, test_loader, calculate_accuracy)
+        test_results.append((test_wa, test_ua, test_wf1, test_uf1))
+        print(f"Fold {fold + 1} Test Results: WA: {test_wa:.4f}, UA: {test_ua:.4f}, WF1: {test_wf1:.4f}, UF1: {test_uf1:.4f}")
+        print("=" * 50)
+
+    # After all folds, calculate the mean results for validation and test sets
+    mean_val_wa = sum([res[0] for res in fold_results]) / K_FOLDS
+    mean_val_ua = sum([res[1] for res in fold_results]) / K_FOLDS
+    mean_val_wf1 = sum([res[2] for res in fold_results]) / K_FOLDS
+    mean_val_uf1 = sum([res[3] for res in fold_results]) / K_FOLDS
+
+    mean_test_wa = sum([res[0] for res in test_results]) / K_FOLDS
+    mean_test_ua = sum([res[1] for res in test_results]) / K_FOLDS
+    mean_test_wf1 = sum([res[2] for res in test_results]) / K_FOLDS
+    mean_test_uf1 = sum([res[3] for res in test_results]) / K_FOLDS
+
+    print(f"Alpha = {alpha} - Validation Results Summary:")
+    print(f"Mean WA: {mean_val_wa:.4f}, Mean UA: {mean_val_ua:.4f}, Mean WF1: {mean_val_wf1:.4f}, Mean UF1: {mean_val_uf1:.4f}")
     print("=" * 50)
 
-    # Log the aggregated results to W&B
+    print(f"Alpha = {alpha} - Test Results Summary:")
+    print(f"Mean WA: {mean_test_wa:.4f}, Mean UA: {mean_test_ua:.4f}, Mean WF1: {mean_test_wf1:.4f}, Mean UF1: {mean_test_uf1:.4f}")
+    print("=" * 50)
+
+    # Log the results to WandB
     wandb.log({
         "alpha": alpha,
-        "mean_wa": mean_wa,
-        "mean_ua": mean_ua,
-        "mean_wf1": mean_wf1,
-        "mean_uf1": mean_uf1
+        "mean_val_wa": mean_val_wa,
+        "mean_val_ua": mean_val_ua,
+        "mean_val_wf1": mean_val_wf1,
+        "mean_val_uf1": mean_val_uf1,
+        "mean_test_wa": mean_test_wa,
+        "mean_test_ua": mean_test_ua,
+        "mean_test_wf1": mean_test_wf1,
+        "mean_test_uf1": mean_test_uf1
     })
-    
-    # Finish the W&B run for this alpha
+
     wandb.finish()

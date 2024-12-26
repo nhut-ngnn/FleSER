@@ -6,6 +6,8 @@ import wandb
 
 import torch.nn as nn
 from torch.utils.data import DataLoader
+from sklearn.model_selection import KFold
+from torch.utils.data import Subset, DataLoader
 
 import matplotlib.pyplot as plt
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -111,9 +113,6 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
             best_val_loss = val_loss
             best_wa, best_ua = val_wa, val_ua
             best_mf1, best_wf1 = val_mf1, val_wf1
-            if save_path:
-                torch.save(model.state_dict(), save_path)
-    
             print(f"Validation loss reduced. Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Best MF1: {best_mf1:.4f}, Best WF1: {best_wf1:.4f}")
             print("-" * 50)
 
@@ -121,8 +120,11 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
         print(f"Val Loss: {val_loss:.4f}, Val WA: {val_wa:.4f}, Val UA: {val_ua:.4f}, Val MF1: {val_mf1:.4f}, Val WF1: {val_wf1:.4f}")
         print("-" * 50)
 
-    print(f"Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Best Val MF1: {best_mf1:.4f}, Best Val WF1: {best_wf1:.4f}")
+        if save_path and epoch == num_epochs - 1:
+            torch.save(model.state_dict(), save_path)
+            print(f"Last model saved to {save_path}")
 
+    print(f"Best Val WA: {best_wa:.4f}, Best Val UA: {best_ua:.4f}, Best Val MF1: {best_mf1:.4f}, Best Val WF1: {best_wf1:.4f}")
 
 def calculate_accuracy(y_pred, y_true):
     class_weights = {cls: 1.0 / count for cls, count in Counter(y_true).items()}
