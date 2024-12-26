@@ -1,44 +1,32 @@
 import torch
-from torch.utils.data import DataLoader, ConcatDataset, Subset
+from torch.utils.data import DataLoader
 import wandb
-from sklearn.model_selection import KFold
 from training.CustomizedDataset import CustomizedDataset
 from training.BERT_Wav2Vec import FlexibleMMSER
 from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# Paths to metadata
 train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_train.pkl"
 val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_val.pkl"
 test_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
-
-# Hyperparameters
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
-NUM_EPOCHS = 200
-ALPHA_VALUES = [0.1]
+NUM_EPOCHS = 100
+ALPHA_VALUES = [0.5]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
 MODEL_NAME = "BERT_Wav2Vec"
 DATASET_NAME = "IEMOCAP"
-K_FOLDS = 5
 
-# Load datasets
 train_dataset = CustomizedDataset(train_metadata)
 val_dataset = CustomizedDataset(val_metadata)
 test_dataset = CustomizedDataset(test_metadata)
 
-# Concatenate training and validation datasets
-combined_dataset = ConcatDataset([train_dataset, val_dataset])
+train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
-# K-Fold Cross-Validation
-kfold = KFold(n_splits=K_FOLDS, shuffle=True, random_state=42)
-
-# Iterate through alpha values
 for alpha in ALPHA_VALUES:
-    fold_results = []
-
-    # Initialize W&B for the experiment
     wandb.init(
         project=PROJECT_NAME,
         config={
@@ -49,62 +37,23 @@ for alpha in ALPHA_VALUES:
             "model": "FlexibleMMSER",
             "dataset": DATASET_NAME,
             "feature": MODEL_NAME,
-            "alpha": alpha,
-            "k_folds": K_FOLDS
+            "alpha": alpha
         }
     )
     
-    for fold, (train_idx, val_idx) in enumerate(kfold.split(combined_dataset)):
-        print(f"Fold {fold + 1}/{K_FOLDS} - Training with alpha = {alpha}")
-        
-        # Create datasets for the current fold
-        train_subset = Subset(combined_dataset, train_idx)
-        val_subset = Subset(combined_dataset, val_idx)
-        train_loader = DataLoader(train_subset, batch_size=BATCH_SIZE, shuffle=True)
-        val_loader = DataLoader(val_subset, batch_size=BATCH_SIZE, shuffle=False)
+    model = FlexibleMMSER(num_classes=4).to(device)
+    model.alpha = alpha
+    print(f"Training with alpha = {alpha}")
+    print_model_parameters(model)
 
-        # Initialize model
-        model = FlexibleMMSER(num_classes=4).to(device)
-        model.alpha = alpha
-        print_model_parameters(model)
-
-        # Save path for the current fold
-        save_path = f"model/{DATASET_NAME}_{MODEL_NAME}_fold{fold + 1}_alpha_{alpha}.pt"
-
-        # Train and evaluate
-        train_and_evaluate(
-            model=model,
-            train_loader=train_loader,
-            val_loader=val_loader,
-            num_epochs=NUM_EPOCHS,
-            lr=LEARNING_RATE,
-            save_path=save_path
-        )
-        
-        # Evaluate the final performance on the validation set
-        val_wa, val_ua, val_wf1, val_uf1, _, _ = model_prediction(model, val_loader, calculate_accuracy)
-        fold_results.append((val_wa, val_ua, val_wf1, val_uf1))
-        print(f"Fold {fold + 1} Results: WA: {val_wa:.4f}, UA: {val_ua:.4f}, WF1: {val_wf1:.4f}, UF1: {val_uf1:.4f}")
-        print("=" * 50)
-
-    # Aggregate fold results
-    mean_wa = sum([res[0] for res in fold_results]) / K_FOLDS
-    mean_ua = sum([res[1] for res in fold_results]) / K_FOLDS
-    mean_wf1 = sum([res[2] for res in fold_results]) / K_FOLDS
-    mean_uf1 = sum([res[3] for res in fold_results]) / K_FOLDS
-
-    print(f"Alpha = {alpha} - K-Fold Results Summary:")
-    print(f"Mean WA: {mean_wa:.4f}, Mean UA: {mean_ua:.4f}, Mean WF1: {mean_wf1:.4f}, Mean UF1: {mean_uf1:.4f}")
-    print("=" * 50)
-
-    # Log the aggregated results to W&B
-    wandb.log({
-        "alpha": alpha,
-        "mean_wa": mean_wa,
-        "mean_ua": mean_ua,
-        "mean_wf1": mean_wf1,
-        "mean_uf1": mean_uf1
-    })
+    save_path = f"model/{DATASET_NAME}_{MODEL_NAME}_attention_alpha_{alpha}.pt"
     
-    # Finish the W&B run for this alpha
+    train_and_evaluate(
+        model=model,
+        train_loader=train_dataloader,
+        val_loader=val_dataloader,
+        num_epochs=NUM_EPOCHS,
+        save_path=save_path
+    )
+    
     wandb.finish()
