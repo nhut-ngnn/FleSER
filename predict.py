@@ -9,7 +9,7 @@ DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 BATCH_SIZE = 128
 TEST_METADATA_PATH = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_BERT_Wav2Vec_test.pkl"
 MODEL_BASE_PATH = "model/IEMOCAP_BERT_Wav2Vec_attention_alpha_{}.pt"
-ALPHA_VALUES = [0.1]
+ALPHA_VALUES = [0.5]
 NUM_CLASSES = 4 
 RESULTS_CSV_PATH = "performance-analysics/IEMOCAP_BERT_Wav2Vec_attention.csv"
 

@@ -49,8 +49,8 @@ class FlexibleMMSER(nn.Module):
         self.softmax = nn.Softmax(dim=1)
 
     def calculate_fuzzy_membership(self, embeddings, cluster_centers):
-        distances = torch.cdist(embeddings, cluster_centers)  # Pairwise distances
-        memberships = F.softmax(-distances, dim=1)  # Memberships based on distances
+        distances = torch.cdist(embeddings, cluster_centers) 
+        memberships = F.softmax(-distances, dim=1)  
         return memberships
 
     def compute_clustered_representation(self, embeddings, cluster_centers):

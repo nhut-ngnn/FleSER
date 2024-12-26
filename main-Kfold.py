@@ -14,8 +14,8 @@ test_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/I
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
-NUM_EPOCHS = 200
-ALPHA_VALUES = [0.1]
+NUM_EPOCHS = 100
+ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
 MODEL_NAME = "BERT_Wav2Vec"
 DATASET_NAME = "IEMOCAP" 
@@ -48,14 +48,13 @@ for alpha in ALPHA_VALUES:
         }
     )
     
-    # Training, Validation, and Test in One Loop
     for fold, (train_idx, val_idx) in enumerate(kfold.split(combined_dataset)):
         print(f"Fold {fold + 1}/{K_FOLDS} - Training with alpha = {alpha}")
         
         train_subset = Subset(combined_dataset, train_idx)
         val_subset = Subset(combined_dataset, val_idx)
-        train_loader = DataLoader(train_subset, batch_size=BATCH_SIZE, shuffle=True)
-        val_loader = DataLoader(val_subset, batch_size=BATCH_SIZE, shuffle=False)
+        train_loader = DataLoader(train_subset, batch_size=BATCH_SIZE)
+        val_loader = DataLoader(val_subset, batch_size=BATCH_SIZE)
 
         model = FlexibleMMSER(num_classes=4).to(device)
         model.alpha = alpha
@@ -77,7 +76,6 @@ for alpha in ALPHA_VALUES:
         print(f"Fold {fold + 1} Results: WA: {val_wa:.4f}, UA: {val_ua:.4f}, WF1: {val_wf1:.4f}, UF1: {val_uf1:.4f}")
         print("=" * 50)
 
-        # Test evaluation for the current fold
         test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
         model.load_state_dict(torch.load(save_path, map_location=device))
         model.eval()
@@ -87,7 +85,6 @@ for alpha in ALPHA_VALUES:
         print(f"Fold {fold + 1} Test Results: WA: {test_wa:.4f}, UA: {test_ua:.4f}, WF1: {test_wf1:.4f}, UF1: {test_uf1:.4f}")
         print("=" * 50)
 
-    # After all folds, calculate the mean results for validation and test sets
     mean_val_wa = sum([res[0] for res in fold_results]) / K_FOLDS
     mean_val_ua = sum([res[1] for res in fold_results]) / K_FOLDS
     mean_val_wf1 = sum([res[2] for res in fold_results]) / K_FOLDS
@@ -106,7 +103,6 @@ for alpha in ALPHA_VALUES:
     print(f"Mean WA: {mean_test_wa:.4f}, Mean UA: {mean_test_ua:.4f}, Mean WF1: {mean_test_wf1:.4f}, Mean UF1: {mean_test_uf1:.4f}")
     print("=" * 50)
 
-    # Log the results to WandB
     wandb.log({
         "alpha": alpha,
         "mean_val_wa": mean_val_wa,
