@@ -48,16 +48,6 @@ class FlexibleMMSER(nn.Module):
         )
         self.softmax = nn.Softmax(dim=1)
 
-    def calculate_fuzzy_membership(self, embeddings, cluster_centers):
-        distances = torch.cdist(embeddings, cluster_centers) 
-        memberships = F.softmax(-distances, dim=1)  
-        return memberships
-
-    def compute_clustered_representation(self, embeddings, cluster_centers):
-        memberships = self.calculate_fuzzy_membership(embeddings, cluster_centers)
-        clustered_representation = torch.mm(memberships, cluster_centers)
-        return clustered_representation
-
     def fuzzy_membership(self, x, method='sigmoid'):
         if method == 'sigmoid':
             x = torch.clamp(x, -6, 6)
@@ -100,7 +90,7 @@ class FlexibleMMSER(nn.Module):
         elif 0 <= min_val < max_val:  
             return 'piecewise'
         else:
-            return 'sigmoid'
+            return 'sigmoid' 
 
     def fuzzy_fusion(self, text_fuzzy, audio_fuzzy):
         if self.fusion_method == 'weighted':
@@ -134,17 +124,13 @@ class FlexibleMMSER(nn.Module):
         text_proj = self.text_projection(text_embed)
         audio_proj = self.audio_projection(audio_embed)
 
-        text_clustered = self.compute_clustered_representation(text_proj, self.text_clusters)
-        audio_clustered = self.compute_clustered_representation(audio_proj, self.audio_clusters)
+        text_fuzzy_type = self.select_fuzzy_type(text_proj)
+        audio_fuzzy_type = self.select_fuzzy_type(audio_proj)
 
-        text_fuzzy_type = self.select_fuzzy_type(text_clustered)
-        audio_fuzzy_type = self.select_fuzzy_type(audio_clustered)
-
-        text_fuzzy = self.fuzzy_membership(text_clustered, method=text_fuzzy_type)
-        audio_fuzzy = self.fuzzy_membership(audio_clustered, method=audio_fuzzy_type)
+        text_fuzzy = self.fuzzy_membership(text_proj, method=text_fuzzy_type)
+        audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)
-
         concat_embed = torch.cat((text_proj, audio_proj), dim=1)
         y_logits = self.fc(concat_embed)
         y_softmax = self.softmax(y_logits)

@@ -1,0 +1,25 @@
+Fold 1/5 - Training with alpha = 0.1
+Total Parameters: 872261
+Trainable Parameters: 872261
+Epoch 1/100
+Traceback (most recent call last):
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\main-Kfold.py", line 65, in <module>
+    train_and_evaluate(
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\ultis.py", line 92, in train_and_evaluate
+    train_loss, train_wa, train_ua, train_mf1, train_wf1 = train_step(model, train_loader, optimizer, criterion)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\ultis.py", line 29, in train_step
+    y_logits, y_softmax = model(text_embed, audio_embed)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\admin\Documents\FuzzyMachineLearning\mymodel\FuzzySystem-for-SER\training\BERT_Wav2Vec.py", line 109, in forward
+    text_fuzzy_type = self.select_fuzzy_type(text_proj)
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 1931, in __getattr__
+    raise AttributeError(
+AttributeError: 'FlexibleMMSER' object has no attribute 'select_fuzzy_type'
