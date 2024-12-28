@@ -1,0 +1,28 @@
+2024-12-28 22:34:15,342 INFO    MainThread:48572 [wandb_setup.py:_flush():68] Current SDK version is 0.19.1
+2024-12-28 22:34:15,342 INFO    MainThread:48572 [wandb_setup.py:_flush():68] Configure stats pid to 48572
+2024-12-28 22:34:15,342 INFO    MainThread:48572 [wandb_setup.py:_flush():68] Loading settings from /home/nhut-minh-nguyen/.config/wandb/settings
+2024-12-28 22:34:15,342 INFO    MainThread:48572 [wandb_setup.py:_flush():68] Loading settings from /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/settings
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_init.py:_log_setup():528] Logging user logs to /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20241228_223415-p8pk84w7/logs/debug.log
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_init.py:_log_setup():529] Logging internal logs to /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20241228_223415-p8pk84w7/logs/debug-internal.log
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_init.py:init():644] calling init triggers
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_init.py:init():650] wandb.init called with sweep_config: {}
+config: {'name': 'RoBERTa_ECAPA', 'batch_size': 128, 'learning_rate': 0.0001, 'num_epochs': 200, 'model': 'FlexibleMMSER', 'dataset': 'IEMOCAP', 'feature': 'RoBERTa_ECAPA', 'alpha': 0.1, 'k_folds': 5}
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_init.py:init():680] starting backend
+2024-12-28 22:34:15,343 INFO    MainThread:48572 [wandb_init.py:init():684] sending inform_init request
+2024-12-28 22:34:15,352 INFO    MainThread:48572 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-12-28 22:34:15,352 INFO    MainThread:48572 [wandb_init.py:init():697] backend started and connected
+2024-12-28 22:34:15,353 INFO    MainThread:48572 [wandb_init.py:init():790] updated telemetry
+2024-12-28 22:34:15,357 INFO    MainThread:48572 [wandb_init.py:init():822] communicating run to backend with 90.0 second timeout
+2024-12-28 22:34:15,359 WARNING MsgRouterThr:48572 [router.py:message_loop():75] message_loop has been closed
+2024-12-28 22:34:25,362 ERROR   MainThread:48572 [wandb_init.py:init():1308] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1298, in init
+    return wi.init()
+           ^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 825, in init
+    result = run_init_handle.wait(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 277, in wait
+    raise MailboxError("transport failed")
+wandb.sdk.lib.mailbox.MailboxError: transport failed

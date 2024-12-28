@@ -8,9 +8,9 @@ from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_ECAPA_train.pkl"
-val_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_ECAPA_val.pkl"
-test_metadata = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/IEMOCAP_RoBERTa_ECAPA_test.pkl"
+train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_ECAPA_train.pkl"
+val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_ECAPA_val.pkl"
+test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_ECAPA_test.pkl"
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
@@ -61,7 +61,7 @@ for alpha in ALPHA_VALUES:
         model.alpha = alpha
         print_model_parameters(model)
 
-        save_path = f"model/{DATASET_NAME}_{MODEL_NAME}_fold{fold + 1}_alpha_{alpha}.pt"
+        save_path = f"saved_models/{DATASET_NAME}_{MODEL_NAME}_fold{fold + 1}_alpha_{alpha}.pt"
 
         train_and_evaluate(
             model=model,
