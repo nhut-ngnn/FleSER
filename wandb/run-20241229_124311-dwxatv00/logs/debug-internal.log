@@ -1,0 +1,17 @@
+{"time":"2024-12-29T12:43:11.875614721+07:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-29T12:43:11.87562753+07:00","level":"INFO","msg":"created symlink","path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20241229_124311-dwxatv00/logs/debug-core.log"}
+{"time":"2024-12-29T12:43:11.978547864+07:00","level":"INFO","msg":"created new stream","id":"dwxatv00"}
+{"time":"2024-12-29T12:43:11.978560704+07:00","level":"INFO","msg":"stream: started","id":"dwxatv00"}
+{"time":"2024-12-29T12:43:11.978603087+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"dwxatv00"}
+{"time":"2024-12-29T12:43:11.978646761+07:00","level":"INFO","msg":"sender: started","stream_id":"dwxatv00"}
+{"time":"2024-12-29T12:43:11.978682776+07:00","level":"INFO","msg":"handler: started","stream_id":"dwxatv00"}
+{"time":"2024-12-29T12:43:13.209414918+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-29T12:48:58.787313604+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-29T12:48:58.797050353+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-29T12:48:59.791993407+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 964-1000, summary, console lines 4060-4217","runtime_seconds":0.685714401},{"desc":"uploading wandb-summary.json","runtime_seconds":0.38819556,"progress":"725B/725B"},{"desc":"uploading config.yaml","runtime_seconds":0.106265205,"progress":"819B/819B"},{"desc":"uploading output.log","runtime_seconds":0.106256214,"progress":"144.0KB/254.4KB"}],"total_operations":4}}
+{"time":"2024-12-29T12:49:01.449842766+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-29T12:49:03.772842982+07:00","level":"INFO","msg":"stream: closing","id":"dwxatv00"}
+{"time":"2024-12-29T12:49:03.772859238+07:00","level":"INFO","msg":"handler: closed","stream_id":"dwxatv00"}
+{"time":"2024-12-29T12:49:03.77286677+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"dwxatv00"}
+{"time":"2024-12-29T12:49:03.773185137+07:00","level":"INFO","msg":"sender: closed","stream_id":"dwxatv00"}
+{"time":"2024-12-29T12:49:03.773218465+07:00","level":"INFO","msg":"stream: closed","id":"dwxatv00"}

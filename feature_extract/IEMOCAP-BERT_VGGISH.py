@@ -21,7 +21,7 @@ IEMOCAP_TEST_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multi
 OUTPUT_DIR = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/"
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BertModel.from_pretrained('bert-base-uncased').to(device)
-AUDIO_MODEL = vggish(postprocess=False).to(device)  # Load pretrained VGGish model
+AUDIO_MODEL = vggish(postprocess=False).to(device)  
 
 def preprocess_audio(audio_file):
     try:

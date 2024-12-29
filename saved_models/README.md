@@ -1,1 +1,1 @@
-The best model after training will be stored in this folder.
+Model will save here after training process.

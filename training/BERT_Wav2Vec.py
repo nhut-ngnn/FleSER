@@ -3,13 +3,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.3, num_clusters=5):
+    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
 
         self.num_classes = num_classes
         self.fusion_method = fusion_method
         self.alpha = 0.3
-        self.num_clusters = num_clusters
 
         self.text_projection = nn.Sequential(
             nn.Linear(768, 256),
@@ -23,9 +22,6 @@ class FlexibleMMSER(nn.Module):
             nn.ReLU(),
             nn.Dropout(dropout_rate)
         )
-
-        self.text_clusters = nn.Parameter(torch.randn(num_clusters, 256))
-        self.audio_clusters = nn.Parameter(torch.randn(num_clusters, 256))
 
         self.attention = nn.Sequential(
             nn.Linear(256 * 2, 128),
@@ -114,7 +110,7 @@ class FlexibleMMSER(nn.Module):
             weighted_input = weighted_input.unsqueeze(1)
             text_fuzzy = text_fuzzy.unsqueeze(1)
             audio_fuzzy = audio_fuzzy.unsqueeze(1)
-            attn_output, _ = self.multihead_attention(weighted_input, text_fuzzy, audio_fuzzy)
+            attn_output, _ = self.multihead_attention(audio_fuzzy, audio_fuzzy, text_fuzzy)
             fused_output = self.alpha * attn_output.mean(dim=1) + (1 - self.alpha) * audio_fuzzy
             return self.fuzzy_membership(fused_output)
         else:

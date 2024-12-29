@@ -82,7 +82,7 @@ def eval_step(model, dataloader, loss_fn):
 def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, save_path=None):
     optimizer = optim.Adam(params=model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
-    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.1)
+    lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=30, gamma=0.3)
 
     best_val_loss = float('inf')
     best_wa, best_ua, best_mf1, best_wf1 = 0.0, 0.0, 0.0, 0.0
@@ -113,6 +113,8 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
             best_val_loss = val_loss
             best_wa, best_ua = val_wa, val_ua
             best_mf1, best_wf1 = val_mf1, val_wf1
+            
+            # Save the best model
             if save_path:
                 torch.save(model.state_dict(), save_path)
     

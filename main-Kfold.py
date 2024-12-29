@@ -3,21 +3,22 @@ from torch.utils.data import DataLoader, ConcatDataset, Subset
 import wandb
 from sklearn.model_selection import KFold
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_ECAPA import FlexibleMMSER
+from training.BERT_Wav2Vec import FlexibleMMSER
 from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_ECAPA_train.pkl"
-val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_ECAPA_val.pkl"
-test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_ECAPA_test.pkl"
+train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
+val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
+test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_test.pkl"
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
-NUM_EPOCHS = 200
+NUM_EPOCHS = 100
 ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
-PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
-MODEL_NAME = "RoBERTa_ECAPA"
+PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment-draft-1"
+MODEL_NAME = "BERT_Wav2Vec"
+FUZZY_METHOD = "attention"
 DATASET_NAME = "IEMOCAP" 
 K_FOLDS = 5
 
@@ -25,7 +26,7 @@ train_dataset = CustomizedDataset(train_metadata)
 val_dataset = CustomizedDataset(val_metadata)
 test_dataset = CustomizedDataset(test_metadata)
 
-combined_dataset = ConcatDataset([train_dataset, val_dataset])
+combined_dataset = ConcatDataset([val_dataset, test_dataset])
 
 kfold = KFold(n_splits=K_FOLDS, shuffle=True, random_state=42)
 
@@ -35,7 +36,7 @@ for alpha in ALPHA_VALUES:
 
     wandb.init(
         project=PROJECT_NAME,
-        name=f"{MODEL_NAME}_alpha_{alpha}",
+        name=f"{MODEL_NAME}_{FUZZY_METHOD}_alpha_{alpha}",
         config={
             "name": MODEL_NAME,
             "batch_size": BATCH_SIZE,
@@ -44,18 +45,17 @@ for alpha in ALPHA_VALUES:
             "model": "FlexibleMMSER",
             "dataset": DATASET_NAME,
             "feature": MODEL_NAME,
+            "fuzzy_method": FUZZY_METHOD,
             "alpha": alpha,
             "k_folds": K_FOLDS
         }
     )
     
-    for fold, (train_idx, val_idx) in enumerate(kfold.split(combined_dataset)):
+    for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
         print(f"Fold {fold + 1}/{K_FOLDS} - Training with alpha = {alpha}")
         
-        train_subset = Subset(combined_dataset, train_idx)
-        val_subset = Subset(combined_dataset, val_idx)
-        train_loader = DataLoader(train_subset, batch_size=BATCH_SIZE)
-        val_loader = DataLoader(val_subset, batch_size=BATCH_SIZE)
+        train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+        val_loader = DataLoader(combined_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
         model = FlexibleMMSER(num_classes=4).to(device)
         model.alpha = alpha
@@ -77,7 +77,7 @@ for alpha in ALPHA_VALUES:
         print(f"Fold {fold + 1} Results: WA: {val_wa:.4f}, UA: {val_ua:.4f}, WF1: {val_wf1:.4f}, UF1: {val_uf1:.4f}")
         print("=" * 50)
 
-        test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+        test_loader = DataLoader(combined_dataset, batch_size=BATCH_SIZE, shuffle=False)
         model.load_state_dict(torch.load(save_path, map_location=device))
         model.eval()
 
