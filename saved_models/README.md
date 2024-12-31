@@ -1,1 +1,0 @@
-Model will save here after training process.

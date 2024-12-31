@@ -8,17 +8,17 @@ from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
-val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
-test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_test.pkl"
+train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_WAV2VEC_train.pkl"
+val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_WAV2VEC_val.pkl"
+test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_WAV2VEC_test.pkl"
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 100
 ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
-PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment-draft-1"
-MODEL_NAME = "BERT_Wav2Vec"
-FUZZY_METHOD = "attention"
+PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
+MODEL_NAME = "RoBERTa_Wav2Vec"
+FUZZY_METHOD = "cross_attention"
 DATASET_NAME = "IEMOCAP" 
 K_FOLDS = 5
 
@@ -59,6 +59,7 @@ for alpha in ALPHA_VALUES:
 
         model = FlexibleMMSER(num_classes=4).to(device)
         model.alpha = alpha
+        model.fusion_method = FUZZY_METHOD
         print_model_parameters(model)
 
         save_path = f"saved_models/{DATASET_NAME}_{MODEL_NAME}_fold{fold + 1}_alpha_{alpha}.pt"

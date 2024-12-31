@@ -3,14 +3,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method='attention', dropout_rate=0.3):
+    def __init__(self, num_classes=4, fusion_method=None, alpha=None, dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
-        
-        # Model parameters
         self.num_classes = num_classes
         self.fusion_method = fusion_method
-        self.alpha = 0.3 
-        
+        self.alpha = alpha
+
         self.text_projection = nn.Sequential(
             nn.Linear(768, 256),
             nn.BatchNorm1d(256),
@@ -23,14 +21,7 @@ class FlexibleMMSER(nn.Module):
             nn.ReLU(),
             nn.Dropout(dropout_rate)
         )
-        
-        self.attention = nn.Sequential(
-            nn.Linear(256 * 2, 128),
-            nn.ReLU(),
-            nn.Dropout(0.3),
-            nn.Linear(128, 1),
-            nn.Sigmoid()
-        )
+
         self.multihead_attention = nn.MultiheadAttention(embed_dim=256, num_heads=4, batch_first=True)
 
         self.fc = nn.Sequential(
@@ -90,29 +81,19 @@ class FlexibleMMSER(nn.Module):
             return 'sigmoid' 
 
     def fuzzy_fusion(self, text_fuzzy, audio_fuzzy):
-        if self.fusion_method == 'weighted':
-            return self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
-        elif self.fusion_method == 'min':
-            return torch.min(text_fuzzy, audio_fuzzy)
-        elif self.fusion_method == 'max':
-            return torch.max(text_fuzzy, audio_fuzzy)
-        elif self.fusion_method == 'product':
-            return text_fuzzy * audio_fuzzy
-        elif self.fusion_method == 'sum':
-            return text_fuzzy + audio_fuzzy - text_fuzzy * audio_fuzzy
-        elif self.fusion_method == 'attention':
-            weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
-            concat_embed = torch.cat((text_fuzzy, audio_fuzzy), dim=1)
-            attention_weights = self.attention(concat_embed)
-            attended_weighted_input = attention_weights * weighted_input
-            return attended_weighted_input
-        elif self.fusion_method == 'MHA':
+        text_fuzzy = text_fuzzy.unsqueeze(1) 
+        audio_fuzzy = audio_fuzzy.unsqueeze(1)
+        if self.fusion_method == 'self_attention':
+            weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy  
+            concat_embed = torch.cat((text_fuzzy, audio_fuzzy), dim=1) 
+            attn_output, _ = self.multihead_attention(query=weighted_input, key=concat_embed, value=concat_embed)
+            fused_output = attn_output.mean(dim=1)  
+            return self.fuzzy_membership(fused_output)
+        elif self.fusion_method == 'cross_attention':
             weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
             weighted_input = weighted_input.unsqueeze(1)
-            text_fuzzy = text_fuzzy.unsqueeze(1)
-            audio_fuzzy = audio_fuzzy.unsqueeze(1)
-            attn_output, _ = self.multihead_attention(weighted_input, text_fuzzy, audio_fuzzy)
-            fused_output = self.alpha * attn_output.mean(dim=1) + (1 - self.alpha) * audio_fuzzy
+            attn_output, _ = self.multihead_attention(query=audio_fuzzy, key=text_fuzzy, value=text_fuzzy)
+            fused_output = attn_output.mean(dim=1)  
             return self.fuzzy_membership(fused_output)
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
