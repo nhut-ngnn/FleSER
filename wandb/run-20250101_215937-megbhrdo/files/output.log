@@ -1,0 +1,50 @@
+Fold 1/5 - Training with alpha = 0.3
+Total Parameters: 699588
+Trainable Parameters: 699588
+Epoch 1/100
+Validation loss reduced. Best Val WA: 0.5813, Best Val UA: 0.5379, Best MF1: 0.5302, Best WF1: 0.5213
+--------------------------------------------------
+Train Loss: 1.3056, Train WA: 0.4192, Train UA: 0.3891, Train MF1: 0.3812, Train WF1: 0.3748
+Val Loss: 1.2591, Val WA: 0.5813, Val UA: 0.5379, Val MF1: 0.5302, Val WF1: 0.5213
+--------------------------------------------------
+Epoch 2/100
+Validation loss reduced. Best Val WA: 0.6578, Best Val UA: 0.6390, Best MF1: 0.6387, Best WF1: 0.6375
+--------------------------------------------------
+Train Loss: 1.1291, Train WA: 0.6000, Train UA: 0.5743, Train MF1: 0.5770, Train WF1: 0.5700
+Val Loss: 0.9711, Val WA: 0.6578, Val UA: 0.6390, Val MF1: 0.6387, Val WF1: 0.6375
+--------------------------------------------------
+Epoch 3/100
+Validation loss reduced. Best Val WA: 0.6847, Best Val UA: 0.6713, Best MF1: 0.6710, Best WF1: 0.6704
+--------------------------------------------------
+Train Loss: 0.9884, Train WA: 0.6658, Train UA: 0.6462, Train MF1: 0.6485, Train WF1: 0.6460
+Val Loss: 0.8372, Val WA: 0.6847, Val UA: 0.6713, Val MF1: 0.6710, Val WF1: 0.6704
+--------------------------------------------------
+Epoch 4/100
+Traceback (most recent call last):
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/main-Kfold.py", line 67, in <module>
+    train_and_evaluate(
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/ultis.py", line 92, in train_and_evaluate
+    train_loss, train_wa, train_ua, train_mf1, train_wf1 = train_step(model, train_loader, optimizer, criterion)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/ultis.py", line 32, in train_step
+    wa, ua, mf1, wf1 = calculate_metrics(y_preds.cpu().numpy(), label.cpu().numpy())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/ultis.py", line 17, in calculate_metrics
+    ua = accuracy_score(y_true, y_pred)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py", line 227, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py", line 122, in _check_targets
+    y_true = column_or_1d(y_true)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1456, in column_or_1d
+    y = check_array(
+        ^^^^^^^^^^^^
+  File "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/.conda/lib/python3.11/site-packages/sklearn/utils/validation.py", line 736, in check_array
+    def check_array(
+
+KeyboardInterrupt

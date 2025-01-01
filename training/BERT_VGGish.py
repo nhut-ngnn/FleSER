@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=4, fusion_method=None, alpha=None, dropout_rate=0.3):
+    def __init__(self, num_classes=4, fusion_method=None, alpha=None, dropout_rate=0.2):
         super(FlexibleMMSER, self).__init__()
         self.num_classes = num_classes
         self.fusion_method = fusion_method
@@ -25,38 +25,39 @@ class FlexibleMMSER(nn.Module):
         self.multihead_attention = nn.MultiheadAttention(embed_dim=256, num_heads=4, batch_first=True)
 
         self.fc = nn.Sequential(
-            nn.Linear(256 * 2, 256),
-            nn.BatchNorm1d(256),
+            nn.Linear(256, 128),
+            nn.BatchNorm1d(128),
             nn.ReLU(),
-            nn.Dropout(0.2),
-            nn.Linear(256, 64),
+            nn.Dropout(0.3),
+            nn.Linear(128, 64),
             nn.ReLU(),
             nn.Dropout(0.3),
             nn.Linear(64, num_classes)
         )
         self.softmax = nn.Softmax(dim=1)
-
     def fuzzy_membership(self, x, method='sigmoid'):
+        x = (x - x.mean(dim=1, keepdim=True)) / (x.std(dim=1, keepdim=True) + 1e-5)
+
         if method == 'sigmoid':
-            x = torch.clamp(x, -6, 6)
-            return torch.sigmoid(x)
+            clamped_x = torch.clamp(x, -4, 4) 
+            return torch.sigmoid(clamped_x)
         elif method == 'tanh':
-            x = torch.clamp(x, -3, 3)
-            return torch.tanh(x)
+            clamped_x = torch.clamp(x, -2, 2)  
+            return torch.tanh(clamped_x)
         elif method == 'linear':
-            x = F.relu(x)
-            x = torch.clamp(x, 0, 1)
-            return x
+            x = F.softplus(x)  
+            normalized_x = torch.clamp(x, 0, 1)
+            return normalized_x
         elif method == 'gaussian':
             mean = 0.5
-            std = 0.1
-            x = torch.clamp(x, 0, 1)
-            return torch.exp(-torch.pow(x - mean, 2) / (2 * std**2))
+            std = 0.15 
+            normalized_x = torch.clamp(x, 0, 1)
+            return torch.exp(-torch.pow(normalized_x - mean, 2) / (2 * std**2))
         elif method == 'piecewise':
-            x = torch.clamp(x, 0, 1)
+            normalized_x = torch.clamp(x, 0, 1)
             return torch.where(
-                x < 0.3, 0.2 * x,
-                torch.where(x < 0.7, 0.5 + 0.5 * x, 0.9)
+                normalized_x < 0.3, 0.2 * normalized_x,
+                torch.where(normalized_x < 0.7, 0.5 + 0.5 * normalized_x, 0.9)
             )
         else:
             raise ValueError(f"Unknown fuzzy membership method: {method}")
@@ -64,37 +65,43 @@ class FlexibleMMSER(nn.Module):
     def select_fuzzy_type(self, input_data):
         mean_value = input_data.mean().item()
         std_dev = input_data.std().item()
+        skewness = torch.mean((input_data - mean_value)**3) / (std_dev**3 + 1e-5)  
         min_val, max_val = input_data.min().item(), input_data.max().item()
 
-        if min_val < 0 and max_val > 0:  
-            return 'tanh'
-        elif 0 <= min_val < max_val <= 1:  
-            if std_dev < 0.1:  
+        if -0.5 < skewness < 0.5 and 0 <= min_val < max_val <= 1:
+            if std_dev < 0.1:
                 return 'linear'
-            else:  
+            else:
                 return 'gaussian'
-        elif mean_value > 1 or std_dev > 1: 
+        elif skewness < -0.5 or skewness > 0.5: 
+            return 'tanh'
+        elif mean_value > 0.7 or max_val > 1.5: 
             return 'sigmoid'
-        elif 0 <= min_val < max_val:  
-            return 'piecewise'
         else:
-            return 'sigmoid' 
+            return 'piecewise'
 
     def fuzzy_fusion(self, text_fuzzy, audio_fuzzy):
         text_fuzzy = text_fuzzy.unsqueeze(1) 
         audio_fuzzy = audio_fuzzy.unsqueeze(1)
         if self.fusion_method == 'self_attention':
-            weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy  
-            concat_embed = torch.cat((text_fuzzy, audio_fuzzy), dim=1) 
-            attn_output, _ = self.multihead_attention(query=weighted_input, key=concat_embed, value=concat_embed)
-            fused_output = attn_output.mean(dim=1)  
-            return self.fuzzy_membership(fused_output)
+            weighted_input = self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy
+            attn_output, _ = self.multihead_attention(
+                query=weighted_input, key=weighted_input, value=weighted_input
+            )
+            return attn_output.mean(dim=1)
+
         elif self.fusion_method == 'cross_attention':
-            weighted_input = self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy
-            weighted_input = weighted_input.unsqueeze(1)
-            attn_output, _ = self.multihead_attention(query=audio_fuzzy, key=text_fuzzy, value=text_fuzzy)
-            fused_output = attn_output.mean(dim=1)  
-            return self.fuzzy_membership(fused_output)
+            attn_text_audio, _ = self.multihead_attention(
+                query=self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy,
+                key=audio_fuzzy,
+                value=audio_fuzzy
+            )
+            attn_audio_text, _ = self.multihead_attention(
+                query=(1 - self.alpha) * text_fuzzy + self.alpha * audio_fuzzy,
+                key=text_fuzzy,
+                value=text_fuzzy
+            )
+            return (attn_text_audio.squeeze(1) + attn_audio_text.squeeze(1)) / 2
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
 
@@ -106,11 +113,14 @@ class FlexibleMMSER(nn.Module):
         audio_fuzzy_type = self.select_fuzzy_type(audio_proj)
 
         text_fuzzy = self.fuzzy_membership(text_proj, method=text_fuzzy_type)
+        text_fuzzy = text_fuzzy.unsqueeze(1)  
+        attn_text_fuzzy, _ = self.multihead_attention(query=text_fuzzy, key=text_fuzzy, value=text_fuzzy)
+        text_fuzzy = attn_text_fuzzy.squeeze(1) 
+        
         audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)
-        concat_embed = torch.cat((text_proj, audio_proj), dim=1)
-        y_logits = self.fc(concat_embed)
+        y_logits = self.fc(fused_fuzzy)
         y_softmax = self.softmax(y_logits)
 
         return y_logits, y_softmax
