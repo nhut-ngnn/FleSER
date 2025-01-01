@@ -1,0 +1,20 @@
+{"time":"2025-01-01T23:55:13.543779475+07:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-01T23:55:13.543787498+07:00","level":"INFO","msg":"created symlink","path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250101_235513-wt9jvnbq/logs/debug-core.log"}
+{"time":"2025-01-01T23:55:13.645455565+07:00","level":"INFO","msg":"created new stream","id":"wt9jvnbq"}
+{"time":"2025-01-01T23:55:13.645468092+07:00","level":"INFO","msg":"stream: started","id":"wt9jvnbq"}
+{"time":"2025-01-01T23:55:13.645520597+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"wt9jvnbq"}
+{"time":"2025-01-01T23:55:13.645608444+07:00","level":"INFO","msg":"sender: started","stream_id":"wt9jvnbq"}
+{"time":"2025-01-01T23:55:13.64560501+07:00","level":"INFO","msg":"handler: started","stream_id":"wt9jvnbq"}
+{"time":"2025-01-01T23:55:14.138007564+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-01T23:57:14.957283787+07:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/minhnhut05032004-aita-lab/FlexibleMMSER-Alpha-Experiment/wt9jvnbq/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2025-01-01T23:57:17.210296739+07:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/minhnhut05032004-aita-lab/FlexibleMMSER-Alpha-Experiment/wt9jvnbq/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2025-01-01T23:57:21.563128615+07:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/minhnhut05032004-aita-lab/FlexibleMMSER-Alpha-Experiment/wt9jvnbq/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2025-01-02T00:01:56.890137904+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T00:01:56.890547478+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T00:01:57.890556689+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.335668426,"progress":"710B/710B"},{"desc":"uploading config.yaml","runtime_seconds":0.049059508,"progress":"859B/859B"},{"desc":"uploading output.log","runtime_seconds":0.049052525,"progress":"144.0KB/190.8KB"}],"total_operations":3}}
+{"time":"2025-01-02T00:01:59.400427666+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T00:02:00.913029038+07:00","level":"INFO","msg":"stream: closing","id":"wt9jvnbq"}
+{"time":"2025-01-02T00:02:00.913048306+07:00","level":"INFO","msg":"handler: closed","stream_id":"wt9jvnbq"}
+{"time":"2025-01-02T00:02:00.913056775+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"wt9jvnbq"}
+{"time":"2025-01-02T00:02:00.913143584+07:00","level":"INFO","msg":"sender: closed","stream_id":"wt9jvnbq"}
+{"time":"2025-01-02T00:02:00.913146109+07:00","level":"INFO","msg":"stream: closed","id":"wt9jvnbq"}

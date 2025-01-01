@@ -1,0 +1,17 @@
+{"time":"2025-01-01T23:48:57.002695331+07:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-01T23:48:57.002706187+07:00","level":"INFO","msg":"created symlink","path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250101_234856-xdosvcou/logs/debug-core.log"}
+{"time":"2025-01-01T23:48:57.109993001+07:00","level":"INFO","msg":"created new stream","id":"xdosvcou"}
+{"time":"2025-01-01T23:48:57.110013892+07:00","level":"INFO","msg":"stream: started","id":"xdosvcou"}
+{"time":"2025-01-01T23:48:57.110057496+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"xdosvcou"}
+{"time":"2025-01-01T23:48:57.11011526+07:00","level":"INFO","msg":"handler: started","stream_id":"xdosvcou"}
+{"time":"2025-01-01T23:48:57.110122223+07:00","level":"INFO","msg":"sender: started","stream_id":"xdosvcou"}
+{"time":"2025-01-01T23:48:57.562382937+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-01T23:55:09.316400859+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-01T23:55:09.316751701+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-01T23:55:10.317111572+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.380336666,"progress":"708B/708B"},{"desc":"uploading config.yaml","runtime_seconds":0.082305505,"progress":"859B/859B"},{"desc":"uploading output.log","runtime_seconds":0.082295551,"progress":"144.0KB/189.6KB"}],"total_operations":3}}
+{"time":"2025-01-01T23:55:11.983059238+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-01T23:55:13.502455348+07:00","level":"INFO","msg":"stream: closing","id":"xdosvcou"}
+{"time":"2025-01-01T23:55:13.502464307+07:00","level":"INFO","msg":"handler: closed","stream_id":"xdosvcou"}
+{"time":"2025-01-01T23:55:13.502470301+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"xdosvcou"}
+{"time":"2025-01-01T23:55:13.502527879+07:00","level":"INFO","msg":"sender: closed","stream_id":"xdosvcou"}
+{"time":"2025-01-01T23:55:13.502530871+07:00","level":"INFO","msg":"stream: closed","id":"xdosvcou"}

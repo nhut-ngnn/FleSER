@@ -14,11 +14,11 @@ test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCA
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
-NUM_EPOCHS = 100
+NUM_EPOCHS = 150
 ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
 MODEL_NAME = "BERT_Wav2Vec"
-FUZZY_METHOD = "self_attention"
+FUZZY_METHOD = "cross_attention"
 DATASET_NAME = "IEMOCAP" 
 K_FOLDS = 5
 
