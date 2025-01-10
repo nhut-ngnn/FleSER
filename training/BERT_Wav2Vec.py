@@ -101,7 +101,8 @@ class FlexibleMMSER(nn.Module):
                 key=text_fuzzy,
                 value=text_fuzzy
             )
-            return (attn_text_audio.squeeze(1) + attn_audio_text.squeeze(1)) / 2
+            fused_feature = torch.cat([attn_text_audio, attn_audio_text], dim=1)
+            return fused_feature.mean(dim=1)
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
 

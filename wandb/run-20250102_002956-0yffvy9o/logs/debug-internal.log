@@ -1,0 +1,17 @@
+{"time":"2025-01-02T00:29:56.546613099+07:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T00:29:56.546627778+07:00","level":"INFO","msg":"created symlink","path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250102_002956-0yffvy9o/logs/debug-core.log"}
+{"time":"2025-01-02T00:29:56.649957815+07:00","level":"INFO","msg":"created new stream","id":"0yffvy9o"}
+{"time":"2025-01-02T00:29:56.649974851+07:00","level":"INFO","msg":"stream: started","id":"0yffvy9o"}
+{"time":"2025-01-02T00:29:56.650064892+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"0yffvy9o"}
+{"time":"2025-01-02T00:29:56.650079149+07:00","level":"INFO","msg":"handler: started","stream_id":"0yffvy9o"}
+{"time":"2025-01-02T00:29:56.65011911+07:00","level":"INFO","msg":"sender: started","stream_id":"0yffvy9o"}
+{"time":"2025-01-02T00:29:57.04133037+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T00:37:21.245637221+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T00:37:21.246013276+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T00:37:22.246237739+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.423787898,"progress":"707B/707B"},{"desc":"uploading config.yaml","runtime_seconds":0.159481952,"progress":"860B/860B"},{"desc":"uploading output.log","runtime_seconds":0.159474688,"progress":"190.1KB/190.1KB"}],"total_operations":3}}
+{"time":"2025-01-02T00:37:23.689790004+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T00:37:25.08263944+07:00","level":"INFO","msg":"stream: closing","id":"0yffvy9o"}
+{"time":"2025-01-02T00:37:25.082649874+07:00","level":"INFO","msg":"handler: closed","stream_id":"0yffvy9o"}
+{"time":"2025-01-02T00:37:25.082654666+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0yffvy9o"}
+{"time":"2025-01-02T00:37:25.08269196+07:00","level":"INFO","msg":"sender: closed","stream_id":"0yffvy9o"}
+{"time":"2025-01-02T00:37:25.082694624+07:00","level":"INFO","msg":"stream: closed","id":"0yffvy9o"}

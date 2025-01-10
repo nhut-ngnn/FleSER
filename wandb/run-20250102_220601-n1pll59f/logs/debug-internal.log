@@ -1,0 +1,17 @@
+{"time":"2025-01-02T22:06:01.096050121+07:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-01-02T22:06:01.096057944+07:00","level":"INFO","msg":"created symlink","path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250102_220601-n1pll59f/logs/debug-core.log"}
+{"time":"2025-01-02T22:06:01.198521004+07:00","level":"INFO","msg":"created new stream","id":"n1pll59f"}
+{"time":"2025-01-02T22:06:01.198534774+07:00","level":"INFO","msg":"stream: started","id":"n1pll59f"}
+{"time":"2025-01-02T22:06:01.198579023+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"n1pll59f"}
+{"time":"2025-01-02T22:06:01.198619453+07:00","level":"INFO","msg":"handler: started","stream_id":"n1pll59f"}
+{"time":"2025-01-02T22:06:01.198626838+07:00","level":"INFO","msg":"sender: started","stream_id":"n1pll59f"}
+{"time":"2025-01-02T22:06:01.689834016+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-02T22:13:08.725286707+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-02T22:13:08.725684404+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-02T22:13:09.725772024+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.319165726,"progress":"710B/710B"},{"desc":"uploading output.log","runtime_seconds":0.020073073,"progress":"144.0KB/189.9KB"},{"desc":"uploading config.yaml","runtime_seconds":0.020066235,"progress":"857B/857B"}],"total_operations":3}}
+{"time":"2025-01-02T22:13:10.605071885+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-02T22:13:12.050528693+07:00","level":"INFO","msg":"stream: closing","id":"n1pll59f"}
+{"time":"2025-01-02T22:13:12.050538781+07:00","level":"INFO","msg":"handler: closed","stream_id":"n1pll59f"}
+{"time":"2025-01-02T22:13:12.050543525+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n1pll59f"}
+{"time":"2025-01-02T22:13:12.050574365+07:00","level":"INFO","msg":"sender: closed","stream_id":"n1pll59f"}
+{"time":"2025-01-02T22:13:12.050577715+07:00","level":"INFO","msg":"stream: closed","id":"n1pll59f"}

@@ -1,0 +1,23 @@
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_setup.py:_flush():68] Current SDK version is 0.19.1
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_setup.py:_flush():68] Configure stats pid to 7184
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_setup.py:_flush():68] Loading settings from /home/nhut-minh-nguyen/.config/wandb/settings
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_setup.py:_flush():68] Loading settings from /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/settings
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_init.py:_log_setup():528] Logging user logs to /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250101_205340-01n1qwgu/logs/debug.log
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_init.py:_log_setup():529] Logging internal logs to /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250101_205340-01n1qwgu/logs/debug-internal.log
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_init.py:init():644] calling init triggers
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_init.py:init():650] wandb.init called with sweep_config: {}
+config: {'name': 'BERT_Wav2Vec', 'batch_size': 128, 'learning_rate': 0.0001, 'num_epochs': 100, 'model': 'FlexibleMMSER', 'dataset': 'IEMOCAP', 'feature': 'BERT_Wav2Vec', 'fuzzy_method': 'cross_attention', 'alpha': 0.5, 'k_folds': 5}
+2025-01-01 20:53:40,360 INFO    MainThread:7184 [wandb_init.py:init():680] starting backend
+2025-01-01 20:53:40,361 INFO    MainThread:7184 [wandb_init.py:init():684] sending inform_init request
+2025-01-01 20:53:40,361 INFO    MainThread:7184 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-01 20:53:40,361 INFO    MainThread:7184 [wandb_init.py:init():697] backend started and connected
+2025-01-01 20:53:40,362 INFO    MainThread:7184 [wandb_init.py:init():790] updated telemetry
+2025-01-01 20:53:40,365 INFO    MainThread:7184 [wandb_init.py:init():822] communicating run to backend with 90.0 second timeout
+2025-01-01 20:53:40,937 INFO    MainThread:7184 [wandb_init.py:init():874] starting run threads in backend
+2025-01-01 20:53:40,982 INFO    MainThread:7184 [wandb_run.py:_console_start():2374] atexit reg
+2025-01-01 20:53:40,983 INFO    MainThread:7184 [wandb_run.py:_redirect():2224] redirect: wrap_raw
+2025-01-01 20:53:40,983 INFO    MainThread:7184 [wandb_run.py:_redirect():2289] Wrapping output streams.
+2025-01-01 20:53:40,983 INFO    MainThread:7184 [wandb_run.py:_redirect():2314] Redirects installed.
+2025-01-01 20:53:40,983 INFO    MainThread:7184 [wandb_init.py:init():916] run started, returning control to user process
+2025-01-01 20:54:03,461 WARNING MsgRouterThr:7184 [router.py:message_loop():75] message_loop has been closed

@@ -1,0 +1,3142 @@
+Fold 1/5 - Training with alpha = 0.9
+Total Parameters: 765124
+Trainable Parameters: 765124
+Epoch 1/150
+Validation loss reduced. Best Val WA: 0.4388, Best Val UA: 0.4053, Best MF1: 0.3464, Best WF1: 0.3267
+--------------------------------------------------
+Train Loss: 1.3375, Train WA: 0.3781, Train UA: 0.3505, Train MF1: 0.3083, Train WF1: 0.3024
+Val Loss: 1.2905, Val WA: 0.4388, Val UA: 0.4053, Val MF1: 0.3464, Val WF1: 0.3267
+--------------------------------------------------
+Epoch 2/150
+Validation loss reduced. Best Val WA: 0.5500, Best Val UA: 0.5312, Best MF1: 0.5181, Best WF1: 0.5168
+--------------------------------------------------
+Train Loss: 1.2166, Train WA: 0.4889, Train UA: 0.4736, Train MF1: 0.4606, Train WF1: 0.4577
+Val Loss: 1.0913, Val WA: 0.5500, Val UA: 0.5312, Val MF1: 0.5181, Val WF1: 0.5168
+--------------------------------------------------
+Epoch 3/150
+Validation loss reduced. Best Val WA: 0.6406, Best Val UA: 0.6325, Best MF1: 0.6237, Best WF1: 0.6280
+--------------------------------------------------
+Train Loss: 1.0904, Train WA: 0.5787, Train UA: 0.5712, Train MF1: 0.5669, Train WF1: 0.5693
+Val Loss: 0.9433, Val WA: 0.6406, Val UA: 0.6325, Val MF1: 0.6237, Val WF1: 0.6280
+--------------------------------------------------
+Epoch 4/150
+Validation loss reduced. Best Val WA: 0.6595, Best Val UA: 0.6658, Best MF1: 0.6575, Best WF1: 0.6651
+--------------------------------------------------
+Train Loss: 0.9644, Train WA: 0.6481, Train UA: 0.6441, Train MF1: 0.6415, Train WF1: 0.6434
+Val Loss: 0.8420, Val WA: 0.6595, Val UA: 0.6658, Val MF1: 0.6575, Val WF1: 0.6651
+--------------------------------------------------
+Epoch 5/150
+Validation loss reduced. Best Val WA: 0.7040, Best Val UA: 0.6851, Best MF1: 0.6797, Best WF1: 0.6804
+--------------------------------------------------
+Train Loss: 0.8485, Train WA: 0.7075, Train UA: 0.6991, Train MF1: 0.6975, Train WF1: 0.7000
+Val Loss: 0.7994, Val WA: 0.7040, Val UA: 0.6851, Val MF1: 0.6797, Val WF1: 0.6804
+--------------------------------------------------
+Epoch 6/150
+Validation loss reduced. Best Val WA: 0.7109, Best Val UA: 0.6935, Best MF1: 0.6887, Best WF1: 0.6888
+--------------------------------------------------
+Train Loss: 0.7674, Train WA: 0.7406, Train UA: 0.7311, Train MF1: 0.7304, Train WF1: 0.7316
+Val Loss: 0.7674, Val WA: 0.7109, Val UA: 0.6935, Val MF1: 0.6887, Val WF1: 0.6888
+--------------------------------------------------
+Epoch 7/150
+Validation loss reduced. Best Val WA: 0.7183, Best Val UA: 0.7175, Best MF1: 0.7172, Best WF1: 0.7190
+--------------------------------------------------
+Train Loss: 0.6748, Train WA: 0.7786, Train UA: 0.7705, Train MF1: 0.7698, Train WF1: 0.7712
+Val Loss: 0.7515, Val WA: 0.7183, Val UA: 0.7175, Val MF1: 0.7172, Val WF1: 0.7190
+--------------------------------------------------
+Epoch 8/150
+Train Loss: 0.6096, Train WA: 0.7970, Train UA: 0.7861, Train MF1: 0.7862, Train WF1: 0.7869
+Val Loss: 0.8055, Val WA: 0.7187, Val UA: 0.6944, Val MF1: 0.6943, Val WF1: 0.6931
+--------------------------------------------------
+Epoch 9/150
+Train Loss: 0.5390, Train WA: 0.8276, Train UA: 0.8200, Train MF1: 0.8192, Train WF1: 0.8196
+Val Loss: 0.8026, Val WA: 0.7354, Val UA: 0.7148, Val MF1: 0.7107, Val WF1: 0.7057
+--------------------------------------------------
+Epoch 10/150
+Train Loss: 0.4889, Train WA: 0.8458, Train UA: 0.8370, Train MF1: 0.8364, Train WF1: 0.8376
+Val Loss: 0.7956, Val WA: 0.7260, Val UA: 0.7203, Val MF1: 0.7160, Val WF1: 0.7151
+--------------------------------------------------
+Epoch 11/150
+Train Loss: 0.4425, Train WA: 0.8598, Train UA: 0.8495, Train MF1: 0.8494, Train WF1: 0.8496
+Val Loss: 0.8011, Val WA: 0.7362, Val UA: 0.7380, Val MF1: 0.7377, Val WF1: 0.7370
+--------------------------------------------------
+Epoch 12/150
+Train Loss: 0.4026, Train WA: 0.8754, Train UA: 0.8691, Train MF1: 0.8688, Train WF1: 0.8693
+Val Loss: 0.8017, Val WA: 0.7483, Val UA: 0.7394, Val MF1: 0.7384, Val WF1: 0.7374
+--------------------------------------------------
+Epoch 13/150
+Train Loss: 0.3673, Train WA: 0.8820, Train UA: 0.8760, Train MF1: 0.8747, Train WF1: 0.8764
+Val Loss: 0.8605, Val WA: 0.7355, Val UA: 0.7359, Val MF1: 0.7354, Val WF1: 0.7360
+--------------------------------------------------
+Epoch 14/150
+Train Loss: 0.3456, Train WA: 0.8891, Train UA: 0.8806, Train MF1: 0.8804, Train WF1: 0.8807
+Val Loss: 0.8885, Val WA: 0.7136, Val UA: 0.7189, Val MF1: 0.7169, Val WF1: 0.7192
+--------------------------------------------------
+Epoch 15/150
+Train Loss: 0.3144, Train WA: 0.9038, Train UA: 0.8996, Train MF1: 0.8989, Train WF1: 0.8998
+Val Loss: 0.9042, Val WA: 0.7315, Val UA: 0.7163, Val MF1: 0.7120, Val WF1: 0.7126
+--------------------------------------------------
+Epoch 16/150
+Train Loss: 0.3001, Train WA: 0.9058, Train UA: 0.8995, Train MF1: 0.8999, Train WF1: 0.8997
+Val Loss: 0.8532, Val WA: 0.7391, Val UA: 0.7348, Val MF1: 0.7355, Val WF1: 0.7354
+--------------------------------------------------
+Epoch 17/150
+Train Loss: 0.2823, Train WA: 0.9157, Train UA: 0.9104, Train MF1: 0.9101, Train WF1: 0.9108
+Val Loss: 0.8985, Val WA: 0.7502, Val UA: 0.7509, Val MF1: 0.7495, Val WF1: 0.7497
+--------------------------------------------------
+Epoch 18/150
+Train Loss: 0.2791, Train WA: 0.9176, Train UA: 0.9104, Train MF1: 0.9094, Train WF1: 0.9110
+Val Loss: 0.9470, Val WA: 0.7265, Val UA: 0.7273, Val MF1: 0.7288, Val WF1: 0.7277
+--------------------------------------------------
+Epoch 19/150
+Train Loss: 0.2551, Train WA: 0.9194, Train UA: 0.9135, Train MF1: 0.9136, Train WF1: 0.9136
+Val Loss: 0.8947, Val WA: 0.7535, Val UA: 0.7460, Val MF1: 0.7456, Val WF1: 0.7448
+--------------------------------------------------
+Epoch 20/150
+Train Loss: 0.2486, Train WA: 0.9232, Train UA: 0.9152, Train MF1: 0.9143, Train WF1: 0.9155
+Val Loss: 0.9689, Val WA: 0.7213, Val UA: 0.7177, Val MF1: 0.7178, Val WF1: 0.7179
+--------------------------------------------------
+Epoch 21/150
+Train Loss: 0.2278, Train WA: 0.9281, Train UA: 0.9233, Train MF1: 0.9212, Train WF1: 0.9238
+Val Loss: 1.0028, Val WA: 0.7273, Val UA: 0.7270, Val MF1: 0.7233, Val WF1: 0.7248
+--------------------------------------------------
+Epoch 22/150
+Train Loss: 0.2113, Train WA: 0.9319, Train UA: 0.9272, Train MF1: 0.9276, Train WF1: 0.9274
+Val Loss: 1.0077, Val WA: 0.7505, Val UA: 0.7402, Val MF1: 0.7383, Val WF1: 0.7338
+--------------------------------------------------
+Epoch 23/150
+Train Loss: 0.2192, Train WA: 0.9346, Train UA: 0.9302, Train MF1: 0.9295, Train WF1: 0.9303
+Val Loss: 0.9689, Val WA: 0.7526, Val UA: 0.7484, Val MF1: 0.7500, Val WF1: 0.7465
+--------------------------------------------------
+Epoch 24/150
+Train Loss: 0.1992, Train WA: 0.9403, Train UA: 0.9346, Train MF1: 0.9348, Train WF1: 0.9346
+Val Loss: 0.9874, Val WA: 0.7505, Val UA: 0.7345, Val MF1: 0.7351, Val WF1: 0.7302
+--------------------------------------------------
+Epoch 25/150
+Train Loss: 0.1904, Train WA: 0.9415, Train UA: 0.9359, Train MF1: 0.9357, Train WF1: 0.9359
+Val Loss: 0.9954, Val WA: 0.7459, Val UA: 0.7440, Val MF1: 0.7426, Val WF1: 0.7430
+--------------------------------------------------
+Epoch 26/150
+Train Loss: 0.1993, Train WA: 0.9380, Train UA: 0.9337, Train MF1: 0.9334, Train WF1: 0.9338
+Val Loss: 0.9644, Val WA: 0.7628, Val UA: 0.7578, Val MF1: 0.7599, Val WF1: 0.7579
+--------------------------------------------------
+Epoch 27/150
+Train Loss: 0.1838, Train WA: 0.9418, Train UA: 0.9380, Train MF1: 0.9375, Train WF1: 0.9383
+Val Loss: 1.0920, Val WA: 0.7557, Val UA: 0.7328, Val MF1: 0.7285, Val WF1: 0.7236
+--------------------------------------------------
+Epoch 28/150
+Train Loss: 0.1822, Train WA: 0.9451, Train UA: 0.9403, Train MF1: 0.9397, Train WF1: 0.9403
+Val Loss: 1.0412, Val WA: 0.7519, Val UA: 0.7497, Val MF1: 0.7505, Val WF1: 0.7495
+--------------------------------------------------
+Epoch 29/150
+Train Loss: 0.1627, Train WA: 0.9481, Train UA: 0.9447, Train MF1: 0.9448, Train WF1: 0.9447
+Val Loss: 1.0637, Val WA: 0.7626, Val UA: 0.7443, Val MF1: 0.7427, Val WF1: 0.7383
+--------------------------------------------------
+Epoch 30/150
+Train Loss: 0.1643, Train WA: 0.9497, Train UA: 0.9460, Train MF1: 0.9456, Train WF1: 0.9462
+Val Loss: 1.0934, Val WA: 0.7371, Val UA: 0.7235, Val MF1: 0.7240, Val WF1: 0.7223
+--------------------------------------------------
+Epoch 31/150
+Train Loss: 0.1478, Train WA: 0.9537, Train UA: 0.9509, Train MF1: 0.9508, Train WF1: 0.9510
+Val Loss: 1.0357, Val WA: 0.7628, Val UA: 0.7561, Val MF1: 0.7587, Val WF1: 0.7560
+--------------------------------------------------
+Epoch 32/150
+Train Loss: 0.1397, Train WA: 0.9597, Train UA: 0.9568, Train MF1: 0.9566, Train WF1: 0.9569
+Val Loss: 1.0314, Val WA: 0.7678, Val UA: 0.7598, Val MF1: 0.7622, Val WF1: 0.7595
+--------------------------------------------------
+Epoch 33/150
+Train Loss: 0.1184, Train WA: 0.9624, Train UA: 0.9592, Train MF1: 0.9592, Train WF1: 0.9593
+Val Loss: 1.0416, Val WA: 0.7610, Val UA: 0.7521, Val MF1: 0.7538, Val WF1: 0.7512
+--------------------------------------------------
+Epoch 34/150
+Train Loss: 0.1187, Train WA: 0.9678, Train UA: 0.9635, Train MF1: 0.9635, Train WF1: 0.9634
+Val Loss: 1.0412, Val WA: 0.7693, Val UA: 0.7532, Val MF1: 0.7544, Val WF1: 0.7497
+--------------------------------------------------
+Epoch 35/150
+Train Loss: 0.1198, Train WA: 0.9652, Train UA: 0.9607, Train MF1: 0.9613, Train WF1: 0.9607
+Val Loss: 1.0530, Val WA: 0.7601, Val UA: 0.7544, Val MF1: 0.7577, Val WF1: 0.7545
+--------------------------------------------------
+Epoch 36/150
+Train Loss: 0.1035, Train WA: 0.9715, Train UA: 0.9702, Train MF1: 0.9696, Train WF1: 0.9704
+Val Loss: 1.0415, Val WA: 0.7602, Val UA: 0.7552, Val MF1: 0.7581, Val WF1: 0.7552
+--------------------------------------------------
+Epoch 37/150
+Train Loss: 0.1060, Train WA: 0.9709, Train UA: 0.9690, Train MF1: 0.9686, Train WF1: 0.9690
+Val Loss: 1.0726, Val WA: 0.7603, Val UA: 0.7576, Val MF1: 0.7596, Val WF1: 0.7582
+--------------------------------------------------
+Epoch 38/150
+Train Loss: 0.1130, Train WA: 0.9663, Train UA: 0.9633, Train MF1: 0.9628, Train WF1: 0.9634
+Val Loss: 1.0613, Val WA: 0.7595, Val UA: 0.7472, Val MF1: 0.7495, Val WF1: 0.7465
+--------------------------------------------------
+Epoch 39/150
+Train Loss: 0.1097, Train WA: 0.9699, Train UA: 0.9665, Train MF1: 0.9662, Train WF1: 0.9666
+Val Loss: 1.0720, Val WA: 0.7628, Val UA: 0.7541, Val MF1: 0.7567, Val WF1: 0.7526
+--------------------------------------------------
+Epoch 40/150
+Train Loss: 0.0997, Train WA: 0.9728, Train UA: 0.9702, Train MF1: 0.9699, Train WF1: 0.9703
+Val Loss: 1.0718, Val WA: 0.7695, Val UA: 0.7619, Val MF1: 0.7646, Val WF1: 0.7616
+--------------------------------------------------
+Epoch 41/150
+Train Loss: 0.1034, Train WA: 0.9700, Train UA: 0.9670, Train MF1: 0.9674, Train WF1: 0.9670
+Val Loss: 1.0699, Val WA: 0.7715, Val UA: 0.7593, Val MF1: 0.7603, Val WF1: 0.7579
+--------------------------------------------------
+Epoch 42/150
+Train Loss: 0.0908, Train WA: 0.9759, Train UA: 0.9731, Train MF1: 0.9731, Train WF1: 0.9733
+Val Loss: 1.0806, Val WA: 0.7613, Val UA: 0.7544, Val MF1: 0.7553, Val WF1: 0.7535
+--------------------------------------------------
+Epoch 43/150
+Train Loss: 0.0959, Train WA: 0.9723, Train UA: 0.9703, Train MF1: 0.9701, Train WF1: 0.9703
+Val Loss: 1.0958, Val WA: 0.7690, Val UA: 0.7599, Val MF1: 0.7637, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 44/150
+Train Loss: 0.0962, Train WA: 0.9722, Train UA: 0.9689, Train MF1: 0.9692, Train WF1: 0.9690
+Val Loss: 1.0997, Val WA: 0.7620, Val UA: 0.7607, Val MF1: 0.7627, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 45/150
+Train Loss: 0.0956, Train WA: 0.9725, Train UA: 0.9708, Train MF1: 0.9705, Train WF1: 0.9710
+Val Loss: 1.0861, Val WA: 0.7556, Val UA: 0.7443, Val MF1: 0.7470, Val WF1: 0.7435
+--------------------------------------------------
+Epoch 46/150
+Train Loss: 0.0900, Train WA: 0.9737, Train UA: 0.9701, Train MF1: 0.9703, Train WF1: 0.9701
+Val Loss: 1.0911, Val WA: 0.7572, Val UA: 0.7480, Val MF1: 0.7499, Val WF1: 0.7475
+--------------------------------------------------
+Epoch 47/150
+Train Loss: 0.0914, Train WA: 0.9734, Train UA: 0.9707, Train MF1: 0.9709, Train WF1: 0.9707
+Val Loss: 1.1334, Val WA: 0.7608, Val UA: 0.7587, Val MF1: 0.7600, Val WF1: 0.7592
+--------------------------------------------------
+Epoch 48/150
+Train Loss: 0.0901, Train WA: 0.9728, Train UA: 0.9712, Train MF1: 0.9715, Train WF1: 0.9713
+Val Loss: 1.1610, Val WA: 0.7525, Val UA: 0.7506, Val MF1: 0.7539, Val WF1: 0.7517
+--------------------------------------------------
+Epoch 49/150
+Train Loss: 0.0938, Train WA: 0.9719, Train UA: 0.9691, Train MF1: 0.9691, Train WF1: 0.9693
+Val Loss: 1.1401, Val WA: 0.7499, Val UA: 0.7492, Val MF1: 0.7511, Val WF1: 0.7493
+--------------------------------------------------
+Epoch 50/150
+Train Loss: 0.0860, Train WA: 0.9775, Train UA: 0.9746, Train MF1: 0.9749, Train WF1: 0.9747
+Val Loss: 1.1232, Val WA: 0.7588, Val UA: 0.7504, Val MF1: 0.7535, Val WF1: 0.7503
+--------------------------------------------------
+Epoch 51/150
+Train Loss: 0.0879, Train WA: 0.9772, Train UA: 0.9743, Train MF1: 0.9745, Train WF1: 0.9743
+Val Loss: 1.1348, Val WA: 0.7615, Val UA: 0.7532, Val MF1: 0.7565, Val WF1: 0.7527
+--------------------------------------------------
+Epoch 52/150
+Train Loss: 0.0871, Train WA: 0.9743, Train UA: 0.9718, Train MF1: 0.9721, Train WF1: 0.9719
+Val Loss: 1.1527, Val WA: 0.7513, Val UA: 0.7492, Val MF1: 0.7530, Val WF1: 0.7501
+--------------------------------------------------
+Epoch 53/150
+Train Loss: 0.0875, Train WA: 0.9728, Train UA: 0.9703, Train MF1: 0.9694, Train WF1: 0.9705
+Val Loss: 1.1255, Val WA: 0.7712, Val UA: 0.7627, Val MF1: 0.7653, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 54/150
+Train Loss: 0.0819, Train WA: 0.9774, Train UA: 0.9746, Train MF1: 0.9747, Train WF1: 0.9746
+Val Loss: 1.1280, Val WA: 0.7685, Val UA: 0.7610, Val MF1: 0.7650, Val WF1: 0.7611
+--------------------------------------------------
+Epoch 55/150
+Train Loss: 0.0854, Train WA: 0.9740, Train UA: 0.9720, Train MF1: 0.9713, Train WF1: 0.9721
+Val Loss: 1.1723, Val WA: 0.7549, Val UA: 0.7593, Val MF1: 0.7618, Val WF1: 0.7610
+--------------------------------------------------
+Epoch 56/150
+Train Loss: 0.0812, Train WA: 0.9769, Train UA: 0.9734, Train MF1: 0.9736, Train WF1: 0.9736
+Val Loss: 1.1098, Val WA: 0.7701, Val UA: 0.7570, Val MF1: 0.7596, Val WF1: 0.7551
+--------------------------------------------------
+Epoch 57/150
+Train Loss: 0.0739, Train WA: 0.9807, Train UA: 0.9786, Train MF1: 0.9785, Train WF1: 0.9787
+Val Loss: 1.2436, Val WA: 0.7491, Val UA: 0.7515, Val MF1: 0.7559, Val WF1: 0.7533
+--------------------------------------------------
+Epoch 58/150
+Train Loss: 0.0851, Train WA: 0.9738, Train UA: 0.9711, Train MF1: 0.9709, Train WF1: 0.9711
+Val Loss: 1.1821, Val WA: 0.7535, Val UA: 0.7449, Val MF1: 0.7437, Val WF1: 0.7423
+--------------------------------------------------
+Epoch 59/150
+Train Loss: 0.0702, Train WA: 0.9798, Train UA: 0.9779, Train MF1: 0.9780, Train WF1: 0.9779
+Val Loss: 1.1582, Val WA: 0.7700, Val UA: 0.7593, Val MF1: 0.7619, Val WF1: 0.7589
+--------------------------------------------------
+Epoch 60/150
+Train Loss: 0.0805, Train WA: 0.9757, Train UA: 0.9743, Train MF1: 0.9739, Train WF1: 0.9743
+Val Loss: 1.1972, Val WA: 0.7644, Val UA: 0.7596, Val MF1: 0.7629, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 61/150
+Train Loss: 0.0711, Train WA: 0.9794, Train UA: 0.9772, Train MF1: 0.9773, Train WF1: 0.9773
+Val Loss: 1.1530, Val WA: 0.7663, Val UA: 0.7578, Val MF1: 0.7605, Val WF1: 0.7577
+--------------------------------------------------
+Epoch 62/150
+Train Loss: 0.0712, Train WA: 0.9797, Train UA: 0.9778, Train MF1: 0.9775, Train WF1: 0.9779
+Val Loss: 1.1700, Val WA: 0.7687, Val UA: 0.7636, Val MF1: 0.7681, Val WF1: 0.7647
+--------------------------------------------------
+Epoch 63/150
+Train Loss: 0.0741, Train WA: 0.9781, Train UA: 0.9760, Train MF1: 0.9756, Train WF1: 0.9761
+Val Loss: 1.1587, Val WA: 0.7692, Val UA: 0.7613, Val MF1: 0.7640, Val WF1: 0.7615
+--------------------------------------------------
+Epoch 64/150
+Train Loss: 0.0706, Train WA: 0.9813, Train UA: 0.9796, Train MF1: 0.9791, Train WF1: 0.9797
+Val Loss: 1.1428, Val WA: 0.7664, Val UA: 0.7561, Val MF1: 0.7584, Val WF1: 0.7556
+--------------------------------------------------
+Epoch 65/150
+Train Loss: 0.0602, Train WA: 0.9822, Train UA: 0.9812, Train MF1: 0.9805, Train WF1: 0.9812
+Val Loss: 1.1540, Val WA: 0.7667, Val UA: 0.7599, Val MF1: 0.7630, Val WF1: 0.7603
+--------------------------------------------------
+Epoch 66/150
+Train Loss: 0.0632, Train WA: 0.9834, Train UA: 0.9810, Train MF1: 0.9814, Train WF1: 0.9811
+Val Loss: 1.1508, Val WA: 0.7617, Val UA: 0.7538, Val MF1: 0.7573, Val WF1: 0.7540
+--------------------------------------------------
+Epoch 67/150
+Train Loss: 0.0708, Train WA: 0.9797, Train UA: 0.9780, Train MF1: 0.9781, Train WF1: 0.9781
+Val Loss: 1.1635, Val WA: 0.7642, Val UA: 0.7561, Val MF1: 0.7589, Val WF1: 0.7564
+--------------------------------------------------
+Epoch 68/150
+Train Loss: 0.0717, Train WA: 0.9806, Train UA: 0.9786, Train MF1: 0.9783, Train WF1: 0.9787
+Val Loss: 1.1686, Val WA: 0.7636, Val UA: 0.7552, Val MF1: 0.7573, Val WF1: 0.7549
+--------------------------------------------------
+Epoch 69/150
+Train Loss: 0.0659, Train WA: 0.9810, Train UA: 0.9790, Train MF1: 0.9794, Train WF1: 0.9791
+Val Loss: 1.1565, Val WA: 0.7648, Val UA: 0.7570, Val MF1: 0.7603, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 70/150
+Train Loss: 0.0655, Train WA: 0.9816, Train UA: 0.9800, Train MF1: 0.9796, Train WF1: 0.9800
+Val Loss: 1.1581, Val WA: 0.7714, Val UA: 0.7619, Val MF1: 0.7653, Val WF1: 0.7616
+--------------------------------------------------
+Epoch 71/150
+Train Loss: 0.0657, Train WA: 0.9824, Train UA: 0.9802, Train MF1: 0.9805, Train WF1: 0.9803
+Val Loss: 1.1758, Val WA: 0.7682, Val UA: 0.7630, Val MF1: 0.7659, Val WF1: 0.7634
+--------------------------------------------------
+Epoch 72/150
+Train Loss: 0.0590, Train WA: 0.9826, Train UA: 0.9815, Train MF1: 0.9818, Train WF1: 0.9815
+Val Loss: 1.1826, Val WA: 0.7645, Val UA: 0.7596, Val MF1: 0.7629, Val WF1: 0.7600
+--------------------------------------------------
+Epoch 73/150
+Train Loss: 0.0674, Train WA: 0.9797, Train UA: 0.9786, Train MF1: 0.9782, Train WF1: 0.9786
+Val Loss: 1.1709, Val WA: 0.7626, Val UA: 0.7524, Val MF1: 0.7558, Val WF1: 0.7523
+--------------------------------------------------
+Epoch 74/150
+Train Loss: 0.0608, Train WA: 0.9829, Train UA: 0.9811, Train MF1: 0.9812, Train WF1: 0.9811
+Val Loss: 1.1521, Val WA: 0.7673, Val UA: 0.7570, Val MF1: 0.7596, Val WF1: 0.7562
+--------------------------------------------------
+Epoch 75/150
+Train Loss: 0.0564, Train WA: 0.9841, Train UA: 0.9824, Train MF1: 0.9823, Train WF1: 0.9824
+Val Loss: 1.1909, Val WA: 0.7642, Val UA: 0.7590, Val MF1: 0.7626, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 76/150
+Train Loss: 0.0627, Train WA: 0.9817, Train UA: 0.9808, Train MF1: 0.9803, Train WF1: 0.9808
+Val Loss: 1.1604, Val WA: 0.7657, Val UA: 0.7555, Val MF1: 0.7584, Val WF1: 0.7553
+--------------------------------------------------
+Epoch 77/150
+Train Loss: 0.0663, Train WA: 0.9820, Train UA: 0.9799, Train MF1: 0.9797, Train WF1: 0.9800
+Val Loss: 1.1805, Val WA: 0.7668, Val UA: 0.7596, Val MF1: 0.7637, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 78/150
+Train Loss: 0.0557, Train WA: 0.9845, Train UA: 0.9830, Train MF1: 0.9833, Train WF1: 0.9830
+Val Loss: 1.1676, Val WA: 0.7703, Val UA: 0.7610, Val MF1: 0.7624, Val WF1: 0.7609
+--------------------------------------------------
+Epoch 79/150
+Train Loss: 0.0573, Train WA: 0.9843, Train UA: 0.9831, Train MF1: 0.9829, Train WF1: 0.9831
+Val Loss: 1.1922, Val WA: 0.7769, Val UA: 0.7720, Val MF1: 0.7756, Val WF1: 0.7727
+--------------------------------------------------
+Epoch 80/150
+Train Loss: 0.0605, Train WA: 0.9845, Train UA: 0.9824, Train MF1: 0.9816, Train WF1: 0.9826
+Val Loss: 1.1845, Val WA: 0.7693, Val UA: 0.7596, Val MF1: 0.7631, Val WF1: 0.7595
+--------------------------------------------------
+Epoch 81/150
+Train Loss: 0.0621, Train WA: 0.9821, Train UA: 0.9805, Train MF1: 0.9804, Train WF1: 0.9805
+Val Loss: 1.1907, Val WA: 0.7732, Val UA: 0.7662, Val MF1: 0.7703, Val WF1: 0.7666
+--------------------------------------------------
+Epoch 82/150
+Train Loss: 0.0617, Train WA: 0.9838, Train UA: 0.9818, Train MF1: 0.9817, Train WF1: 0.9819
+Val Loss: 1.1948, Val WA: 0.7691, Val UA: 0.7608, Val MF1: 0.7643, Val WF1: 0.7609
+--------------------------------------------------
+Epoch 83/150
+Train Loss: 0.0626, Train WA: 0.9845, Train UA: 0.9822, Train MF1: 0.9823, Train WF1: 0.9822
+Val Loss: 1.1843, Val WA: 0.7672, Val UA: 0.7576, Val MF1: 0.7604, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 84/150
+Train Loss: 0.0651, Train WA: 0.9794, Train UA: 0.9778, Train MF1: 0.9777, Train WF1: 0.9779
+Val Loss: 1.1820, Val WA: 0.7683, Val UA: 0.7616, Val MF1: 0.7646, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 85/150
+Train Loss: 0.0525, Train WA: 0.9859, Train UA: 0.9845, Train MF1: 0.9844, Train WF1: 0.9846
+Val Loss: 1.1820, Val WA: 0.7717, Val UA: 0.7639, Val MF1: 0.7669, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 86/150
+Train Loss: 0.0548, Train WA: 0.9872, Train UA: 0.9852, Train MF1: 0.9848, Train WF1: 0.9853
+Val Loss: 1.1913, Val WA: 0.7665, Val UA: 0.7611, Val MF1: 0.7640, Val WF1: 0.7614
+--------------------------------------------------
+Epoch 87/150
+Train Loss: 0.0617, Train WA: 0.9827, Train UA: 0.9812, Train MF1: 0.9807, Train WF1: 0.9813
+Val Loss: 1.1837, Val WA: 0.7657, Val UA: 0.7578, Val MF1: 0.7605, Val WF1: 0.7578
+--------------------------------------------------
+Epoch 88/150
+Train Loss: 0.0613, Train WA: 0.9842, Train UA: 0.9817, Train MF1: 0.9819, Train WF1: 0.9818
+Val Loss: 1.1977, Val WA: 0.7616, Val UA: 0.7576, Val MF1: 0.7608, Val WF1: 0.7582
+--------------------------------------------------
+Epoch 89/150
+Train Loss: 0.0520, Train WA: 0.9864, Train UA: 0.9856, Train MF1: 0.9857, Train WF1: 0.9857
+Val Loss: 1.2001, Val WA: 0.7618, Val UA: 0.7536, Val MF1: 0.7566, Val WF1: 0.7537
+--------------------------------------------------
+Epoch 90/150
+Train Loss: 0.0551, Train WA: 0.9846, Train UA: 0.9832, Train MF1: 0.9834, Train WF1: 0.9832
+Val Loss: 1.1911, Val WA: 0.7607, Val UA: 0.7532, Val MF1: 0.7555, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 91/150
+Train Loss: 0.0501, Train WA: 0.9877, Train UA: 0.9862, Train MF1: 0.9866, Train WF1: 0.9862
+Val Loss: 1.1964, Val WA: 0.7619, Val UA: 0.7544, Val MF1: 0.7566, Val WF1: 0.7541
+--------------------------------------------------
+Epoch 92/150
+Train Loss: 0.0692, Train WA: 0.9806, Train UA: 0.9784, Train MF1: 0.9780, Train WF1: 0.9784
+Val Loss: 1.1881, Val WA: 0.7692, Val UA: 0.7622, Val MF1: 0.7649, Val WF1: 0.7623
+--------------------------------------------------
+Epoch 93/150
+Train Loss: 0.0539, Train WA: 0.9846, Train UA: 0.9837, Train MF1: 0.9830, Train WF1: 0.9838
+Val Loss: 1.1997, Val WA: 0.7645, Val UA: 0.7584, Val MF1: 0.7606, Val WF1: 0.7587
+--------------------------------------------------
+Epoch 94/150
+Train Loss: 0.0611, Train WA: 0.9838, Train UA: 0.9819, Train MF1: 0.9820, Train WF1: 0.9820
+Val Loss: 1.2056, Val WA: 0.7628, Val UA: 0.7555, Val MF1: 0.7585, Val WF1: 0.7556
+--------------------------------------------------
+Epoch 95/150
+Train Loss: 0.0536, Train WA: 0.9857, Train UA: 0.9834, Train MF1: 0.9835, Train WF1: 0.9834
+Val Loss: 1.1964, Val WA: 0.7636, Val UA: 0.7555, Val MF1: 0.7580, Val WF1: 0.7555
+--------------------------------------------------
+Epoch 96/150
+Train Loss: 0.0552, Train WA: 0.9842, Train UA: 0.9826, Train MF1: 0.9823, Train WF1: 0.9826
+Val Loss: 1.1875, Val WA: 0.7650, Val UA: 0.7578, Val MF1: 0.7610, Val WF1: 0.7583
+--------------------------------------------------
+Epoch 97/150
+Train Loss: 0.0531, Train WA: 0.9855, Train UA: 0.9838, Train MF1: 0.9836, Train WF1: 0.9838
+Val Loss: 1.2028, Val WA: 0.7659, Val UA: 0.7599, Val MF1: 0.7628, Val WF1: 0.7603
+--------------------------------------------------
+Epoch 98/150
+Train Loss: 0.0645, Train WA: 0.9811, Train UA: 0.9798, Train MF1: 0.9793, Train WF1: 0.9798
+Val Loss: 1.2157, Val WA: 0.7668, Val UA: 0.7596, Val MF1: 0.7624, Val WF1: 0.7598
+--------------------------------------------------
+Epoch 99/150
+Train Loss: 0.0514, Train WA: 0.9879, Train UA: 0.9866, Train MF1: 0.9865, Train WF1: 0.9866
+Val Loss: 1.1988, Val WA: 0.7687, Val UA: 0.7613, Val MF1: 0.7640, Val WF1: 0.7614
+--------------------------------------------------
+Epoch 100/150
+Train Loss: 0.0485, Train WA: 0.9873, Train UA: 0.9861, Train MF1: 0.9860, Train WF1: 0.9861
+Val Loss: 1.2031, Val WA: 0.7648, Val UA: 0.7564, Val MF1: 0.7592, Val WF1: 0.7562
+--------------------------------------------------
+Epoch 101/150
+Train Loss: 0.0548, Train WA: 0.9860, Train UA: 0.9839, Train MF1: 0.9839, Train WF1: 0.9840
+Val Loss: 1.1969, Val WA: 0.7631, Val UA: 0.7541, Val MF1: 0.7570, Val WF1: 0.7539
+--------------------------------------------------
+Epoch 102/150
+Train Loss: 0.0535, Train WA: 0.9865, Train UA: 0.9852, Train MF1: 0.9854, Train WF1: 0.9852
+Val Loss: 1.2055, Val WA: 0.7639, Val UA: 0.7576, Val MF1: 0.7609, Val WF1: 0.7576
+--------------------------------------------------
+Epoch 103/150
+Train Loss: 0.0489, Train WA: 0.9887, Train UA: 0.9875, Train MF1: 0.9872, Train WF1: 0.9875
+Val Loss: 1.2034, Val WA: 0.7671, Val UA: 0.7587, Val MF1: 0.7619, Val WF1: 0.7586
+--------------------------------------------------
+Epoch 104/150
+Train Loss: 0.0581, Train WA: 0.9830, Train UA: 0.9819, Train MF1: 0.9815, Train WF1: 0.9819
+Val Loss: 1.2080, Val WA: 0.7643, Val UA: 0.7576, Val MF1: 0.7606, Val WF1: 0.7576
+--------------------------------------------------
+Epoch 105/150
+Train Loss: 0.0580, Train WA: 0.9837, Train UA: 0.9811, Train MF1: 0.9810, Train WF1: 0.9811
+Val Loss: 1.2026, Val WA: 0.7657, Val UA: 0.7599, Val MF1: 0.7621, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 106/150
+Train Loss: 0.0625, Train WA: 0.9822, Train UA: 0.9808, Train MF1: 0.9805, Train WF1: 0.9809
+Val Loss: 1.2046, Val WA: 0.7638, Val UA: 0.7555, Val MF1: 0.7584, Val WF1: 0.7557
+--------------------------------------------------
+Epoch 107/150
+Train Loss: 0.0515, Train WA: 0.9873, Train UA: 0.9857, Train MF1: 0.9857, Train WF1: 0.9857
+Val Loss: 1.2119, Val WA: 0.7697, Val UA: 0.7642, Val MF1: 0.7676, Val WF1: 0.7647
+--------------------------------------------------
+Epoch 108/150
+Train Loss: 0.0439, Train WA: 0.9865, Train UA: 0.9857, Train MF1: 0.9856, Train WF1: 0.9857
+Val Loss: 1.2042, Val WA: 0.7678, Val UA: 0.7616, Val MF1: 0.7650, Val WF1: 0.7618
+--------------------------------------------------
+Epoch 109/150
+Train Loss: 0.0562, Train WA: 0.9848, Train UA: 0.9832, Train MF1: 0.9831, Train WF1: 0.9832
+Val Loss: 1.2097, Val WA: 0.7684, Val UA: 0.7604, Val MF1: 0.7632, Val WF1: 0.7605
+--------------------------------------------------
+Epoch 110/150
+Train Loss: 0.0542, Train WA: 0.9865, Train UA: 0.9850, Train MF1: 0.9848, Train WF1: 0.9851
+Val Loss: 1.2091, Val WA: 0.7619, Val UA: 0.7529, Val MF1: 0.7560, Val WF1: 0.7529
+--------------------------------------------------
+Epoch 111/150
+Train Loss: 0.0509, Train WA: 0.9857, Train UA: 0.9837, Train MF1: 0.9841, Train WF1: 0.9837
+Val Loss: 1.2138, Val WA: 0.7663, Val UA: 0.7619, Val MF1: 0.7654, Val WF1: 0.7627
+--------------------------------------------------
+Epoch 112/150
+Train Loss: 0.0508, Train WA: 0.9852, Train UA: 0.9839, Train MF1: 0.9834, Train WF1: 0.9839
+Val Loss: 1.2053, Val WA: 0.7682, Val UA: 0.7608, Val MF1: 0.7637, Val WF1: 0.7607
+--------------------------------------------------
+Epoch 113/150
+Train Loss: 0.0567, Train WA: 0.9823, Train UA: 0.9808, Train MF1: 0.9809, Train WF1: 0.9808
+Val Loss: 1.2144, Val WA: 0.7652, Val UA: 0.7573, Val MF1: 0.7609, Val WF1: 0.7574
+--------------------------------------------------
+Epoch 114/150
+Train Loss: 0.0512, Train WA: 0.9871, Train UA: 0.9856, Train MF1: 0.9852, Train WF1: 0.9856
+Val Loss: 1.2091, Val WA: 0.7656, Val UA: 0.7570, Val MF1: 0.7598, Val WF1: 0.7568
+--------------------------------------------------
+Epoch 115/150
+Train Loss: 0.0537, Train WA: 0.9869, Train UA: 0.9856, Train MF1: 0.9859, Train WF1: 0.9857
+Val Loss: 1.2106, Val WA: 0.7670, Val UA: 0.7581, Val MF1: 0.7615, Val WF1: 0.7580
+--------------------------------------------------
+Epoch 116/150
+Train Loss: 0.0497, Train WA: 0.9864, Train UA: 0.9839, Train MF1: 0.9839, Train WF1: 0.9840
+Val Loss: 1.2152, Val WA: 0.7697, Val UA: 0.7604, Val MF1: 0.7632, Val WF1: 0.7601
+--------------------------------------------------
+Epoch 117/150
+Train Loss: 0.0543, Train WA: 0.9851, Train UA: 0.9830, Train MF1: 0.9836, Train WF1: 0.9830
+Val Loss: 1.2240, Val WA: 0.7674, Val UA: 0.7581, Val MF1: 0.7609, Val WF1: 0.7578
+--------------------------------------------------
+Epoch 118/150
+Train Loss: 0.0512, Train WA: 0.9845, Train UA: 0.9826, Train MF1: 0.9827, Train WF1: 0.9826
+Val Loss: 1.2074, Val WA: 0.7653, Val UA: 0.7573, Val MF1: 0.7600, Val WF1: 0.7572
+--------------------------------------------------
+Epoch 119/150
+Train Loss: 0.0514, Train WA: 0.9850, Train UA: 0.9835, Train MF1: 0.9832, Train WF1: 0.9835
+Val Loss: 1.2067, Val WA: 0.7653, Val UA: 0.7585, Val MF1: 0.7620, Val WF1: 0.7588
+--------------------------------------------------
+Epoch 120/150
+Train Loss: 0.0431, Train WA: 0.9916, Train UA: 0.9898, Train MF1: 0.9901, Train WF1: 0.9898
+Val Loss: 1.2050, Val WA: 0.7668, Val UA: 0.7578, Val MF1: 0.7606, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 121/150
+Train Loss: 0.0474, Train WA: 0.9881, Train UA: 0.9865, Train MF1: 0.9862, Train WF1: 0.9866
+Val Loss: 1.2097, Val WA: 0.7726, Val UA: 0.7668, Val MF1: 0.7693, Val WF1: 0.7668
+--------------------------------------------------
+Epoch 122/150
+Train Loss: 0.0528, Train WA: 0.9832, Train UA: 0.9812, Train MF1: 0.9817, Train WF1: 0.9812
+Val Loss: 1.2035, Val WA: 0.7663, Val UA: 0.7602, Val MF1: 0.7625, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 123/150
+Train Loss: 0.0537, Train WA: 0.9851, Train UA: 0.9824, Train MF1: 0.9823, Train WF1: 0.9825
+Val Loss: 1.2033, Val WA: 0.7625, Val UA: 0.7532, Val MF1: 0.7559, Val WF1: 0.7529
+--------------------------------------------------
+Epoch 124/150
+Train Loss: 0.0517, Train WA: 0.9860, Train UA: 0.9846, Train MF1: 0.9841, Train WF1: 0.9846
+Val Loss: 1.1971, Val WA: 0.7707, Val UA: 0.7622, Val MF1: 0.7651, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 125/150
+Train Loss: 0.0490, Train WA: 0.9874, Train UA: 0.9868, Train MF1: 0.9866, Train WF1: 0.9868
+Val Loss: 1.2036, Val WA: 0.7660, Val UA: 0.7570, Val MF1: 0.7596, Val WF1: 0.7567
+--------------------------------------------------
+Epoch 126/150
+Train Loss: 0.0521, Train WA: 0.9872, Train UA: 0.9855, Train MF1: 0.9853, Train WF1: 0.9856
+Val Loss: 1.1950, Val WA: 0.7659, Val UA: 0.7570, Val MF1: 0.7593, Val WF1: 0.7568
+--------------------------------------------------
+Epoch 127/150
+Train Loss: 0.0543, Train WA: 0.9864, Train UA: 0.9839, Train MF1: 0.9842, Train WF1: 0.9840
+Val Loss: 1.2086, Val WA: 0.7685, Val UA: 0.7599, Val MF1: 0.7626, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 128/150
+Train Loss: 0.0566, Train WA: 0.9832, Train UA: 0.9822, Train MF1: 0.9819, Train WF1: 0.9823
+Val Loss: 1.2098, Val WA: 0.7657, Val UA: 0.7561, Val MF1: 0.7587, Val WF1: 0.7559
+--------------------------------------------------
+Epoch 129/150
+Train Loss: 0.0517, Train WA: 0.9850, Train UA: 0.9831, Train MF1: 0.9826, Train WF1: 0.9832
+Val Loss: 1.2060, Val WA: 0.7689, Val UA: 0.7608, Val MF1: 0.7635, Val WF1: 0.7606
+--------------------------------------------------
+Epoch 130/150
+Train Loss: 0.0479, Train WA: 0.9895, Train UA: 0.9879, Train MF1: 0.9880, Train WF1: 0.9879
+Val Loss: 1.2161, Val WA: 0.7680, Val UA: 0.7590, Val MF1: 0.7624, Val WF1: 0.7587
+--------------------------------------------------
+Epoch 131/150
+Train Loss: 0.0483, Train WA: 0.9860, Train UA: 0.9841, Train MF1: 0.9846, Train WF1: 0.9841
+Val Loss: 1.2252, Val WA: 0.7663, Val UA: 0.7585, Val MF1: 0.7620, Val WF1: 0.7585
+--------------------------------------------------
+Epoch 132/150
+Train Loss: 0.0563, Train WA: 0.9853, Train UA: 0.9826, Train MF1: 0.9826, Train WF1: 0.9826
+Val Loss: 1.2090, Val WA: 0.7654, Val UA: 0.7561, Val MF1: 0.7588, Val WF1: 0.7559
+--------------------------------------------------
+Epoch 133/150
+Train Loss: 0.0487, Train WA: 0.9850, Train UA: 0.9840, Train MF1: 0.9839, Train WF1: 0.9840
+Val Loss: 1.2010, Val WA: 0.7664, Val UA: 0.7608, Val MF1: 0.7631, Val WF1: 0.7608
+--------------------------------------------------
+Epoch 134/150
+Train Loss: 0.0492, Train WA: 0.9874, Train UA: 0.9859, Train MF1: 0.9856, Train WF1: 0.9860
+Val Loss: 1.2181, Val WA: 0.7655, Val UA: 0.7590, Val MF1: 0.7621, Val WF1: 0.7591
+--------------------------------------------------
+Epoch 135/150
+Train Loss: 0.0425, Train WA: 0.9894, Train UA: 0.9886, Train MF1: 0.9889, Train WF1: 0.9886
+Val Loss: 1.2101, Val WA: 0.7653, Val UA: 0.7564, Val MF1: 0.7595, Val WF1: 0.7562
+--------------------------------------------------
+Epoch 136/150
+Train Loss: 0.0498, Train WA: 0.9873, Train UA: 0.9859, Train MF1: 0.9855, Train WF1: 0.9860
+Val Loss: 1.2046, Val WA: 0.7645, Val UA: 0.7550, Val MF1: 0.7576, Val WF1: 0.7548
+--------------------------------------------------
+Epoch 137/150
+Train Loss: 0.0541, Train WA: 0.9853, Train UA: 0.9831, Train MF1: 0.9830, Train WF1: 0.9832
+Val Loss: 1.2064, Val WA: 0.7663, Val UA: 0.7588, Val MF1: 0.7623, Val WF1: 0.7589
+--------------------------------------------------
+Epoch 138/150
+Train Loss: 0.0562, Train WA: 0.9840, Train UA: 0.9823, Train MF1: 0.9819, Train WF1: 0.9825
+Val Loss: 1.2010, Val WA: 0.7655, Val UA: 0.7585, Val MF1: 0.7613, Val WF1: 0.7583
+--------------------------------------------------
+Epoch 139/150
+Train Loss: 0.0453, Train WA: 0.9886, Train UA: 0.9870, Train MF1: 0.9870, Train WF1: 0.9870
+Val Loss: 1.2164, Val WA: 0.7670, Val UA: 0.7602, Val MF1: 0.7637, Val WF1: 0.7606
+--------------------------------------------------
+Epoch 140/150
+Train Loss: 0.0532, Train WA: 0.9853, Train UA: 0.9839, Train MF1: 0.9839, Train WF1: 0.9839
+Val Loss: 1.2168, Val WA: 0.7667, Val UA: 0.7578, Val MF1: 0.7605, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 141/150
+Train Loss: 0.0558, Train WA: 0.9851, Train UA: 0.9829, Train MF1: 0.9827, Train WF1: 0.9829
+Val Loss: 1.2149, Val WA: 0.7657, Val UA: 0.7573, Val MF1: 0.7600, Val WF1: 0.7572
+--------------------------------------------------
+Epoch 142/150
+Train Loss: 0.0455, Train WA: 0.9877, Train UA: 0.9866, Train MF1: 0.9871, Train WF1: 0.9866
+Val Loss: 1.2117, Val WA: 0.7695, Val UA: 0.7604, Val MF1: 0.7638, Val WF1: 0.7601
+--------------------------------------------------
+Epoch 143/150
+Train Loss: 0.0525, Train WA: 0.9864, Train UA: 0.9852, Train MF1: 0.9853, Train WF1: 0.9852
+Val Loss: 1.2114, Val WA: 0.7635, Val UA: 0.7538, Val MF1: 0.7566, Val WF1: 0.7537
+--------------------------------------------------
+Epoch 144/150
+Train Loss: 0.0550, Train WA: 0.9841, Train UA: 0.9824, Train MF1: 0.9820, Train WF1: 0.9824
+Val Loss: 1.2167, Val WA: 0.7640, Val UA: 0.7567, Val MF1: 0.7595, Val WF1: 0.7565
+--------------------------------------------------
+Epoch 145/150
+Train Loss: 0.0466, Train WA: 0.9862, Train UA: 0.9845, Train MF1: 0.9844, Train WF1: 0.9846
+Val Loss: 1.2263, Val WA: 0.7651, Val UA: 0.7561, Val MF1: 0.7591, Val WF1: 0.7560
+--------------------------------------------------
+Epoch 146/150
+Train Loss: 0.0481, Train WA: 0.9877, Train UA: 0.9866, Train MF1: 0.9861, Train WF1: 0.9867
+Val Loss: 1.2125, Val WA: 0.7662, Val UA: 0.7590, Val MF1: 0.7623, Val WF1: 0.7591
+--------------------------------------------------
+Epoch 147/150
+Train Loss: 0.0511, Train WA: 0.9873, Train UA: 0.9859, Train MF1: 0.9857, Train WF1: 0.9860
+Val Loss: 1.2097, Val WA: 0.7664, Val UA: 0.7590, Val MF1: 0.7622, Val WF1: 0.7590
+--------------------------------------------------
+Epoch 148/150
+Train Loss: 0.0548, Train WA: 0.9867, Train UA: 0.9855, Train MF1: 0.9855, Train WF1: 0.9856
+Val Loss: 1.2078, Val WA: 0.7684, Val UA: 0.7619, Val MF1: 0.7648, Val WF1: 0.7622
+--------------------------------------------------
+Epoch 149/150
+Train Loss: 0.0561, Train WA: 0.9848, Train UA: 0.9837, Train MF1: 0.9836, Train WF1: 0.9837
+Val Loss: 1.2040, Val WA: 0.7671, Val UA: 0.7578, Val MF1: 0.7609, Val WF1: 0.7576
+--------------------------------------------------
+Epoch 150/150
+Train Loss: 0.0517, Train WA: 0.9846, Train UA: 0.9827, Train MF1: 0.9830, Train WF1: 0.9827
+Val Loss: 1.2114, Val WA: 0.7700, Val UA: 0.7634, Val MF1: 0.7667, Val WF1: 0.7638
+--------------------------------------------------
+Best Val WA: 0.7183, Best Val UA: 0.7175, Best Val MF1: 0.7172, Best Val WF1: 0.7190
+Total Test WA: 0.7700 | Total Test UA: 0.7634 | Total Test WF1: 0.7638 | Total Test UF1: 0.7667
+Fold 1 Results: WA: 0.7700, UA: 0.7634, WF1: 0.7638, UF1: 0.7667
+==================================================
+/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/main-Kfold.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(save_path, map_location=device))
+Total Test WA: 0.7183 | Total Test UA: 0.7175 | Total Test WF1: 0.7190 | Total Test UF1: 0.7172
+Fold 1 Test Results: WA: 0.7183, UA: 0.7175, WF1: 0.7190, UF1: 0.7172
+==================================================
+Fold 2/5 - Training with alpha = 0.9
+Total Parameters: 765124
+Trainable Parameters: 765124
+Epoch 1/150
+Validation loss reduced. Best Val WA: 0.4181, Best Val UA: 0.4252, Best MF1: 0.3723, Best WF1: 0.3826
+--------------------------------------------------
+Train Loss: 1.3039, Train WA: 0.3546, Train UA: 0.3695, Train MF1: 0.3296, Train WF1: 0.3452
+Val Loss: 1.2601, Val WA: 0.4181, Val UA: 0.4252, Val MF1: 0.3723, Val WF1: 0.3826
+--------------------------------------------------
+Epoch 2/150
+Validation loss reduced. Best Val WA: 0.5416, Best Val UA: 0.5125, Best MF1: 0.5030, Best WF1: 0.4953
+--------------------------------------------------
+Train Loss: 1.1965, Train WA: 0.4773, Train UA: 0.4793, Train MF1: 0.4705, Train WF1: 0.4756
+Val Loss: 1.0993, Val WA: 0.5416, Val UA: 0.5125, Val MF1: 0.5030, Val WF1: 0.4953
+--------------------------------------------------
+Epoch 3/150
+Validation loss reduced. Best Val WA: 0.6319, Best Val UA: 0.6256, Best MF1: 0.6163, Best WF1: 0.6230
+--------------------------------------------------
+Train Loss: 1.0818, Train WA: 0.5818, Train UA: 0.5773, Train MF1: 0.5780, Train WF1: 0.5783
+Val Loss: 0.9405, Val WA: 0.6319, Val UA: 0.6256, Val MF1: 0.6163, Val WF1: 0.6230
+--------------------------------------------------
+Epoch 4/150
+Validation loss reduced. Best Val WA: 0.6793, Best Val UA: 0.6588, Best MF1: 0.6561, Best WF1: 0.6561
+--------------------------------------------------
+Train Loss: 0.9487, Train WA: 0.6606, Train UA: 0.6535, Train MF1: 0.6551, Train WF1: 0.6542
+Val Loss: 0.8394, Val WA: 0.6793, Val UA: 0.6588, Val MF1: 0.6561, Val WF1: 0.6561
+--------------------------------------------------
+Epoch 5/150
+Validation loss reduced. Best Val WA: 0.6789, Best Val UA: 0.6750, Best MF1: 0.6708, Best WF1: 0.6719
+--------------------------------------------------
+Train Loss: 0.8247, Train WA: 0.7153, Train UA: 0.7061, Train MF1: 0.7074, Train WF1: 0.7071
+Val Loss: 0.8000, Val WA: 0.6789, Val UA: 0.6750, Val MF1: 0.6708, Val WF1: 0.6719
+--------------------------------------------------
+Epoch 6/150
+Train Loss: 0.7356, Train WA: 0.7515, Train UA: 0.7430, Train MF1: 0.7447, Train WF1: 0.7433
+Val Loss: 0.8045, Val WA: 0.6890, Val UA: 0.6782, Val MF1: 0.6801, Val WF1: 0.6774
+--------------------------------------------------
+Epoch 7/150
+Validation loss reduced. Best Val WA: 0.7123, Best Val UA: 0.6929, Best MF1: 0.6895, Best WF1: 0.6909
+--------------------------------------------------
+Train Loss: 0.6552, Train WA: 0.7866, Train UA: 0.7781, Train MF1: 0.7794, Train WF1: 0.7789
+Val Loss: 0.7610, Val WA: 0.7123, Val UA: 0.6929, Val MF1: 0.6895, Val WF1: 0.6909
+--------------------------------------------------
+Epoch 8/150
+Validation loss reduced. Best Val WA: 0.7160, Best Val UA: 0.7218, Best MF1: 0.7159, Best WF1: 0.7185
+--------------------------------------------------
+Train Loss: 0.5819, Train WA: 0.8046, Train UA: 0.7970, Train MF1: 0.7975, Train WF1: 0.7974
+Val Loss: 0.7403, Val WA: 0.7160, Val UA: 0.7218, Val MF1: 0.7159, Val WF1: 0.7185
+--------------------------------------------------
+Epoch 9/150
+Validation loss reduced. Best Val WA: 0.7287, Best Val UA: 0.7319, Best MF1: 0.7323, Best WF1: 0.7340
+--------------------------------------------------
+Train Loss: 0.5182, Train WA: 0.8346, Train UA: 0.8263, Train MF1: 0.8266, Train WF1: 0.8268
+Val Loss: 0.7306, Val WA: 0.7287, Val UA: 0.7319, Val MF1: 0.7323, Val WF1: 0.7340
+--------------------------------------------------
+Epoch 10/150
+Train Loss: 0.4693, Train WA: 0.8532, Train UA: 0.8444, Train MF1: 0.8448, Train WF1: 0.8446
+Val Loss: 0.7589, Val WA: 0.7411, Val UA: 0.7368, Val MF1: 0.7333, Val WF1: 0.7336
+--------------------------------------------------
+Epoch 11/150
+Train Loss: 0.4271, Train WA: 0.8638, Train UA: 0.8552, Train MF1: 0.8553, Train WF1: 0.8556
+Val Loss: 0.7904, Val WA: 0.7461, Val UA: 0.7402, Val MF1: 0.7406, Val WF1: 0.7364
+--------------------------------------------------
+Epoch 12/150
+Train Loss: 0.3979, Train WA: 0.8735, Train UA: 0.8647, Train MF1: 0.8661, Train WF1: 0.8651
+Val Loss: 0.8928, Val WA: 0.6891, Val UA: 0.7050, Val MF1: 0.7040, Val WF1: 0.7079
+--------------------------------------------------
+Epoch 13/150
+Train Loss: 0.3660, Train WA: 0.8810, Train UA: 0.8732, Train MF1: 0.8732, Train WF1: 0.8734
+Val Loss: 0.8109, Val WA: 0.7381, Val UA: 0.7445, Val MF1: 0.7424, Val WF1: 0.7445
+--------------------------------------------------
+Epoch 14/150
+Train Loss: 0.3413, Train WA: 0.8969, Train UA: 0.8894, Train MF1: 0.8893, Train WF1: 0.8897
+Val Loss: 0.9041, Val WA: 0.7437, Val UA: 0.7273, Val MF1: 0.7238, Val WF1: 0.7180
+--------------------------------------------------
+Epoch 15/150
+Train Loss: 0.2950, Train WA: 0.9103, Train UA: 0.9025, Train MF1: 0.9044, Train WF1: 0.9026
+Val Loss: 0.8046, Val WA: 0.7607, Val UA: 0.7512, Val MF1: 0.7499, Val WF1: 0.7507
+--------------------------------------------------
+Epoch 16/150
+Train Loss: 0.2799, Train WA: 0.9137, Train UA: 0.9070, Train MF1: 0.9069, Train WF1: 0.9071
+Val Loss: 0.9013, Val WA: 0.7311, Val UA: 0.7209, Val MF1: 0.7217, Val WF1: 0.7205
+--------------------------------------------------
+Epoch 17/150
+Train Loss: 0.2489, Train WA: 0.9272, Train UA: 0.9222, Train MF1: 0.9228, Train WF1: 0.9222
+Val Loss: 0.8514, Val WA: 0.7662, Val UA: 0.7492, Val MF1: 0.7494, Val WF1: 0.7454
+--------------------------------------------------
+Epoch 18/150
+Train Loss: 0.2520, Train WA: 0.9246, Train UA: 0.9190, Train MF1: 0.9191, Train WF1: 0.9193
+Val Loss: 1.0397, Val WA: 0.7063, Val UA: 0.7175, Val MF1: 0.7126, Val WF1: 0.7140
+--------------------------------------------------
+Epoch 19/150
+Train Loss: 0.2304, Train WA: 0.9358, Train UA: 0.9297, Train MF1: 0.9298, Train WF1: 0.9299
+Val Loss: 1.0036, Val WA: 0.7327, Val UA: 0.7237, Val MF1: 0.7249, Val WF1: 0.7239
+--------------------------------------------------
+Epoch 20/150
+Train Loss: 0.2211, Train WA: 0.9343, Train UA: 0.9287, Train MF1: 0.9298, Train WF1: 0.9288
+Val Loss: 0.9390, Val WA: 0.7460, Val UA: 0.7400, Val MF1: 0.7388, Val WF1: 0.7391
+--------------------------------------------------
+Epoch 21/150
+Train Loss: 0.2159, Train WA: 0.9301, Train UA: 0.9260, Train MF1: 0.9253, Train WF1: 0.9261
+Val Loss: 1.0285, Val WA: 0.7475, Val UA: 0.7221, Val MF1: 0.7155, Val WF1: 0.7116
+--------------------------------------------------
+Epoch 22/150
+Train Loss: 0.2028, Train WA: 0.9374, Train UA: 0.9319, Train MF1: 0.9324, Train WF1: 0.9320
+Val Loss: 0.9604, Val WA: 0.7585, Val UA: 0.7533, Val MF1: 0.7510, Val WF1: 0.7510
+--------------------------------------------------
+Epoch 23/150
+Train Loss: 0.1955, Train WA: 0.9370, Train UA: 0.9339, Train MF1: 0.9330, Train WF1: 0.9341
+Val Loss: 1.1576, Val WA: 0.7246, Val UA: 0.7202, Val MF1: 0.7231, Val WF1: 0.7202
+--------------------------------------------------
+Epoch 24/150
+Train Loss: 0.1871, Train WA: 0.9393, Train UA: 0.9340, Train MF1: 0.9348, Train WF1: 0.9344
+Val Loss: 1.1476, Val WA: 0.7365, Val UA: 0.7146, Val MF1: 0.7081, Val WF1: 0.6980
+--------------------------------------------------
+Epoch 25/150
+Train Loss: 0.1839, Train WA: 0.9440, Train UA: 0.9377, Train MF1: 0.9389, Train WF1: 0.9378
+Val Loss: 1.1900, Val WA: 0.6857, Val UA: 0.7044, Val MF1: 0.6934, Val WF1: 0.7004
+--------------------------------------------------
+Epoch 26/150
+Train Loss: 0.1767, Train WA: 0.9432, Train UA: 0.9390, Train MF1: 0.9388, Train WF1: 0.9391
+Val Loss: 1.0197, Val WA: 0.7535, Val UA: 0.7345, Val MF1: 0.7338, Val WF1: 0.7329
+--------------------------------------------------
+Epoch 27/150
+Train Loss: 0.1733, Train WA: 0.9463, Train UA: 0.9427, Train MF1: 0.9421, Train WF1: 0.9430
+Val Loss: 1.0500, Val WA: 0.7379, Val UA: 0.7324, Val MF1: 0.7324, Val WF1: 0.7330
+--------------------------------------------------
+Epoch 28/150
+Train Loss: 0.1721, Train WA: 0.9446, Train UA: 0.9397, Train MF1: 0.9400, Train WF1: 0.9400
+Val Loss: 1.0479, Val WA: 0.7587, Val UA: 0.7495, Val MF1: 0.7508, Val WF1: 0.7500
+--------------------------------------------------
+Epoch 29/150
+Train Loss: 0.1675, Train WA: 0.9467, Train UA: 0.9438, Train MF1: 0.9439, Train WF1: 0.9441
+Val Loss: 1.0499, Val WA: 0.7711, Val UA: 0.7564, Val MF1: 0.7576, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 30/150
+Train Loss: 0.1632, Train WA: 0.9516, Train UA: 0.9448, Train MF1: 0.9460, Train WF1: 0.9451
+Val Loss: 1.0497, Val WA: 0.7571, Val UA: 0.7547, Val MF1: 0.7551, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 31/150
+Train Loss: 0.1405, Train WA: 0.9594, Train UA: 0.9540, Train MF1: 0.9539, Train WF1: 0.9541
+Val Loss: 1.0300, Val WA: 0.7568, Val UA: 0.7480, Val MF1: 0.7488, Val WF1: 0.7477
+--------------------------------------------------
+Epoch 32/150
+Train Loss: 0.1335, Train WA: 0.9617, Train UA: 0.9574, Train MF1: 0.9571, Train WF1: 0.9575
+Val Loss: 1.0479, Val WA: 0.7505, Val UA: 0.7402, Val MF1: 0.7410, Val WF1: 0.7389
+--------------------------------------------------
+Epoch 33/150
+Train Loss: 0.1093, Train WA: 0.9691, Train UA: 0.9667, Train MF1: 0.9666, Train WF1: 0.9667
+Val Loss: 1.0514, Val WA: 0.7600, Val UA: 0.7518, Val MF1: 0.7527, Val WF1: 0.7499
+--------------------------------------------------
+Epoch 34/150
+Train Loss: 0.1164, Train WA: 0.9672, Train UA: 0.9637, Train MF1: 0.9642, Train WF1: 0.9637
+Val Loss: 1.0219, Val WA: 0.7700, Val UA: 0.7576, Val MF1: 0.7582, Val WF1: 0.7564
+--------------------------------------------------
+Epoch 35/150
+Train Loss: 0.1050, Train WA: 0.9720, Train UA: 0.9693, Train MF1: 0.9697, Train WF1: 0.9693
+Val Loss: 1.0276, Val WA: 0.7731, Val UA: 0.7642, Val MF1: 0.7657, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 36/150
+Train Loss: 0.1047, Train WA: 0.9662, Train UA: 0.9632, Train MF1: 0.9636, Train WF1: 0.9632
+Val Loss: 1.0407, Val WA: 0.7639, Val UA: 0.7573, Val MF1: 0.7592, Val WF1: 0.7560
+--------------------------------------------------
+Epoch 37/150
+Train Loss: 0.1109, Train WA: 0.9645, Train UA: 0.9604, Train MF1: 0.9600, Train WF1: 0.9605
+Val Loss: 1.0513, Val WA: 0.7706, Val UA: 0.7559, Val MF1: 0.7568, Val WF1: 0.7522
+--------------------------------------------------
+Epoch 38/150
+Train Loss: 0.1074, Train WA: 0.9668, Train UA: 0.9648, Train MF1: 0.9642, Train WF1: 0.9649
+Val Loss: 1.0466, Val WA: 0.7604, Val UA: 0.7547, Val MF1: 0.7553, Val WF1: 0.7546
+--------------------------------------------------
+Epoch 39/150
+Train Loss: 0.1000, Train WA: 0.9720, Train UA: 0.9702, Train MF1: 0.9698, Train WF1: 0.9703
+Val Loss: 1.0687, Val WA: 0.7658, Val UA: 0.7559, Val MF1: 0.7572, Val WF1: 0.7543
+--------------------------------------------------
+Epoch 40/150
+Train Loss: 0.1025, Train WA: 0.9699, Train UA: 0.9686, Train MF1: 0.9680, Train WF1: 0.9687
+Val Loss: 1.0735, Val WA: 0.7624, Val UA: 0.7529, Val MF1: 0.7545, Val WF1: 0.7532
+--------------------------------------------------
+Epoch 41/150
+Train Loss: 0.1002, Train WA: 0.9693, Train UA: 0.9667, Train MF1: 0.9666, Train WF1: 0.9668
+Val Loss: 1.1092, Val WA: 0.7549, Val UA: 0.7483, Val MF1: 0.7504, Val WF1: 0.7494
+--------------------------------------------------
+Epoch 42/150
+Train Loss: 0.0937, Train WA: 0.9724, Train UA: 0.9696, Train MF1: 0.9686, Train WF1: 0.9698
+Val Loss: 1.0898, Val WA: 0.7653, Val UA: 0.7570, Val MF1: 0.7599, Val WF1: 0.7555
+--------------------------------------------------
+Epoch 43/150
+Train Loss: 0.0848, Train WA: 0.9743, Train UA: 0.9727, Train MF1: 0.9727, Train WF1: 0.9727
+Val Loss: 1.0647, Val WA: 0.7766, Val UA: 0.7625, Val MF1: 0.7643, Val WF1: 0.7605
+--------------------------------------------------
+Epoch 44/150
+Train Loss: 0.0900, Train WA: 0.9746, Train UA: 0.9717, Train MF1: 0.9710, Train WF1: 0.9718
+Val Loss: 1.1259, Val WA: 0.7598, Val UA: 0.7552, Val MF1: 0.7565, Val WF1: 0.7560
+--------------------------------------------------
+Epoch 45/150
+Train Loss: 0.0829, Train WA: 0.9783, Train UA: 0.9766, Train MF1: 0.9768, Train WF1: 0.9766
+Val Loss: 1.0995, Val WA: 0.7692, Val UA: 0.7550, Val MF1: 0.7569, Val WF1: 0.7542
+--------------------------------------------------
+Epoch 46/150
+Train Loss: 0.0900, Train WA: 0.9740, Train UA: 0.9722, Train MF1: 0.9716, Train WF1: 0.9723
+Val Loss: 1.1555, Val WA: 0.7502, Val UA: 0.7489, Val MF1: 0.7501, Val WF1: 0.7501
+--------------------------------------------------
+Epoch 47/150
+Train Loss: 0.0894, Train WA: 0.9748, Train UA: 0.9725, Train MF1: 0.9723, Train WF1: 0.9726
+Val Loss: 1.0921, Val WA: 0.7673, Val UA: 0.7489, Val MF1: 0.7516, Val WF1: 0.7468
+--------------------------------------------------
+Epoch 48/150
+Train Loss: 0.0832, Train WA: 0.9765, Train UA: 0.9739, Train MF1: 0.9743, Train WF1: 0.9739
+Val Loss: 1.0940, Val WA: 0.7790, Val UA: 0.7691, Val MF1: 0.7712, Val WF1: 0.7678
+--------------------------------------------------
+Epoch 49/150
+Train Loss: 0.0857, Train WA: 0.9747, Train UA: 0.9717, Train MF1: 0.9717, Train WF1: 0.9717
+Val Loss: 1.1044, Val WA: 0.7749, Val UA: 0.7613, Val MF1: 0.7642, Val WF1: 0.7604
+--------------------------------------------------
+Epoch 50/150
+Train Loss: 0.0894, Train WA: 0.9750, Train UA: 0.9717, Train MF1: 0.9720, Train WF1: 0.9718
+Val Loss: 1.1111, Val WA: 0.7665, Val UA: 0.7611, Val MF1: 0.7621, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 51/150
+Train Loss: 0.0810, Train WA: 0.9779, Train UA: 0.9750, Train MF1: 0.9749, Train WF1: 0.9751
+Val Loss: 1.1221, Val WA: 0.7699, Val UA: 0.7616, Val MF1: 0.7646, Val WF1: 0.7625
+--------------------------------------------------
+Epoch 52/150
+Train Loss: 0.0838, Train WA: 0.9747, Train UA: 0.9720, Train MF1: 0.9721, Train WF1: 0.9720
+Val Loss: 1.1223, Val WA: 0.7672, Val UA: 0.7611, Val MF1: 0.7636, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 53/150
+Train Loss: 0.0810, Train WA: 0.9775, Train UA: 0.9747, Train MF1: 0.9755, Train WF1: 0.9747
+Val Loss: 1.1297, Val WA: 0.7624, Val UA: 0.7613, Val MF1: 0.7621, Val WF1: 0.7622
+--------------------------------------------------
+Epoch 54/150
+Train Loss: 0.0758, Train WA: 0.9772, Train UA: 0.9746, Train MF1: 0.9746, Train WF1: 0.9747
+Val Loss: 1.1600, Val WA: 0.7652, Val UA: 0.7619, Val MF1: 0.7633, Val WF1: 0.7626
+--------------------------------------------------
+Epoch 55/150
+Train Loss: 0.0731, Train WA: 0.9805, Train UA: 0.9782, Train MF1: 0.9792, Train WF1: 0.9782
+Val Loss: 1.1364, Val WA: 0.7707, Val UA: 0.7642, Val MF1: 0.7653, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 56/150
+Train Loss: 0.0705, Train WA: 0.9805, Train UA: 0.9774, Train MF1: 0.9772, Train WF1: 0.9774
+Val Loss: 1.1302, Val WA: 0.7781, Val UA: 0.7637, Val MF1: 0.7649, Val WF1: 0.7614
+--------------------------------------------------
+Epoch 57/150
+Train Loss: 0.0660, Train WA: 0.9818, Train UA: 0.9789, Train MF1: 0.9791, Train WF1: 0.9790
+Val Loss: 1.1858, Val WA: 0.7624, Val UA: 0.7493, Val MF1: 0.7495, Val WF1: 0.7457
+--------------------------------------------------
+Epoch 58/150
+Train Loss: 0.0781, Train WA: 0.9797, Train UA: 0.9767, Train MF1: 0.9770, Train WF1: 0.9768
+Val Loss: 1.1604, Val WA: 0.7658, Val UA: 0.7469, Val MF1: 0.7468, Val WF1: 0.7422
+--------------------------------------------------
+Epoch 59/150
+Train Loss: 0.0851, Train WA: 0.9747, Train UA: 0.9722, Train MF1: 0.9724, Train WF1: 0.9722
+Val Loss: 1.1575, Val WA: 0.7678, Val UA: 0.7591, Val MF1: 0.7612, Val WF1: 0.7585
+--------------------------------------------------
+Epoch 60/150
+Train Loss: 0.0738, Train WA: 0.9776, Train UA: 0.9757, Train MF1: 0.9757, Train WF1: 0.9758
+Val Loss: 1.1570, Val WA: 0.7633, Val UA: 0.7504, Val MF1: 0.7520, Val WF1: 0.7488
+--------------------------------------------------
+Epoch 61/150
+Train Loss: 0.0663, Train WA: 0.9809, Train UA: 0.9790, Train MF1: 0.9797, Train WF1: 0.9791
+Val Loss: 1.1676, Val WA: 0.7692, Val UA: 0.7613, Val MF1: 0.7638, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 62/150
+Train Loss: 0.0584, Train WA: 0.9827, Train UA: 0.9806, Train MF1: 0.9810, Train WF1: 0.9806
+Val Loss: 1.1579, Val WA: 0.7692, Val UA: 0.7588, Val MF1: 0.7609, Val WF1: 0.7583
+--------------------------------------------------
+Epoch 63/150
+Train Loss: 0.0676, Train WA: 0.9815, Train UA: 0.9795, Train MF1: 0.9793, Train WF1: 0.9795
+Val Loss: 1.1748, Val WA: 0.7722, Val UA: 0.7645, Val MF1: 0.7667, Val WF1: 0.7646
+--------------------------------------------------
+Epoch 64/150
+Train Loss: 0.0582, Train WA: 0.9859, Train UA: 0.9836, Train MF1: 0.9837, Train WF1: 0.9836
+Val Loss: 1.1798, Val WA: 0.7739, Val UA: 0.7639, Val MF1: 0.7670, Val WF1: 0.7640
+--------------------------------------------------
+Epoch 65/150
+Train Loss: 0.0585, Train WA: 0.9834, Train UA: 0.9810, Train MF1: 0.9815, Train WF1: 0.9811
+Val Loss: 1.1852, Val WA: 0.7749, Val UA: 0.7648, Val MF1: 0.7680, Val WF1: 0.7648
+--------------------------------------------------
+Epoch 66/150
+Train Loss: 0.0588, Train WA: 0.9840, Train UA: 0.9823, Train MF1: 0.9822, Train WF1: 0.9823
+Val Loss: 1.1713, Val WA: 0.7717, Val UA: 0.7617, Val MF1: 0.7634, Val WF1: 0.7613
+--------------------------------------------------
+Epoch 67/150
+Train Loss: 0.0686, Train WA: 0.9806, Train UA: 0.9784, Train MF1: 0.9788, Train WF1: 0.9784
+Val Loss: 1.1800, Val WA: 0.7704, Val UA: 0.7599, Val MF1: 0.7623, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 68/150
+Train Loss: 0.0532, Train WA: 0.9859, Train UA: 0.9836, Train MF1: 0.9842, Train WF1: 0.9836
+Val Loss: 1.1750, Val WA: 0.7729, Val UA: 0.7648, Val MF1: 0.7665, Val WF1: 0.7644
+--------------------------------------------------
+Epoch 69/150
+Train Loss: 0.0604, Train WA: 0.9823, Train UA: 0.9799, Train MF1: 0.9802, Train WF1: 0.9800
+Val Loss: 1.1686, Val WA: 0.7816, Val UA: 0.7720, Val MF1: 0.7745, Val WF1: 0.7718
+--------------------------------------------------
+Epoch 70/150
+Train Loss: 0.0638, Train WA: 0.9827, Train UA: 0.9805, Train MF1: 0.9801, Train WF1: 0.9807
+Val Loss: 1.1643, Val WA: 0.7772, Val UA: 0.7680, Val MF1: 0.7702, Val WF1: 0.7679
+--------------------------------------------------
+Epoch 71/150
+Train Loss: 0.0575, Train WA: 0.9819, Train UA: 0.9806, Train MF1: 0.9807, Train WF1: 0.9806
+Val Loss: 1.1635, Val WA: 0.7757, Val UA: 0.7686, Val MF1: 0.7706, Val WF1: 0.7686
+--------------------------------------------------
+Epoch 72/150
+Train Loss: 0.0542, Train WA: 0.9848, Train UA: 0.9834, Train MF1: 0.9831, Train WF1: 0.9835
+Val Loss: 1.1763, Val WA: 0.7743, Val UA: 0.7665, Val MF1: 0.7684, Val WF1: 0.7661
+--------------------------------------------------
+Epoch 73/150
+Train Loss: 0.0578, Train WA: 0.9829, Train UA: 0.9820, Train MF1: 0.9819, Train WF1: 0.9821
+Val Loss: 1.1655, Val WA: 0.7716, Val UA: 0.7619, Val MF1: 0.7640, Val WF1: 0.7616
+--------------------------------------------------
+Epoch 74/150
+Train Loss: 0.0572, Train WA: 0.9847, Train UA: 0.9833, Train MF1: 0.9836, Train WF1: 0.9833
+Val Loss: 1.1794, Val WA: 0.7748, Val UA: 0.7663, Val MF1: 0.7677, Val WF1: 0.7659
+--------------------------------------------------
+Epoch 75/150
+Train Loss: 0.0584, Train WA: 0.9823, Train UA: 0.9809, Train MF1: 0.9806, Train WF1: 0.9809
+Val Loss: 1.1747, Val WA: 0.7730, Val UA: 0.7637, Val MF1: 0.7664, Val WF1: 0.7637
+--------------------------------------------------
+Epoch 76/150
+Train Loss: 0.0544, Train WA: 0.9852, Train UA: 0.9830, Train MF1: 0.9830, Train WF1: 0.9831
+Val Loss: 1.1836, Val WA: 0.7743, Val UA: 0.7642, Val MF1: 0.7666, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 77/150
+Train Loss: 0.0626, Train WA: 0.9822, Train UA: 0.9807, Train MF1: 0.9792, Train WF1: 0.9808
+Val Loss: 1.1958, Val WA: 0.7675, Val UA: 0.7579, Val MF1: 0.7613, Val WF1: 0.7579
+--------------------------------------------------
+Epoch 78/150
+Train Loss: 0.0545, Train WA: 0.9874, Train UA: 0.9857, Train MF1: 0.9862, Train WF1: 0.9857
+Val Loss: 1.1835, Val WA: 0.7729, Val UA: 0.7611, Val MF1: 0.7635, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 79/150
+Train Loss: 0.0547, Train WA: 0.9878, Train UA: 0.9865, Train MF1: 0.9866, Train WF1: 0.9866
+Val Loss: 1.1957, Val WA: 0.7699, Val UA: 0.7611, Val MF1: 0.7640, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 80/150
+Train Loss: 0.0570, Train WA: 0.9844, Train UA: 0.9824, Train MF1: 0.9822, Train WF1: 0.9824
+Val Loss: 1.1885, Val WA: 0.7753, Val UA: 0.7628, Val MF1: 0.7638, Val WF1: 0.7613
+--------------------------------------------------
+Epoch 81/150
+Train Loss: 0.0522, Train WA: 0.9858, Train UA: 0.9836, Train MF1: 0.9839, Train WF1: 0.9836
+Val Loss: 1.1784, Val WA: 0.7774, Val UA: 0.7677, Val MF1: 0.7691, Val WF1: 0.7669
+--------------------------------------------------
+Epoch 82/150
+Train Loss: 0.0506, Train WA: 0.9872, Train UA: 0.9862, Train MF1: 0.9859, Train WF1: 0.9862
+Val Loss: 1.2008, Val WA: 0.7712, Val UA: 0.7656, Val MF1: 0.7672, Val WF1: 0.7658
+--------------------------------------------------
+Epoch 83/150
+Train Loss: 0.0571, Train WA: 0.9851, Train UA: 0.9834, Train MF1: 0.9833, Train WF1: 0.9836
+Val Loss: 1.2004, Val WA: 0.7688, Val UA: 0.7579, Val MF1: 0.7596, Val WF1: 0.7569
+--------------------------------------------------
+Epoch 84/150
+Train Loss: 0.0573, Train WA: 0.9835, Train UA: 0.9817, Train MF1: 0.9815, Train WF1: 0.9818
+Val Loss: 1.1990, Val WA: 0.7693, Val UA: 0.7608, Val MF1: 0.7624, Val WF1: 0.7603
+--------------------------------------------------
+Epoch 85/150
+Train Loss: 0.0536, Train WA: 0.9864, Train UA: 0.9850, Train MF1: 0.9851, Train WF1: 0.9850
+Val Loss: 1.1982, Val WA: 0.7750, Val UA: 0.7663, Val MF1: 0.7679, Val WF1: 0.7658
+--------------------------------------------------
+Epoch 86/150
+Train Loss: 0.0494, Train WA: 0.9881, Train UA: 0.9871, Train MF1: 0.9869, Train WF1: 0.9871
+Val Loss: 1.2033, Val WA: 0.7747, Val UA: 0.7677, Val MF1: 0.7706, Val WF1: 0.7677
+--------------------------------------------------
+Epoch 87/150
+Train Loss: 0.0513, Train WA: 0.9865, Train UA: 0.9853, Train MF1: 0.9853, Train WF1: 0.9852
+Val Loss: 1.2013, Val WA: 0.7744, Val UA: 0.7640, Val MF1: 0.7656, Val WF1: 0.7629
+--------------------------------------------------
+Epoch 88/150
+Train Loss: 0.0453, Train WA: 0.9881, Train UA: 0.9875, Train MF1: 0.9878, Train WF1: 0.9875
+Val Loss: 1.2252, Val WA: 0.7724, Val UA: 0.7628, Val MF1: 0.7659, Val WF1: 0.7627
+--------------------------------------------------
+Epoch 89/150
+Train Loss: 0.0626, Train WA: 0.9840, Train UA: 0.9808, Train MF1: 0.9804, Train WF1: 0.9811
+Val Loss: 1.1950, Val WA: 0.7756, Val UA: 0.7689, Val MF1: 0.7711, Val WF1: 0.7691
+--------------------------------------------------
+Epoch 90/150
+Train Loss: 0.0517, Train WA: 0.9872, Train UA: 0.9856, Train MF1: 0.9858, Train WF1: 0.9857
+Val Loss: 1.2226, Val WA: 0.7642, Val UA: 0.7562, Val MF1: 0.7585, Val WF1: 0.7558
+--------------------------------------------------
+Epoch 91/150
+Train Loss: 0.0461, Train WA: 0.9890, Train UA: 0.9879, Train MF1: 0.9879, Train WF1: 0.9879
+Val Loss: 1.2255, Val WA: 0.7696, Val UA: 0.7588, Val MF1: 0.7613, Val WF1: 0.7578
+--------------------------------------------------
+Epoch 92/150
+Train Loss: 0.0548, Train WA: 0.9842, Train UA: 0.9828, Train MF1: 0.9829, Train WF1: 0.9828
+Val Loss: 1.2113, Val WA: 0.7699, Val UA: 0.7588, Val MF1: 0.7616, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 93/150
+Train Loss: 0.0523, Train WA: 0.9845, Train UA: 0.9829, Train MF1: 0.9830, Train WF1: 0.9829
+Val Loss: 1.2174, Val WA: 0.7730, Val UA: 0.7631, Val MF1: 0.7656, Val WF1: 0.7625
+--------------------------------------------------
+Epoch 94/150
+Train Loss: 0.0508, Train WA: 0.9851, Train UA: 0.9833, Train MF1: 0.9832, Train WF1: 0.9833
+Val Loss: 1.2149, Val WA: 0.7701, Val UA: 0.7605, Val MF1: 0.7633, Val WF1: 0.7601
+--------------------------------------------------
+Epoch 95/150
+Train Loss: 0.0578, Train WA: 0.9843, Train UA: 0.9816, Train MF1: 0.9822, Train WF1: 0.9816
+Val Loss: 1.2205, Val WA: 0.7746, Val UA: 0.7648, Val MF1: 0.7665, Val WF1: 0.7646
+--------------------------------------------------
+Epoch 96/150
+Train Loss: 0.0481, Train WA: 0.9871, Train UA: 0.9856, Train MF1: 0.9858, Train WF1: 0.9857
+Val Loss: 1.2145, Val WA: 0.7711, Val UA: 0.7596, Val MF1: 0.7622, Val WF1: 0.7585
+--------------------------------------------------
+Epoch 97/150
+Train Loss: 0.0517, Train WA: 0.9842, Train UA: 0.9835, Train MF1: 0.9834, Train WF1: 0.9835
+Val Loss: 1.2129, Val WA: 0.7718, Val UA: 0.7654, Val MF1: 0.7680, Val WF1: 0.7653
+--------------------------------------------------
+Epoch 98/150
+Train Loss: 0.0549, Train WA: 0.9858, Train UA: 0.9843, Train MF1: 0.9834, Train WF1: 0.9844
+Val Loss: 1.2103, Val WA: 0.7715, Val UA: 0.7605, Val MF1: 0.7629, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 99/150
+Train Loss: 0.0558, Train WA: 0.9855, Train UA: 0.9835, Train MF1: 0.9839, Train WF1: 0.9835
+Val Loss: 1.2145, Val WA: 0.7716, Val UA: 0.7593, Val MF1: 0.7618, Val WF1: 0.7579
+--------------------------------------------------
+Epoch 100/150
+Train Loss: 0.0492, Train WA: 0.9861, Train UA: 0.9848, Train MF1: 0.9845, Train WF1: 0.9849
+Val Loss: 1.2073, Val WA: 0.7729, Val UA: 0.7628, Val MF1: 0.7656, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 101/150
+Train Loss: 0.0528, Train WA: 0.9848, Train UA: 0.9833, Train MF1: 0.9831, Train WF1: 0.9834
+Val Loss: 1.2090, Val WA: 0.7720, Val UA: 0.7634, Val MF1: 0.7658, Val WF1: 0.7635
+--------------------------------------------------
+Epoch 102/150
+Train Loss: 0.0474, Train WA: 0.9863, Train UA: 0.9850, Train MF1: 0.9853, Train WF1: 0.9851
+Val Loss: 1.2113, Val WA: 0.7740, Val UA: 0.7648, Val MF1: 0.7677, Val WF1: 0.7643
+--------------------------------------------------
+Epoch 103/150
+Train Loss: 0.0522, Train WA: 0.9856, Train UA: 0.9839, Train MF1: 0.9840, Train WF1: 0.9839
+Val Loss: 1.2045, Val WA: 0.7741, Val UA: 0.7640, Val MF1: 0.7665, Val WF1: 0.7636
+--------------------------------------------------
+Epoch 104/150
+Train Loss: 0.0498, Train WA: 0.9851, Train UA: 0.9830, Train MF1: 0.9832, Train WF1: 0.9831
+Val Loss: 1.2199, Val WA: 0.7702, Val UA: 0.7591, Val MF1: 0.7616, Val WF1: 0.7580
+--------------------------------------------------
+Epoch 105/150
+Train Loss: 0.0521, Train WA: 0.9865, Train UA: 0.9850, Train MF1: 0.9850, Train WF1: 0.9851
+Val Loss: 1.2191, Val WA: 0.7732, Val UA: 0.7628, Val MF1: 0.7657, Val WF1: 0.7623
+--------------------------------------------------
+Epoch 106/150
+Train Loss: 0.0531, Train WA: 0.9858, Train UA: 0.9839, Train MF1: 0.9844, Train WF1: 0.9839
+Val Loss: 1.2124, Val WA: 0.7775, Val UA: 0.7671, Val MF1: 0.7698, Val WF1: 0.7665
+--------------------------------------------------
+Epoch 107/150
+Train Loss: 0.0486, Train WA: 0.9871, Train UA: 0.9854, Train MF1: 0.9853, Train WF1: 0.9855
+Val Loss: 1.2016, Val WA: 0.7761, Val UA: 0.7651, Val MF1: 0.7677, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 108/150
+Train Loss: 0.0489, Train WA: 0.9869, Train UA: 0.9847, Train MF1: 0.9849, Train WF1: 0.9848
+Val Loss: 1.2105, Val WA: 0.7729, Val UA: 0.7660, Val MF1: 0.7677, Val WF1: 0.7663
+--------------------------------------------------
+Epoch 109/150
+Train Loss: 0.0421, Train WA: 0.9893, Train UA: 0.9884, Train MF1: 0.9884, Train WF1: 0.9884
+Val Loss: 1.2082, Val WA: 0.7740, Val UA: 0.7654, Val MF1: 0.7677, Val WF1: 0.7652
+--------------------------------------------------
+Epoch 110/150
+Train Loss: 0.0479, Train WA: 0.9890, Train UA: 0.9877, Train MF1: 0.9878, Train WF1: 0.9877
+Val Loss: 1.2076, Val WA: 0.7735, Val UA: 0.7651, Val MF1: 0.7681, Val WF1: 0.7653
+--------------------------------------------------
+Epoch 111/150
+Train Loss: 0.0463, Train WA: 0.9890, Train UA: 0.9879, Train MF1: 0.9877, Train WF1: 0.9880
+Val Loss: 1.2145, Val WA: 0.7741, Val UA: 0.7631, Val MF1: 0.7652, Val WF1: 0.7618
+--------------------------------------------------
+Epoch 112/150
+Train Loss: 0.0509, Train WA: 0.9861, Train UA: 0.9848, Train MF1: 0.9846, Train WF1: 0.9848
+Val Loss: 1.2111, Val WA: 0.7761, Val UA: 0.7671, Val MF1: 0.7698, Val WF1: 0.7667
+--------------------------------------------------
+Epoch 113/150
+Train Loss: 0.0525, Train WA: 0.9864, Train UA: 0.9841, Train MF1: 0.9848, Train WF1: 0.9841
+Val Loss: 1.2210, Val WA: 0.7738, Val UA: 0.7663, Val MF1: 0.7693, Val WF1: 0.7661
+--------------------------------------------------
+Epoch 114/150
+Train Loss: 0.0465, Train WA: 0.9875, Train UA: 0.9862, Train MF1: 0.9861, Train WF1: 0.9863
+Val Loss: 1.2014, Val WA: 0.7761, Val UA: 0.7668, Val MF1: 0.7685, Val WF1: 0.7662
+--------------------------------------------------
+Epoch 115/150
+Train Loss: 0.0438, Train WA: 0.9877, Train UA: 0.9858, Train MF1: 0.9862, Train WF1: 0.9858
+Val Loss: 1.2057, Val WA: 0.7739, Val UA: 0.7663, Val MF1: 0.7686, Val WF1: 0.7663
+--------------------------------------------------
+Epoch 116/150
+Train Loss: 0.0448, Train WA: 0.9887, Train UA: 0.9878, Train MF1: 0.9877, Train WF1: 0.9878
+Val Loss: 1.2118, Val WA: 0.7723, Val UA: 0.7605, Val MF1: 0.7628, Val WF1: 0.7591
+--------------------------------------------------
+Epoch 117/150
+Train Loss: 0.0458, Train WA: 0.9869, Train UA: 0.9854, Train MF1: 0.9858, Train WF1: 0.9854
+Val Loss: 1.2224, Val WA: 0.7719, Val UA: 0.7654, Val MF1: 0.7677, Val WF1: 0.7657
+--------------------------------------------------
+Epoch 118/150
+Train Loss: 0.0432, Train WA: 0.9881, Train UA: 0.9877, Train MF1: 0.9872, Train WF1: 0.9877
+Val Loss: 1.2196, Val WA: 0.7734, Val UA: 0.7645, Val MF1: 0.7672, Val WF1: 0.7644
+--------------------------------------------------
+Epoch 119/150
+Train Loss: 0.0526, Train WA: 0.9855, Train UA: 0.9838, Train MF1: 0.9832, Train WF1: 0.9839
+Val Loss: 1.2367, Val WA: 0.7740, Val UA: 0.7631, Val MF1: 0.7651, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 120/150
+Train Loss: 0.0523, Train WA: 0.9862, Train UA: 0.9850, Train MF1: 0.9850, Train WF1: 0.9851
+Val Loss: 1.2167, Val WA: 0.7712, Val UA: 0.7614, Val MF1: 0.7634, Val WF1: 0.7610
+--------------------------------------------------
+Epoch 121/150
+Train Loss: 0.0437, Train WA: 0.9891, Train UA: 0.9875, Train MF1: 0.9877, Train WF1: 0.9875
+Val Loss: 1.2259, Val WA: 0.7769, Val UA: 0.7677, Val MF1: 0.7704, Val WF1: 0.7675
+--------------------------------------------------
+Epoch 122/150
+Train Loss: 0.0510, Train WA: 0.9853, Train UA: 0.9840, Train MF1: 0.9842, Train WF1: 0.9840
+Val Loss: 1.2153, Val WA: 0.7746, Val UA: 0.7660, Val MF1: 0.7686, Val WF1: 0.7658
+--------------------------------------------------
+Epoch 123/150
+Train Loss: 0.0487, Train WA: 0.9864, Train UA: 0.9850, Train MF1: 0.9848, Train WF1: 0.9850
+Val Loss: 1.2160, Val WA: 0.7765, Val UA: 0.7671, Val MF1: 0.7695, Val WF1: 0.7668
+--------------------------------------------------
+Epoch 124/150
+Train Loss: 0.0477, Train WA: 0.9867, Train UA: 0.9853, Train MF1: 0.9848, Train WF1: 0.9854
+Val Loss: 1.2361, Val WA: 0.7751, Val UA: 0.7651, Val MF1: 0.7673, Val WF1: 0.7643
+--------------------------------------------------
+Epoch 125/150
+Train Loss: 0.0489, Train WA: 0.9862, Train UA: 0.9844, Train MF1: 0.9846, Train WF1: 0.9844
+Val Loss: 1.2239, Val WA: 0.7720, Val UA: 0.7625, Val MF1: 0.7650, Val WF1: 0.7623
+--------------------------------------------------
+Epoch 126/150
+Train Loss: 0.0502, Train WA: 0.9864, Train UA: 0.9856, Train MF1: 0.9859, Train WF1: 0.9856
+Val Loss: 1.2096, Val WA: 0.7750, Val UA: 0.7654, Val MF1: 0.7681, Val WF1: 0.7652
+--------------------------------------------------
+Epoch 127/150
+Train Loss: 0.0493, Train WA: 0.9870, Train UA: 0.9859, Train MF1: 0.9857, Train WF1: 0.9860
+Val Loss: 1.2164, Val WA: 0.7741, Val UA: 0.7648, Val MF1: 0.7671, Val WF1: 0.7645
+--------------------------------------------------
+Epoch 128/150
+Train Loss: 0.0449, Train WA: 0.9870, Train UA: 0.9854, Train MF1: 0.9855, Train WF1: 0.9855
+Val Loss: 1.2100, Val WA: 0.7809, Val UA: 0.7712, Val MF1: 0.7732, Val WF1: 0.7701
+--------------------------------------------------
+Epoch 129/150
+Train Loss: 0.0448, Train WA: 0.9885, Train UA: 0.9873, Train MF1: 0.9873, Train WF1: 0.9873
+Val Loss: 1.2076, Val WA: 0.7755, Val UA: 0.7654, Val MF1: 0.7674, Val WF1: 0.7645
+--------------------------------------------------
+Epoch 130/150
+Train Loss: 0.0452, Train WA: 0.9893, Train UA: 0.9882, Train MF1: 0.9884, Train WF1: 0.9882
+Val Loss: 1.2257, Val WA: 0.7746, Val UA: 0.7660, Val MF1: 0.7686, Val WF1: 0.7662
+--------------------------------------------------
+Epoch 131/150
+Train Loss: 0.0441, Train WA: 0.9878, Train UA: 0.9863, Train MF1: 0.9863, Train WF1: 0.9864
+Val Loss: 1.2291, Val WA: 0.7738, Val UA: 0.7628, Val MF1: 0.7653, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 132/150
+Train Loss: 0.0484, Train WA: 0.9884, Train UA: 0.9871, Train MF1: 0.9874, Train WF1: 0.9871
+Val Loss: 1.2212, Val WA: 0.7741, Val UA: 0.7648, Val MF1: 0.7681, Val WF1: 0.7644
+--------------------------------------------------
+Epoch 133/150
+Train Loss: 0.0554, Train WA: 0.9854, Train UA: 0.9834, Train MF1: 0.9828, Train WF1: 0.9835
+Val Loss: 1.2267, Val WA: 0.7735, Val UA: 0.7631, Val MF1: 0.7651, Val WF1: 0.7622
+--------------------------------------------------
+Epoch 134/150
+Train Loss: 0.0507, Train WA: 0.9852, Train UA: 0.9840, Train MF1: 0.9833, Train WF1: 0.9841
+Val Loss: 1.2163, Val WA: 0.7745, Val UA: 0.7651, Val MF1: 0.7677, Val WF1: 0.7649
+--------------------------------------------------
+Epoch 135/150
+Train Loss: 0.0450, Train WA: 0.9870, Train UA: 0.9861, Train MF1: 0.9856, Train WF1: 0.9861
+Val Loss: 1.2236, Val WA: 0.7775, Val UA: 0.7671, Val MF1: 0.7687, Val WF1: 0.7663
+--------------------------------------------------
+Epoch 136/150
+Train Loss: 0.0499, Train WA: 0.9872, Train UA: 0.9859, Train MF1: 0.9856, Train WF1: 0.9859
+Val Loss: 1.2215, Val WA: 0.7723, Val UA: 0.7637, Val MF1: 0.7655, Val WF1: 0.7632
+--------------------------------------------------
+Epoch 137/150
+Train Loss: 0.0452, Train WA: 0.9877, Train UA: 0.9862, Train MF1: 0.9860, Train WF1: 0.9863
+Val Loss: 1.2295, Val WA: 0.7735, Val UA: 0.7660, Val MF1: 0.7687, Val WF1: 0.7662
+--------------------------------------------------
+Epoch 138/150
+Train Loss: 0.0486, Train WA: 0.9887, Train UA: 0.9877, Train MF1: 0.9880, Train WF1: 0.9877
+Val Loss: 1.2202, Val WA: 0.7760, Val UA: 0.7660, Val MF1: 0.7683, Val WF1: 0.7656
+--------------------------------------------------
+Epoch 139/150
+Train Loss: 0.0449, Train WA: 0.9890, Train UA: 0.9873, Train MF1: 0.9871, Train WF1: 0.9873
+Val Loss: 1.2098, Val WA: 0.7762, Val UA: 0.7657, Val MF1: 0.7685, Val WF1: 0.7652
+--------------------------------------------------
+Epoch 140/150
+Train Loss: 0.0494, Train WA: 0.9848, Train UA: 0.9841, Train MF1: 0.9832, Train WF1: 0.9841
+Val Loss: 1.2275, Val WA: 0.7750, Val UA: 0.7654, Val MF1: 0.7678, Val WF1: 0.7651
+--------------------------------------------------
+Epoch 141/150
+Train Loss: 0.0469, Train WA: 0.9869, Train UA: 0.9862, Train MF1: 0.9861, Train WF1: 0.9862
+Val Loss: 1.2321, Val WA: 0.7735, Val UA: 0.7651, Val MF1: 0.7675, Val WF1: 0.7652
+--------------------------------------------------
+Epoch 142/150
+Train Loss: 0.0506, Train WA: 0.9859, Train UA: 0.9844, Train MF1: 0.9843, Train WF1: 0.9844
+Val Loss: 1.2194, Val WA: 0.7766, Val UA: 0.7668, Val MF1: 0.7694, Val WF1: 0.7667
+--------------------------------------------------
+Epoch 143/150
+Train Loss: 0.0514, Train WA: 0.9854, Train UA: 0.9840, Train MF1: 0.9837, Train WF1: 0.9841
+Val Loss: 1.2271, Val WA: 0.7750, Val UA: 0.7654, Val MF1: 0.7673, Val WF1: 0.7651
+--------------------------------------------------
+Epoch 144/150
+Train Loss: 0.0461, Train WA: 0.9861, Train UA: 0.9852, Train MF1: 0.9851, Train WF1: 0.9853
+Val Loss: 1.2245, Val WA: 0.7743, Val UA: 0.7652, Val MF1: 0.7677, Val WF1: 0.7646
+--------------------------------------------------
+Epoch 145/150
+Train Loss: 0.0455, Train WA: 0.9887, Train UA: 0.9875, Train MF1: 0.9872, Train WF1: 0.9875
+Val Loss: 1.2193, Val WA: 0.7718, Val UA: 0.7628, Val MF1: 0.7647, Val WF1: 0.7624
+--------------------------------------------------
+Epoch 146/150
+Train Loss: 0.0482, Train WA: 0.9856, Train UA: 0.9846, Train MF1: 0.9846, Train WF1: 0.9846
+Val Loss: 1.2228, Val WA: 0.7743, Val UA: 0.7648, Val MF1: 0.7672, Val WF1: 0.7642
+--------------------------------------------------
+Epoch 147/150
+Train Loss: 0.0450, Train WA: 0.9888, Train UA: 0.9879, Train MF1: 0.9878, Train WF1: 0.9879
+Val Loss: 1.2185, Val WA: 0.7733, Val UA: 0.7631, Val MF1: 0.7647, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 148/150
+Train Loss: 0.0429, Train WA: 0.9880, Train UA: 0.9868, Train MF1: 0.9869, Train WF1: 0.9868
+Val Loss: 1.2216, Val WA: 0.7769, Val UA: 0.7694, Val MF1: 0.7710, Val WF1: 0.7695
+--------------------------------------------------
+Epoch 149/150
+Train Loss: 0.0482, Train WA: 0.9879, Train UA: 0.9864, Train MF1: 0.9868, Train WF1: 0.9864
+Val Loss: 1.2250, Val WA: 0.7763, Val UA: 0.7677, Val MF1: 0.7700, Val WF1: 0.7675
+--------------------------------------------------
+Epoch 150/150
+Train Loss: 0.0477, Train WA: 0.9880, Train UA: 0.9864, Train MF1: 0.9858, Train WF1: 0.9864
+Val Loss: 1.2227, Val WA: 0.7735, Val UA: 0.7660, Val MF1: 0.7678, Val WF1: 0.7658
+--------------------------------------------------
+Best Val WA: 0.7287, Best Val UA: 0.7319, Best Val MF1: 0.7323, Best Val WF1: 0.7340
+Total Test WA: 0.7735 | Total Test UA: 0.7660 | Total Test WF1: 0.7658 | Total Test UF1: 0.7678
+Fold 2 Results: WA: 0.7735, UA: 0.7660, WF1: 0.7658, UF1: 0.7678
+==================================================
+/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/main-Kfold.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(save_path, map_location=device))
+Total Test WA: 0.7287 | Total Test UA: 0.7319 | Total Test WF1: 0.7340 | Total Test UF1: 0.7323
+Fold 2 Test Results: WA: 0.7287, UA: 0.7319, WF1: 0.7340, UF1: 0.7323
+==================================================
+Fold 3/5 - Training with alpha = 0.9
+Total Parameters: 765124
+Trainable Parameters: 765124
+Epoch 1/150
+Validation loss reduced. Best Val WA: 0.4186, Best Val UA: 0.4179, Best MF1: 0.3751, Best WF1: 0.3813
+--------------------------------------------------
+Train Loss: 1.3157, Train WA: 0.3609, Train UA: 0.3713, Train MF1: 0.3476, Train WF1: 0.3579
+Val Loss: 1.2858, Val WA: 0.4186, Val UA: 0.4179, Val MF1: 0.3751, Val WF1: 0.3813
+--------------------------------------------------
+Epoch 2/150
+Validation loss reduced. Best Val WA: 0.5323, Best Val UA: 0.5162, Best MF1: 0.5047, Best WF1: 0.4988
+--------------------------------------------------
+Train Loss: 1.2150, Train WA: 0.4620, Train UA: 0.4613, Train MF1: 0.4470, Train WF1: 0.4507
+Val Loss: 1.1168, Val WA: 0.5323, Val UA: 0.5162, Val MF1: 0.5047, Val WF1: 0.4988
+--------------------------------------------------
+Epoch 3/150
+Validation loss reduced. Best Val WA: 0.6184, Best Val UA: 0.6029, Best MF1: 0.5964, Best WF1: 0.5947
+--------------------------------------------------
+Train Loss: 1.1118, Train WA: 0.5575, Train UA: 0.5552, Train MF1: 0.5491, Train WF1: 0.5522
+Val Loss: 0.9817, Val WA: 0.6184, Val UA: 0.6029, Val MF1: 0.5964, Val WF1: 0.5947
+--------------------------------------------------
+Epoch 4/150
+Validation loss reduced. Best Val WA: 0.6515, Best Val UA: 0.6321, Best MF1: 0.6283, Best WF1: 0.6300
+--------------------------------------------------
+Train Loss: 0.9792, Train WA: 0.6477, Train UA: 0.6440, Train MF1: 0.6432, Train WF1: 0.6436
+Val Loss: 0.9025, Val WA: 0.6515, Val UA: 0.6321, Val MF1: 0.6283, Val WF1: 0.6300
+--------------------------------------------------
+Epoch 5/150
+Validation loss reduced. Best Val WA: 0.6851, Best Val UA: 0.6782, Best MF1: 0.6722, Best WF1: 0.6761
+--------------------------------------------------
+Train Loss: 0.8592, Train WA: 0.7096, Train UA: 0.7022, Train MF1: 0.7037, Train WF1: 0.7030
+Val Loss: 0.7990, Val WA: 0.6851, Val UA: 0.6782, Val MF1: 0.6722, Val WF1: 0.6761
+--------------------------------------------------
+Epoch 6/150
+Validation loss reduced. Best Val WA: 0.6901, Best Val UA: 0.6800, Best MF1: 0.6708, Best WF1: 0.6723
+--------------------------------------------------
+Train Loss: 0.7591, Train WA: 0.7499, Train UA: 0.7389, Train MF1: 0.7394, Train WF1: 0.7392
+Val Loss: 0.7886, Val WA: 0.6901, Val UA: 0.6800, Val MF1: 0.6708, Val WF1: 0.6723
+--------------------------------------------------
+Epoch 7/150
+Train Loss: 0.6689, Train WA: 0.7782, Train UA: 0.7688, Train MF1: 0.7694, Train WF1: 0.7692
+Val Loss: 0.8236, Val WA: 0.6807, Val UA: 0.6813, Val MF1: 0.6808, Val WF1: 0.6813
+--------------------------------------------------
+Epoch 8/150
+Validation loss reduced. Best Val WA: 0.7313, Best Val UA: 0.7193, Best MF1: 0.7167, Best WF1: 0.7123
+--------------------------------------------------
+Train Loss: 0.6036, Train WA: 0.8047, Train UA: 0.7924, Train MF1: 0.7945, Train WF1: 0.7929
+Val Loss: 0.7504, Val WA: 0.7313, Val UA: 0.7193, Val MF1: 0.7167, Val WF1: 0.7123
+--------------------------------------------------
+Epoch 9/150
+Validation loss reduced. Best Val WA: 0.7499, Best Val UA: 0.7340, Best MF1: 0.7338, Best WF1: 0.7330
+--------------------------------------------------
+Train Loss: 0.5300, Train WA: 0.8344, Train UA: 0.8229, Train MF1: 0.8254, Train WF1: 0.8230
+Val Loss: 0.7311, Val WA: 0.7499, Val UA: 0.7340, Val MF1: 0.7338, Val WF1: 0.7330
+--------------------------------------------------
+Epoch 10/150
+Train Loss: 0.4926, Train WA: 0.8453, Train UA: 0.8340, Train MF1: 0.8339, Train WF1: 0.8342
+Val Loss: 0.8134, Val WA: 0.7244, Val UA: 0.7105, Val MF1: 0.7102, Val WF1: 0.7079
+--------------------------------------------------
+Epoch 11/150
+Train Loss: 0.4406, Train WA: 0.8558, Train UA: 0.8479, Train MF1: 0.8471, Train WF1: 0.8484
+Val Loss: 0.8007, Val WA: 0.7323, Val UA: 0.7200, Val MF1: 0.7231, Val WF1: 0.7194
+--------------------------------------------------
+Epoch 12/150
+Train Loss: 0.4047, Train WA: 0.8761, Train UA: 0.8673, Train MF1: 0.8680, Train WF1: 0.8677
+Val Loss: 0.8569, Val WA: 0.7259, Val UA: 0.7238, Val MF1: 0.7243, Val WF1: 0.7204
+--------------------------------------------------
+Epoch 13/150
+Train Loss: 0.3718, Train WA: 0.8832, Train UA: 0.8736, Train MF1: 0.8734, Train WF1: 0.8744
+Val Loss: 0.8634, Val WA: 0.7162, Val UA: 0.7177, Val MF1: 0.7180, Val WF1: 0.7179
+--------------------------------------------------
+Epoch 14/150
+Train Loss: 0.3386, Train WA: 0.8931, Train UA: 0.8843, Train MF1: 0.8850, Train WF1: 0.8842
+Val Loss: 0.8315, Val WA: 0.7445, Val UA: 0.7345, Val MF1: 0.7363, Val WF1: 0.7345
+--------------------------------------------------
+Epoch 15/150
+Train Loss: 0.3212, Train WA: 0.8992, Train UA: 0.8913, Train MF1: 0.8917, Train WF1: 0.8916
+Val Loss: 0.8964, Val WA: 0.7315, Val UA: 0.7313, Val MF1: 0.7319, Val WF1: 0.7305
+--------------------------------------------------
+Epoch 16/150
+Train Loss: 0.2954, Train WA: 0.9119, Train UA: 0.9037, Train MF1: 0.9045, Train WF1: 0.9036
+Val Loss: 0.9682, Val WA: 0.7462, Val UA: 0.7262, Val MF1: 0.7227, Val WF1: 0.7138
+--------------------------------------------------
+Epoch 17/150
+Train Loss: 0.2756, Train WA: 0.9176, Train UA: 0.9115, Train MF1: 0.9106, Train WF1: 0.9118
+Val Loss: 0.8834, Val WA: 0.7438, Val UA: 0.7414, Val MF1: 0.7409, Val WF1: 0.7395
+--------------------------------------------------
+Epoch 18/150
+Train Loss: 0.2656, Train WA: 0.9166, Train UA: 0.9096, Train MF1: 0.9100, Train WF1: 0.9099
+Val Loss: 1.0207, Val WA: 0.7177, Val UA: 0.6929, Val MF1: 0.6936, Val WF1: 0.6904
+--------------------------------------------------
+Epoch 19/150
+Train Loss: 0.2523, Train WA: 0.9217, Train UA: 0.9141, Train MF1: 0.9142, Train WF1: 0.9143
+Val Loss: 0.9083, Val WA: 0.7496, Val UA: 0.7379, Val MF1: 0.7415, Val WF1: 0.7382
+--------------------------------------------------
+Epoch 20/150
+Train Loss: 0.2241, Train WA: 0.9307, Train UA: 0.9255, Train MF1: 0.9256, Train WF1: 0.9258
+Val Loss: 0.9489, Val WA: 0.7299, Val UA: 0.7327, Val MF1: 0.7326, Val WF1: 0.7324
+--------------------------------------------------
+Epoch 21/150
+Train Loss: 0.2224, Train WA: 0.9275, Train UA: 0.9213, Train MF1: 0.9211, Train WF1: 0.9216
+Val Loss: 1.0282, Val WA: 0.7441, Val UA: 0.7365, Val MF1: 0.7343, Val WF1: 0.7302
+--------------------------------------------------
+Epoch 22/150
+Train Loss: 0.2150, Train WA: 0.9357, Train UA: 0.9298, Train MF1: 0.9293, Train WF1: 0.9299
+Val Loss: 0.9377, Val WA: 0.7560, Val UA: 0.7408, Val MF1: 0.7445, Val WF1: 0.7394
+--------------------------------------------------
+Epoch 23/150
+Train Loss: 0.2093, Train WA: 0.9356, Train UA: 0.9288, Train MF1: 0.9291, Train WF1: 0.9291
+Val Loss: 1.0247, Val WA: 0.7426, Val UA: 0.7417, Val MF1: 0.7410, Val WF1: 0.7407
+--------------------------------------------------
+Epoch 24/150
+Train Loss: 0.1923, Train WA: 0.9435, Train UA: 0.9373, Train MF1: 0.9376, Train WF1: 0.9373
+Val Loss: 1.0341, Val WA: 0.7318, Val UA: 0.7356, Val MF1: 0.7392, Val WF1: 0.7371
+--------------------------------------------------
+Epoch 25/150
+Train Loss: 0.1918, Train WA: 0.9394, Train UA: 0.9343, Train MF1: 0.9337, Train WF1: 0.9344
+Val Loss: 1.0741, Val WA: 0.7154, Val UA: 0.7278, Val MF1: 0.7258, Val WF1: 0.7293
+--------------------------------------------------
+Epoch 26/150
+Train Loss: 0.1792, Train WA: 0.9417, Train UA: 0.9372, Train MF1: 0.9367, Train WF1: 0.9374
+Val Loss: 1.0052, Val WA: 0.7462, Val UA: 0.7440, Val MF1: 0.7438, Val WF1: 0.7433
+--------------------------------------------------
+Epoch 27/150
+Train Loss: 0.1584, Train WA: 0.9540, Train UA: 0.9498, Train MF1: 0.9506, Train WF1: 0.9498
+Val Loss: 0.9990, Val WA: 0.7513, Val UA: 0.7475, Val MF1: 0.7459, Val WF1: 0.7458
+--------------------------------------------------
+Epoch 28/150
+Train Loss: 0.1728, Train WA: 0.9473, Train UA: 0.9423, Train MF1: 0.9415, Train WF1: 0.9427
+Val Loss: 1.1701, Val WA: 0.7211, Val UA: 0.7290, Val MF1: 0.7258, Val WF1: 0.7256
+--------------------------------------------------
+Epoch 29/150
+Train Loss: 0.1680, Train WA: 0.9477, Train UA: 0.9437, Train MF1: 0.9433, Train WF1: 0.9438
+Val Loss: 1.0535, Val WA: 0.7575, Val UA: 0.7391, Val MF1: 0.7379, Val WF1: 0.7332
+--------------------------------------------------
+Epoch 30/150
+Train Loss: 0.1574, Train WA: 0.9512, Train UA: 0.9462, Train MF1: 0.9465, Train WF1: 0.9464
+Val Loss: 1.0662, Val WA: 0.7419, Val UA: 0.7425, Val MF1: 0.7432, Val WF1: 0.7431
+--------------------------------------------------
+Epoch 31/150
+Train Loss: 0.1322, Train WA: 0.9611, Train UA: 0.9571, Train MF1: 0.9575, Train WF1: 0.9572
+Val Loss: 1.0351, Val WA: 0.7374, Val UA: 0.7301, Val MF1: 0.7300, Val WF1: 0.7296
+--------------------------------------------------
+Epoch 32/150
+Train Loss: 0.1225, Train WA: 0.9653, Train UA: 0.9618, Train MF1: 0.9624, Train WF1: 0.9618
+Val Loss: 1.0513, Val WA: 0.7452, Val UA: 0.7437, Val MF1: 0.7445, Val WF1: 0.7440
+--------------------------------------------------
+Epoch 33/150
+Train Loss: 0.1036, Train WA: 0.9719, Train UA: 0.9700, Train MF1: 0.9696, Train WF1: 0.9700
+Val Loss: 1.0386, Val WA: 0.7616, Val UA: 0.7521, Val MF1: 0.7528, Val WF1: 0.7496
+--------------------------------------------------
+Epoch 34/150
+Train Loss: 0.1124, Train WA: 0.9670, Train UA: 0.9637, Train MF1: 0.9629, Train WF1: 0.9640
+Val Loss: 1.1050, Val WA: 0.7526, Val UA: 0.7437, Val MF1: 0.7421, Val WF1: 0.7387
+--------------------------------------------------
+Epoch 35/150
+Train Loss: 0.1031, Train WA: 0.9703, Train UA: 0.9675, Train MF1: 0.9677, Train WF1: 0.9675
+Val Loss: 1.0710, Val WA: 0.7511, Val UA: 0.7428, Val MF1: 0.7429, Val WF1: 0.7413
+--------------------------------------------------
+Epoch 36/150
+Train Loss: 0.1086, Train WA: 0.9657, Train UA: 0.9632, Train MF1: 0.9631, Train WF1: 0.9633
+Val Loss: 1.0481, Val WA: 0.7492, Val UA: 0.7428, Val MF1: 0.7447, Val WF1: 0.7426
+--------------------------------------------------
+Epoch 37/150
+Train Loss: 0.1138, Train WA: 0.9651, Train UA: 0.9625, Train MF1: 0.9627, Train WF1: 0.9627
+Val Loss: 1.0729, Val WA: 0.7566, Val UA: 0.7529, Val MF1: 0.7544, Val WF1: 0.7523
+--------------------------------------------------
+Epoch 38/150
+Train Loss: 0.1100, Train WA: 0.9689, Train UA: 0.9653, Train MF1: 0.9654, Train WF1: 0.9653
+Val Loss: 1.0913, Val WA: 0.7515, Val UA: 0.7541, Val MF1: 0.7544, Val WF1: 0.7538
+--------------------------------------------------
+Epoch 39/150
+Train Loss: 0.1004, Train WA: 0.9745, Train UA: 0.9705, Train MF1: 0.9708, Train WF1: 0.9706
+Val Loss: 1.0912, Val WA: 0.7521, Val UA: 0.7434, Val MF1: 0.7453, Val WF1: 0.7443
+--------------------------------------------------
+Epoch 40/150
+Train Loss: 0.0960, Train WA: 0.9743, Train UA: 0.9722, Train MF1: 0.9723, Train WF1: 0.9723
+Val Loss: 1.0655, Val WA: 0.7615, Val UA: 0.7552, Val MF1: 0.7557, Val WF1: 0.7544
+--------------------------------------------------
+Epoch 41/150
+Train Loss: 0.0868, Train WA: 0.9756, Train UA: 0.9729, Train MF1: 0.9734, Train WF1: 0.9729
+Val Loss: 1.1012, Val WA: 0.7401, Val UA: 0.7390, Val MF1: 0.7401, Val WF1: 0.7393
+--------------------------------------------------
+Epoch 42/150
+Train Loss: 0.0911, Train WA: 0.9751, Train UA: 0.9722, Train MF1: 0.9728, Train WF1: 0.9722
+Val Loss: 1.0907, Val WA: 0.7480, Val UA: 0.7475, Val MF1: 0.7481, Val WF1: 0.7484
+--------------------------------------------------
+Epoch 43/150
+Train Loss: 0.0970, Train WA: 0.9693, Train UA: 0.9673, Train MF1: 0.9677, Train WF1: 0.9673
+Val Loss: 1.0993, Val WA: 0.7655, Val UA: 0.7576, Val MF1: 0.7596, Val WF1: 0.7571
+--------------------------------------------------
+Epoch 44/150
+Train Loss: 0.0926, Train WA: 0.9750, Train UA: 0.9725, Train MF1: 0.9718, Train WF1: 0.9726
+Val Loss: 1.1287, Val WA: 0.7564, Val UA: 0.7466, Val MF1: 0.7446, Val WF1: 0.7422
+--------------------------------------------------
+Epoch 45/150
+Train Loss: 0.0865, Train WA: 0.9767, Train UA: 0.9742, Train MF1: 0.9745, Train WF1: 0.9742
+Val Loss: 1.1208, Val WA: 0.7501, Val UA: 0.7524, Val MF1: 0.7503, Val WF1: 0.7516
+--------------------------------------------------
+Epoch 46/150
+Train Loss: 0.0965, Train WA: 0.9721, Train UA: 0.9696, Train MF1: 0.9693, Train WF1: 0.9698
+Val Loss: 1.1267, Val WA: 0.7436, Val UA: 0.7376, Val MF1: 0.7412, Val WF1: 0.7387
+--------------------------------------------------
+Epoch 47/150
+Train Loss: 0.0855, Train WA: 0.9782, Train UA: 0.9757, Train MF1: 0.9757, Train WF1: 0.9757
+Val Loss: 1.1134, Val WA: 0.7523, Val UA: 0.7532, Val MF1: 0.7534, Val WF1: 0.7519
+--------------------------------------------------
+Epoch 48/150
+Train Loss: 0.0878, Train WA: 0.9747, Train UA: 0.9720, Train MF1: 0.9727, Train WF1: 0.9721
+Val Loss: 1.0962, Val WA: 0.7648, Val UA: 0.7613, Val MF1: 0.7634, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 49/150
+Train Loss: 0.0919, Train WA: 0.9735, Train UA: 0.9700, Train MF1: 0.9693, Train WF1: 0.9703
+Val Loss: 1.1225, Val WA: 0.7592, Val UA: 0.7504, Val MF1: 0.7515, Val WF1: 0.7494
+--------------------------------------------------
+Epoch 50/150
+Train Loss: 0.0810, Train WA: 0.9775, Train UA: 0.9752, Train MF1: 0.9750, Train WF1: 0.9752
+Val Loss: 1.1382, Val WA: 0.7530, Val UA: 0.7538, Val MF1: 0.7548, Val WF1: 0.7546
+--------------------------------------------------
+Epoch 51/150
+Train Loss: 0.0815, Train WA: 0.9768, Train UA: 0.9756, Train MF1: 0.9754, Train WF1: 0.9756
+Val Loss: 1.1492, Val WA: 0.7518, Val UA: 0.7457, Val MF1: 0.7491, Val WF1: 0.7469
+--------------------------------------------------
+Epoch 52/150
+Train Loss: 0.0722, Train WA: 0.9803, Train UA: 0.9779, Train MF1: 0.9778, Train WF1: 0.9779
+Val Loss: 1.1239, Val WA: 0.7539, Val UA: 0.7498, Val MF1: 0.7503, Val WF1: 0.7483
+--------------------------------------------------
+Epoch 53/150
+Train Loss: 0.0758, Train WA: 0.9769, Train UA: 0.9746, Train MF1: 0.9744, Train WF1: 0.9746
+Val Loss: 1.1561, Val WA: 0.7564, Val UA: 0.7524, Val MF1: 0.7553, Val WF1: 0.7524
+--------------------------------------------------
+Epoch 54/150
+Train Loss: 0.0736, Train WA: 0.9800, Train UA: 0.9783, Train MF1: 0.9785, Train WF1: 0.9783
+Val Loss: 1.1390, Val WA: 0.7631, Val UA: 0.7611, Val MF1: 0.7632, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 55/150
+Train Loss: 0.0840, Train WA: 0.9735, Train UA: 0.9722, Train MF1: 0.9721, Train WF1: 0.9723
+Val Loss: 1.1218, Val WA: 0.7589, Val UA: 0.7524, Val MF1: 0.7533, Val WF1: 0.7508
+--------------------------------------------------
+Epoch 56/150
+Train Loss: 0.0843, Train WA: 0.9773, Train UA: 0.9745, Train MF1: 0.9740, Train WF1: 0.9745
+Val Loss: 1.1489, Val WA: 0.7584, Val UA: 0.7564, Val MF1: 0.7573, Val WF1: 0.7559
+--------------------------------------------------
+Epoch 57/150
+Train Loss: 0.0725, Train WA: 0.9802, Train UA: 0.9778, Train MF1: 0.9784, Train WF1: 0.9778
+Val Loss: 1.1504, Val WA: 0.7631, Val UA: 0.7527, Val MF1: 0.7516, Val WF1: 0.7500
+--------------------------------------------------
+Epoch 58/150
+Train Loss: 0.0726, Train WA: 0.9793, Train UA: 0.9778, Train MF1: 0.9773, Train WF1: 0.9779
+Val Loss: 1.1396, Val WA: 0.7624, Val UA: 0.7599, Val MF1: 0.7620, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 59/150
+Train Loss: 0.0787, Train WA: 0.9770, Train UA: 0.9755, Train MF1: 0.9751, Train WF1: 0.9755
+Val Loss: 1.1546, Val WA: 0.7531, Val UA: 0.7527, Val MF1: 0.7518, Val WF1: 0.7521
+--------------------------------------------------
+Epoch 60/150
+Train Loss: 0.0811, Train WA: 0.9794, Train UA: 0.9765, Train MF1: 0.9754, Train WF1: 0.9768
+Val Loss: 1.1786, Val WA: 0.7637, Val UA: 0.7602, Val MF1: 0.7627, Val WF1: 0.7609
+--------------------------------------------------
+Epoch 61/150
+Train Loss: 0.0661, Train WA: 0.9811, Train UA: 0.9798, Train MF1: 0.9800, Train WF1: 0.9798
+Val Loss: 1.1471, Val WA: 0.7671, Val UA: 0.7608, Val MF1: 0.7618, Val WF1: 0.7603
+--------------------------------------------------
+Epoch 62/150
+Train Loss: 0.0649, Train WA: 0.9843, Train UA: 0.9826, Train MF1: 0.9816, Train WF1: 0.9827
+Val Loss: 1.1817, Val WA: 0.7676, Val UA: 0.7660, Val MF1: 0.7677, Val WF1: 0.7661
+--------------------------------------------------
+Epoch 63/150
+Train Loss: 0.0671, Train WA: 0.9811, Train UA: 0.9797, Train MF1: 0.9795, Train WF1: 0.9797
+Val Loss: 1.1717, Val WA: 0.7660, Val UA: 0.7616, Val MF1: 0.7626, Val WF1: 0.7606
+--------------------------------------------------
+Epoch 64/150
+Train Loss: 0.0636, Train WA: 0.9819, Train UA: 0.9805, Train MF1: 0.9804, Train WF1: 0.9806
+Val Loss: 1.1554, Val WA: 0.7658, Val UA: 0.7642, Val MF1: 0.7648, Val WF1: 0.7647
+--------------------------------------------------
+Epoch 65/150
+Train Loss: 0.0595, Train WA: 0.9839, Train UA: 0.9821, Train MF1: 0.9825, Train WF1: 0.9822
+Val Loss: 1.1602, Val WA: 0.7648, Val UA: 0.7608, Val MF1: 0.7612, Val WF1: 0.7607
+--------------------------------------------------
+Epoch 66/150
+Train Loss: 0.0597, Train WA: 0.9839, Train UA: 0.9826, Train MF1: 0.9828, Train WF1: 0.9826
+Val Loss: 1.1770, Val WA: 0.7631, Val UA: 0.7602, Val MF1: 0.7617, Val WF1: 0.7597
+--------------------------------------------------
+Epoch 67/150
+Train Loss: 0.0637, Train WA: 0.9830, Train UA: 0.9812, Train MF1: 0.9808, Train WF1: 0.9813
+Val Loss: 1.1758, Val WA: 0.7650, Val UA: 0.7625, Val MF1: 0.7642, Val WF1: 0.7626
+--------------------------------------------------
+Epoch 68/150
+Train Loss: 0.0594, Train WA: 0.9842, Train UA: 0.9827, Train MF1: 0.9825, Train WF1: 0.9826
+Val Loss: 1.2040, Val WA: 0.7549, Val UA: 0.7529, Val MF1: 0.7547, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 69/150
+Train Loss: 0.0634, Train WA: 0.9807, Train UA: 0.9794, Train MF1: 0.9791, Train WF1: 0.9794
+Val Loss: 1.1797, Val WA: 0.7642, Val UA: 0.7602, Val MF1: 0.7602, Val WF1: 0.7594
+--------------------------------------------------
+Epoch 70/150
+Train Loss: 0.0659, Train WA: 0.9810, Train UA: 0.9792, Train MF1: 0.9788, Train WF1: 0.9793
+Val Loss: 1.1654, Val WA: 0.7657, Val UA: 0.7634, Val MF1: 0.7634, Val WF1: 0.7629
+--------------------------------------------------
+Epoch 71/150
+Train Loss: 0.0585, Train WA: 0.9854, Train UA: 0.9837, Train MF1: 0.9837, Train WF1: 0.9838
+Val Loss: 1.1729, Val WA: 0.7662, Val UA: 0.7616, Val MF1: 0.7620, Val WF1: 0.7608
+--------------------------------------------------
+Epoch 72/150
+Train Loss: 0.0609, Train WA: 0.9837, Train UA: 0.9821, Train MF1: 0.9816, Train WF1: 0.9821
+Val Loss: 1.1781, Val WA: 0.7734, Val UA: 0.7677, Val MF1: 0.7688, Val WF1: 0.7674
+--------------------------------------------------
+Epoch 73/150
+Train Loss: 0.0521, Train WA: 0.9863, Train UA: 0.9848, Train MF1: 0.9850, Train WF1: 0.9849
+Val Loss: 1.1800, Val WA: 0.7677, Val UA: 0.7642, Val MF1: 0.7659, Val WF1: 0.7639
+--------------------------------------------------
+Epoch 74/150
+Train Loss: 0.0567, Train WA: 0.9820, Train UA: 0.9806, Train MF1: 0.9805, Train WF1: 0.9807
+Val Loss: 1.1999, Val WA: 0.7659, Val UA: 0.7616, Val MF1: 0.7623, Val WF1: 0.7611
+--------------------------------------------------
+Epoch 75/150
+Train Loss: 0.0652, Train WA: 0.9809, Train UA: 0.9789, Train MF1: 0.9792, Train WF1: 0.9789
+Val Loss: 1.2043, Val WA: 0.7566, Val UA: 0.7529, Val MF1: 0.7549, Val WF1: 0.7532
+--------------------------------------------------
+Epoch 76/150
+Train Loss: 0.0629, Train WA: 0.9817, Train UA: 0.9809, Train MF1: 0.9809, Train WF1: 0.9809
+Val Loss: 1.1763, Val WA: 0.7605, Val UA: 0.7573, Val MF1: 0.7589, Val WF1: 0.7579
+--------------------------------------------------
+Epoch 77/150
+Train Loss: 0.0607, Train WA: 0.9820, Train UA: 0.9811, Train MF1: 0.9805, Train WF1: 0.9812
+Val Loss: 1.1778, Val WA: 0.7638, Val UA: 0.7608, Val MF1: 0.7621, Val WF1: 0.7613
+--------------------------------------------------
+Epoch 78/150
+Train Loss: 0.0581, Train WA: 0.9840, Train UA: 0.9822, Train MF1: 0.9818, Train WF1: 0.9823
+Val Loss: 1.1724, Val WA: 0.7644, Val UA: 0.7616, Val MF1: 0.7628, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 79/150
+Train Loss: 0.0566, Train WA: 0.9856, Train UA: 0.9842, Train MF1: 0.9842, Train WF1: 0.9843
+Val Loss: 1.2022, Val WA: 0.7588, Val UA: 0.7573, Val MF1: 0.7599, Val WF1: 0.7586
+--------------------------------------------------
+Epoch 80/150
+Train Loss: 0.0566, Train WA: 0.9846, Train UA: 0.9835, Train MF1: 0.9830, Train WF1: 0.9835
+Val Loss: 1.1794, Val WA: 0.7649, Val UA: 0.7630, Val MF1: 0.7631, Val WF1: 0.7635
+--------------------------------------------------
+Epoch 81/150
+Train Loss: 0.0564, Train WA: 0.9851, Train UA: 0.9836, Train MF1: 0.9829, Train WF1: 0.9837
+Val Loss: 1.1914, Val WA: 0.7633, Val UA: 0.7616, Val MF1: 0.7616, Val WF1: 0.7616
+--------------------------------------------------
+Epoch 82/150
+Train Loss: 0.0540, Train WA: 0.9861, Train UA: 0.9842, Train MF1: 0.9843, Train WF1: 0.9843
+Val Loss: 1.2190, Val WA: 0.7606, Val UA: 0.7590, Val MF1: 0.7620, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 83/150
+Train Loss: 0.0461, Train WA: 0.9894, Train UA: 0.9888, Train MF1: 0.9886, Train WF1: 0.9888
+Val Loss: 1.1878, Val WA: 0.7706, Val UA: 0.7619, Val MF1: 0.7630, Val WF1: 0.7604
+--------------------------------------------------
+Epoch 84/150
+Train Loss: 0.0528, Train WA: 0.9843, Train UA: 0.9833, Train MF1: 0.9833, Train WF1: 0.9833
+Val Loss: 1.1839, Val WA: 0.7669, Val UA: 0.7630, Val MF1: 0.7631, Val WF1: 0.7629
+--------------------------------------------------
+Epoch 85/150
+Train Loss: 0.0603, Train WA: 0.9839, Train UA: 0.9812, Train MF1: 0.9814, Train WF1: 0.9813
+Val Loss: 1.2053, Val WA: 0.7646, Val UA: 0.7613, Val MF1: 0.7627, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 86/150
+Train Loss: 0.0544, Train WA: 0.9850, Train UA: 0.9844, Train MF1: 0.9844, Train WF1: 0.9844
+Val Loss: 1.1899, Val WA: 0.7741, Val UA: 0.7660, Val MF1: 0.7667, Val WF1: 0.7642
+--------------------------------------------------
+Epoch 87/150
+Train Loss: 0.0564, Train WA: 0.9842, Train UA: 0.9827, Train MF1: 0.9831, Train WF1: 0.9827
+Val Loss: 1.2253, Val WA: 0.7529, Val UA: 0.7552, Val MF1: 0.7550, Val WF1: 0.7552
+--------------------------------------------------
+Epoch 88/150
+Train Loss: 0.0497, Train WA: 0.9872, Train UA: 0.9863, Train MF1: 0.9865, Train WF1: 0.9863
+Val Loss: 1.1876, Val WA: 0.7707, Val UA: 0.7642, Val MF1: 0.7651, Val WF1: 0.7632
+--------------------------------------------------
+Epoch 89/150
+Train Loss: 0.0513, Train WA: 0.9853, Train UA: 0.9838, Train MF1: 0.9838, Train WF1: 0.9838
+Val Loss: 1.2039, Val WA: 0.7631, Val UA: 0.7625, Val MF1: 0.7639, Val WF1: 0.7631
+--------------------------------------------------
+Epoch 90/150
+Train Loss: 0.0454, Train WA: 0.9885, Train UA: 0.9869, Train MF1: 0.9872, Train WF1: 0.9869
+Val Loss: 1.2051, Val WA: 0.7627, Val UA: 0.7608, Val MF1: 0.7619, Val WF1: 0.7611
+--------------------------------------------------
+Epoch 91/150
+Train Loss: 0.0469, Train WA: 0.9873, Train UA: 0.9863, Train MF1: 0.9858, Train WF1: 0.9864
+Val Loss: 1.2059, Val WA: 0.7682, Val UA: 0.7634, Val MF1: 0.7643, Val WF1: 0.7628
+--------------------------------------------------
+Epoch 92/150
+Train Loss: 0.0530, Train WA: 0.9857, Train UA: 0.9843, Train MF1: 0.9843, Train WF1: 0.9843
+Val Loss: 1.1962, Val WA: 0.7630, Val UA: 0.7630, Val MF1: 0.7644, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 93/150
+Train Loss: 0.0483, Train WA: 0.9875, Train UA: 0.9862, Train MF1: 0.9857, Train WF1: 0.9862
+Val Loss: 1.2012, Val WA: 0.7655, Val UA: 0.7616, Val MF1: 0.7635, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 94/150
+Train Loss: 0.0539, Train WA: 0.9850, Train UA: 0.9825, Train MF1: 0.9826, Train WF1: 0.9826
+Val Loss: 1.2020, Val WA: 0.7630, Val UA: 0.7613, Val MF1: 0.7635, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 95/150
+Train Loss: 0.0546, Train WA: 0.9868, Train UA: 0.9857, Train MF1: 0.9859, Train WF1: 0.9857
+Val Loss: 1.2110, Val WA: 0.7644, Val UA: 0.7630, Val MF1: 0.7644, Val WF1: 0.7632
+--------------------------------------------------
+Epoch 96/150
+Train Loss: 0.0467, Train WA: 0.9882, Train UA: 0.9871, Train MF1: 0.9871, Train WF1: 0.9871
+Val Loss: 1.2087, Val WA: 0.7603, Val UA: 0.7581, Val MF1: 0.7586, Val WF1: 0.7579
+--------------------------------------------------
+Epoch 97/150
+Train Loss: 0.0538, Train WA: 0.9853, Train UA: 0.9838, Train MF1: 0.9834, Train WF1: 0.9839
+Val Loss: 1.2124, Val WA: 0.7650, Val UA: 0.7616, Val MF1: 0.7622, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 98/150
+Train Loss: 0.0487, Train WA: 0.9849, Train UA: 0.9839, Train MF1: 0.9838, Train WF1: 0.9840
+Val Loss: 1.2099, Val WA: 0.7678, Val UA: 0.7648, Val MF1: 0.7668, Val WF1: 0.7648
+--------------------------------------------------
+Epoch 99/150
+Train Loss: 0.0512, Train WA: 0.9866, Train UA: 0.9840, Train MF1: 0.9837, Train WF1: 0.9840
+Val Loss: 1.2019, Val WA: 0.7685, Val UA: 0.7642, Val MF1: 0.7663, Val WF1: 0.7644
+--------------------------------------------------
+Epoch 100/150
+Train Loss: 0.0502, Train WA: 0.9865, Train UA: 0.9848, Train MF1: 0.9843, Train WF1: 0.9849
+Val Loss: 1.1969, Val WA: 0.7652, Val UA: 0.7639, Val MF1: 0.7657, Val WF1: 0.7645
+--------------------------------------------------
+Epoch 101/150
+Train Loss: 0.0545, Train WA: 0.9858, Train UA: 0.9840, Train MF1: 0.9835, Train WF1: 0.9840
+Val Loss: 1.2148, Val WA: 0.7610, Val UA: 0.7596, Val MF1: 0.7609, Val WF1: 0.7600
+--------------------------------------------------
+Epoch 102/150
+Train Loss: 0.0526, Train WA: 0.9850, Train UA: 0.9838, Train MF1: 0.9836, Train WF1: 0.9838
+Val Loss: 1.2210, Val WA: 0.7618, Val UA: 0.7604, Val MF1: 0.7623, Val WF1: 0.7608
+--------------------------------------------------
+Epoch 103/150
+Train Loss: 0.0468, Train WA: 0.9876, Train UA: 0.9870, Train MF1: 0.9870, Train WF1: 0.9869
+Val Loss: 1.2058, Val WA: 0.7678, Val UA: 0.7648, Val MF1: 0.7672, Val WF1: 0.7649
+--------------------------------------------------
+Epoch 104/150
+Train Loss: 0.0518, Train WA: 0.9865, Train UA: 0.9850, Train MF1: 0.9850, Train WF1: 0.9850
+Val Loss: 1.2119, Val WA: 0.7679, Val UA: 0.7656, Val MF1: 0.7674, Val WF1: 0.7654
+--------------------------------------------------
+Epoch 105/150
+Train Loss: 0.0530, Train WA: 0.9871, Train UA: 0.9852, Train MF1: 0.9853, Train WF1: 0.9852
+Val Loss: 1.2043, Val WA: 0.7674, Val UA: 0.7639, Val MF1: 0.7654, Val WF1: 0.7639
+--------------------------------------------------
+Epoch 106/150
+Train Loss: 0.0517, Train WA: 0.9861, Train UA: 0.9845, Train MF1: 0.9848, Train WF1: 0.9845
+Val Loss: 1.2194, Val WA: 0.7658, Val UA: 0.7630, Val MF1: 0.7651, Val WF1: 0.7637
+--------------------------------------------------
+Epoch 107/150
+Train Loss: 0.0534, Train WA: 0.9855, Train UA: 0.9839, Train MF1: 0.9837, Train WF1: 0.9840
+Val Loss: 1.2108, Val WA: 0.7658, Val UA: 0.7630, Val MF1: 0.7649, Val WF1: 0.7629
+--------------------------------------------------
+Epoch 108/150
+Train Loss: 0.0435, Train WA: 0.9885, Train UA: 0.9877, Train MF1: 0.9873, Train WF1: 0.9877
+Val Loss: 1.2087, Val WA: 0.7670, Val UA: 0.7639, Val MF1: 0.7660, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 109/150
+Train Loss: 0.0415, Train WA: 0.9890, Train UA: 0.9879, Train MF1: 0.9881, Train WF1: 0.9879
+Val Loss: 1.2065, Val WA: 0.7665, Val UA: 0.7630, Val MF1: 0.7654, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 110/150
+Train Loss: 0.0520, Train WA: 0.9866, Train UA: 0.9855, Train MF1: 0.9849, Train WF1: 0.9855
+Val Loss: 1.2083, Val WA: 0.7683, Val UA: 0.7639, Val MF1: 0.7658, Val WF1: 0.7639
+--------------------------------------------------
+Epoch 111/150
+Train Loss: 0.0444, Train WA: 0.9885, Train UA: 0.9873, Train MF1: 0.9874, Train WF1: 0.9873
+Val Loss: 1.1993, Val WA: 0.7669, Val UA: 0.7630, Val MF1: 0.7651, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 112/150
+Train Loss: 0.0451, Train WA: 0.9851, Train UA: 0.9835, Train MF1: 0.9836, Train WF1: 0.9835
+Val Loss: 1.2098, Val WA: 0.7637, Val UA: 0.7622, Val MF1: 0.7634, Val WF1: 0.7623
+--------------------------------------------------
+Epoch 113/150
+Train Loss: 0.0468, Train WA: 0.9863, Train UA: 0.9855, Train MF1: 0.9850, Train WF1: 0.9855
+Val Loss: 1.2112, Val WA: 0.7662, Val UA: 0.7634, Val MF1: 0.7650, Val WF1: 0.7634
+--------------------------------------------------
+Epoch 114/150
+Train Loss: 0.0376, Train WA: 0.9915, Train UA: 0.9903, Train MF1: 0.9896, Train WF1: 0.9903
+Val Loss: 1.2221, Val WA: 0.7620, Val UA: 0.7604, Val MF1: 0.7626, Val WF1: 0.7609
+--------------------------------------------------
+Epoch 115/150
+Train Loss: 0.0601, Train WA: 0.9838, Train UA: 0.9818, Train MF1: 0.9811, Train WF1: 0.9819
+Val Loss: 1.2188, Val WA: 0.7714, Val UA: 0.7674, Val MF1: 0.7688, Val WF1: 0.7671
+--------------------------------------------------
+Epoch 116/150
+Train Loss: 0.0562, Train WA: 0.9871, Train UA: 0.9855, Train MF1: 0.9848, Train WF1: 0.9855
+Val Loss: 1.2336, Val WA: 0.7634, Val UA: 0.7625, Val MF1: 0.7629, Val WF1: 0.7626
+--------------------------------------------------
+Epoch 117/150
+Train Loss: 0.0443, Train WA: 0.9892, Train UA: 0.9877, Train MF1: 0.9876, Train WF1: 0.9878
+Val Loss: 1.2333, Val WA: 0.7623, Val UA: 0.7608, Val MF1: 0.7624, Val WF1: 0.7612
+--------------------------------------------------
+Epoch 118/150
+Train Loss: 0.0531, Train WA: 0.9843, Train UA: 0.9827, Train MF1: 0.9821, Train WF1: 0.9827
+Val Loss: 1.2184, Val WA: 0.7667, Val UA: 0.7622, Val MF1: 0.7644, Val WF1: 0.7626
+--------------------------------------------------
+Epoch 119/150
+Train Loss: 0.0503, Train WA: 0.9870, Train UA: 0.9852, Train MF1: 0.9851, Train WF1: 0.9852
+Val Loss: 1.2214, Val WA: 0.7632, Val UA: 0.7613, Val MF1: 0.7631, Val WF1: 0.7615
+--------------------------------------------------
+Epoch 120/150
+Train Loss: 0.0394, Train WA: 0.9917, Train UA: 0.9911, Train MF1: 0.9912, Train WF1: 0.9911
+Val Loss: 1.2131, Val WA: 0.7674, Val UA: 0.7642, Val MF1: 0.7649, Val WF1: 0.7640
+--------------------------------------------------
+Epoch 121/150
+Train Loss: 0.0437, Train WA: 0.9908, Train UA: 0.9888, Train MF1: 0.9891, Train WF1: 0.9889
+Val Loss: 1.2252, Val WA: 0.7663, Val UA: 0.7642, Val MF1: 0.7654, Val WF1: 0.7642
+--------------------------------------------------
+Epoch 122/150
+Train Loss: 0.0514, Train WA: 0.9855, Train UA: 0.9832, Train MF1: 0.9826, Train WF1: 0.9833
+Val Loss: 1.2281, Val WA: 0.7686, Val UA: 0.7645, Val MF1: 0.7658, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 123/150
+Train Loss: 0.0496, Train WA: 0.9860, Train UA: 0.9837, Train MF1: 0.9839, Train WF1: 0.9837
+Val Loss: 1.2338, Val WA: 0.7663, Val UA: 0.7634, Val MF1: 0.7649, Val WF1: 0.7631
+--------------------------------------------------
+Epoch 124/150
+Train Loss: 0.0427, Train WA: 0.9893, Train UA: 0.9879, Train MF1: 0.9879, Train WF1: 0.9880
+Val Loss: 1.2356, Val WA: 0.7612, Val UA: 0.7613, Val MF1: 0.7629, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 125/150
+Train Loss: 0.0475, Train WA: 0.9876, Train UA: 0.9862, Train MF1: 0.9863, Train WF1: 0.9863
+Val Loss: 1.2334, Val WA: 0.7633, Val UA: 0.7630, Val MF1: 0.7646, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 126/150
+Train Loss: 0.0449, Train WA: 0.9875, Train UA: 0.9871, Train MF1: 0.9863, Train WF1: 0.9871
+Val Loss: 1.2246, Val WA: 0.7667, Val UA: 0.7634, Val MF1: 0.7651, Val WF1: 0.7630
+--------------------------------------------------
+Epoch 127/150
+Train Loss: 0.0522, Train WA: 0.9843, Train UA: 0.9833, Train MF1: 0.9827, Train WF1: 0.9834
+Val Loss: 1.2224, Val WA: 0.7653, Val UA: 0.7630, Val MF1: 0.7650, Val WF1: 0.7631
+--------------------------------------------------
+Epoch 128/150
+Train Loss: 0.0470, Train WA: 0.9860, Train UA: 0.9845, Train MF1: 0.9847, Train WF1: 0.9845
+Val Loss: 1.2219, Val WA: 0.7657, Val UA: 0.7642, Val MF1: 0.7658, Val WF1: 0.7643
+--------------------------------------------------
+Epoch 129/150
+Train Loss: 0.0492, Train WA: 0.9866, Train UA: 0.9850, Train MF1: 0.9852, Train WF1: 0.9851
+Val Loss: 1.2291, Val WA: 0.7637, Val UA: 0.7616, Val MF1: 0.7632, Val WF1: 0.7615
+--------------------------------------------------
+Epoch 130/150
+Train Loss: 0.0494, Train WA: 0.9863, Train UA: 0.9848, Train MF1: 0.9847, Train WF1: 0.9849
+Val Loss: 1.2113, Val WA: 0.7659, Val UA: 0.7622, Val MF1: 0.7637, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 131/150
+Train Loss: 0.0532, Train WA: 0.9874, Train UA: 0.9852, Train MF1: 0.9851, Train WF1: 0.9853
+Val Loss: 1.2380, Val WA: 0.7653, Val UA: 0.7625, Val MF1: 0.7636, Val WF1: 0.7624
+--------------------------------------------------
+Epoch 132/150
+Train Loss: 0.0476, Train WA: 0.9874, Train UA: 0.9859, Train MF1: 0.9855, Train WF1: 0.9859
+Val Loss: 1.2271, Val WA: 0.7644, Val UA: 0.7587, Val MF1: 0.7606, Val WF1: 0.7588
+--------------------------------------------------
+Epoch 133/150
+Train Loss: 0.0471, Train WA: 0.9869, Train UA: 0.9856, Train MF1: 0.9860, Train WF1: 0.9857
+Val Loss: 1.2379, Val WA: 0.7627, Val UA: 0.7616, Val MF1: 0.7636, Val WF1: 0.7619
+--------------------------------------------------
+Epoch 134/150
+Train Loss: 0.0505, Train WA: 0.9875, Train UA: 0.9856, Train MF1: 0.9855, Train WF1: 0.9857
+Val Loss: 1.2251, Val WA: 0.7641, Val UA: 0.7604, Val MF1: 0.7633, Val WF1: 0.7608
+--------------------------------------------------
+Epoch 135/150
+Train Loss: 0.0517, Train WA: 0.9855, Train UA: 0.9840, Train MF1: 0.9847, Train WF1: 0.9840
+Val Loss: 1.2359, Val WA: 0.7605, Val UA: 0.7590, Val MF1: 0.7607, Val WF1: 0.7592
+--------------------------------------------------
+Epoch 136/150
+Train Loss: 0.0474, Train WA: 0.9886, Train UA: 0.9863, Train MF1: 0.9865, Train WF1: 0.9864
+Val Loss: 1.2312, Val WA: 0.7677, Val UA: 0.7642, Val MF1: 0.7660, Val WF1: 0.7640
+--------------------------------------------------
+Epoch 137/150
+Train Loss: 0.0460, Train WA: 0.9877, Train UA: 0.9868, Train MF1: 0.9866, Train WF1: 0.9868
+Val Loss: 1.2313, Val WA: 0.7631, Val UA: 0.7608, Val MF1: 0.7629, Val WF1: 0.7607
+--------------------------------------------------
+Epoch 138/150
+Train Loss: 0.0479, Train WA: 0.9880, Train UA: 0.9865, Train MF1: 0.9868, Train WF1: 0.9866
+Val Loss: 1.2329, Val WA: 0.7632, Val UA: 0.7590, Val MF1: 0.7605, Val WF1: 0.7589
+--------------------------------------------------
+Epoch 139/150
+Train Loss: 0.0423, Train WA: 0.9880, Train UA: 0.9868, Train MF1: 0.9870, Train WF1: 0.9868
+Val Loss: 1.2261, Val WA: 0.7617, Val UA: 0.7599, Val MF1: 0.7622, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 140/150
+Train Loss: 0.0513, Train WA: 0.9865, Train UA: 0.9842, Train MF1: 0.9843, Train WF1: 0.9842
+Val Loss: 1.2243, Val WA: 0.7609, Val UA: 0.7590, Val MF1: 0.7609, Val WF1: 0.7593
+--------------------------------------------------
+Epoch 141/150
+Train Loss: 0.0474, Train WA: 0.9871, Train UA: 0.9859, Train MF1: 0.9854, Train WF1: 0.9860
+Val Loss: 1.2349, Val WA: 0.7672, Val UA: 0.7634, Val MF1: 0.7653, Val WF1: 0.7632
+--------------------------------------------------
+Epoch 142/150
+Train Loss: 0.0410, Train WA: 0.9892, Train UA: 0.9880, Train MF1: 0.9880, Train WF1: 0.9880
+Val Loss: 1.2267, Val WA: 0.7659, Val UA: 0.7616, Val MF1: 0.7638, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 143/150
+Train Loss: 0.0447, Train WA: 0.9891, Train UA: 0.9877, Train MF1: 0.9881, Train WF1: 0.9877
+Val Loss: 1.2417, Val WA: 0.7579, Val UA: 0.7564, Val MF1: 0.7589, Val WF1: 0.7570
+--------------------------------------------------
+Epoch 144/150
+Train Loss: 0.0452, Train WA: 0.9872, Train UA: 0.9868, Train MF1: 0.9869, Train WF1: 0.9868
+Val Loss: 1.2422, Val WA: 0.7621, Val UA: 0.7599, Val MF1: 0.7619, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 145/150
+Train Loss: 0.0442, Train WA: 0.9886, Train UA: 0.9871, Train MF1: 0.9866, Train WF1: 0.9871
+Val Loss: 1.2430, Val WA: 0.7637, Val UA: 0.7625, Val MF1: 0.7627, Val WF1: 0.7617
+--------------------------------------------------
+Epoch 146/150
+Train Loss: 0.0512, Train WA: 0.9848, Train UA: 0.9839, Train MF1: 0.9833, Train WF1: 0.9840
+Val Loss: 1.2256, Val WA: 0.7636, Val UA: 0.7622, Val MF1: 0.7638, Val WF1: 0.7624
+--------------------------------------------------
+Epoch 147/150
+Train Loss: 0.0492, Train WA: 0.9864, Train UA: 0.9843, Train MF1: 0.9846, Train WF1: 0.9843
+Val Loss: 1.2240, Val WA: 0.7649, Val UA: 0.7630, Val MF1: 0.7648, Val WF1: 0.7635
+--------------------------------------------------
+Epoch 148/150
+Train Loss: 0.0440, Train WA: 0.9893, Train UA: 0.9879, Train MF1: 0.9880, Train WF1: 0.9879
+Val Loss: 1.2314, Val WA: 0.7618, Val UA: 0.7599, Val MF1: 0.7617, Val WF1: 0.7603
+--------------------------------------------------
+Epoch 149/150
+Train Loss: 0.0534, Train WA: 0.9844, Train UA: 0.9827, Train MF1: 0.9823, Train WF1: 0.9828
+Val Loss: 1.2387, Val WA: 0.7611, Val UA: 0.7599, Val MF1: 0.7617, Val WF1: 0.7601
+--------------------------------------------------
+Epoch 150/150
+Train Loss: 0.0522, Train WA: 0.9859, Train UA: 0.9845, Train MF1: 0.9834, Train WF1: 0.9848
+Val Loss: 1.2251, Val WA: 0.7636, Val UA: 0.7608, Val MF1: 0.7619, Val WF1: 0.7607
+--------------------------------------------------
+Best Val WA: 0.7499, Best Val UA: 0.7340, Best Val MF1: 0.7338, Best Val WF1: 0.7330
+Total Test WA: 0.7636 | Total Test UA: 0.7608 | Total Test WF1: 0.7607 | Total Test UF1: 0.7619
+Fold 3 Results: WA: 0.7636, UA: 0.7608, WF1: 0.7607, UF1: 0.7619
+==================================================
+/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/main-Kfold.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(save_path, map_location=device))
+Total Test WA: 0.7499 | Total Test UA: 0.7340 | Total Test WF1: 0.7330 | Total Test UF1: 0.7338
+Fold 3 Test Results: WA: 0.7499, UA: 0.7340, WF1: 0.7330, UF1: 0.7338
+==================================================
+Fold 4/5 - Training with alpha = 0.9
+Total Parameters: 765124
+Trainable Parameters: 765124
+Epoch 1/150
+Validation loss reduced. Best Val WA: 0.4498, Best Val UA: 0.4156, Best MF1: 0.3687, Best WF1: 0.3498
+--------------------------------------------------
+Train Loss: 1.3347, Train WA: 0.3582, Train UA: 0.3492, Train MF1: 0.3389, Train WF1: 0.3386
+Val Loss: 1.3064, Val WA: 0.4498, Val UA: 0.4156, Val MF1: 0.3687, Val WF1: 0.3498
+--------------------------------------------------
+Epoch 2/150
+Validation loss reduced. Best Val WA: 0.5439, Best Val UA: 0.5148, Best MF1: 0.5061, Best WF1: 0.5012
+--------------------------------------------------
+Train Loss: 1.2359, Train WA: 0.4699, Train UA: 0.4520, Train MF1: 0.4468, Train WF1: 0.4428
+Val Loss: 1.1306, Val WA: 0.5439, Val UA: 0.5148, Val MF1: 0.5061, Val WF1: 0.5012
+--------------------------------------------------
+Epoch 3/150
+Validation loss reduced. Best Val WA: 0.6045, Best Val UA: 0.5884, Best MF1: 0.5807, Best WF1: 0.5789
+--------------------------------------------------
+Train Loss: 1.1186, Train WA: 0.5612, Train UA: 0.5484, Train MF1: 0.5499, Train WF1: 0.5484
+Val Loss: 0.9982, Val WA: 0.6045, Val UA: 0.5884, Val MF1: 0.5807, Val WF1: 0.5789
+--------------------------------------------------
+Epoch 4/150
+Validation loss reduced. Best Val WA: 0.6790, Best Val UA: 0.6595, Best MF1: 0.6549, Best WF1: 0.6580
+--------------------------------------------------
+Train Loss: 0.9975, Train WA: 0.6451, Train UA: 0.6366, Train MF1: 0.6369, Train WF1: 0.6373
+Val Loss: 0.8785, Val WA: 0.6790, Val UA: 0.6595, Val MF1: 0.6549, Val WF1: 0.6580
+--------------------------------------------------
+Epoch 5/150
+Validation loss reduced. Best Val WA: 0.6802, Best Val UA: 0.6802, Best MF1: 0.6768, Best WF1: 0.6809
+--------------------------------------------------
+Train Loss: 0.8788, Train WA: 0.7001, Train UA: 0.6886, Train MF1: 0.6894, Train WF1: 0.6890
+Val Loss: 0.8016, Val WA: 0.6802, Val UA: 0.6802, Val MF1: 0.6768, Val WF1: 0.6809
+--------------------------------------------------
+Epoch 6/150
+Validation loss reduced. Best Val WA: 0.7259, Best Val UA: 0.7097, Best MF1: 0.7069, Best WF1: 0.7075
+--------------------------------------------------
+Train Loss: 0.7831, Train WA: 0.7382, Train UA: 0.7287, Train MF1: 0.7296, Train WF1: 0.7290
+Val Loss: 0.7596, Val WA: 0.7259, Val UA: 0.7097, Val MF1: 0.7069, Val WF1: 0.7075
+--------------------------------------------------
+Epoch 7/150
+Train Loss: 0.6903, Train WA: 0.7703, Train UA: 0.7595, Train MF1: 0.7605, Train WF1: 0.7594
+Val Loss: 0.8184, Val WA: 0.6857, Val UA: 0.6935, Val MF1: 0.6855, Val WF1: 0.6886
+--------------------------------------------------
+Epoch 8/150
+Validation loss reduced. Best Val WA: 0.7351, Best Val UA: 0.7331, Best MF1: 0.7303, Best WF1: 0.7314
+--------------------------------------------------
+Train Loss: 0.6184, Train WA: 0.7988, Train UA: 0.7872, Train MF1: 0.7887, Train WF1: 0.7870
+Val Loss: 0.7387, Val WA: 0.7351, Val UA: 0.7331, Val MF1: 0.7303, Val WF1: 0.7314
+--------------------------------------------------
+Epoch 9/150
+Train Loss: 0.5556, Train WA: 0.8191, Train UA: 0.8098, Train MF1: 0.8106, Train WF1: 0.8104
+Val Loss: 0.7682, Val WA: 0.7403, Val UA: 0.7206, Val MF1: 0.7167, Val WF1: 0.7145
+--------------------------------------------------
+Epoch 10/150
+Train Loss: 0.4933, Train WA: 0.8383, Train UA: 0.8295, Train MF1: 0.8305, Train WF1: 0.8302
+Val Loss: 0.8833, Val WA: 0.6925, Val UA: 0.6921, Val MF1: 0.6929, Val WF1: 0.6912
+--------------------------------------------------
+Epoch 11/150
+Train Loss: 0.4519, Train WA: 0.8539, Train UA: 0.8440, Train MF1: 0.8463, Train WF1: 0.8440
+Val Loss: 0.7995, Val WA: 0.7275, Val UA: 0.7319, Val MF1: 0.7307, Val WF1: 0.7319
+--------------------------------------------------
+Epoch 12/150
+Train Loss: 0.4088, Train WA: 0.8687, Train UA: 0.8608, Train MF1: 0.8607, Train WF1: 0.8609
+Val Loss: 0.8151, Val WA: 0.7474, Val UA: 0.7256, Val MF1: 0.7224, Val WF1: 0.7187
+--------------------------------------------------
+Epoch 13/150
+Train Loss: 0.3753, Train WA: 0.8805, Train UA: 0.8723, Train MF1: 0.8726, Train WF1: 0.8724
+Val Loss: 0.9343, Val WA: 0.7309, Val UA: 0.7180, Val MF1: 0.7143, Val WF1: 0.7084
+--------------------------------------------------
+Epoch 14/150
+Train Loss: 0.3560, Train WA: 0.8903, Train UA: 0.8804, Train MF1: 0.8809, Train WF1: 0.8805
+Val Loss: 0.8469, Val WA: 0.7343, Val UA: 0.7313, Val MF1: 0.7328, Val WF1: 0.7321
+--------------------------------------------------
+Epoch 15/150
+Train Loss: 0.3262, Train WA: 0.8958, Train UA: 0.8903, Train MF1: 0.8898, Train WF1: 0.8903
+Val Loss: 0.9132, Val WA: 0.7345, Val UA: 0.7209, Val MF1: 0.7178, Val WF1: 0.7117
+--------------------------------------------------
+Epoch 16/150
+Train Loss: 0.3016, Train WA: 0.9069, Train UA: 0.8996, Train MF1: 0.8994, Train WF1: 0.8996
+Val Loss: 0.9073, Val WA: 0.7299, Val UA: 0.7342, Val MF1: 0.7334, Val WF1: 0.7347
+--------------------------------------------------
+Epoch 17/150
+Train Loss: 0.2835, Train WA: 0.9127, Train UA: 0.9063, Train MF1: 0.9061, Train WF1: 0.9064
+Val Loss: 0.9363, Val WA: 0.7484, Val UA: 0.7348, Val MF1: 0.7320, Val WF1: 0.7283
+--------------------------------------------------
+Epoch 18/150
+Train Loss: 0.2565, Train WA: 0.9190, Train UA: 0.9137, Train MF1: 0.9136, Train WF1: 0.9140
+Val Loss: 0.9795, Val WA: 0.7379, Val UA: 0.7377, Val MF1: 0.7350, Val WF1: 0.7327
+--------------------------------------------------
+Epoch 19/150
+Train Loss: 0.2489, Train WA: 0.9275, Train UA: 0.9206, Train MF1: 0.9213, Train WF1: 0.9209
+Val Loss: 0.8731, Val WA: 0.7583, Val UA: 0.7484, Val MF1: 0.7483, Val WF1: 0.7464
+--------------------------------------------------
+Epoch 20/150
+Train Loss: 0.2390, Train WA: 0.9292, Train UA: 0.9222, Train MF1: 0.9217, Train WF1: 0.9223
+Val Loss: 0.9429, Val WA: 0.7448, Val UA: 0.7425, Val MF1: 0.7444, Val WF1: 0.7429
+--------------------------------------------------
+Epoch 21/150
+Train Loss: 0.2390, Train WA: 0.9235, Train UA: 0.9171, Train MF1: 0.9168, Train WF1: 0.9174
+Val Loss: 0.9912, Val WA: 0.7285, Val UA: 0.7319, Val MF1: 0.7304, Val WF1: 0.7326
+--------------------------------------------------
+Epoch 22/150
+Train Loss: 0.2136, Train WA: 0.9346, Train UA: 0.9283, Train MF1: 0.9286, Train WF1: 0.9283
+Val Loss: 0.9925, Val WA: 0.7307, Val UA: 0.7388, Val MF1: 0.7329, Val WF1: 0.7382
+--------------------------------------------------
+Epoch 23/150
+Train Loss: 0.2016, Train WA: 0.9347, Train UA: 0.9297, Train MF1: 0.9298, Train WF1: 0.9300
+Val Loss: 1.0175, Val WA: 0.7244, Val UA: 0.7305, Val MF1: 0.7319, Val WF1: 0.7314
+--------------------------------------------------
+Epoch 24/150
+Train Loss: 0.1981, Train WA: 0.9421, Train UA: 0.9365, Train MF1: 0.9369, Train WF1: 0.9366
+Val Loss: 0.9625, Val WA: 0.7530, Val UA: 0.7484, Val MF1: 0.7473, Val WF1: 0.7477
+--------------------------------------------------
+Epoch 25/150
+Train Loss: 0.1906, Train WA: 0.9441, Train UA: 0.9391, Train MF1: 0.9395, Train WF1: 0.9393
+Val Loss: 0.9596, Val WA: 0.7545, Val UA: 0.7400, Val MF1: 0.7395, Val WF1: 0.7380
+--------------------------------------------------
+Epoch 26/150
+Train Loss: 0.1767, Train WA: 0.9471, Train UA: 0.9426, Train MF1: 0.9426, Train WF1: 0.9426
+Val Loss: 1.0072, Val WA: 0.7345, Val UA: 0.7377, Val MF1: 0.7362, Val WF1: 0.7381
+--------------------------------------------------
+Epoch 27/150
+Train Loss: 0.1762, Train WA: 0.9474, Train UA: 0.9429, Train MF1: 0.9426, Train WF1: 0.9430
+Val Loss: 1.0682, Val WA: 0.7424, Val UA: 0.7392, Val MF1: 0.7357, Val WF1: 0.7372
+--------------------------------------------------
+Epoch 28/150
+Train Loss: 0.1707, Train WA: 0.9492, Train UA: 0.9456, Train MF1: 0.9456, Train WF1: 0.9457
+Val Loss: 1.0668, Val WA: 0.7419, Val UA: 0.7411, Val MF1: 0.7397, Val WF1: 0.7405
+--------------------------------------------------
+Epoch 29/150
+Train Loss: 0.1578, Train WA: 0.9471, Train UA: 0.9428, Train MF1: 0.9427, Train WF1: 0.9430
+Val Loss: 1.1225, Val WA: 0.7574, Val UA: 0.7388, Val MF1: 0.7356, Val WF1: 0.7319
+--------------------------------------------------
+Epoch 30/150
+Train Loss: 0.1633, Train WA: 0.9493, Train UA: 0.9437, Train MF1: 0.9442, Train WF1: 0.9439
+Val Loss: 1.2146, Val WA: 0.7181, Val UA: 0.7324, Val MF1: 0.7305, Val WF1: 0.7336
+--------------------------------------------------
+Epoch 31/150
+Train Loss: 0.1354, Train WA: 0.9569, Train UA: 0.9542, Train MF1: 0.9538, Train WF1: 0.9543
+Val Loss: 1.0399, Val WA: 0.7570, Val UA: 0.7498, Val MF1: 0.7472, Val WF1: 0.7474
+--------------------------------------------------
+Epoch 32/150
+Train Loss: 0.1304, Train WA: 0.9614, Train UA: 0.9559, Train MF1: 0.9562, Train WF1: 0.9560
+Val Loss: 1.1019, Val WA: 0.7581, Val UA: 0.7451, Val MF1: 0.7450, Val WF1: 0.7410
+--------------------------------------------------
+Epoch 33/150
+Train Loss: 0.1215, Train WA: 0.9637, Train UA: 0.9595, Train MF1: 0.9591, Train WF1: 0.9596
+Val Loss: 1.0409, Val WA: 0.7651, Val UA: 0.7532, Val MF1: 0.7538, Val WF1: 0.7516
+--------------------------------------------------
+Epoch 34/150
+Train Loss: 0.1129, Train WA: 0.9711, Train UA: 0.9672, Train MF1: 0.9672, Train WF1: 0.9673
+Val Loss: 1.0983, Val WA: 0.7453, Val UA: 0.7512, Val MF1: 0.7495, Val WF1: 0.7520
+--------------------------------------------------
+Epoch 35/150
+Train Loss: 0.1062, Train WA: 0.9685, Train UA: 0.9653, Train MF1: 0.9659, Train WF1: 0.9653
+Val Loss: 1.1128, Val WA: 0.7485, Val UA: 0.7524, Val MF1: 0.7488, Val WF1: 0.7512
+--------------------------------------------------
+Epoch 36/150
+Train Loss: 0.1059, Train WA: 0.9684, Train UA: 0.9659, Train MF1: 0.9660, Train WF1: 0.9660
+Val Loss: 1.0870, Val WA: 0.7573, Val UA: 0.7588, Val MF1: 0.7574, Val WF1: 0.7582
+--------------------------------------------------
+Epoch 37/150
+Train Loss: 0.1012, Train WA: 0.9696, Train UA: 0.9671, Train MF1: 0.9670, Train WF1: 0.9672
+Val Loss: 1.0694, Val WA: 0.7576, Val UA: 0.7486, Val MF1: 0.7493, Val WF1: 0.7476
+--------------------------------------------------
+Epoch 38/150
+Train Loss: 0.1040, Train WA: 0.9683, Train UA: 0.9659, Train MF1: 0.9659, Train WF1: 0.9660
+Val Loss: 1.0754, Val WA: 0.7507, Val UA: 0.7466, Val MF1: 0.7446, Val WF1: 0.7461
+--------------------------------------------------
+Epoch 39/150
+Train Loss: 0.0866, Train WA: 0.9789, Train UA: 0.9772, Train MF1: 0.9771, Train WF1: 0.9773
+Val Loss: 1.0972, Val WA: 0.7599, Val UA: 0.7503, Val MF1: 0.7500, Val WF1: 0.7475
+--------------------------------------------------
+Epoch 40/150
+Train Loss: 0.0987, Train WA: 0.9713, Train UA: 0.9684, Train MF1: 0.9682, Train WF1: 0.9684
+Val Loss: 1.1103, Val WA: 0.7560, Val UA: 0.7616, Val MF1: 0.7590, Val WF1: 0.7618
+--------------------------------------------------
+Epoch 41/150
+Train Loss: 0.1025, Train WA: 0.9697, Train UA: 0.9665, Train MF1: 0.9659, Train WF1: 0.9667
+Val Loss: 1.1584, Val WA: 0.7557, Val UA: 0.7405, Val MF1: 0.7399, Val WF1: 0.7363
+--------------------------------------------------
+Epoch 42/150
+Train Loss: 0.0986, Train WA: 0.9730, Train UA: 0.9694, Train MF1: 0.9704, Train WF1: 0.9695
+Val Loss: 1.1392, Val WA: 0.7609, Val UA: 0.7555, Val MF1: 0.7552, Val WF1: 0.7533
+--------------------------------------------------
+Epoch 43/150
+Train Loss: 0.0867, Train WA: 0.9756, Train UA: 0.9729, Train MF1: 0.9736, Train WF1: 0.9729
+Val Loss: 1.1274, Val WA: 0.7577, Val UA: 0.7590, Val MF1: 0.7603, Val WF1: 0.7599
+--------------------------------------------------
+Epoch 44/150
+Train Loss: 0.0946, Train WA: 0.9737, Train UA: 0.9705, Train MF1: 0.9709, Train WF1: 0.9706
+Val Loss: 1.0994, Val WA: 0.7598, Val UA: 0.7550, Val MF1: 0.7545, Val WF1: 0.7539
+--------------------------------------------------
+Epoch 45/150
+Train Loss: 0.0868, Train WA: 0.9747, Train UA: 0.9725, Train MF1: 0.9720, Train WF1: 0.9725
+Val Loss: 1.1130, Val WA: 0.7633, Val UA: 0.7573, Val MF1: 0.7569, Val WF1: 0.7561
+--------------------------------------------------
+Epoch 46/150
+Train Loss: 0.0811, Train WA: 0.9800, Train UA: 0.9777, Train MF1: 0.9776, Train WF1: 0.9778
+Val Loss: 1.0842, Val WA: 0.7681, Val UA: 0.7596, Val MF1: 0.7600, Val WF1: 0.7589
+--------------------------------------------------
+Epoch 47/150
+Train Loss: 0.0808, Train WA: 0.9767, Train UA: 0.9754, Train MF1: 0.9751, Train WF1: 0.9754
+Val Loss: 1.1094, Val WA: 0.7647, Val UA: 0.7604, Val MF1: 0.7602, Val WF1: 0.7590
+--------------------------------------------------
+Epoch 48/150
+Train Loss: 0.0874, Train WA: 0.9707, Train UA: 0.9684, Train MF1: 0.9686, Train WF1: 0.9683
+Val Loss: 1.1037, Val WA: 0.7685, Val UA: 0.7561, Val MF1: 0.7556, Val WF1: 0.7540
+--------------------------------------------------
+Epoch 49/150
+Train Loss: 0.0747, Train WA: 0.9781, Train UA: 0.9760, Train MF1: 0.9761, Train WF1: 0.9761
+Val Loss: 1.1395, Val WA: 0.7580, Val UA: 0.7570, Val MF1: 0.7566, Val WF1: 0.7567
+--------------------------------------------------
+Epoch 50/150
+Train Loss: 0.0864, Train WA: 0.9761, Train UA: 0.9728, Train MF1: 0.9721, Train WF1: 0.9729
+Val Loss: 1.1555, Val WA: 0.7575, Val UA: 0.7538, Val MF1: 0.7544, Val WF1: 0.7540
+--------------------------------------------------
+Epoch 51/150
+Train Loss: 0.0814, Train WA: 0.9779, Train UA: 0.9751, Train MF1: 0.9755, Train WF1: 0.9751
+Val Loss: 1.1862, Val WA: 0.7465, Val UA: 0.7506, Val MF1: 0.7504, Val WF1: 0.7513
+--------------------------------------------------
+Epoch 52/150
+Train Loss: 0.0715, Train WA: 0.9814, Train UA: 0.9799, Train MF1: 0.9796, Train WF1: 0.9799
+Val Loss: 1.1604, Val WA: 0.7599, Val UA: 0.7602, Val MF1: 0.7602, Val WF1: 0.7597
+--------------------------------------------------
+Epoch 53/150
+Train Loss: 0.0790, Train WA: 0.9788, Train UA: 0.9765, Train MF1: 0.9760, Train WF1: 0.9766
+Val Loss: 1.1617, Val WA: 0.7606, Val UA: 0.7570, Val MF1: 0.7552, Val WF1: 0.7552
+--------------------------------------------------
+Epoch 54/150
+Train Loss: 0.0692, Train WA: 0.9791, Train UA: 0.9770, Train MF1: 0.9773, Train WF1: 0.9770
+Val Loss: 1.1694, Val WA: 0.7542, Val UA: 0.7562, Val MF1: 0.7537, Val WF1: 0.7558
+--------------------------------------------------
+Epoch 55/150
+Train Loss: 0.0807, Train WA: 0.9753, Train UA: 0.9725, Train MF1: 0.9729, Train WF1: 0.9726
+Val Loss: 1.1627, Val WA: 0.7565, Val UA: 0.7524, Val MF1: 0.7519, Val WF1: 0.7518
+--------------------------------------------------
+Epoch 56/150
+Train Loss: 0.0830, Train WA: 0.9774, Train UA: 0.9746, Train MF1: 0.9750, Train WF1: 0.9747
+Val Loss: 1.1977, Val WA: 0.7529, Val UA: 0.7578, Val MF1: 0.7574, Val WF1: 0.7583
+--------------------------------------------------
+Epoch 57/150
+Train Loss: 0.0859, Train WA: 0.9750, Train UA: 0.9725, Train MF1: 0.9726, Train WF1: 0.9725
+Val Loss: 1.1690, Val WA: 0.7582, Val UA: 0.7448, Val MF1: 0.7453, Val WF1: 0.7420
+--------------------------------------------------
+Epoch 58/150
+Train Loss: 0.0784, Train WA: 0.9769, Train UA: 0.9752, Train MF1: 0.9748, Train WF1: 0.9752
+Val Loss: 1.2256, Val WA: 0.7500, Val UA: 0.7532, Val MF1: 0.7540, Val WF1: 0.7545
+--------------------------------------------------
+Epoch 59/150
+Train Loss: 0.0720, Train WA: 0.9798, Train UA: 0.9771, Train MF1: 0.9774, Train WF1: 0.9771
+Val Loss: 1.2094, Val WA: 0.7649, Val UA: 0.7555, Val MF1: 0.7539, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 60/150
+Train Loss: 0.0679, Train WA: 0.9806, Train UA: 0.9789, Train MF1: 0.9789, Train WF1: 0.9790
+Val Loss: 1.1932, Val WA: 0.7568, Val UA: 0.7512, Val MF1: 0.7513, Val WF1: 0.7507
+--------------------------------------------------
+Epoch 61/150
+Train Loss: 0.0702, Train WA: 0.9797, Train UA: 0.9772, Train MF1: 0.9768, Train WF1: 0.9774
+Val Loss: 1.1986, Val WA: 0.7597, Val UA: 0.7559, Val MF1: 0.7554, Val WF1: 0.7552
+--------------------------------------------------
+Epoch 62/150
+Train Loss: 0.0664, Train WA: 0.9785, Train UA: 0.9767, Train MF1: 0.9764, Train WF1: 0.9768
+Val Loss: 1.1964, Val WA: 0.7576, Val UA: 0.7538, Val MF1: 0.7530, Val WF1: 0.7529
+--------------------------------------------------
+Epoch 63/150
+Train Loss: 0.0683, Train WA: 0.9818, Train UA: 0.9788, Train MF1: 0.9793, Train WF1: 0.9791
+Val Loss: 1.2035, Val WA: 0.7621, Val UA: 0.7555, Val MF1: 0.7549, Val WF1: 0.7537
+--------------------------------------------------
+Epoch 64/150
+Train Loss: 0.0738, Train WA: 0.9815, Train UA: 0.9783, Train MF1: 0.9782, Train WF1: 0.9784
+Val Loss: 1.2035, Val WA: 0.7585, Val UA: 0.7541, Val MF1: 0.7533, Val WF1: 0.7528
+--------------------------------------------------
+Epoch 65/150
+Train Loss: 0.0593, Train WA: 0.9842, Train UA: 0.9829, Train MF1: 0.9833, Train WF1: 0.9829
+Val Loss: 1.1886, Val WA: 0.7646, Val UA: 0.7630, Val MF1: 0.7617, Val WF1: 0.7625
+--------------------------------------------------
+Epoch 66/150
+Train Loss: 0.0649, Train WA: 0.9804, Train UA: 0.9781, Train MF1: 0.9778, Train WF1: 0.9782
+Val Loss: 1.1729, Val WA: 0.7579, Val UA: 0.7552, Val MF1: 0.7545, Val WF1: 0.7549
+--------------------------------------------------
+Epoch 67/150
+Train Loss: 0.0595, Train WA: 0.9829, Train UA: 0.9814, Train MF1: 0.9815, Train WF1: 0.9815
+Val Loss: 1.2033, Val WA: 0.7614, Val UA: 0.7581, Val MF1: 0.7570, Val WF1: 0.7570
+--------------------------------------------------
+Epoch 68/150
+Train Loss: 0.0589, Train WA: 0.9833, Train UA: 0.9818, Train MF1: 0.9821, Train WF1: 0.9819
+Val Loss: 1.2071, Val WA: 0.7563, Val UA: 0.7541, Val MF1: 0.7533, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 69/150
+Train Loss: 0.0609, Train WA: 0.9845, Train UA: 0.9826, Train MF1: 0.9825, Train WF1: 0.9827
+Val Loss: 1.1853, Val WA: 0.7592, Val UA: 0.7523, Val MF1: 0.7531, Val WF1: 0.7519
+--------------------------------------------------
+Epoch 70/150
+Train Loss: 0.0580, Train WA: 0.9839, Train UA: 0.9818, Train MF1: 0.9815, Train WF1: 0.9819
+Val Loss: 1.2204, Val WA: 0.7529, Val UA: 0.7559, Val MF1: 0.7540, Val WF1: 0.7556
+--------------------------------------------------
+Epoch 71/150
+Train Loss: 0.0551, Train WA: 0.9861, Train UA: 0.9845, Train MF1: 0.9845, Train WF1: 0.9846
+Val Loss: 1.1976, Val WA: 0.7560, Val UA: 0.7486, Val MF1: 0.7489, Val WF1: 0.7473
+--------------------------------------------------
+Epoch 72/150
+Train Loss: 0.0578, Train WA: 0.9844, Train UA: 0.9830, Train MF1: 0.9829, Train WF1: 0.9830
+Val Loss: 1.2208, Val WA: 0.7527, Val UA: 0.7529, Val MF1: 0.7514, Val WF1: 0.7521
+--------------------------------------------------
+Epoch 73/150
+Train Loss: 0.0561, Train WA: 0.9848, Train UA: 0.9827, Train MF1: 0.9828, Train WF1: 0.9828
+Val Loss: 1.2142, Val WA: 0.7577, Val UA: 0.7544, Val MF1: 0.7538, Val WF1: 0.7536
+--------------------------------------------------
+Epoch 74/150
+Train Loss: 0.0568, Train WA: 0.9844, Train UA: 0.9824, Train MF1: 0.9825, Train WF1: 0.9825
+Val Loss: 1.1832, Val WA: 0.7580, Val UA: 0.7529, Val MF1: 0.7537, Val WF1: 0.7525
+--------------------------------------------------
+Epoch 75/150
+Train Loss: 0.0567, Train WA: 0.9845, Train UA: 0.9822, Train MF1: 0.9816, Train WF1: 0.9823
+Val Loss: 1.2262, Val WA: 0.7575, Val UA: 0.7550, Val MF1: 0.7558, Val WF1: 0.7544
+--------------------------------------------------
+Epoch 76/150
+Train Loss: 0.0564, Train WA: 0.9833, Train UA: 0.9817, Train MF1: 0.9815, Train WF1: 0.9817
+Val Loss: 1.2068, Val WA: 0.7636, Val UA: 0.7611, Val MF1: 0.7614, Val WF1: 0.7607
+--------------------------------------------------
+Epoch 77/150
+Train Loss: 0.0555, Train WA: 0.9841, Train UA: 0.9828, Train MF1: 0.9827, Train WF1: 0.9828
+Val Loss: 1.1978, Val WA: 0.7519, Val UA: 0.7489, Val MF1: 0.7481, Val WF1: 0.7480
+--------------------------------------------------
+Epoch 78/150
+Train Loss: 0.0633, Train WA: 0.9831, Train UA: 0.9807, Train MF1: 0.9807, Train WF1: 0.9808
+Val Loss: 1.2083, Val WA: 0.7609, Val UA: 0.7576, Val MF1: 0.7580, Val WF1: 0.7566
+--------------------------------------------------
+Epoch 79/150
+Train Loss: 0.0640, Train WA: 0.9815, Train UA: 0.9795, Train MF1: 0.9795, Train WF1: 0.9796
+Val Loss: 1.1927, Val WA: 0.7612, Val UA: 0.7570, Val MF1: 0.7571, Val WF1: 0.7565
+--------------------------------------------------
+Epoch 80/150
+Train Loss: 0.0569, Train WA: 0.9845, Train UA: 0.9830, Train MF1: 0.9830, Train WF1: 0.9830
+Val Loss: 1.2055, Val WA: 0.7578, Val UA: 0.7564, Val MF1: 0.7555, Val WF1: 0.7558
+--------------------------------------------------
+Epoch 81/150
+Train Loss: 0.0614, Train WA: 0.9834, Train UA: 0.9810, Train MF1: 0.9810, Train WF1: 0.9811
+Val Loss: 1.2064, Val WA: 0.7594, Val UA: 0.7578, Val MF1: 0.7577, Val WF1: 0.7581
+--------------------------------------------------
+Epoch 82/150
+Train Loss: 0.0531, Train WA: 0.9856, Train UA: 0.9844, Train MF1: 0.9845, Train WF1: 0.9844
+Val Loss: 1.2013, Val WA: 0.7566, Val UA: 0.7570, Val MF1: 0.7566, Val WF1: 0.7571
+--------------------------------------------------
+Epoch 83/150
+Train Loss: 0.0558, Train WA: 0.9841, Train UA: 0.9824, Train MF1: 0.9816, Train WF1: 0.9825
+Val Loss: 1.2026, Val WA: 0.7625, Val UA: 0.7581, Val MF1: 0.7580, Val WF1: 0.7574
+--------------------------------------------------
+Epoch 84/150
+Train Loss: 0.0531, Train WA: 0.9859, Train UA: 0.9839, Train MF1: 0.9843, Train WF1: 0.9839
+Val Loss: 1.2272, Val WA: 0.7650, Val UA: 0.7581, Val MF1: 0.7574, Val WF1: 0.7558
+--------------------------------------------------
+Epoch 85/150
+Train Loss: 0.0485, Train WA: 0.9864, Train UA: 0.9845, Train MF1: 0.9846, Train WF1: 0.9846
+Val Loss: 1.2182, Val WA: 0.7626, Val UA: 0.7584, Val MF1: 0.7590, Val WF1: 0.7572
+--------------------------------------------------
+Epoch 86/150
+Train Loss: 0.0510, Train WA: 0.9867, Train UA: 0.9847, Train MF1: 0.9847, Train WF1: 0.9848
+Val Loss: 1.2176, Val WA: 0.7602, Val UA: 0.7555, Val MF1: 0.7553, Val WF1: 0.7543
+--------------------------------------------------
+Epoch 87/150
+Train Loss: 0.0458, Train WA: 0.9861, Train UA: 0.9843, Train MF1: 0.9843, Train WF1: 0.9843
+Val Loss: 1.2216, Val WA: 0.7569, Val UA: 0.7576, Val MF1: 0.7570, Val WF1: 0.7570
+--------------------------------------------------
+Epoch 88/150
+Train Loss: 0.0545, Train WA: 0.9854, Train UA: 0.9839, Train MF1: 0.9840, Train WF1: 0.9839
+Val Loss: 1.2255, Val WA: 0.7529, Val UA: 0.7532, Val MF1: 0.7526, Val WF1: 0.7532
+--------------------------------------------------
+Epoch 89/150
+Train Loss: 0.0557, Train WA: 0.9846, Train UA: 0.9835, Train MF1: 0.9836, Train WF1: 0.9835
+Val Loss: 1.2078, Val WA: 0.7595, Val UA: 0.7541, Val MF1: 0.7550, Val WF1: 0.7532
+--------------------------------------------------
+Epoch 90/150
+Train Loss: 0.0523, Train WA: 0.9866, Train UA: 0.9855, Train MF1: 0.9857, Train WF1: 0.9855
+Val Loss: 1.2317, Val WA: 0.7610, Val UA: 0.7573, Val MF1: 0.7570, Val WF1: 0.7562
+--------------------------------------------------
+Epoch 91/150
+Train Loss: 0.0562, Train WA: 0.9844, Train UA: 0.9825, Train MF1: 0.9823, Train WF1: 0.9826
+Val Loss: 1.2246, Val WA: 0.7608, Val UA: 0.7547, Val MF1: 0.7547, Val WF1: 0.7533
+--------------------------------------------------
+Epoch 92/150
+Train Loss: 0.0485, Train WA: 0.9860, Train UA: 0.9847, Train MF1: 0.9845, Train WF1: 0.9848
+Val Loss: 1.2251, Val WA: 0.7613, Val UA: 0.7573, Val MF1: 0.7571, Val WF1: 0.7562
+--------------------------------------------------
+Epoch 93/150
+Train Loss: 0.0579, Train WA: 0.9836, Train UA: 0.9811, Train MF1: 0.9818, Train WF1: 0.9812
+Val Loss: 1.2393, Val WA: 0.7573, Val UA: 0.7524, Val MF1: 0.7522, Val WF1: 0.7513
+--------------------------------------------------
+Epoch 94/150
+Train Loss: 0.0450, Train WA: 0.9879, Train UA: 0.9863, Train MF1: 0.9868, Train WF1: 0.9863
+Val Loss: 1.2449, Val WA: 0.7590, Val UA: 0.7581, Val MF1: 0.7573, Val WF1: 0.7574
+--------------------------------------------------
+Epoch 95/150
+Train Loss: 0.0613, Train WA: 0.9825, Train UA: 0.9802, Train MF1: 0.9790, Train WF1: 0.9804
+Val Loss: 1.2248, Val WA: 0.7612, Val UA: 0.7555, Val MF1: 0.7553, Val WF1: 0.7544
+--------------------------------------------------
+Epoch 96/150
+Train Loss: 0.0558, Train WA: 0.9843, Train UA: 0.9823, Train MF1: 0.9827, Train WF1: 0.9823
+Val Loss: 1.2140, Val WA: 0.7601, Val UA: 0.7567, Val MF1: 0.7573, Val WF1: 0.7565
+--------------------------------------------------
+Epoch 97/150
+Train Loss: 0.0498, Train WA: 0.9863, Train UA: 0.9840, Train MF1: 0.9844, Train WF1: 0.9840
+Val Loss: 1.2329, Val WA: 0.7595, Val UA: 0.7550, Val MF1: 0.7549, Val WF1: 0.7538
+--------------------------------------------------
+Epoch 98/150
+Train Loss: 0.0500, Train WA: 0.9858, Train UA: 0.9845, Train MF1: 0.9849, Train WF1: 0.9845
+Val Loss: 1.2252, Val WA: 0.7591, Val UA: 0.7559, Val MF1: 0.7555, Val WF1: 0.7553
+--------------------------------------------------
+Epoch 99/150
+Train Loss: 0.0469, Train WA: 0.9855, Train UA: 0.9841, Train MF1: 0.9841, Train WF1: 0.9841
+Val Loss: 1.2369, Val WA: 0.7582, Val UA: 0.7547, Val MF1: 0.7547, Val WF1: 0.7540
+--------------------------------------------------
+Epoch 100/150
+Train Loss: 0.0502, Train WA: 0.9874, Train UA: 0.9850, Train MF1: 0.9854, Train WF1: 0.9850
+Val Loss: 1.2372, Val WA: 0.7576, Val UA: 0.7515, Val MF1: 0.7521, Val WF1: 0.7502
+--------------------------------------------------
+Epoch 101/150
+Train Loss: 0.0507, Train WA: 0.9868, Train UA: 0.9856, Train MF1: 0.9855, Train WF1: 0.9857
+Val Loss: 1.2406, Val WA: 0.7591, Val UA: 0.7524, Val MF1: 0.7527, Val WF1: 0.7509
+--------------------------------------------------
+Epoch 102/150
+Train Loss: 0.0525, Train WA: 0.9879, Train UA: 0.9861, Train MF1: 0.9863, Train WF1: 0.9861
+Val Loss: 1.2213, Val WA: 0.7619, Val UA: 0.7573, Val MF1: 0.7581, Val WF1: 0.7568
+--------------------------------------------------
+Epoch 103/150
+Train Loss: 0.0556, Train WA: 0.9832, Train UA: 0.9816, Train MF1: 0.9811, Train WF1: 0.9818
+Val Loss: 1.2272, Val WA: 0.7587, Val UA: 0.7564, Val MF1: 0.7570, Val WF1: 0.7564
+--------------------------------------------------
+Epoch 104/150
+Train Loss: 0.0552, Train WA: 0.9854, Train UA: 0.9830, Train MF1: 0.9827, Train WF1: 0.9831
+Val Loss: 1.2348, Val WA: 0.7572, Val UA: 0.7512, Val MF1: 0.7514, Val WF1: 0.7499
+--------------------------------------------------
+Epoch 105/150
+Train Loss: 0.0486, Train WA: 0.9868, Train UA: 0.9858, Train MF1: 0.9860, Train WF1: 0.9858
+Val Loss: 1.2382, Val WA: 0.7561, Val UA: 0.7524, Val MF1: 0.7523, Val WF1: 0.7512
+--------------------------------------------------
+Epoch 106/150
+Train Loss: 0.0516, Train WA: 0.9855, Train UA: 0.9835, Train MF1: 0.9837, Train WF1: 0.9835
+Val Loss: 1.2484, Val WA: 0.7554, Val UA: 0.7541, Val MF1: 0.7525, Val WF1: 0.7531
+--------------------------------------------------
+Epoch 107/150
+Train Loss: 0.0492, Train WA: 0.9882, Train UA: 0.9877, Train MF1: 0.9875, Train WF1: 0.9877
+Val Loss: 1.2358, Val WA: 0.7609, Val UA: 0.7573, Val MF1: 0.7570, Val WF1: 0.7563
+--------------------------------------------------
+Epoch 108/150
+Train Loss: 0.0561, Train WA: 0.9857, Train UA: 0.9844, Train MF1: 0.9846, Train WF1: 0.9844
+Val Loss: 1.2446, Val WA: 0.7598, Val UA: 0.7567, Val MF1: 0.7563, Val WF1: 0.7558
+--------------------------------------------------
+Epoch 109/150
+Train Loss: 0.0495, Train WA: 0.9851, Train UA: 0.9838, Train MF1: 0.9837, Train WF1: 0.9838
+Val Loss: 1.2321, Val WA: 0.7604, Val UA: 0.7564, Val MF1: 0.7566, Val WF1: 0.7556
+--------------------------------------------------
+Epoch 110/150
+Train Loss: 0.0543, Train WA: 0.9843, Train UA: 0.9822, Train MF1: 0.9826, Train WF1: 0.9822
+Val Loss: 1.2560, Val WA: 0.7582, Val UA: 0.7564, Val MF1: 0.7556, Val WF1: 0.7555
+--------------------------------------------------
+Epoch 111/150
+Train Loss: 0.0505, Train WA: 0.9874, Train UA: 0.9854, Train MF1: 0.9859, Train WF1: 0.9854
+Val Loss: 1.2340, Val WA: 0.7611, Val UA: 0.7544, Val MF1: 0.7548, Val WF1: 0.7534
+--------------------------------------------------
+Epoch 112/150
+Train Loss: 0.0451, Train WA: 0.9877, Train UA: 0.9868, Train MF1: 0.9869, Train WF1: 0.9869
+Val Loss: 1.2446, Val WA: 0.7566, Val UA: 0.7547, Val MF1: 0.7545, Val WF1: 0.7539
+--------------------------------------------------
+Epoch 113/150
+Train Loss: 0.0492, Train WA: 0.9868, Train UA: 0.9855, Train MF1: 0.9854, Train WF1: 0.9855
+Val Loss: 1.2358, Val WA: 0.7592, Val UA: 0.7555, Val MF1: 0.7561, Val WF1: 0.7549
+--------------------------------------------------
+Epoch 114/150
+Train Loss: 0.0438, Train WA: 0.9891, Train UA: 0.9876, Train MF1: 0.9874, Train WF1: 0.9876
+Val Loss: 1.2657, Val WA: 0.7584, Val UA: 0.7573, Val MF1: 0.7571, Val WF1: 0.7568
+--------------------------------------------------
+Epoch 115/150
+Train Loss: 0.0434, Train WA: 0.9890, Train UA: 0.9879, Train MF1: 0.9879, Train WF1: 0.9879
+Val Loss: 1.2463, Val WA: 0.7593, Val UA: 0.7552, Val MF1: 0.7555, Val WF1: 0.7545
+--------------------------------------------------
+Epoch 116/150
+Train Loss: 0.0502, Train WA: 0.9865, Train UA: 0.9849, Train MF1: 0.9852, Train WF1: 0.9849
+Val Loss: 1.2495, Val WA: 0.7628, Val UA: 0.7570, Val MF1: 0.7576, Val WF1: 0.7558
+--------------------------------------------------
+Epoch 117/150
+Train Loss: 0.0459, Train WA: 0.9862, Train UA: 0.9853, Train MF1: 0.9861, Train WF1: 0.9853
+Val Loss: 1.2430, Val WA: 0.7654, Val UA: 0.7604, Val MF1: 0.7604, Val WF1: 0.7592
+--------------------------------------------------
+Epoch 118/150
+Train Loss: 0.0442, Train WA: 0.9886, Train UA: 0.9872, Train MF1: 0.9873, Train WF1: 0.9872
+Val Loss: 1.2344, Val WA: 0.7548, Val UA: 0.7521, Val MF1: 0.7515, Val WF1: 0.7514
+--------------------------------------------------
+Epoch 119/150
+Train Loss: 0.0475, Train WA: 0.9873, Train UA: 0.9853, Train MF1: 0.9851, Train WF1: 0.9853
+Val Loss: 1.2451, Val WA: 0.7589, Val UA: 0.7555, Val MF1: 0.7554, Val WF1: 0.7546
+--------------------------------------------------
+Epoch 120/150
+Train Loss: 0.0473, Train WA: 0.9867, Train UA: 0.9854, Train MF1: 0.9856, Train WF1: 0.9854
+Val Loss: 1.2433, Val WA: 0.7601, Val UA: 0.7555, Val MF1: 0.7560, Val WF1: 0.7546
+--------------------------------------------------
+Epoch 121/150
+Train Loss: 0.0445, Train WA: 0.9905, Train UA: 0.9891, Train MF1: 0.9892, Train WF1: 0.9891
+Val Loss: 1.2407, Val WA: 0.7646, Val UA: 0.7573, Val MF1: 0.7583, Val WF1: 0.7561
+--------------------------------------------------
+Epoch 122/150
+Train Loss: 0.0474, Train WA: 0.9876, Train UA: 0.9860, Train MF1: 0.9854, Train WF1: 0.9861
+Val Loss: 1.2389, Val WA: 0.7635, Val UA: 0.7590, Val MF1: 0.7590, Val WF1: 0.7582
+--------------------------------------------------
+Epoch 123/150
+Train Loss: 0.0474, Train WA: 0.9864, Train UA: 0.9846, Train MF1: 0.9848, Train WF1: 0.9847
+Val Loss: 1.2306, Val WA: 0.7615, Val UA: 0.7581, Val MF1: 0.7578, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 124/150
+Train Loss: 0.0430, Train WA: 0.9885, Train UA: 0.9877, Train MF1: 0.9880, Train WF1: 0.9877
+Val Loss: 1.2444, Val WA: 0.7581, Val UA: 0.7573, Val MF1: 0.7562, Val WF1: 0.7565
+--------------------------------------------------
+Epoch 125/150
+Train Loss: 0.0499, Train WA: 0.9841, Train UA: 0.9824, Train MF1: 0.9823, Train WF1: 0.9824
+Val Loss: 1.2480, Val WA: 0.7580, Val UA: 0.7555, Val MF1: 0.7545, Val WF1: 0.7544
+--------------------------------------------------
+Epoch 126/150
+Train Loss: 0.0510, Train WA: 0.9861, Train UA: 0.9836, Train MF1: 0.9835, Train WF1: 0.9836
+Val Loss: 1.2396, Val WA: 0.7606, Val UA: 0.7581, Val MF1: 0.7571, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 127/150
+Train Loss: 0.0490, Train WA: 0.9864, Train UA: 0.9848, Train MF1: 0.9845, Train WF1: 0.9849
+Val Loss: 1.2368, Val WA: 0.7672, Val UA: 0.7648, Val MF1: 0.7649, Val WF1: 0.7645
+--------------------------------------------------
+Epoch 128/150
+Train Loss: 0.0479, Train WA: 0.9860, Train UA: 0.9837, Train MF1: 0.9841, Train WF1: 0.9838
+Val Loss: 1.2450, Val WA: 0.7559, Val UA: 0.7547, Val MF1: 0.7537, Val WF1: 0.7541
+--------------------------------------------------
+Epoch 129/150
+Train Loss: 0.0500, Train WA: 0.9845, Train UA: 0.9832, Train MF1: 0.9830, Train WF1: 0.9833
+Val Loss: 1.2472, Val WA: 0.7652, Val UA: 0.7613, Val MF1: 0.7615, Val WF1: 0.7607
+--------------------------------------------------
+Epoch 130/150
+Train Loss: 0.0487, Train WA: 0.9858, Train UA: 0.9841, Train MF1: 0.9839, Train WF1: 0.9841
+Val Loss: 1.2489, Val WA: 0.7592, Val UA: 0.7575, Val MF1: 0.7565, Val WF1: 0.7567
+--------------------------------------------------
+Epoch 131/150
+Train Loss: 0.0455, Train WA: 0.9886, Train UA: 0.9866, Train MF1: 0.9866, Train WF1: 0.9867
+Val Loss: 1.2500, Val WA: 0.7542, Val UA: 0.7521, Val MF1: 0.7515, Val WF1: 0.7511
+--------------------------------------------------
+Epoch 132/150
+Train Loss: 0.0478, Train WA: 0.9876, Train UA: 0.9859, Train MF1: 0.9860, Train WF1: 0.9859
+Val Loss: 1.2581, Val WA: 0.7554, Val UA: 0.7521, Val MF1: 0.7516, Val WF1: 0.7511
+--------------------------------------------------
+Epoch 133/150
+Train Loss: 0.0505, Train WA: 0.9864, Train UA: 0.9843, Train MF1: 0.9844, Train WF1: 0.9843
+Val Loss: 1.2526, Val WA: 0.7562, Val UA: 0.7538, Val MF1: 0.7533, Val WF1: 0.7532
+--------------------------------------------------
+Epoch 134/150
+Train Loss: 0.0414, Train WA: 0.9901, Train UA: 0.9888, Train MF1: 0.9891, Train WF1: 0.9889
+Val Loss: 1.2363, Val WA: 0.7596, Val UA: 0.7552, Val MF1: 0.7554, Val WF1: 0.7543
+--------------------------------------------------
+Epoch 135/150
+Train Loss: 0.0493, Train WA: 0.9864, Train UA: 0.9848, Train MF1: 0.9847, Train WF1: 0.9849
+Val Loss: 1.2536, Val WA: 0.7594, Val UA: 0.7547, Val MF1: 0.7544, Val WF1: 0.7537
+--------------------------------------------------
+Epoch 136/150
+Train Loss: 0.0494, Train WA: 0.9846, Train UA: 0.9834, Train MF1: 0.9831, Train WF1: 0.9835
+Val Loss: 1.2533, Val WA: 0.7587, Val UA: 0.7547, Val MF1: 0.7548, Val WF1: 0.7539
+--------------------------------------------------
+Epoch 137/150
+Train Loss: 0.0432, Train WA: 0.9889, Train UA: 0.9882, Train MF1: 0.9882, Train WF1: 0.9882
+Val Loss: 1.2550, Val WA: 0.7583, Val UA: 0.7547, Val MF1: 0.7541, Val WF1: 0.7538
+--------------------------------------------------
+Epoch 138/150
+Train Loss: 0.0432, Train WA: 0.9884, Train UA: 0.9872, Train MF1: 0.9871, Train WF1: 0.9872
+Val Loss: 1.2404, Val WA: 0.7626, Val UA: 0.7564, Val MF1: 0.7569, Val WF1: 0.7554
+--------------------------------------------------
+Epoch 139/150
+Train Loss: 0.0440, Train WA: 0.9872, Train UA: 0.9868, Train MF1: 0.9867, Train WF1: 0.9868
+Val Loss: 1.2350, Val WA: 0.7587, Val UA: 0.7555, Val MF1: 0.7555, Val WF1: 0.7552
+--------------------------------------------------
+Epoch 140/150
+Train Loss: 0.0459, Train WA: 0.9873, Train UA: 0.9860, Train MF1: 0.9865, Train WF1: 0.9860
+Val Loss: 1.2509, Val WA: 0.7654, Val UA: 0.7608, Val MF1: 0.7618, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 141/150
+Train Loss: 0.0457, Train WA: 0.9892, Train UA: 0.9885, Train MF1: 0.9883, Train WF1: 0.9886
+Val Loss: 1.2470, Val WA: 0.7564, Val UA: 0.7529, Val MF1: 0.7529, Val WF1: 0.7522
+--------------------------------------------------
+Epoch 142/150
+Train Loss: 0.0430, Train WA: 0.9885, Train UA: 0.9872, Train MF1: 0.9869, Train WF1: 0.9873
+Val Loss: 1.2468, Val WA: 0.7597, Val UA: 0.7555, Val MF1: 0.7556, Val WF1: 0.7546
+--------------------------------------------------
+Epoch 143/150
+Train Loss: 0.0464, Train WA: 0.9865, Train UA: 0.9848, Train MF1: 0.9849, Train WF1: 0.9849
+Val Loss: 1.2392, Val WA: 0.7655, Val UA: 0.7616, Val MF1: 0.7621, Val WF1: 0.7609
+--------------------------------------------------
+Epoch 144/150
+Train Loss: 0.0466, Train WA: 0.9880, Train UA: 0.9872, Train MF1: 0.9873, Train WF1: 0.9872
+Val Loss: 1.2442, Val WA: 0.7586, Val UA: 0.7561, Val MF1: 0.7557, Val WF1: 0.7556
+--------------------------------------------------
+Epoch 145/150
+Train Loss: 0.0455, Train WA: 0.9870, Train UA: 0.9863, Train MF1: 0.9857, Train WF1: 0.9863
+Val Loss: 1.2392, Val WA: 0.7600, Val UA: 0.7559, Val MF1: 0.7563, Val WF1: 0.7552
+--------------------------------------------------
+Epoch 146/150
+Train Loss: 0.0569, Train WA: 0.9852, Train UA: 0.9829, Train MF1: 0.9833, Train WF1: 0.9829
+Val Loss: 1.2591, Val WA: 0.7552, Val UA: 0.7529, Val MF1: 0.7520, Val WF1: 0.7521
+--------------------------------------------------
+Epoch 147/150
+Train Loss: 0.0386, Train WA: 0.9901, Train UA: 0.9888, Train MF1: 0.9889, Train WF1: 0.9889
+Val Loss: 1.2568, Val WA: 0.7559, Val UA: 0.7521, Val MF1: 0.7516, Val WF1: 0.7511
+--------------------------------------------------
+Epoch 148/150
+Train Loss: 0.0431, Train WA: 0.9877, Train UA: 0.9868, Train MF1: 0.9871, Train WF1: 0.9868
+Val Loss: 1.2613, Val WA: 0.7564, Val UA: 0.7547, Val MF1: 0.7535, Val WF1: 0.7537
+--------------------------------------------------
+Epoch 149/150
+Train Loss: 0.0477, Train WA: 0.9888, Train UA: 0.9877, Train MF1: 0.9879, Train WF1: 0.9877
+Val Loss: 1.2443, Val WA: 0.7574, Val UA: 0.7564, Val MF1: 0.7556, Val WF1: 0.7556
+--------------------------------------------------
+Epoch 150/150
+Train Loss: 0.0474, Train WA: 0.9866, Train UA: 0.9853, Train MF1: 0.9852, Train WF1: 0.9854
+Val Loss: 1.2488, Val WA: 0.7605, Val UA: 0.7576, Val MF1: 0.7576, Val WF1: 0.7568
+--------------------------------------------------
+Best Val WA: 0.7351, Best Val UA: 0.7331, Best Val MF1: 0.7303, Best Val WF1: 0.7314
+Total Test WA: 0.7605 | Total Test UA: 0.7576 | Total Test WF1: 0.7568 | Total Test UF1: 0.7576
+Fold 4 Results: WA: 0.7605, UA: 0.7576, WF1: 0.7568, UF1: 0.7576
+==================================================
+/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/main-Kfold.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(save_path, map_location=device))
+Total Test WA: 0.7351 | Total Test UA: 0.7331 | Total Test WF1: 0.7314 | Total Test UF1: 0.7303
+Fold 4 Test Results: WA: 0.7351, UA: 0.7331, WF1: 0.7314, UF1: 0.7303
+==================================================
+Fold 5/5 - Training with alpha = 0.9
+Total Parameters: 765124
+Trainable Parameters: 765124
+Epoch 1/150
+Validation loss reduced. Best Val WA: 0.4536, Best Val UA: 0.4318, Best MF1: 0.3977, Best WF1: 0.3904
+--------------------------------------------------
+Train Loss: 1.3026, Train WA: 0.3877, Train UA: 0.3859, Train MF1: 0.3650, Train WF1: 0.3698
+Val Loss: 1.2639, Val WA: 0.4536, Val UA: 0.4318, Val MF1: 0.3977, Val WF1: 0.3904
+--------------------------------------------------
+Epoch 2/150
+Validation loss reduced. Best Val WA: 0.5786, Best Val UA: 0.5629, Best MF1: 0.5570, Best WF1: 0.5601
+--------------------------------------------------
+Train Loss: 1.1837, Train WA: 0.4984, Train UA: 0.4874, Train MF1: 0.4845, Train WF1: 0.4845
+Val Loss: 1.0669, Val WA: 0.5786, Val UA: 0.5629, Val MF1: 0.5570, Val WF1: 0.5601
+--------------------------------------------------
+Epoch 3/150
+Validation loss reduced. Best Val WA: 0.6545, Best Val UA: 0.6372, Best MF1: 0.6353, Best WF1: 0.6368
+--------------------------------------------------
+Train Loss: 1.0563, Train WA: 0.5958, Train UA: 0.5931, Train MF1: 0.5905, Train WF1: 0.5930
+Val Loss: 0.9229, Val WA: 0.6545, Val UA: 0.6372, Val MF1: 0.6353, Val WF1: 0.6368
+--------------------------------------------------
+Epoch 4/150
+Validation loss reduced. Best Val WA: 0.6660, Best Val UA: 0.6713, Best MF1: 0.6646, Best WF1: 0.6711
+--------------------------------------------------
+Train Loss: 0.9360, Train WA: 0.6561, Train UA: 0.6492, Train MF1: 0.6504, Train WF1: 0.6513
+Val Loss: 0.8268, Val WA: 0.6660, Val UA: 0.6713, Val MF1: 0.6646, Val WF1: 0.6711
+--------------------------------------------------
+Epoch 5/150
+Validation loss reduced. Best Val WA: 0.6741, Best Val UA: 0.6816, Best MF1: 0.6756, Best WF1: 0.6820
+--------------------------------------------------
+Train Loss: 0.8281, Train WA: 0.7192, Train UA: 0.7104, Train MF1: 0.7110, Train WF1: 0.7111
+Val Loss: 0.7987, Val WA: 0.6741, Val UA: 0.6816, Val MF1: 0.6756, Val WF1: 0.6820
+--------------------------------------------------
+Epoch 6/150
+Validation loss reduced. Best Val WA: 0.7048, Best Val UA: 0.7007, Best MF1: 0.6951, Best WF1: 0.7003
+--------------------------------------------------
+Train Loss: 0.7515, Train WA: 0.7428, Train UA: 0.7363, Train MF1: 0.7372, Train WF1: 0.7370
+Val Loss: 0.7521, Val WA: 0.7048, Val UA: 0.7007, Val MF1: 0.6951, Val WF1: 0.7003
+--------------------------------------------------
+Epoch 7/150
+Train Loss: 0.6694, Train WA: 0.7729, Train UA: 0.7647, Train MF1: 0.7657, Train WF1: 0.7655
+Val Loss: 0.8757, Val WA: 0.6494, Val UA: 0.6580, Val MF1: 0.6489, Val WF1: 0.6539
+--------------------------------------------------
+Epoch 8/150
+Validation loss reduced. Best Val WA: 0.7347, Best Val UA: 0.7212, Best MF1: 0.7215, Best WF1: 0.7198
+--------------------------------------------------
+Train Loss: 0.6087, Train WA: 0.7946, Train UA: 0.7817, Train MF1: 0.7832, Train WF1: 0.7826
+Val Loss: 0.7335, Val WA: 0.7347, Val UA: 0.7212, Val MF1: 0.7215, Val WF1: 0.7198
+--------------------------------------------------
+Epoch 9/150
+Validation loss reduced. Best Val WA: 0.7481, Best Val UA: 0.7296, Best MF1: 0.7285, Best WF1: 0.7256
+--------------------------------------------------
+Train Loss: 0.5421, Train WA: 0.8224, Train UA: 0.8149, Train MF1: 0.8154, Train WF1: 0.8153
+Val Loss: 0.7311, Val WA: 0.7481, Val UA: 0.7296, Val MF1: 0.7285, Val WF1: 0.7256
+--------------------------------------------------
+Epoch 10/150
+Train Loss: 0.4889, Train WA: 0.8414, Train UA: 0.8316, Train MF1: 0.8328, Train WF1: 0.8320
+Val Loss: 0.8979, Val WA: 0.6646, Val UA: 0.6864, Val MF1: 0.6811, Val WF1: 0.6880
+--------------------------------------------------
+Epoch 11/150
+Train Loss: 0.4584, Train WA: 0.8511, Train UA: 0.8423, Train MF1: 0.8420, Train WF1: 0.8423
+Val Loss: 0.7800, Val WA: 0.7252, Val UA: 0.7307, Val MF1: 0.7245, Val WF1: 0.7291
+--------------------------------------------------
+Epoch 12/150
+Train Loss: 0.4147, Train WA: 0.8695, Train UA: 0.8606, Train MF1: 0.8616, Train WF1: 0.8605
+Val Loss: 0.7688, Val WA: 0.7467, Val UA: 0.7310, Val MF1: 0.7294, Val WF1: 0.7294
+--------------------------------------------------
+Epoch 13/150
+Train Loss: 0.3857, Train WA: 0.8813, Train UA: 0.8736, Train MF1: 0.8735, Train WF1: 0.8738
+Val Loss: 0.7781, Val WA: 0.7378, Val UA: 0.7244, Val MF1: 0.7241, Val WF1: 0.7217
+--------------------------------------------------
+Epoch 14/150
+Train Loss: 0.3533, Train WA: 0.8911, Train UA: 0.8839, Train MF1: 0.8845, Train WF1: 0.8838
+Val Loss: 0.7981, Val WA: 0.7496, Val UA: 0.7443, Val MF1: 0.7480, Val WF1: 0.7451
+--------------------------------------------------
+Epoch 15/150
+Train Loss: 0.3117, Train WA: 0.9064, Train UA: 0.9010, Train MF1: 0.9018, Train WF1: 0.9015
+Val Loss: 0.9332, Val WA: 0.7171, Val UA: 0.6877, Val MF1: 0.6790, Val WF1: 0.6691
+--------------------------------------------------
+Epoch 16/150
+Train Loss: 0.3098, Train WA: 0.9044, Train UA: 0.8981, Train MF1: 0.8981, Train WF1: 0.8984
+Val Loss: 0.8474, Val WA: 0.7582, Val UA: 0.7435, Val MF1: 0.7448, Val WF1: 0.7427
+--------------------------------------------------
+Epoch 17/150
+Train Loss: 0.2760, Train WA: 0.9151, Train UA: 0.9089, Train MF1: 0.9085, Train WF1: 0.9094
+Val Loss: 0.9211, Val WA: 0.7291, Val UA: 0.7304, Val MF1: 0.7267, Val WF1: 0.7259
+--------------------------------------------------
+Epoch 18/150
+Train Loss: 0.2512, Train WA: 0.9285, Train UA: 0.9214, Train MF1: 0.9215, Train WF1: 0.9216
+Val Loss: 0.8929, Val WA: 0.7303, Val UA: 0.7325, Val MF1: 0.7328, Val WF1: 0.7335
+--------------------------------------------------
+Epoch 19/150
+Train Loss: 0.2604, Train WA: 0.9139, Train UA: 0.9082, Train MF1: 0.9081, Train WF1: 0.9085
+Val Loss: 0.9315, Val WA: 0.7348, Val UA: 0.7285, Val MF1: 0.7298, Val WF1: 0.7292
+--------------------------------------------------
+Epoch 20/150
+Train Loss: 0.2466, Train WA: 0.9269, Train UA: 0.9202, Train MF1: 0.9198, Train WF1: 0.9206
+Val Loss: 0.9478, Val WA: 0.7355, Val UA: 0.7391, Val MF1: 0.7392, Val WF1: 0.7392
+--------------------------------------------------
+Epoch 21/150
+Train Loss: 0.2321, Train WA: 0.9285, Train UA: 0.9224, Train MF1: 0.9229, Train WF1: 0.9225
+Val Loss: 0.9995, Val WA: 0.7434, Val UA: 0.7256, Val MF1: 0.7204, Val WF1: 0.7134
+--------------------------------------------------
+Epoch 22/150
+Train Loss: 0.2131, Train WA: 0.9325, Train UA: 0.9299, Train MF1: 0.9296, Train WF1: 0.9300
+Val Loss: 1.0422, Val WA: 0.7285, Val UA: 0.7137, Val MF1: 0.7149, Val WF1: 0.7119
+--------------------------------------------------
+Epoch 23/150
+Train Loss: 0.1998, Train WA: 0.9435, Train UA: 0.9368, Train MF1: 0.9378, Train WF1: 0.9370
+Val Loss: 0.9622, Val WA: 0.7533, Val UA: 0.7374, Val MF1: 0.7374, Val WF1: 0.7359
+--------------------------------------------------
+Epoch 24/150
+Train Loss: 0.2116, Train WA: 0.9381, Train UA: 0.9324, Train MF1: 0.9322, Train WF1: 0.9325
+Val Loss: 0.9946, Val WA: 0.7654, Val UA: 0.7500, Val MF1: 0.7508, Val WF1: 0.7462
+--------------------------------------------------
+Epoch 25/150
+Train Loss: 0.2022, Train WA: 0.9368, Train UA: 0.9316, Train MF1: 0.9307, Train WF1: 0.9318
+Val Loss: 0.9909, Val WA: 0.7397, Val UA: 0.7378, Val MF1: 0.7362, Val WF1: 0.7378
+--------------------------------------------------
+Epoch 26/150
+Train Loss: 0.1939, Train WA: 0.9402, Train UA: 0.9359, Train MF1: 0.9359, Train WF1: 0.9363
+Val Loss: 0.9811, Val WA: 0.7561, Val UA: 0.7530, Val MF1: 0.7552, Val WF1: 0.7524
+--------------------------------------------------
+Epoch 27/150
+Train Loss: 0.1670, Train WA: 0.9498, Train UA: 0.9437, Train MF1: 0.9449, Train WF1: 0.9438
+Val Loss: 1.1455, Val WA: 0.7166, Val UA: 0.7281, Val MF1: 0.7273, Val WF1: 0.7278
+--------------------------------------------------
+Epoch 28/150
+Train Loss: 0.1652, Train WA: 0.9513, Train UA: 0.9486, Train MF1: 0.9484, Train WF1: 0.9487
+Val Loss: 0.9506, Val WA: 0.7709, Val UA: 0.7628, Val MF1: 0.7645, Val WF1: 0.7619
+--------------------------------------------------
+Epoch 29/150
+Train Loss: 0.1576, Train WA: 0.9522, Train UA: 0.9490, Train MF1: 0.9500, Train WF1: 0.9492
+Val Loss: 0.9714, Val WA: 0.7793, Val UA: 0.7743, Val MF1: 0.7756, Val WF1: 0.7727
+--------------------------------------------------
+Epoch 30/150
+Train Loss: 0.1666, Train WA: 0.9492, Train UA: 0.9449, Train MF1: 0.9438, Train WF1: 0.9453
+Val Loss: 1.0690, Val WA: 0.7468, Val UA: 0.7409, Val MF1: 0.7407, Val WF1: 0.7386
+--------------------------------------------------
+Epoch 31/150
+Train Loss: 0.1484, Train WA: 0.9568, Train UA: 0.9531, Train MF1: 0.9526, Train WF1: 0.9534
+Val Loss: 1.0442, Val WA: 0.7578, Val UA: 0.7589, Val MF1: 0.7593, Val WF1: 0.7590
+--------------------------------------------------
+Epoch 32/150
+Train Loss: 0.1303, Train WA: 0.9636, Train UA: 0.9612, Train MF1: 0.9603, Train WF1: 0.9612
+Val Loss: 1.0079, Val WA: 0.7623, Val UA: 0.7578, Val MF1: 0.7586, Val WF1: 0.7567
+--------------------------------------------------
+Epoch 33/150
+Train Loss: 0.1193, Train WA: 0.9670, Train UA: 0.9630, Train MF1: 0.9627, Train WF1: 0.9631
+Val Loss: 1.0243, Val WA: 0.7689, Val UA: 0.7637, Val MF1: 0.7646, Val WF1: 0.7632
+--------------------------------------------------
+Epoch 34/150
+Train Loss: 0.1104, Train WA: 0.9660, Train UA: 0.9638, Train MF1: 0.9630, Train WF1: 0.9639
+Val Loss: 1.0280, Val WA: 0.7704, Val UA: 0.7622, Val MF1: 0.7629, Val WF1: 0.7604
+--------------------------------------------------
+Epoch 35/150
+Train Loss: 0.1260, Train WA: 0.9636, Train UA: 0.9600, Train MF1: 0.9591, Train WF1: 0.9603
+Val Loss: 1.0646, Val WA: 0.7581, Val UA: 0.7547, Val MF1: 0.7564, Val WF1: 0.7533
+--------------------------------------------------
+Epoch 36/150
+Train Loss: 0.1015, Train WA: 0.9701, Train UA: 0.9680, Train MF1: 0.9682, Train WF1: 0.9680
+Val Loss: 1.0457, Val WA: 0.7705, Val UA: 0.7634, Val MF1: 0.7645, Val WF1: 0.7629
+--------------------------------------------------
+Epoch 37/150
+Train Loss: 0.1158, Train WA: 0.9668, Train UA: 0.9641, Train MF1: 0.9637, Train WF1: 0.9643
+Val Loss: 1.0479, Val WA: 0.7796, Val UA: 0.7694, Val MF1: 0.7709, Val WF1: 0.7682
+--------------------------------------------------
+Epoch 38/150
+Train Loss: 0.1089, Train WA: 0.9667, Train UA: 0.9637, Train MF1: 0.9638, Train WF1: 0.9638
+Val Loss: 1.0611, Val WA: 0.7763, Val UA: 0.7677, Val MF1: 0.7696, Val WF1: 0.7670
+--------------------------------------------------
+Epoch 39/150
+Train Loss: 0.1003, Train WA: 0.9719, Train UA: 0.9685, Train MF1: 0.9691, Train WF1: 0.9685
+Val Loss: 1.0437, Val WA: 0.7862, Val UA: 0.7775, Val MF1: 0.7790, Val WF1: 0.7758
+--------------------------------------------------
+Epoch 40/150
+Train Loss: 0.0941, Train WA: 0.9745, Train UA: 0.9718, Train MF1: 0.9712, Train WF1: 0.9719
+Val Loss: 1.0655, Val WA: 0.7680, Val UA: 0.7645, Val MF1: 0.7651, Val WF1: 0.7640
+--------------------------------------------------
+Epoch 41/150
+Train Loss: 0.1037, Train WA: 0.9705, Train UA: 0.9681, Train MF1: 0.9681, Train WF1: 0.9681
+Val Loss: 1.1320, Val WA: 0.7558, Val UA: 0.7581, Val MF1: 0.7567, Val WF1: 0.7575
+--------------------------------------------------
+Epoch 42/150
+Train Loss: 0.0967, Train WA: 0.9727, Train UA: 0.9708, Train MF1: 0.9706, Train WF1: 0.9709
+Val Loss: 1.0663, Val WA: 0.7805, Val UA: 0.7683, Val MF1: 0.7699, Val WF1: 0.7656
+--------------------------------------------------
+Epoch 43/150
+Train Loss: 0.0997, Train WA: 0.9732, Train UA: 0.9693, Train MF1: 0.9703, Train WF1: 0.9694
+Val Loss: 1.0817, Val WA: 0.7658, Val UA: 0.7642, Val MF1: 0.7644, Val WF1: 0.7644
+--------------------------------------------------
+Epoch 44/150
+Train Loss: 0.0963, Train WA: 0.9721, Train UA: 0.9685, Train MF1: 0.9668, Train WF1: 0.9687
+Val Loss: 1.0768, Val WA: 0.7743, Val UA: 0.7677, Val MF1: 0.7699, Val WF1: 0.7668
+--------------------------------------------------
+Epoch 45/150
+Train Loss: 0.0921, Train WA: 0.9721, Train UA: 0.9691, Train MF1: 0.9691, Train WF1: 0.9691
+Val Loss: 1.0783, Val WA: 0.7720, Val UA: 0.7634, Val MF1: 0.7652, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 46/150
+Train Loss: 0.0872, Train WA: 0.9748, Train UA: 0.9725, Train MF1: 0.9723, Train WF1: 0.9725
+Val Loss: 1.1379, Val WA: 0.7559, Val UA: 0.7578, Val MF1: 0.7596, Val WF1: 0.7586
+--------------------------------------------------
+Epoch 47/150
+Train Loss: 0.0978, Train WA: 0.9712, Train UA: 0.9688, Train MF1: 0.9692, Train WF1: 0.9688
+Val Loss: 1.0811, Val WA: 0.7798, Val UA: 0.7735, Val MF1: 0.7753, Val WF1: 0.7733
+--------------------------------------------------
+Epoch 48/150
+Train Loss: 0.0866, Train WA: 0.9760, Train UA: 0.9734, Train MF1: 0.9736, Train WF1: 0.9735
+Val Loss: 1.1392, Val WA: 0.7676, Val UA: 0.7676, Val MF1: 0.7692, Val WF1: 0.7678
+--------------------------------------------------
+Epoch 49/150
+Train Loss: 0.0776, Train WA: 0.9802, Train UA: 0.9778, Train MF1: 0.9785, Train WF1: 0.9779
+Val Loss: 1.1311, Val WA: 0.7637, Val UA: 0.7532, Val MF1: 0.7558, Val WF1: 0.7525
+--------------------------------------------------
+Epoch 50/150
+Train Loss: 0.0856, Train WA: 0.9764, Train UA: 0.9760, Train MF1: 0.9757, Train WF1: 0.9761
+Val Loss: 1.1074, Val WA: 0.7811, Val UA: 0.7738, Val MF1: 0.7752, Val WF1: 0.7734
+--------------------------------------------------
+Epoch 51/150
+Train Loss: 0.0856, Train WA: 0.9754, Train UA: 0.9734, Train MF1: 0.9730, Train WF1: 0.9734
+Val Loss: 1.1587, Val WA: 0.7580, Val UA: 0.7599, Val MF1: 0.7607, Val WF1: 0.7606
+--------------------------------------------------
+Epoch 52/150
+Train Loss: 0.0862, Train WA: 0.9764, Train UA: 0.9754, Train MF1: 0.9755, Train WF1: 0.9754
+Val Loss: 1.1217, Val WA: 0.7785, Val UA: 0.7709, Val MF1: 0.7714, Val WF1: 0.7702
+--------------------------------------------------
+Epoch 53/150
+Train Loss: 0.0748, Train WA: 0.9786, Train UA: 0.9766, Train MF1: 0.9769, Train WF1: 0.9767
+Val Loss: 1.1375, Val WA: 0.7661, Val UA: 0.7625, Val MF1: 0.7649, Val WF1: 0.7629
+--------------------------------------------------
+Epoch 54/150
+Train Loss: 0.0846, Train WA: 0.9758, Train UA: 0.9746, Train MF1: 0.9749, Train WF1: 0.9745
+Val Loss: 1.1246, Val WA: 0.7817, Val UA: 0.7761, Val MF1: 0.7767, Val WF1: 0.7753
+--------------------------------------------------
+Epoch 55/150
+Train Loss: 0.0849, Train WA: 0.9726, Train UA: 0.9705, Train MF1: 0.9708, Train WF1: 0.9706
+Val Loss: 1.1260, Val WA: 0.7720, Val UA: 0.7671, Val MF1: 0.7679, Val WF1: 0.7668
+--------------------------------------------------
+Epoch 56/150
+Train Loss: 0.0760, Train WA: 0.9785, Train UA: 0.9756, Train MF1: 0.9753, Train WF1: 0.9757
+Val Loss: 1.1559, Val WA: 0.7657, Val UA: 0.7593, Val MF1: 0.7617, Val WF1: 0.7582
+--------------------------------------------------
+Epoch 57/150
+Train Loss: 0.0826, Train WA: 0.9755, Train UA: 0.9730, Train MF1: 0.9725, Train WF1: 0.9731
+Val Loss: 1.1663, Val WA: 0.7649, Val UA: 0.7596, Val MF1: 0.7610, Val WF1: 0.7600
+--------------------------------------------------
+Epoch 58/150
+Train Loss: 0.0809, Train WA: 0.9763, Train UA: 0.9745, Train MF1: 0.9748, Train WF1: 0.9745
+Val Loss: 1.1268, Val WA: 0.7697, Val UA: 0.7639, Val MF1: 0.7644, Val WF1: 0.7631
+--------------------------------------------------
+Epoch 59/150
+Train Loss: 0.0839, Train WA: 0.9735, Train UA: 0.9710, Train MF1: 0.9709, Train WF1: 0.9711
+Val Loss: 1.2019, Val WA: 0.7632, Val UA: 0.7634, Val MF1: 0.7651, Val WF1: 0.7630
+--------------------------------------------------
+Epoch 60/150
+Train Loss: 0.0784, Train WA: 0.9793, Train UA: 0.9766, Train MF1: 0.9768, Train WF1: 0.9766
+Val Loss: 1.1942, Val WA: 0.7573, Val UA: 0.7590, Val MF1: 0.7592, Val WF1: 0.7594
+--------------------------------------------------
+Epoch 61/150
+Train Loss: 0.0711, Train WA: 0.9819, Train UA: 0.9804, Train MF1: 0.9808, Train WF1: 0.9804
+Val Loss: 1.1643, Val WA: 0.7718, Val UA: 0.7648, Val MF1: 0.7664, Val WF1: 0.7647
+--------------------------------------------------
+Epoch 62/150
+Train Loss: 0.0682, Train WA: 0.9806, Train UA: 0.9786, Train MF1: 0.9781, Train WF1: 0.9788
+Val Loss: 1.1711, Val WA: 0.7742, Val UA: 0.7683, Val MF1: 0.7709, Val WF1: 0.7679
+--------------------------------------------------
+Epoch 63/150
+Train Loss: 0.0658, Train WA: 0.9818, Train UA: 0.9801, Train MF1: 0.9800, Train WF1: 0.9802
+Val Loss: 1.1591, Val WA: 0.7773, Val UA: 0.7720, Val MF1: 0.7730, Val WF1: 0.7717
+--------------------------------------------------
+Epoch 64/150
+Train Loss: 0.0678, Train WA: 0.9811, Train UA: 0.9792, Train MF1: 0.9793, Train WF1: 0.9793
+Val Loss: 1.1626, Val WA: 0.7771, Val UA: 0.7691, Val MF1: 0.7722, Val WF1: 0.7681
+--------------------------------------------------
+Epoch 65/150
+Train Loss: 0.0601, Train WA: 0.9840, Train UA: 0.9824, Train MF1: 0.9825, Train WF1: 0.9824
+Val Loss: 1.1595, Val WA: 0.7692, Val UA: 0.7619, Val MF1: 0.7645, Val WF1: 0.7613
+--------------------------------------------------
+Epoch 66/150
+Train Loss: 0.0594, Train WA: 0.9852, Train UA: 0.9835, Train MF1: 0.9837, Train WF1: 0.9835
+Val Loss: 1.1580, Val WA: 0.7716, Val UA: 0.7645, Val MF1: 0.7675, Val WF1: 0.7639
+--------------------------------------------------
+Epoch 67/150
+Train Loss: 0.0590, Train WA: 0.9835, Train UA: 0.9812, Train MF1: 0.9819, Train WF1: 0.9812
+Val Loss: 1.1836, Val WA: 0.7678, Val UA: 0.7611, Val MF1: 0.7643, Val WF1: 0.7608
+--------------------------------------------------
+Epoch 68/150
+Train Loss: 0.0690, Train WA: 0.9809, Train UA: 0.9783, Train MF1: 0.9783, Train WF1: 0.9783
+Val Loss: 1.1643, Val WA: 0.7672, Val UA: 0.7614, Val MF1: 0.7633, Val WF1: 0.7611
+--------------------------------------------------
+Epoch 69/150
+Train Loss: 0.0659, Train WA: 0.9825, Train UA: 0.9797, Train MF1: 0.9800, Train WF1: 0.9798
+Val Loss: 1.1673, Val WA: 0.7729, Val UA: 0.7654, Val MF1: 0.7678, Val WF1: 0.7648
+--------------------------------------------------
+Epoch 70/150
+Train Loss: 0.0595, Train WA: 0.9833, Train UA: 0.9821, Train MF1: 0.9824, Train WF1: 0.9822
+Val Loss: 1.1732, Val WA: 0.7720, Val UA: 0.7654, Val MF1: 0.7681, Val WF1: 0.7649
+--------------------------------------------------
+Epoch 71/150
+Train Loss: 0.0668, Train WA: 0.9803, Train UA: 0.9792, Train MF1: 0.9788, Train WF1: 0.9793
+Val Loss: 1.1504, Val WA: 0.7781, Val UA: 0.7686, Val MF1: 0.7709, Val WF1: 0.7674
+--------------------------------------------------
+Epoch 72/150
+Train Loss: 0.0701, Train WA: 0.9801, Train UA: 0.9780, Train MF1: 0.9774, Train WF1: 0.9781
+Val Loss: 1.1659, Val WA: 0.7795, Val UA: 0.7697, Val MF1: 0.7724, Val WF1: 0.7686
+--------------------------------------------------
+Epoch 73/150
+Train Loss: 0.0642, Train WA: 0.9795, Train UA: 0.9783, Train MF1: 0.9785, Train WF1: 0.9783
+Val Loss: 1.1704, Val WA: 0.7760, Val UA: 0.7680, Val MF1: 0.7708, Val WF1: 0.7670
+--------------------------------------------------
+Epoch 74/150
+Train Loss: 0.0615, Train WA: 0.9832, Train UA: 0.9817, Train MF1: 0.9818, Train WF1: 0.9817
+Val Loss: 1.1916, Val WA: 0.7717, Val UA: 0.7668, Val MF1: 0.7695, Val WF1: 0.7665
+--------------------------------------------------
+Epoch 75/150
+Train Loss: 0.0568, Train WA: 0.9841, Train UA: 0.9830, Train MF1: 0.9828, Train WF1: 0.9831
+Val Loss: 1.2016, Val WA: 0.7760, Val UA: 0.7729, Val MF1: 0.7759, Val WF1: 0.7730
+--------------------------------------------------
+Epoch 76/150
+Train Loss: 0.0617, Train WA: 0.9837, Train UA: 0.9815, Train MF1: 0.9821, Train WF1: 0.9816
+Val Loss: 1.1843, Val WA: 0.7769, Val UA: 0.7668, Val MF1: 0.7698, Val WF1: 0.7656
+--------------------------------------------------
+Epoch 77/150
+Train Loss: 0.0583, Train WA: 0.9837, Train UA: 0.9821, Train MF1: 0.9822, Train WF1: 0.9821
+Val Loss: 1.1990, Val WA: 0.7699, Val UA: 0.7634, Val MF1: 0.7661, Val WF1: 0.7627
+--------------------------------------------------
+Epoch 78/150
+Train Loss: 0.0540, Train WA: 0.9838, Train UA: 0.9824, Train MF1: 0.9824, Train WF1: 0.9826
+Val Loss: 1.1948, Val WA: 0.7704, Val UA: 0.7634, Val MF1: 0.7666, Val WF1: 0.7628
+--------------------------------------------------
+Epoch 79/150
+Train Loss: 0.0634, Train WA: 0.9835, Train UA: 0.9816, Train MF1: 0.9818, Train WF1: 0.9817
+Val Loss: 1.1990, Val WA: 0.7778, Val UA: 0.7703, Val MF1: 0.7733, Val WF1: 0.7692
+--------------------------------------------------
+Epoch 80/150
+Train Loss: 0.0622, Train WA: 0.9820, Train UA: 0.9803, Train MF1: 0.9801, Train WF1: 0.9805
+Val Loss: 1.2068, Val WA: 0.7716, Val UA: 0.7645, Val MF1: 0.7688, Val WF1: 0.7641
+--------------------------------------------------
+Epoch 81/150
+Train Loss: 0.0558, Train WA: 0.9831, Train UA: 0.9815, Train MF1: 0.9810, Train WF1: 0.9816
+Val Loss: 1.2177, Val WA: 0.7726, Val UA: 0.7694, Val MF1: 0.7719, Val WF1: 0.7695
+--------------------------------------------------
+Epoch 82/150
+Train Loss: 0.0677, Train WA: 0.9821, Train UA: 0.9789, Train MF1: 0.9792, Train WF1: 0.9789
+Val Loss: 1.2320, Val WA: 0.7712, Val UA: 0.7625, Val MF1: 0.7649, Val WF1: 0.7613
+--------------------------------------------------
+Epoch 83/150
+Train Loss: 0.0629, Train WA: 0.9824, Train UA: 0.9810, Train MF1: 0.9808, Train WF1: 0.9811
+Val Loss: 1.2111, Val WA: 0.7750, Val UA: 0.7680, Val MF1: 0.7702, Val WF1: 0.7672
+--------------------------------------------------
+Epoch 84/150
+Train Loss: 0.0560, Train WA: 0.9823, Train UA: 0.9804, Train MF1: 0.9803, Train WF1: 0.9805
+Val Loss: 1.2117, Val WA: 0.7746, Val UA: 0.7651, Val MF1: 0.7677, Val WF1: 0.7638
+--------------------------------------------------
+Epoch 85/150
+Train Loss: 0.0627, Train WA: 0.9839, Train UA: 0.9810, Train MF1: 0.9815, Train WF1: 0.9810
+Val Loss: 1.2126, Val WA: 0.7693, Val UA: 0.7628, Val MF1: 0.7651, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 86/150
+Train Loss: 0.0596, Train WA: 0.9858, Train UA: 0.9830, Train MF1: 0.9829, Train WF1: 0.9831
+Val Loss: 1.2327, Val WA: 0.7623, Val UA: 0.7567, Val MF1: 0.7596, Val WF1: 0.7563
+--------------------------------------------------
+Epoch 87/150
+Train Loss: 0.0554, Train WA: 0.9848, Train UA: 0.9823, Train MF1: 0.9828, Train WF1: 0.9823
+Val Loss: 1.2063, Val WA: 0.7681, Val UA: 0.7611, Val MF1: 0.7630, Val WF1: 0.7602
+--------------------------------------------------
+Epoch 88/150
+Train Loss: 0.0515, Train WA: 0.9883, Train UA: 0.9872, Train MF1: 0.9874, Train WF1: 0.9872
+Val Loss: 1.2099, Val WA: 0.7694, Val UA: 0.7637, Val MF1: 0.7663, Val WF1: 0.7635
+--------------------------------------------------
+Epoch 89/150
+Train Loss: 0.0623, Train WA: 0.9833, Train UA: 0.9813, Train MF1: 0.9816, Train WF1: 0.9812
+Val Loss: 1.2111, Val WA: 0.7754, Val UA: 0.7680, Val MF1: 0.7704, Val WF1: 0.7674
+--------------------------------------------------
+Epoch 90/150
+Train Loss: 0.0582, Train WA: 0.9829, Train UA: 0.9807, Train MF1: 0.9812, Train WF1: 0.9807
+Val Loss: 1.2251, Val WA: 0.7696, Val UA: 0.7625, Val MF1: 0.7655, Val WF1: 0.7620
+--------------------------------------------------
+Epoch 91/150
+Train Loss: 0.0560, Train WA: 0.9835, Train UA: 0.9823, Train MF1: 0.9827, Train WF1: 0.9823
+Val Loss: 1.2332, Val WA: 0.7687, Val UA: 0.7625, Val MF1: 0.7645, Val WF1: 0.7619
+--------------------------------------------------
+Epoch 92/150
+Train Loss: 0.0531, Train WA: 0.9850, Train UA: 0.9839, Train MF1: 0.9839, Train WF1: 0.9839
+Val Loss: 1.2008, Val WA: 0.7750, Val UA: 0.7680, Val MF1: 0.7703, Val WF1: 0.7676
+--------------------------------------------------
+Epoch 93/150
+Train Loss: 0.0516, Train WA: 0.9864, Train UA: 0.9845, Train MF1: 0.9851, Train WF1: 0.9846
+Val Loss: 1.2211, Val WA: 0.7746, Val UA: 0.7671, Val MF1: 0.7689, Val WF1: 0.7663
+--------------------------------------------------
+Epoch 94/150
+Train Loss: 0.0572, Train WA: 0.9843, Train UA: 0.9824, Train MF1: 0.9821, Train WF1: 0.9824
+Val Loss: 1.2199, Val WA: 0.7743, Val UA: 0.7671, Val MF1: 0.7695, Val WF1: 0.7667
+--------------------------------------------------
+Epoch 95/150
+Train Loss: 0.0556, Train WA: 0.9854, Train UA: 0.9830, Train MF1: 0.9835, Train WF1: 0.9830
+Val Loss: 1.2083, Val WA: 0.7743, Val UA: 0.7677, Val MF1: 0.7695, Val WF1: 0.7673
+--------------------------------------------------
+Epoch 96/150
+Train Loss: 0.0528, Train WA: 0.9856, Train UA: 0.9836, Train MF1: 0.9837, Train WF1: 0.9837
+Val Loss: 1.2252, Val WA: 0.7678, Val UA: 0.7628, Val MF1: 0.7641, Val WF1: 0.7621
+--------------------------------------------------
+Epoch 97/150
+Train Loss: 0.0532, Train WA: 0.9861, Train UA: 0.9839, Train MF1: 0.9845, Train WF1: 0.9839
+Val Loss: 1.2157, Val WA: 0.7719, Val UA: 0.7654, Val MF1: 0.7678, Val WF1: 0.7649
+--------------------------------------------------
+Epoch 98/150
+Train Loss: 0.0620, Train WA: 0.9837, Train UA: 0.9813, Train MF1: 0.9817, Train WF1: 0.9814
+Val Loss: 1.2075, Val WA: 0.7765, Val UA: 0.7677, Val MF1: 0.7702, Val WF1: 0.7666
+--------------------------------------------------
+Epoch 99/150
+Train Loss: 0.0538, Train WA: 0.9858, Train UA: 0.9848, Train MF1: 0.9850, Train WF1: 0.9848
+Val Loss: 1.2178, Val WA: 0.7792, Val UA: 0.7712, Val MF1: 0.7740, Val WF1: 0.7705
+--------------------------------------------------
+Epoch 100/150
+Train Loss: 0.0575, Train WA: 0.9843, Train UA: 0.9823, Train MF1: 0.9826, Train WF1: 0.9823
+Val Loss: 1.2126, Val WA: 0.7738, Val UA: 0.7674, Val MF1: 0.7698, Val WF1: 0.7671
+--------------------------------------------------
+Epoch 101/150
+Train Loss: 0.0539, Train WA: 0.9863, Train UA: 0.9850, Train MF1: 0.9852, Train WF1: 0.9851
+Val Loss: 1.2200, Val WA: 0.7786, Val UA: 0.7703, Val MF1: 0.7723, Val WF1: 0.7694
+--------------------------------------------------
+Epoch 102/150
+Train Loss: 0.0563, Train WA: 0.9823, Train UA: 0.9807, Train MF1: 0.9806, Train WF1: 0.9808
+Val Loss: 1.2197, Val WA: 0.7726, Val UA: 0.7654, Val MF1: 0.7682, Val WF1: 0.7648
+--------------------------------------------------
+Epoch 103/150
+Train Loss: 0.0510, Train WA: 0.9862, Train UA: 0.9853, Train MF1: 0.9849, Train WF1: 0.9853
+Val Loss: 1.2307, Val WA: 0.7757, Val UA: 0.7697, Val MF1: 0.7713, Val WF1: 0.7689
+--------------------------------------------------
+Epoch 104/150
+Train Loss: 0.0546, Train WA: 0.9842, Train UA: 0.9821, Train MF1: 0.9825, Train WF1: 0.9821
+Val Loss: 1.2179, Val WA: 0.7767, Val UA: 0.7703, Val MF1: 0.7730, Val WF1: 0.7699
+--------------------------------------------------
+Epoch 105/150
+Train Loss: 0.0574, Train WA: 0.9834, Train UA: 0.9817, Train MF1: 0.9809, Train WF1: 0.9818
+Val Loss: 1.2184, Val WA: 0.7775, Val UA: 0.7686, Val MF1: 0.7711, Val WF1: 0.7675
+--------------------------------------------------
+Epoch 106/150
+Train Loss: 0.0482, Train WA: 0.9860, Train UA: 0.9840, Train MF1: 0.9844, Train WF1: 0.9840
+Val Loss: 1.2173, Val WA: 0.7760, Val UA: 0.7677, Val MF1: 0.7707, Val WF1: 0.7668
+--------------------------------------------------
+Epoch 107/150
+Train Loss: 0.0582, Train WA: 0.9847, Train UA: 0.9825, Train MF1: 0.9826, Train WF1: 0.9826
+Val Loss: 1.2159, Val WA: 0.7768, Val UA: 0.7686, Val MF1: 0.7713, Val WF1: 0.7679
+--------------------------------------------------
+Epoch 108/150
+Train Loss: 0.0490, Train WA: 0.9878, Train UA: 0.9861, Train MF1: 0.9863, Train WF1: 0.9861
+Val Loss: 1.2289, Val WA: 0.7715, Val UA: 0.7634, Val MF1: 0.7662, Val WF1: 0.7625
+--------------------------------------------------
+Epoch 109/150
+Train Loss: 0.0541, Train WA: 0.9857, Train UA: 0.9845, Train MF1: 0.9841, Train WF1: 0.9845
+Val Loss: 1.2198, Val WA: 0.7725, Val UA: 0.7642, Val MF1: 0.7668, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 110/150
+Train Loss: 0.0469, Train WA: 0.9884, Train UA: 0.9871, Train MF1: 0.9868, Train WF1: 0.9871
+Val Loss: 1.2420, Val WA: 0.7732, Val UA: 0.7686, Val MF1: 0.7704, Val WF1: 0.7682
+--------------------------------------------------
+Epoch 111/150
+Train Loss: 0.0515, Train WA: 0.9841, Train UA: 0.9828, Train MF1: 0.9823, Train WF1: 0.9829
+Val Loss: 1.2317, Val WA: 0.7758, Val UA: 0.7677, Val MF1: 0.7705, Val WF1: 0.7670
+--------------------------------------------------
+Epoch 112/150
+Train Loss: 0.0533, Train WA: 0.9878, Train UA: 0.9866, Train MF1: 0.9862, Train WF1: 0.9867
+Val Loss: 1.2513, Val WA: 0.7751, Val UA: 0.7677, Val MF1: 0.7702, Val WF1: 0.7670
+--------------------------------------------------
+Epoch 113/150
+Train Loss: 0.0484, Train WA: 0.9894, Train UA: 0.9878, Train MF1: 0.9880, Train WF1: 0.9878
+Val Loss: 1.2435, Val WA: 0.7710, Val UA: 0.7642, Val MF1: 0.7669, Val WF1: 0.7637
+--------------------------------------------------
+Epoch 114/150
+Train Loss: 0.0547, Train WA: 0.9866, Train UA: 0.9839, Train MF1: 0.9841, Train WF1: 0.9839
+Val Loss: 1.2260, Val WA: 0.7746, Val UA: 0.7660, Val MF1: 0.7682, Val WF1: 0.7651
+--------------------------------------------------
+Epoch 115/150
+Train Loss: 0.0488, Train WA: 0.9863, Train UA: 0.9852, Train MF1: 0.9848, Train WF1: 0.9852
+Val Loss: 1.2291, Val WA: 0.7747, Val UA: 0.7686, Val MF1: 0.7710, Val WF1: 0.7679
+--------------------------------------------------
+Epoch 116/150
+Train Loss: 0.0545, Train WA: 0.9843, Train UA: 0.9830, Train MF1: 0.9826, Train WF1: 0.9831
+Val Loss: 1.2216, Val WA: 0.7768, Val UA: 0.7694, Val MF1: 0.7717, Val WF1: 0.7689
+--------------------------------------------------
+Epoch 117/150
+Train Loss: 0.0522, Train WA: 0.9859, Train UA: 0.9846, Train MF1: 0.9841, Train WF1: 0.9847
+Val Loss: 1.2229, Val WA: 0.7788, Val UA: 0.7712, Val MF1: 0.7731, Val WF1: 0.7702
+--------------------------------------------------
+Epoch 118/150
+Train Loss: 0.0582, Train WA: 0.9827, Train UA: 0.9807, Train MF1: 0.9804, Train WF1: 0.9808
+Val Loss: 1.2341, Val WA: 0.7738, Val UA: 0.7677, Val MF1: 0.7695, Val WF1: 0.7673
+--------------------------------------------------
+Epoch 119/150
+Train Loss: 0.0487, Train WA: 0.9844, Train UA: 0.9827, Train MF1: 0.9833, Train WF1: 0.9828
+Val Loss: 1.2339, Val WA: 0.7756, Val UA: 0.7677, Val MF1: 0.7704, Val WF1: 0.7669
+--------------------------------------------------
+Epoch 120/150
+Train Loss: 0.0455, Train WA: 0.9893, Train UA: 0.9879, Train MF1: 0.9878, Train WF1: 0.9879
+Val Loss: 1.2246, Val WA: 0.7739, Val UA: 0.7668, Val MF1: 0.7689, Val WF1: 0.7662
+--------------------------------------------------
+Epoch 121/150
+Train Loss: 0.0526, Train WA: 0.9832, Train UA: 0.9827, Train MF1: 0.9821, Train WF1: 0.9828
+Val Loss: 1.2230, Val WA: 0.7741, Val UA: 0.7677, Val MF1: 0.7700, Val WF1: 0.7673
+--------------------------------------------------
+Epoch 122/150
+Train Loss: 0.0500, Train WA: 0.9870, Train UA: 0.9855, Train MF1: 0.9859, Train WF1: 0.9855
+Val Loss: 1.2511, Val WA: 0.7692, Val UA: 0.7645, Val MF1: 0.7676, Val WF1: 0.7644
+--------------------------------------------------
+Epoch 123/150
+Train Loss: 0.0534, Train WA: 0.9827, Train UA: 0.9815, Train MF1: 0.9816, Train WF1: 0.9815
+Val Loss: 1.2207, Val WA: 0.7744, Val UA: 0.7677, Val MF1: 0.7702, Val WF1: 0.7673
+--------------------------------------------------
+Epoch 124/150
+Train Loss: 0.0545, Train WA: 0.9843, Train UA: 0.9836, Train MF1: 0.9834, Train WF1: 0.9836
+Val Loss: 1.2531, Val WA: 0.7776, Val UA: 0.7703, Val MF1: 0.7728, Val WF1: 0.7696
+--------------------------------------------------
+Epoch 125/150
+Train Loss: 0.0518, Train WA: 0.9861, Train UA: 0.9843, Train MF1: 0.9848, Train WF1: 0.9843
+Val Loss: 1.2345, Val WA: 0.7692, Val UA: 0.7637, Val MF1: 0.7657, Val WF1: 0.7634
+--------------------------------------------------
+Epoch 126/150
+Train Loss: 0.0488, Train WA: 0.9858, Train UA: 0.9850, Train MF1: 0.9851, Train WF1: 0.9850
+Val Loss: 1.2274, Val WA: 0.7754, Val UA: 0.7668, Val MF1: 0.7697, Val WF1: 0.7660
+--------------------------------------------------
+Epoch 127/150
+Train Loss: 0.0538, Train WA: 0.9859, Train UA: 0.9849, Train MF1: 0.9846, Train WF1: 0.9849
+Val Loss: 1.2444, Val WA: 0.7705, Val UA: 0.7634, Val MF1: 0.7661, Val WF1: 0.7626
+--------------------------------------------------
+Epoch 128/150
+Train Loss: 0.0510, Train WA: 0.9866, Train UA: 0.9845, Train MF1: 0.9846, Train WF1: 0.9845
+Val Loss: 1.2327, Val WA: 0.7759, Val UA: 0.7686, Val MF1: 0.7707, Val WF1: 0.7679
+--------------------------------------------------
+Epoch 129/150
+Train Loss: 0.0508, Train WA: 0.9861, Train UA: 0.9847, Train MF1: 0.9847, Train WF1: 0.9847
+Val Loss: 1.2511, Val WA: 0.7741, Val UA: 0.7668, Val MF1: 0.7697, Val WF1: 0.7662
+--------------------------------------------------
+Epoch 130/150
+Train Loss: 0.0577, Train WA: 0.9855, Train UA: 0.9839, Train MF1: 0.9836, Train WF1: 0.9839
+Val Loss: 1.2284, Val WA: 0.7768, Val UA: 0.7686, Val MF1: 0.7711, Val WF1: 0.7678
+--------------------------------------------------
+Epoch 131/150
+Train Loss: 0.0501, Train WA: 0.9873, Train UA: 0.9855, Train MF1: 0.9857, Train WF1: 0.9855
+Val Loss: 1.2426, Val WA: 0.7745, Val UA: 0.7660, Val MF1: 0.7688, Val WF1: 0.7650
+--------------------------------------------------
+Epoch 132/150
+Train Loss: 0.0505, Train WA: 0.9863, Train UA: 0.9847, Train MF1: 0.9843, Train WF1: 0.9849
+Val Loss: 1.2334, Val WA: 0.7726, Val UA: 0.7668, Val MF1: 0.7694, Val WF1: 0.7665
+--------------------------------------------------
+Epoch 133/150
+Train Loss: 0.0498, Train WA: 0.9874, Train UA: 0.9867, Train MF1: 0.9868, Train WF1: 0.9867
+Val Loss: 1.2369, Val WA: 0.7742, Val UA: 0.7668, Val MF1: 0.7684, Val WF1: 0.7658
+--------------------------------------------------
+Epoch 134/150
+Train Loss: 0.0574, Train WA: 0.9842, Train UA: 0.9827, Train MF1: 0.9827, Train WF1: 0.9828
+Val Loss: 1.2376, Val WA: 0.7750, Val UA: 0.7668, Val MF1: 0.7697, Val WF1: 0.7661
+--------------------------------------------------
+Epoch 135/150
+Train Loss: 0.0502, Train WA: 0.9856, Train UA: 0.9842, Train MF1: 0.9841, Train WF1: 0.9842
+Val Loss: 1.2281, Val WA: 0.7721, Val UA: 0.7660, Val MF1: 0.7687, Val WF1: 0.7657
+--------------------------------------------------
+Epoch 136/150
+Train Loss: 0.0516, Train WA: 0.9857, Train UA: 0.9845, Train MF1: 0.9841, Train WF1: 0.9845
+Val Loss: 1.2297, Val WA: 0.7753, Val UA: 0.7668, Val MF1: 0.7695, Val WF1: 0.7659
+--------------------------------------------------
+Epoch 137/150
+Train Loss: 0.0491, Train WA: 0.9856, Train UA: 0.9840, Train MF1: 0.9845, Train WF1: 0.9840
+Val Loss: 1.2383, Val WA: 0.7705, Val UA: 0.7642, Val MF1: 0.7670, Val WF1: 0.7637
+--------------------------------------------------
+Epoch 138/150
+Train Loss: 0.0524, Train WA: 0.9844, Train UA: 0.9833, Train MF1: 0.9832, Train WF1: 0.9834
+Val Loss: 1.2386, Val WA: 0.7722, Val UA: 0.7660, Val MF1: 0.7683, Val WF1: 0.7656
+--------------------------------------------------
+Epoch 139/150
+Train Loss: 0.0473, Train WA: 0.9871, Train UA: 0.9859, Train MF1: 0.9860, Train WF1: 0.9860
+Val Loss: 1.2299, Val WA: 0.7755, Val UA: 0.7677, Val MF1: 0.7698, Val WF1: 0.7671
+--------------------------------------------------
+Epoch 140/150
+Train Loss: 0.0471, Train WA: 0.9891, Train UA: 0.9879, Train MF1: 0.9882, Train WF1: 0.9880
+Val Loss: 1.2386, Val WA: 0.7687, Val UA: 0.7634, Val MF1: 0.7666, Val WF1: 0.7633
+--------------------------------------------------
+Epoch 141/150
+Train Loss: 0.0492, Train WA: 0.9857, Train UA: 0.9845, Train MF1: 0.9847, Train WF1: 0.9845
+Val Loss: 1.2339, Val WA: 0.7761, Val UA: 0.7677, Val MF1: 0.7699, Val WF1: 0.7669
+--------------------------------------------------
+Epoch 142/150
+Train Loss: 0.0451, Train WA: 0.9895, Train UA: 0.9875, Train MF1: 0.9877, Train WF1: 0.9875
+Val Loss: 1.2375, Val WA: 0.7734, Val UA: 0.7668, Val MF1: 0.7695, Val WF1: 0.7664
+--------------------------------------------------
+Epoch 143/150
+Train Loss: 0.0499, Train WA: 0.9871, Train UA: 0.9854, Train MF1: 0.9854, Train WF1: 0.9855
+Val Loss: 1.2336, Val WA: 0.7740, Val UA: 0.7660, Val MF1: 0.7681, Val WF1: 0.7650
+--------------------------------------------------
+Epoch 144/150
+Train Loss: 0.0500, Train WA: 0.9856, Train UA: 0.9845, Train MF1: 0.9845, Train WF1: 0.9845
+Val Loss: 1.2459, Val WA: 0.7709, Val UA: 0.7642, Val MF1: 0.7664, Val WF1: 0.7635
+--------------------------------------------------
+Epoch 145/150
+Train Loss: 0.0439, Train WA: 0.9891, Train UA: 0.9882, Train MF1: 0.9885, Train WF1: 0.9882
+Val Loss: 1.2379, Val WA: 0.7766, Val UA: 0.7686, Val MF1: 0.7707, Val WF1: 0.7677
+--------------------------------------------------
+Epoch 146/150
+Train Loss: 0.0538, Train WA: 0.9860, Train UA: 0.9850, Train MF1: 0.9855, Train WF1: 0.9851
+Val Loss: 1.2292, Val WA: 0.7750, Val UA: 0.7677, Val MF1: 0.7700, Val WF1: 0.7671
+--------------------------------------------------
+Epoch 147/150
+Train Loss: 0.0481, Train WA: 0.9870, Train UA: 0.9849, Train MF1: 0.9850, Train WF1: 0.9849
+Val Loss: 1.2417, Val WA: 0.7726, Val UA: 0.7660, Val MF1: 0.7685, Val WF1: 0.7655
+--------------------------------------------------
+Epoch 148/150
+Train Loss: 0.0542, Train WA: 0.9859, Train UA: 0.9849, Train MF1: 0.9844, Train WF1: 0.9850
+Val Loss: 1.2277, Val WA: 0.7748, Val UA: 0.7677, Val MF1: 0.7701, Val WF1: 0.7672
+--------------------------------------------------
+Epoch 149/150
+Train Loss: 0.0458, Train WA: 0.9887, Train UA: 0.9881, Train MF1: 0.9877, Train WF1: 0.9881
+Val Loss: 1.2317, Val WA: 0.7743, Val UA: 0.7668, Val MF1: 0.7698, Val WF1: 0.7664
+--------------------------------------------------
+Epoch 150/150
+Train Loss: 0.0482, Train WA: 0.9870, Train UA: 0.9853, Train MF1: 0.9857, Train WF1: 0.9853
+Val Loss: 1.2398, Val WA: 0.7744, Val UA: 0.7668, Val MF1: 0.7692, Val WF1: 0.7662
+--------------------------------------------------
+Best Val WA: 0.7481, Best Val UA: 0.7296, Best Val MF1: 0.7285, Best Val WF1: 0.7256
+Total Test WA: 0.7744 | Total Test UA: 0.7668 | Total Test WF1: 0.7662 | Total Test UF1: 0.7692
+Fold 5 Results: WA: 0.7744, UA: 0.7668, WF1: 0.7662, UF1: 0.7692
+==================================================
+/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/main-Kfold.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(save_path, map_location=device))
+Total Test WA: 0.7481 | Total Test UA: 0.7296 | Total Test WF1: 0.7256 | Total Test UF1: 0.7285
+Fold 5 Test Results: WA: 0.7481, UA: 0.7296, WF1: 0.7256, UF1: 0.7285
+==================================================
+Alpha = 0.9 - Validation Results Summary:
+Mean WA: 0.7684, Mean UA: 0.7629, Mean WF1: 0.7627, Mean UF1: 0.7646
+==================================================
+Alpha = 0.9 - Test Results Summary:
+Mean WA: 0.7360, Mean UA: 0.7292, Mean WF1: 0.7286, Mean UF1: 0.7284
+==================================================
