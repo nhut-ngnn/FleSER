@@ -20,3 +20,10 @@ config: {'name': 'BERT_HUBERT', 'batch_size': 128, 'learning_rate': 0.0001, 'num
 2025-01-11 10:39:14,540 INFO    MainThread:20971 [wandb_run.py:_redirect():2330] Wrapping output streams.
 2025-01-11 10:39:14,540 INFO    MainThread:20971 [wandb_run.py:_redirect():2355] Redirects installed.
 2025-01-11 10:39:14,541 INFO    MainThread:20971 [wandb_init.py:init():910] run started, returning control to user process
+2025-01-11 10:43:12,284 INFO    MainThread:20971 [wandb_run.py:_finish():2140] finishing run minhnhut05032004-aita-lab/FlexibleMMSER-Alpha-Experiment-cross/5o9y3eo3
+2025-01-11 10:43:12,284 INFO    MainThread:20971 [wandb_run.py:_atexit_cleanup():2380] got exitcode: 0
+2025-01-11 10:43:12,284 INFO    MainThread:20971 [wandb_run.py:_restore():2362] restore
+2025-01-11 10:43:12,284 INFO    MainThread:20971 [wandb_run.py:_restore():2368] restore done
+2025-01-11 10:43:16,848 INFO    MainThread:20971 [wandb_run.py:_footer_history_summary_info():3984] rendering history
+2025-01-11 10:43:16,849 INFO    MainThread:20971 [wandb_run.py:_footer_history_summary_info():4016] rendering summary
+2025-01-11 10:43:16,856 INFO    MainThread:20971 [wandb_run.py:_footer_sync_info():3945] logging synced files

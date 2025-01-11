@@ -1,0 +1,16 @@
+{"time":"2025-01-11T11:14:39.705685183+07:00","level":"INFO","msg":"stream: starting","core version":"0.19.2","symlink path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250111_111439-9bmfgozy/logs/debug-core.log"}
+{"time":"2025-01-11T11:14:39.810062269+07:00","level":"INFO","msg":"created new stream","id":"9bmfgozy"}
+{"time":"2025-01-11T11:14:39.810089546+07:00","level":"INFO","msg":"stream: started","id":"9bmfgozy"}
+{"time":"2025-01-11T11:14:39.810099959+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"9bmfgozy"}
+{"time":"2025-01-11T11:14:39.810109167+07:00","level":"INFO","msg":"handler: started","stream_id":"9bmfgozy"}
+{"time":"2025-01-11T11:14:39.810113437+07:00","level":"INFO","msg":"sender: started","stream_id":"9bmfgozy"}
+{"time":"2025-01-11T11:14:40.300000789+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T11:18:13.807161832+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T11:18:13.80765317+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T11:18:14.807911947+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.370427753,"progress":"189.9KB/189.9KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.370417065,"progress":"710B/710B"},{"desc":"uploading config.yaml","runtime_seconds":0.058368387,"progress":"858B/858B"}],"total_operations":3}}
+{"time":"2025-01-11T11:18:15.718089441+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T11:18:17.182870506+07:00","level":"INFO","msg":"stream: closing","id":"9bmfgozy"}
+{"time":"2025-01-11T11:18:17.18288907+07:00","level":"INFO","msg":"handler: closed","stream_id":"9bmfgozy"}
+{"time":"2025-01-11T11:18:17.182896101+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"9bmfgozy"}
+{"time":"2025-01-11T11:18:17.182933145+07:00","level":"INFO","msg":"sender: closed","stream_id":"9bmfgozy"}
+{"time":"2025-01-11T11:18:17.182936401+07:00","level":"INFO","msg":"stream: closed","id":"9bmfgozy"}
