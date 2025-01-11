@@ -92,12 +92,12 @@ class FlexibleMMSER(nn.Module):
 
         elif self.fusion_method == 'cross_attention':
             attn_text_audio, _ = self.multihead_attention(
-                query=self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy,
+                query=self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy,
                 key=audio_fuzzy,
                 value=audio_fuzzy
             )
             attn_audio_text, _ = self.multihead_attention(
-                query=(1 - self.alpha) * text_fuzzy + self.alpha * audio_fuzzy,
+                query=self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy,
                 key=text_fuzzy,
                 value=text_fuzzy
             )

@@ -92,16 +92,17 @@ class FlexibleMMSER(nn.Module):
 
         elif self.fusion_method == 'cross_attention':
             attn_text_audio, _ = self.multihead_attention(
-                query=self.alpha * text_fuzzy + (1 - self.alpha) * audio_fuzzy,
+                query=self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy,
                 key=audio_fuzzy,
                 value=audio_fuzzy
             )
             attn_audio_text, _ = self.multihead_attention(
-                query=(1 - self.alpha) * text_fuzzy + self.alpha * audio_fuzzy,
+                query=self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy,
                 key=text_fuzzy,
                 value=text_fuzzy
             )
-            return (attn_text_audio.squeeze(1) + attn_audio_text.squeeze(1)) / 2
+            fused_feature = torch.cat([attn_text_audio, attn_audio_text], dim=1)
+            return fused_feature.mean(dim=1)
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
 
