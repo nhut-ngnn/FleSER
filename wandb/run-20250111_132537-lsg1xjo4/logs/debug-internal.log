@@ -1,0 +1,16 @@
+{"time":"2025-01-11T13:25:37.783779339+07:00","level":"INFO","msg":"stream: starting","core version":"0.19.2","symlink path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250111_132537-lsg1xjo4/logs/debug-core.log"}
+{"time":"2025-01-11T13:25:37.886164676+07:00","level":"INFO","msg":"created new stream","id":"lsg1xjo4"}
+{"time":"2025-01-11T13:25:37.886186119+07:00","level":"INFO","msg":"stream: started","id":"lsg1xjo4"}
+{"time":"2025-01-11T13:25:37.886323585+07:00","level":"INFO","msg":"sender: started","stream_id":"lsg1xjo4"}
+{"time":"2025-01-11T13:25:37.886329616+07:00","level":"INFO","msg":"handler: started","stream_id":"lsg1xjo4"}
+{"time":"2025-01-11T13:25:37.886320277+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"lsg1xjo4"}
+{"time":"2025-01-11T13:25:38.39463988+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T13:29:00.393472134+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T13:29:00.393799072+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T13:29:01.393997654+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.300476741,"progress":"190.7KB/190.7KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.300472373,"progress":"710B/710B"},{"desc":"uploading config.yaml","runtime_seconds":0.025573285,"progress":"866B/866B"}],"total_operations":3}}
+{"time":"2025-01-11T13:29:02.891631398+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T13:29:04.34609146+07:00","level":"INFO","msg":"stream: closing","id":"lsg1xjo4"}
+{"time":"2025-01-11T13:29:04.346107954+07:00","level":"INFO","msg":"handler: closed","stream_id":"lsg1xjo4"}
+{"time":"2025-01-11T13:29:04.346115387+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"lsg1xjo4"}
+{"time":"2025-01-11T13:29:04.346120774+07:00","level":"INFO","msg":"sender: closed","stream_id":"lsg1xjo4"}
+{"time":"2025-01-11T13:29:04.346162623+07:00","level":"INFO","msg":"stream: closed","id":"lsg1xjo4"}

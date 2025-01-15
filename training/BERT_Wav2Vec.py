@@ -121,6 +121,7 @@ class FlexibleMMSER(nn.Module):
         audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)
+
         y_logits = self.fc(fused_fuzzy)
         y_softmax = self.softmax(y_logits)
 

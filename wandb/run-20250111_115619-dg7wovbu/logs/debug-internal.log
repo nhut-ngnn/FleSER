@@ -1,0 +1,16 @@
+{"time":"2025-01-11T11:56:19.830837673+07:00","level":"INFO","msg":"stream: starting","core version":"0.19.2","symlink path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250111_115619-dg7wovbu/logs/debug-core.log"}
+{"time":"2025-01-11T11:56:19.934511742+07:00","level":"INFO","msg":"created new stream","id":"dg7wovbu"}
+{"time":"2025-01-11T11:56:19.934535781+07:00","level":"INFO","msg":"stream: started","id":"dg7wovbu"}
+{"time":"2025-01-11T11:56:19.93455194+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"dg7wovbu"}
+{"time":"2025-01-11T11:56:19.934583751+07:00","level":"INFO","msg":"sender: started","stream_id":"dg7wovbu"}
+{"time":"2025-01-11T11:56:19.934605161+07:00","level":"INFO","msg":"handler: started","stream_id":"dg7wovbu"}
+{"time":"2025-01-11T11:56:20.878404735+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T11:59:44.096685832+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T11:59:44.097018162+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T11:59:45.097403946+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.375977866,"progress":"190.4KB/190.4KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.375970898,"progress":"708B/708B"},{"desc":"uploading config.yaml","runtime_seconds":0.137721179,"progress":"864B/864B"}],"total_operations":3}}
+{"time":"2025-01-11T11:59:46.577422612+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T11:59:48.181836572+07:00","level":"INFO","msg":"stream: closing","id":"dg7wovbu"}
+{"time":"2025-01-11T11:59:48.181849543+07:00","level":"INFO","msg":"handler: closed","stream_id":"dg7wovbu"}
+{"time":"2025-01-11T11:59:48.181857953+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"dg7wovbu"}
+{"time":"2025-01-11T11:59:48.181910236+07:00","level":"INFO","msg":"sender: closed","stream_id":"dg7wovbu"}
+{"time":"2025-01-11T11:59:48.181916933+07:00","level":"INFO","msg":"stream: closed","id":"dg7wovbu"}

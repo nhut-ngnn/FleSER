@@ -3,21 +3,21 @@ from torch.utils.data import DataLoader, ConcatDataset, Subset
 import wandb
 from sklearn.model_selection import KFold
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_HuBERT import FlexibleMMSER
+from training.BERT_Wav2Vec import FlexibleMMSER
 from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_HUBERT_train.pkl"
-val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_HUBERT_val.pkl"
-test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_HUBERT_test.pkl"
+ 
+train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_WAV2VEC_train.pkl"
+val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_WAV2VEC_val.pkl"
+test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCAP_RoBERTa_WAV2VEC_test.pkl"
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 150
-ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
+ALPHA_VALUES = [0.5]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment-cross"
-MODEL_NAME = "RoBERTa_HUBERT"
+MODEL_NAME = "RoBERTa_WAV2VEC"
 FUZZY_METHOD = "cross_attention"
 DATASET_NAME = "IEMOCAP" 
 K_FOLDS = 5

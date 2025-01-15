@@ -1,0 +1,29 @@
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_setup.py:_flush():68] Current SDK version is 0.19.2
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_setup.py:_flush():68] Configure stats pid to 44048
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_setup.py:_flush():68] Loading settings from /home/nhut-minh-nguyen/.config/wandb/settings
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_setup.py:_flush():68] Loading settings from /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/settings
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_init.py:_log_setup():523] Logging user logs to /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250111_115250-dhcb6xlp/logs/debug.log
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_init.py:_log_setup():524] Logging internal logs to /home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250111_115250-dhcb6xlp/logs/debug-internal.log
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_init.py:init():641] calling init triggers
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_init.py:init():647] wandb.init called with sweep_config: {}
+config: {'name': 'RoBERTa_HUBERT', 'batch_size': 128, 'learning_rate': 0.0001, 'num_epochs': 150, 'model': 'FlexibleMMSER', 'dataset': 'IEMOCAP', 'feature': 'RoBERTa_HUBERT', 'fuzzy_method': 'cross_attention', 'alpha': 0.1, 'k_folds': 5}
+2025-01-11 11:52:50,808 INFO    MainThread:44048 [wandb_init.py:init():674] starting backend
+2025-01-11 11:52:51,013 INFO    MainThread:44048 [wandb_init.py:init():678] sending inform_init request
+2025-01-11 11:52:51,021 INFO    MainThread:44048 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-11 11:52:51,022 INFO    MainThread:44048 [wandb_init.py:init():693] backend started and connected
+2025-01-11 11:52:51,022 INFO    MainThread:44048 [wandb_init.py:init():786] updated telemetry
+2025-01-11 11:52:51,025 INFO    MainThread:44048 [wandb_init.py:init():818] communicating run to backend with 90.0 second timeout
+2025-01-11 11:52:51,724 INFO    MainThread:44048 [wandb_init.py:init():868] starting run threads in backend
+2025-01-11 11:52:51,764 INFO    MainThread:44048 [wandb_run.py:_console_start():2415] atexit reg
+2025-01-11 11:52:51,764 INFO    MainThread:44048 [wandb_run.py:_redirect():2265] redirect: wrap_raw
+2025-01-11 11:52:51,765 INFO    MainThread:44048 [wandb_run.py:_redirect():2330] Wrapping output streams.
+2025-01-11 11:52:51,765 INFO    MainThread:44048 [wandb_run.py:_redirect():2355] Redirects installed.
+2025-01-11 11:52:51,766 INFO    MainThread:44048 [wandb_init.py:init():910] run started, returning control to user process
+2025-01-11 11:56:15,123 INFO    MainThread:44048 [wandb_run.py:_finish():2140] finishing run minhnhut05032004-aita-lab/FlexibleMMSER-Alpha-Experiment-cross/dhcb6xlp
+2025-01-11 11:56:15,129 INFO    MainThread:44048 [wandb_run.py:_atexit_cleanup():2380] got exitcode: 0
+2025-01-11 11:56:15,129 INFO    MainThread:44048 [wandb_run.py:_restore():2362] restore
+2025-01-11 11:56:15,129 INFO    MainThread:44048 [wandb_run.py:_restore():2368] restore done
+2025-01-11 11:56:19,787 INFO    MainThread:44048 [wandb_run.py:_footer_history_summary_info():3984] rendering history
+2025-01-11 11:56:19,787 INFO    MainThread:44048 [wandb_run.py:_footer_history_summary_info():4016] rendering summary
+2025-01-11 11:56:19,789 INFO    MainThread:44048 [wandb_run.py:_footer_sync_info():3945] logging synced files

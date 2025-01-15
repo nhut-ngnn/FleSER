@@ -13,7 +13,7 @@ test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/feature/IEMOCA
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
-NUM_EPOCHS = 100
+NUM_EPOCHS = 150
 ALPHA_VALUES = [0.5]
 PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment"
 MODEL_NAME = "BERT_Wav2Vec"

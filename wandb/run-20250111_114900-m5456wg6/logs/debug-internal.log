@@ -1,0 +1,16 @@
+{"time":"2025-01-11T11:49:00.827767808+07:00","level":"INFO","msg":"stream: starting","core version":"0.19.2","symlink path":"/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/wandb/run-20250111_114900-m5456wg6/logs/debug-core.log"}
+{"time":"2025-01-11T11:49:00.930696737+07:00","level":"INFO","msg":"created new stream","id":"m5456wg6"}
+{"time":"2025-01-11T11:49:00.9307161+07:00","level":"INFO","msg":"stream: started","id":"m5456wg6"}
+{"time":"2025-01-11T11:49:00.930834537+07:00","level":"INFO","msg":"writer: Do: started","stream_id":"m5456wg6"}
+{"time":"2025-01-11T11:49:00.930926479+07:00","level":"INFO","msg":"handler: started","stream_id":"m5456wg6"}
+{"time":"2025-01-11T11:49:00.930934124+07:00","level":"INFO","msg":"sender: started","stream_id":"m5456wg6"}
+{"time":"2025-01-11T11:49:01.833200801+07:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-11T11:52:25.785234509+07:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-11T11:52:25.785641588+07:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-11T11:52:26.785869378+07:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.369886029,"progress":"190.5KB/190.5KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.369880851,"progress":"711B/711B"},{"desc":"uploading config.yaml","runtime_seconds":0.048918308,"progress":"864B/864B"}],"total_operations":3}}
+{"time":"2025-01-11T11:52:27.720223871+07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-11T11:52:29.693502131+07:00","level":"INFO","msg":"stream: closing","id":"m5456wg6"}
+{"time":"2025-01-11T11:52:29.693519268+07:00","level":"INFO","msg":"handler: closed","stream_id":"m5456wg6"}
+{"time":"2025-01-11T11:52:29.693524396+07:00","level":"INFO","msg":"writer: Close: closed","stream_id":"m5456wg6"}
+{"time":"2025-01-11T11:52:29.693561701+07:00","level":"INFO","msg":"sender: closed","stream_id":"m5456wg6"}
+{"time":"2025-01-11T11:52:29.693564281+07:00","level":"INFO","msg":"stream: closed","id":"m5456wg6"}
