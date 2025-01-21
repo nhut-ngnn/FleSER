@@ -16,7 +16,7 @@ class FlexibleMMSER(nn.Module):
             nn.Dropout(dropout_rate)
         )
         self.audio_projection = nn.Sequential(
-            nn.Linear(768, 256),
+            nn.Linear(1024, 256),
             nn.BatchNorm1d(256),
             nn.ReLU(),
             nn.Dropout(dropout_rate)
@@ -121,7 +121,6 @@ class FlexibleMMSER(nn.Module):
         audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)
-
         y_logits = self.fc(fused_fuzzy)
         y_softmax = self.softmax(y_logits)
 

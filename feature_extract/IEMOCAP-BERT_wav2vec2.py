@@ -13,11 +13,11 @@ from tqdm import tqdm  # For progress tracking
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-IEMOCAP_TRAIN_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_train.csv"
-IEMOCAP_VAL_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_val.csv"
-IEMOCAP_TEST_PATH = "C:/Users/admin/Documents/Speech-Emotion_Recognition-2/Multimodal-Speech-Emotion-Recognition/metadata/IEMOCAP_metadata_test.csv"
+IEMOCAP_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_train.csv"
+IEMOCAP_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_val.csv"
+IEMOCAP_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_test.csv"
 
-OUTPUT_DIR = "C:/Users/admin/Documents/FuzzyMachineLearning/mymodel/feature/"
+OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
 
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BertModel.from_pretrained('bert-base-uncased').to(device)
