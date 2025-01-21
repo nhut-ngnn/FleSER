@@ -41,7 +41,7 @@ TEXT_MODEL = BertModel.from_pretrained('bert-base-uncased').to(device)
 WAV2VEC_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
 
 WAV2VEC_MODEL = AudioEmbeddingModel().to(device)
-checkpoint = torch.load('best_wav2vec_embeddings.pt')
+checkpoint = torch.load('fine-tuning/model/best_wav2vec_embeddings.pt')
 WAV2VEC_MODEL.load_state_dict(checkpoint['model_state_dict'])
 WAV2VEC_MODEL.eval()
 

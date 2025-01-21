@@ -1,18 +1,17 @@
 import torch
 import torchaudio
 from torch.utils.data import Dataset, DataLoader
-from transformers import Wav2Vec2Model, Wav2Vec2Processor
+from transformers import HubertModel, Wav2Vec2FeatureExtractor
 from torch.optim import AdamW
 import torch.nn as nn
 import torch.nn.functional as F
 from tqdm import tqdm
 import pandas as pd
-import numpy as np
 
 class AudioDataset(Dataset):
-    def __init__(self, metadata_path, processor, segment_length=16000):
+    def __init__(self, metadata_path, feature_extractor, segment_length=16000):
         self.metadata = pd.read_csv(metadata_path)
-        self.processor = processor
+        self.feature_extractor = feature_extractor
         self.segment_length = segment_length
         
     def __len__(self):
@@ -47,16 +46,18 @@ class AudioDataset(Dataset):
         segment1 = self._get_random_segment(waveform)
         segment2 = self._get_random_segment(waveform)
         
-        processed1 = self.processor(
+        processed1 = self.feature_extractor(
             segment1.numpy(),
             sampling_rate=16000,
-            return_tensors="pt"
+            return_tensors="pt",
+            padding=True
         )
         
-        processed2 = self.processor(
+        processed2 = self.feature_extractor(
             segment2.numpy(),
             sampling_rate=16000,
-            return_tensors="pt"
+            return_tensors="pt",
+            padding=True
         )
         
         return {
@@ -67,7 +68,7 @@ class AudioDataset(Dataset):
 class AudioEmbeddingModel(nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
-        self.wav2vec = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base")
+        self.hubert = HubertModel.from_pretrained("facebook/hubert-base-ls960")
         self.projection = nn.Sequential(
             nn.Linear(embedding_dim, embedding_dim),
             nn.ReLU(),
@@ -75,7 +76,7 @@ class AudioEmbeddingModel(nn.Module):
         )
         
     def forward(self, input_values):
-        outputs = self.wav2vec(input_values)
+        outputs = self.hubert(input_values)
         hidden_states = outputs.last_hidden_state
         pooled = torch.mean(hidden_states, dim=1)
         projection = self.projection(pooled)
@@ -104,10 +105,10 @@ class NTXentLoss(nn.Module):
         return loss
 
 def train_embeddings(metadata_path, num_epochs=10, batch_size=32, learning_rate=1e-4):
-    processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
+    feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
     model = AudioEmbeddingModel()
     
-    dataset = AudioDataset(metadata_path, processor)
+    dataset = AudioDataset(metadata_path, feature_extractor)
     dataloader = DataLoader(
         dataset,
         batch_size=batch_size,
@@ -150,11 +151,11 @@ def train_embeddings(metadata_path, num_epochs=10, batch_size=32, learning_rate=
                 'model_state_dict': model.state_dict(),
                 'loss': best_loss,
                 'epoch': epoch
-            }, 'best_wav2vec_embeddings.pt')
+            }, 'best_hubert_embeddings.pt')
     
     return model
 
-def extract_embeddings(model, audio_path, processor):
+def extract_embeddings(model, audio_path, feature_extractor):
     waveform, sample_rate = torchaudio.load(audio_path)
     if sample_rate != 16000:
         resampler = torchaudio.transforms.Resample(sample_rate, 16000)
@@ -162,10 +163,11 @@ def extract_embeddings(model, audio_path, processor):
     if waveform.shape[0] > 1:
         waveform = torch.mean(waveform, dim=0, keepdim=True)
     
-    processed = processor(
+    processed = feature_extractor(
         waveform.squeeze().numpy(),
         sampling_rate=16000,
-        return_tensors="pt"
+        return_tensors="pt",
+        padding=True
     )
     
     model.eval()
@@ -175,10 +177,10 @@ def extract_embeddings(model, audio_path, processor):
     return embeddings
 
 if __name__ == "__main__":
-    metadata_path = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_train.csv"
+    metadata_path = "/kaggle/input/metadata1/metadata-1/IEMOCAP_metadata_train.csv"
     model = train_embeddings(
         metadata_path=metadata_path,
         num_epochs=10,
         batch_size=32,
         learning_rate=1e-4
-    )  
+    )
