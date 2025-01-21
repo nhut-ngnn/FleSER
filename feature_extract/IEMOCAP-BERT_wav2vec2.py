@@ -9,7 +9,24 @@ import pickle
 import pandas as pd
 import numpy as np
 from transformers import BertTokenizer, BertModel, Wav2Vec2Processor, Wav2Vec2Model
-from tqdm import tqdm  # For progress tracking
+from tqdm import tqdm
+
+class AudioEmbeddingModel(torch.nn.Module):
+    def __init__(self, embedding_dim=768, projection_dim=256):
+        super().__init__()
+        self.wav2vec = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base")
+        self.projection = torch.nn.Sequential(
+            torch.nn.Linear(embedding_dim, embedding_dim),
+            torch.nn.ReLU(),
+            torch.nn.Linear(embedding_dim, projection_dim)
+        )
+        
+    def forward(self, input_values):
+        outputs = self.wav2vec(input_values)
+        hidden_states = outputs.last_hidden_state
+        pooled = torch.mean(hidden_states, dim=1)
+        projection = self.projection(pooled)
+        return pooled, projection
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -22,7 +39,11 @@ OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/fea
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BertModel.from_pretrained('bert-base-uncased').to(device)
 WAV2VEC_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
-WAV2VEC_MODEL = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base").to(device)
+
+WAV2VEC_MODEL = AudioEmbeddingModel().to(device)
+checkpoint = torch.load('best_wav2vec_embeddings.pt')
+WAV2VEC_MODEL.load_state_dict(checkpoint['model_state_dict'])
+WAV2VEC_MODEL.eval()
 
 def extract_wav2vec_features(audio_file, wav2vec_processor, wav2vec_model, device):
     waveform, sample_rate = torchaudio.load(audio_file)
@@ -36,15 +57,14 @@ def extract_wav2vec_features(audio_file, wav2vec_processor, wav2vec_model, devic
         sampling_rate=16000, 
         return_tensors="pt"
     ).input_values.to(device)
+    
     with torch.no_grad():
-        outputs = wav2vec_model(input_values)
-        features = outputs.last_hidden_state
-        audio_embed = features.mean(dim=1).squeeze().cpu()
+        embeddings, projections = wav2vec_model(input_values)
+        audio_embed = embeddings.squeeze().cpu()
     
     return audio_embed
 
 def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
-
     text = row['raw_text']
     text_token = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
     text_token = {k: v.to(device) for k, v in text_token.items()}
