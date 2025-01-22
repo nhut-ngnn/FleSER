@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader, ConcatDataset, Subset
 import wandb
 from sklearn.model_selection import KFold
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_Wav2Vec import FlexibleMMSER
+from training.architecture import FlexibleMMSER
 from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -16,7 +16,7 @@ BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 150
 ALPHA_VALUES = [0.5]
-PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment-cross"
+PROJECT_NAME = "FlexibleMMSER-Alpha-Experiment-self-1"
 MODEL_NAME = "BERT_WAV2VEC"
 FUZZY_METHOD = "self_attention"
 DATASET_NAME = "IEMOCAP" 

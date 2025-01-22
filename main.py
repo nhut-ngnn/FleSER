@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import DataLoader
 import wandb
 from training.CustomizedDataset import CustomizedDataset
-from training.BERT_Wav2Vec import FlexibleMMSER
+from training.architecture import FlexibleMMSER
 from ultis import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
