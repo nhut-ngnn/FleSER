@@ -8,6 +8,7 @@ import pandas as pd
 from transformers import BertTokenizer, BertModel, Wav2Vec2Processor, Wav2Vec2Model
 from tqdm import tqdm
 
+# Define BERT embedding model
 class BERTEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
@@ -24,6 +25,7 @@ class BERTEmbeddingModel(torch.nn.Module):
         projection = self.projection(pooled)
         return pooled, projection
 
+# Define Wav2Vec2 embedding model
 class AudioEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
@@ -41,6 +43,7 @@ class AudioEmbeddingModel(torch.nn.Module):
         projection = self.projection(pooled)
         return pooled, projection
 
+# Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 IEMOCAP_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_train.csv"
@@ -50,6 +53,7 @@ IEMOCAP_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMM
 OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
 
 
+# Load pre-trained tokenizer and models
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BERTEmbeddingModel().to(device)
 text_checkpoint = torch.load('fine-tuning/model/best_bert_embeddings.pt')
@@ -62,6 +66,7 @@ audio_checkpoint = torch.load('fine-tuning/model/best_wav2vec_embeddings.pt')
 WAV2VEC_MODEL.load_state_dict(audio_checkpoint['model_state_dict'])
 WAV2VEC_MODEL.eval()
 
+# Function to extract text features
 def extract_text_features(text, tokenizer, text_model, device):
     try:
         text_token = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
@@ -77,6 +82,7 @@ def extract_text_features(text, tokenizer, text_model, device):
         print(f"Error extracting text features: {e}")
         return None
 
+# Function to extract audio features
 def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device):
     try:
         waveform, sample_rate = torchaudio.load(audio_file)
@@ -98,6 +104,7 @@ def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device)
         print(f"Error extracting audio features: {e}")
         return None
 
+# Function to process a single row
 def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
     try:
         text_embed = extract_text_features(row['raw_text'], tokenizer, text_model, device)
@@ -113,6 +120,7 @@ def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, de
         print(f"Error processing row: {e}")
         return None
 
+# Function to process a dataset
 def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
     data_list = pd.read_csv(input_path)
     processed_data = []
@@ -127,6 +135,7 @@ def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_proc
 
     print(f"Processed data saved to {output_path}")
 
+# Main function
 def main():
     print("Processing training set...")
     process_dataset(
