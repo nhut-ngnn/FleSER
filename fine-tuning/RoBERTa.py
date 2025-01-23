@@ -175,7 +175,7 @@ def extract_embeddings(model, text, tokenizer):
 
 
 if __name__ == "__main__":
-    metadata_path = "/kaggle/input/metadata1/metadata-1/IEMOCAP_metadata_train.csv"
+    metadata_path = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_train.csv"
     model = train_embeddings(
         metadata_path=metadata_path,
         num_epochs=10,

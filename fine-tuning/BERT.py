@@ -27,7 +27,7 @@ class TextDataset(Dataset):
         )
 
     def __getitem__(self, idx):
-        text = self.metadata.iloc[idx]['raw_text']  # Changed from 'transcription' to 'raw_text'
+        text = self.metadata.iloc[idx]['raw_text'] 
         label = self.metadata.iloc[idx]['label']
 
         aug1 = self._create_augmentation(text)
