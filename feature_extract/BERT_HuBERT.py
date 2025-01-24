@@ -1,11 +1,14 @@
 import warnings
 warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore', category=DeprecationWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
 
 import torch
 import torchaudio
 import pickle
 import pandas as pd
-from transformers import BertTokenizer, BertModel, Wav2Vec2Processor, Wav2Vec2Model
+import numpy as np
+from transformers import BertTokenizer, BertModel, Wav2Vec2FeatureExtractor, HubertModel
 from tqdm import tqdm
 
 class BERTEmbeddingModel(torch.nn.Module):
@@ -23,44 +26,42 @@ class BERTEmbeddingModel(torch.nn.Module):
         pooled = outputs.pooler_output
         projection = self.projection(pooled)
         return pooled, projection
-
 class AudioEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
-        self.wav2vec = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base")
+        self.hubert = HubertModel.from_pretrained("facebook/hubert-base-ls960")
         self.projection = torch.nn.Sequential(
             torch.nn.Linear(embedding_dim, embedding_dim),
             torch.nn.ReLU(),
             torch.nn.Linear(embedding_dim, projection_dim)
         )
-
+        
     def forward(self, input_values):
-        outputs = self.wav2vec(input_values)
+        outputs = self.hubert(input_values)
         hidden_states = outputs.last_hidden_state
         pooled = torch.mean(hidden_states, dim=1)
         projection = self.projection(pooled)
         return pooled, projection
-
+    
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-IEMOCAP_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_train.csv"
-IEMOCAP_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_val.csv"
-IEMOCAP_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_test.csv"
+ESD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_train.csv"
+ESD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_val.csv"
+ESD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_test.csv"
 
 OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
 
-
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BERTEmbeddingModel().to(device)
-text_checkpoint = torch.load('fine-tuning/model/best_bert_embeddings.pt')
+text_checkpoint = torch.load('fine_tuning/model/ESD/best_bert_embeddings.pt')
 TEXT_MODEL.load_state_dict(text_checkpoint['model_state_dict'])
 TEXT_MODEL.eval()
 
-WAV2VEC_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
-WAV2VEC_MODEL = AudioEmbeddingModel().to(device)
-audio_checkpoint = torch.load('fine-tuning/model/best_wav2vec_embeddings.pt')
-WAV2VEC_MODEL.load_state_dict(audio_checkpoint['model_state_dict'])
-WAV2VEC_MODEL.eval()
+WAV2VEC_PROCESSOR = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
+HUBERT_MODEL = AudioEmbeddingModel().to(device)
+checkpoint = torch.load('fine_tuning/model/ESD/best_hubert_embeddings.pt')
+HUBERT_MODEL.load_state_dict(checkpoint['model_state_dict'])
+HUBERT_MODEL.eval()
 
 def extract_text_features(text, tokenizer, text_model, device):
     try:
@@ -76,8 +77,8 @@ def extract_text_features(text, tokenizer, text_model, device):
     except Exception as e:
         print(f"Error extracting text features: {e}")
         return None
-
-def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device):
+    
+def extract_audio_features(audio_file, wav2vec_processor, hubert_model, device):
     try:
         waveform, sample_rate = torchaudio.load(audio_file)
 
@@ -92,16 +93,16 @@ def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device)
         ).input_values.to(device)
 
         with torch.no_grad():
-            embeddings, _ = wav2vec_model(input_values)
+            embeddings, _ = hubert_model(input_values)
         return embeddings.squeeze().cpu()
     except Exception as e:
         print(f"Error extracting audio features: {e}")
         return None
 
-def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
+def process_row(row, tokenizer, text_model, wav2vec_processor, hubert_model, device):
     try:
         text_embed = extract_text_features(row['raw_text'], tokenizer, text_model, device)
-        audio_embed = extract_audio_features(row['audio_file'], wav2vec_processor, wav2vec_model, device)
+        audio_embed = extract_audio_features(row['audio_file'], wav2vec_processor, hubert_model, device)
         label = torch.tensor(row['label'])
 
         return {
@@ -112,52 +113,64 @@ def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, de
     except Exception as e:
         print(f"Error processing row: {e}")
         return None
-
-def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
+    
+def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_processor, hubert_model, device):
     data_list = pd.read_csv(input_path)
     processed_data = []
-
-    for idx, row in tqdm(data_list.iterrows(), total=len(data_list), desc=f"Processing {output_path.split('/')[-1]}"):
-        result = process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device)
-        if result is not None:
-            processed_data.append(result)
-
+    
+    with torch.no_grad():
+        for idx, row in tqdm(data_list.iterrows(), total=len(data_list), desc=f"Processing {output_path.split('/')[-1]}"):
+            try:
+                processed_row = process_row(
+                    row, 
+                    tokenizer, 
+                    text_model, 
+                    wav2vec_processor, 
+                    hubert_model, 
+                    device
+                )
+                processed_data.append(processed_row)
+            except Exception as e:
+                print(f"Error processing row {idx}: {e}")
+    
     with open(output_path, "wb") as f:
         pickle.dump(processed_data, f)
-
+    
     print(f"Processed data saved to {output_path}")
 
 def main():
+    print("Loading models and tokenizer...")
+    
     print("Processing training set...")
     process_dataset(
-        IEMOCAP_TRAIN_PATH,
-        f"{OUTPUT_DIR}IEMOCAP_BERT_WAV2VEC_train.pkl",
+        ESD_TRAIN_PATH,
+        f"{OUTPUT_DIR}ESD_BERT_HUBERT_train.pkl",
         TOKENIZER,
         TEXT_MODEL,
         WAV2VEC_PROCESSOR,
-        WAV2VEC_MODEL,
+        HUBERT_MODEL,
         device
     )
 
     print("Processing validation set...")
     process_dataset(
-        IEMOCAP_VAL_PATH,
-        f"{OUTPUT_DIR}IEMOCAP_BERT_WAV2VEC_val.pkl",
+        ESD_VAL_PATH,
+        f"{OUTPUT_DIR}ESD_BERT_HUBERT_val.pkl",
         TOKENIZER,
         TEXT_MODEL,
         WAV2VEC_PROCESSOR,
-        WAV2VEC_MODEL,
+        HUBERT_MODEL,
         device
     )
 
     print("Processing testing set...")
     process_dataset(
-        IEMOCAP_TEST_PATH,
-        f"{OUTPUT_DIR}IEMOCAP_BERT_WAV2VEC_test.pkl",
+        ESD_TEST_PATH,
+        f"{OUTPUT_DIR}ESD_BERT_HUBERT_test.pkl",
         TOKENIZER,
         TEXT_MODEL,
         WAV2VEC_PROCESSOR,
-        WAV2VEC_MODEL,
+        HUBERT_MODEL,
         device
     )
 
