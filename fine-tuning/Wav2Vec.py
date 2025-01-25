@@ -19,16 +19,21 @@ class AudioDataset(Dataset):
         return len(self.metadata)
     
     def _load_and_preprocess_audio(self, file_path):
-        waveform, sample_rate = torchaudio.load(file_path)
-        
-        if sample_rate != 16000:
-            resampler = torchaudio.transforms.Resample(sample_rate, 16000)
-            waveform = resampler(waveform)
+        try:
+            waveform, sample_rate = torchaudio.load(file_path)
             
-        if waveform.shape[0] > 1:
-            waveform = torch.mean(waveform, dim=0, keepdim=True)
+            if sample_rate != 16000:
+                resampler = torchaudio.transforms.Resample(sample_rate, 16000)
+                waveform = resampler(waveform)
+                
+            if waveform.shape[0] > 1:
+                waveform = torch.mean(waveform, dim=0, keepdim=True)
             
-        return waveform.squeeze()
+            return waveform.squeeze()
+        except Exception as e:
+            print(f"Error loading file {file_path}: {e}")
+            # Return silent audio of the segment length
+            return torch.zeros(self.segment_length)
     
     def _get_random_segment(self, waveform):
         if waveform.size(0) > self.segment_length:
@@ -42,27 +47,35 @@ class AudioDataset(Dataset):
     
     def __getitem__(self, idx):
         audio_path = self.metadata.iloc[idx]['audio_file']
-        waveform = self._load_and_preprocess_audio(audio_path)
-        
-        segment1 = self._get_random_segment(waveform)
-        segment2 = self._get_random_segment(waveform)
-        
-        processed1 = self.processor(
-            segment1.numpy(),
-            sampling_rate=16000,
-            return_tensors="pt"
-        )
-        
-        processed2 = self.processor(
-            segment2.numpy(),
-            sampling_rate=16000,
-            return_tensors="pt"
-        )
-        
-        return {
-            'input_values1': processed1['input_values'].squeeze(),
-            'input_values2': processed2['input_values'].squeeze()
-        }
+        try:
+            waveform = self._load_and_preprocess_audio(audio_path)
+            segment1 = self._get_random_segment(waveform)
+            segment2 = self._get_random_segment(waveform)
+            
+            processed1 = self.processor(
+                segment1.numpy(),
+                sampling_rate=16000,
+                return_tensors="pt"
+            )
+            
+            processed2 = self.processor(
+                segment2.numpy(),
+                sampling_rate=16000,
+                return_tensors="pt"
+            )
+            
+            return {
+                'input_values1': processed1['input_values'].squeeze(),
+                'input_values2': processed2['input_values'].squeeze()
+            }
+        except Exception as e:
+            print(f"Error processing index {idx}, file {audio_path}: {e}")
+            # Return dummy tensors to avoid breaking the DataLoader
+            return {
+                'input_values1': torch.zeros(self.segment_length),
+                'input_values2': torch.zeros(self.segment_length)
+            }
+
 
 class AudioEmbeddingModel(nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
@@ -175,7 +188,7 @@ def extract_embeddings(model, audio_path, processor):
     return embeddings
 
 if __name__ == "__main__":
-    metadata_path = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/IEMOCAP_metadata_train.csv"
+    metadata_path = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_train.csv"
     model = train_embeddings(
         metadata_path=metadata_path,
         num_epochs=10,
