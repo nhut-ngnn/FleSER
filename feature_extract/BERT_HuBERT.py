@@ -86,6 +86,9 @@ def extract_audio_features(audio_file, wav2vec_processor, hubert_model, device):
             resampler = torchaudio.transforms.Resample(sample_rate, 16000)
             waveform = resampler(waveform)
 
+        if waveform.shape[0] > 1:
+            waveform = torch.mean(waveform, dim=0, keepdim=True)
+
         input_values = wav2vec_processor(
             waveform.squeeze(),
             sampling_rate=16000,

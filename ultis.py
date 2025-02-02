@@ -179,8 +179,7 @@ def model_prediction(model, dataloader, metrics_fn):
         return eval_wa, eval_ua, eval_wf1, eval_uf1, y_true_ls, y_pred_ls
 
 def calculate_accuracy(y_pred, y_true):
-    class_weights = {cls: 1.0 / count for cls, count in Counter(y_true).items()}
-    wa = balanced_accuracy_score(y_true, y_pred, sample_weight=[class_weights[cls] for cls in y_true])
+    wa = balanced_accuracy_score(y_true, y_pred)
     
     ua = accuracy_score(y_true, y_pred)
     
@@ -189,41 +188,3 @@ def calculate_accuracy(y_pred, y_true):
     uf1 = f1_score(y_true, y_pred, average='macro')
     
     return wa, ua, wf1, uf1
-
-def model_prediction(model, dataloader, metrics_fn):
-    eval_wa = 0.0
-    eval_ua = 0.0
-    eval_wf1 = 0.0
-    eval_uf1 = 0.0
-    y_true_ls = []
-    y_pred_ls = []
-    
-    model.eval()
-    with torch.no_grad():
-        for batch, (text_embed, audio_embed, label) in enumerate(dataloader):
-            text_embed = text_embed.to(device)
-            audio_embed = audio_embed.to(device)
-            label = label.to(device)
-            
-            output_logits, output_softmax = model(text_embed, audio_embed)
-            output_logits, output_softmax = output_logits.to(device), output_softmax.to(device)
-            y_preds = output_softmax.argmax(dim=1).to(device)
-            
-            wa, ua, wf1, uf1 = metrics_fn(y_preds.cpu().numpy(), label.cpu().numpy())
-            
-            y_true_ls.append(label.cpu().numpy())
-            y_pred_ls.append(y_preds.cpu().numpy())
-            
-            eval_wa += wa
-            eval_ua += ua
-            eval_wf1 += wf1
-            eval_uf1 += uf1
-
-        eval_wa /= len(dataloader)
-        eval_ua /= len(dataloader)
-        eval_wf1 /= len(dataloader)
-        eval_uf1 /= len(dataloader)
-        
-        print(f"Total Test WA: {eval_wa:.4f} | Total Test UA: {eval_ua:.4f} | Total Test WF1: {eval_wf1:.4f} | Total Test UF1: {eval_uf1:.4f}")
-        
-        return eval_wa, eval_ua, eval_wf1, eval_uf1, y_true_ls, y_pred_ls
