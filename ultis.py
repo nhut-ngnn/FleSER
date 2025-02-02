@@ -129,8 +129,7 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
 
 
 def calculate_accuracy(y_pred, y_true):
-    class_weights = {cls: 1.0 / count for cls, count in Counter(y_true).items()}
-    wa = balanced_accuracy_score(y_true, y_pred, sample_weight=[class_weights[cls] for cls in y_true])
+    wa = balanced_accuracy_score(y_true, y_pred)
     
     ua = accuracy_score(y_true, y_pred)
     
@@ -177,14 +176,3 @@ def model_prediction(model, dataloader, metrics_fn):
         print(f"Total Test WA: {eval_wa:.4f} | Total Test UA: {eval_ua:.4f} | Total Test WF1: {eval_wf1:.4f} | Total Test UF1: {eval_uf1:.4f}")
         
         return eval_wa, eval_ua, eval_wf1, eval_uf1, y_true_ls, y_pred_ls
-
-def calculate_accuracy(y_pred, y_true):
-    wa = balanced_accuracy_score(y_true, y_pred)
-    
-    ua = accuracy_score(y_true, y_pred)
-    
-    wf1 = f1_score(y_true, y_pred, average='weighted')
-    
-    uf1 = f1_score(y_true, y_pred, average='macro')
-    
-    return wa, ua, wf1, uf1
