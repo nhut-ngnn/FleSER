@@ -12,7 +12,14 @@ class CustomizedDataset(Dataset):
 
     def __getitem__(self, idx):
         with torch.no_grad():
-            text_embed = self.data[idx]['text_embed']
-            audio_embed = self.data[idx]['audio_embed']
-            label = self.data[idx]['label']
-        return text_embed, audio_embed, label
+            sample = self.data[idx]
+            text_embed = sample.get('text_embed', None)
+            audio_embed = sample.get('audio_embed', None)
+            label = sample.get('label', None)
+
+            # Debugging output
+            if text_embed is None or audio_embed is None or label is None:
+                print(f"Warning: None value found at index {idx}")
+                return None  # Returning None will be handled by a custom collate function
+
+            return text_embed, audio_embed, label

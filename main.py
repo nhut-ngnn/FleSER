@@ -6,18 +6,19 @@ from training.CustomizedDataset import CustomizedDataset
 from training.architecture import FlexibleMMSER
 from ultis import *
 
+set_seed(42)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
- 
-train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/ESD_BERT_HUBERT_train.pkl"
-val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/ESD_BERT_HUBERT_val.pkl"
-test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/ESD_BERT_HUBERT_test.pkl"
+
+train_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/ESD_BERT_WAV2VEC_train.pkl"
+val_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/ESD_BERT_WAV2VEC_val.pkl"
+test_metadata = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/ESD_BERT_WAV2VEC_test.pkl"
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 150
 ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
 PROJECT_NAME = "ESD-FlexibleMMSER-Alpha-Experiment-cross"
-MODEL_NAME = "BERT_HUBERT"
+MODEL_NAME = "BERT_WAV2VEC"
 FUZZY_METHOD = "cross_attention"
 DATASET_NAME = "ESD" 
 K_FOLDS = 5
@@ -26,8 +27,6 @@ NUM_CLASSES = 5
 train_dataset = CustomizedDataset(train_metadata)
 val_dataset = CustomizedDataset(val_metadata)
 test_dataset = CustomizedDataset(test_metadata)
-
-combined_dataset = ConcatDataset([val_dataset, test_dataset])
 
 kfold = KFold(n_splits=K_FOLDS, shuffle=True, random_state=42)
 
@@ -56,7 +55,8 @@ for alpha in ALPHA_VALUES:
         print(f"Fold {fold + 1}/{K_FOLDS} - Training with alpha = {alpha}")
         
         train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-        val_loader = DataLoader(combined_dataset, batch_size=BATCH_SIZE, shuffle=False)
+        val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+        test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
         model = FlexibleMMSER(num_classes=NUM_CLASSES).to(device)       # Change num_classes to classses in the dataset
         model.alpha = alpha
@@ -79,7 +79,6 @@ for alpha in ALPHA_VALUES:
         print(f"Fold {fold + 1} Results: WA: {val_wa:.4f}, UA: {val_ua:.4f}, WF1: {val_wf1:.4f}, UF1: {val_uf1:.4f}")
         print("=" * 50)
 
-        test_loader = DataLoader(combined_dataset, batch_size=BATCH_SIZE, shuffle=False)
         model.load_state_dict(torch.load(save_path, map_location=device))
         model.eval()
 

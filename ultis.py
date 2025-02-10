@@ -8,6 +8,8 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from sklearn.model_selection import KFold
 from torch.utils.data import Subset, DataLoader
+import random
+import numpy as np
 
 import matplotlib.pyplot as plt
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -176,3 +178,12 @@ def model_prediction(model, dataloader, metrics_fn):
         print(f"Total Test WA: {eval_wa:.4f} | Total Test UA: {eval_ua:.4f} | Total Test WF1: {eval_wf1:.4f} | Total Test UF1: {eval_uf1:.4f}")
         
         return eval_wa, eval_ua, eval_wf1, eval_uf1, y_true_ls, y_pred_ls
+    
+def set_seed(seed=42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed) 
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False

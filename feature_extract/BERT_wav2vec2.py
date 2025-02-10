@@ -8,6 +8,13 @@ import pandas as pd
 from transformers import BertTokenizer, BertModel, Wav2Vec2Processor, Wav2Vec2Model
 from tqdm import tqdm
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from ultis import set_seed
+
+set_seed(42)
+
 class BERTEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
@@ -46,9 +53,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ESD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_train.csv"
 ESD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_val.csv"
 ESD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_test.csv"
-
 OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
-
 
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BERTEmbeddingModel().to(device)
@@ -64,6 +69,8 @@ AUDIO_MODEL.eval()
 
 def extract_text_features(text, tokenizer, text_model, device):
     try:
+        if not isinstance(text, str) or len(text.strip()) == 0:
+            raise ValueError("Invalid or empty text input.")
         text_token = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
         text_token = {k: v.to(device) for k, v in text_token.items()}
 
@@ -89,7 +96,7 @@ def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device)
             waveform = torch.mean(waveform, dim=0, keepdim=True)
 
         input_values = wav2vec_processor(
-            waveform.squeeze(),
+            waveform.squeeze().numpy(),
             sampling_rate=16000,
             return_tensors="pt"
         ).input_values.to(device)
@@ -103,9 +110,12 @@ def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device)
 
 def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
     try:
-        text_embed = extract_text_features(row['raw_text'], tokenizer, text_model, device)
-        audio_embed = extract_audio_features(row['audio_file'], wav2vec_processor, wav2vec_model, device)
-        label = torch.tensor(row['label'])
+        text_embed = extract_text_features(row.get('raw_text', ''), tokenizer, text_model, device)
+        audio_embed = extract_audio_features(row.get('audio_file', ''), wav2vec_processor, wav2vec_model, device)
+        label = torch.tensor(row.get('label', -1))  # Default to -1 if label is missing
+
+        if text_embed is None or audio_embed is None:
+            raise ValueError("Failed to extract embeddings for row.")
 
         return {
             'text_embed': text_embed,
@@ -130,6 +140,7 @@ def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_proc
 
     print(f"Processed data saved to {output_path}")
 
+# Main Execution
 def main():
     print("Processing training set...")
     process_dataset(

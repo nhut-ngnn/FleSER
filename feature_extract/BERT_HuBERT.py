@@ -10,6 +10,14 @@ import pandas as pd
 import numpy as np
 from transformers import BertTokenizer, BertModel, Wav2Vec2FeatureExtractor, HubertModel
 from tqdm import tqdm
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from ultis import set_seed
+
+set_seed(42)
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class BERTEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
@@ -40,10 +48,9 @@ class AudioEmbeddingModel(torch.nn.Module):
         outputs = self.hubert(input_values)
         hidden_states = outputs.last_hidden_state
         pooled = torch.mean(hidden_states, dim=1)
-        projection = self.projection(pooled)
+        projection = self.projection(pooled) 
         return pooled, projection
     
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 ESD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_train.csv"
 ESD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_val.csv"
@@ -59,7 +66,7 @@ TEXT_MODEL.eval()
 
 WAV2VEC_PROCESSOR = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
 HUBERT_MODEL = AudioEmbeddingModel().to(device)
-checkpoint = torch.load('fine_tuning/model/ESD/best_hubert_embeddings.pt')
+checkpoint = torch.load('fine_tuning/model/IEMOCAP/best_hubert_embeddings.pt')
 HUBERT_MODEL.load_state_dict(checkpoint['model_state_dict'])
 HUBERT_MODEL.eval()
 
@@ -78,7 +85,7 @@ def extract_text_features(text, tokenizer, text_model, device):
         print(f"Error extracting text features: {e}")
         return None
     
-def extract_audio_features(audio_file, wav2vec_processor, hubert_model, device):
+def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device):
     try:
         waveform, sample_rate = torchaudio.load(audio_file)
 
@@ -90,13 +97,13 @@ def extract_audio_features(audio_file, wav2vec_processor, hubert_model, device):
             waveform = torch.mean(waveform, dim=0, keepdim=True)
 
         input_values = wav2vec_processor(
-            waveform.squeeze(),
+            waveform.squeeze().numpy(),
             sampling_rate=16000,
             return_tensors="pt"
         ).input_values.to(device)
 
         with torch.no_grad():
-            embeddings, _ = hubert_model(input_values)
+            embeddings, _ = wav2vec_model(input_values)
         return embeddings.squeeze().cpu()
     except Exception as e:
         print(f"Error extracting audio features: {e}")
@@ -107,7 +114,7 @@ def process_row(row, tokenizer, text_model, wav2vec_processor, hubert_model, dev
         text_embed = extract_text_features(row['raw_text'], tokenizer, text_model, device)
         audio_embed = extract_audio_features(row['audio_file'], wav2vec_processor, hubert_model, device)
         label = torch.tensor(row['label'])
-
+        
         return {
             'text_embed': text_embed,
             'audio_embed': audio_embed,

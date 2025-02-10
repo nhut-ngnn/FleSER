@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class FlexibleMMSER(nn.Module):
-    def __init__(self, num_classes=None, fusion_method=None, alpha=None, dropout_rate=0.3):
+    def __init__(self, num_classes=7, fusion_method=None, alpha=None, dropout_rate=0.3):
         super(FlexibleMMSER, self).__init__()
         self.num_classes = num_classes
         self.fusion_method = fusion_method
@@ -103,6 +103,8 @@ class FlexibleMMSER(nn.Module):
             )
             fused_feature = torch.cat([attn_text_audio, attn_audio_text], dim=1)
             return fused_feature.mean(dim=1)
+        elif self.fusion_method =='concat':
+            return torch.cat([text_fuzzy, audio_fuzzy], dim=1).mean(dim=1)
         else:
             raise ValueError(f"Unknown fusion method: {self.fusion_method}")
 
@@ -121,6 +123,7 @@ class FlexibleMMSER(nn.Module):
         audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)
+
         y_logits = self.fc(fused_fuzzy)
         y_softmax = self.softmax(y_logits)
 

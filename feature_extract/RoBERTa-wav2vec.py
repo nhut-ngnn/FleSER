@@ -8,6 +8,12 @@ import pandas as pd
 from transformers import RobertaTokenizer, RobertaModel, Wav2Vec2Processor, Wav2Vec2Model
 from tqdm import tqdm
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from ultis import set_seed
+
+set_seed(42)
 
 class RoBERTaEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
@@ -42,24 +48,25 @@ class AudioEmbeddingModel(torch.nn.Module):
         projection = self.projection(pooled)
         return pooled, projection
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
 
-ESD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_train.csv"
-ESD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_val.csv"
-ESD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_test.csv"
+MELD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_train.csv"
+MELD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_val.csv"
+MELD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_test.csv"
 
 OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
 
 
 TOKENIZER = RobertaTokenizer.from_pretrained('FacebookAI/roberta-base')
 TEXT_MODEL = RoBERTaEmbeddingModel().to(device)
-text_checkpoint = torch.load('fine_tuning/model/ESD/best_roberta_embeddings.pt')
+text_checkpoint = torch.load('fine_tuning/model/MELD/best_roberta_embeddings.pt')
 TEXT_MODEL.load_state_dict(text_checkpoint['model_state_dict'], strict=False)
 TEXT_MODEL.eval()
 
 AUDIO_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
 AUDIO_MODEL = AudioEmbeddingModel().to(device)
-audio_checkpoint = torch.load('fine_tuning/model/ESD/best_wav2vec_embeddings.pt')
+audio_checkpoint = torch.load('fine_tuning/model/MELD/best_wav2vec_embeddings.pt')
 AUDIO_MODEL.load_state_dict(audio_checkpoint['model_state_dict'], strict=False)
 AUDIO_MODEL.eval()
 
@@ -85,7 +92,6 @@ def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device)
         if sample_rate != 16000:
             resampler = torchaudio.transforms.Resample(sample_rate, 16000)
             waveform = resampler(waveform)
-
         if waveform.shape[0] > 1:
             waveform = torch.mean(waveform, dim=0, keepdim=True)
 
@@ -132,32 +138,32 @@ def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_proc
     print(f"Processed data saved to {output_path}")
 
 def main():
-    print("Processing training set...")
-    process_dataset(
-        ESD_TRAIN_PATH,
-        f"{OUTPUT_DIR}ESD_RoBERTa_WAV2VEC_train.pkl",
-        TOKENIZER,
-        TEXT_MODEL,
-        AUDIO_PROCESSOR,
-        AUDIO_MODEL,
-        device
-    )
+    # print("Processing training set...")
+    # process_dataset(
+    #     MELD_TRAIN_PATH,
+    #     f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_train.pkl",
+    #     TOKENIZER,
+    #     TEXT_MODEL,
+    #     AUDIO_PROCESSOR,
+    #     AUDIO_MODEL,
+    #     device
+    # )
 
-    print("Processing validation set...")
-    process_dataset(
-        ESD_VAL_PATH,
-        f"{OUTPUT_DIR}ESD_RoBERTa_WAV2VEC_val.pkl",
-        TOKENIZER,
-        TEXT_MODEL,
-        AUDIO_PROCESSOR,
-        AUDIO_MODEL,
-        device
-    )
+    # print("Processing validation set...")
+    # process_dataset(
+    #     MELD_VAL_PATH,
+    #     f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_val.pkl",
+    #     TOKENIZER,
+    #     TEXT_MODEL,
+    #     AUDIO_PROCESSOR,
+    #     AUDIO_MODEL,
+    #     device
+    # )
 
     print("Processing testing set...")
     process_dataset(
-        ESD_TEST_PATH,
-        f"{OUTPUT_DIR}ESD_RoBERTa_WAV2VEC_test.pkl",
+        MELD_TEST_PATH,
+        f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_test.pkl",
         TOKENIZER,
         TEXT_MODEL,
         AUDIO_PROCESSOR,
