@@ -92,16 +92,16 @@ class FlexibleMMSER(nn.Module):
 
         elif self.fusion_method == 'cross_attention':
             attn_text_audio, _ = self.multihead_attention(
-                query=self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy,
+                query=text_fuzzy,
                 key=audio_fuzzy,
                 value=audio_fuzzy
             )
             attn_audio_text, _ = self.multihead_attention(
-                query=self.alpha * audio_fuzzy + (1 - self.alpha) * text_fuzzy,
+                query=audio_fuzzy,
                 key=text_fuzzy,
                 value=text_fuzzy
             )
-            fused_feature = torch.cat([attn_text_audio, attn_audio_text], dim=1)
+            fused_feature = self.alpha * attn_text_audio + (1 - self.alpha) * attn_audio_text
             return fused_feature.mean(dim=1)
         elif self.fusion_method =='concat':
             return torch.cat([text_fuzzy, audio_fuzzy], dim=1).mean(dim=1)
