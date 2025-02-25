@@ -1,4 +1,4 @@
-# FlexibleMMSER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion
+# FlexER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion
 
 > Please press ⭐ button and/or cite papers if you feel helpful.
 
