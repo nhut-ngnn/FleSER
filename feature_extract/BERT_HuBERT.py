@@ -18,7 +18,6 @@ from ultis import set_seed
 set_seed(42)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
 class BERTEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
@@ -30,10 +29,12 @@ class BERTEmbeddingModel(torch.nn.Module):
         )
 
     def forward(self, input_ids, attention_mask):
-        outputs = self.bert(input_ids, attention_mask=attention_mask)
+        with torch.no_grad(): 
+            outputs = self.bert(input_ids, attention_mask=attention_mask)
         pooled = outputs.pooler_output
         projection = self.projection(pooled)
         return pooled, projection
+
 class AudioEmbeddingModel(torch.nn.Module):
     def __init__(self, embedding_dim=768, projection_dim=256):
         super().__init__()
@@ -59,10 +60,10 @@ ESD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/
 OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
 
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
+
 TEXT_MODEL = BERTEmbeddingModel().to(device)
-text_checkpoint = torch.load('fine_tuning/model/ESD/best_bert_embeddings.pt')
-TEXT_MODEL.load_state_dict(text_checkpoint['model_state_dict'])
 TEXT_MODEL.eval()
+
 
 WAV2VEC_PROCESSOR = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
 HUBERT_MODEL = AudioEmbeddingModel().to(device)
