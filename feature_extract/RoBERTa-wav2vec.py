@@ -60,9 +60,8 @@ OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/fea
 
 TOKENIZER = RobertaTokenizer.from_pretrained('FacebookAI/roberta-base')
 TEXT_MODEL = RoBERTaEmbeddingModel().to(device)
-text_checkpoint = torch.load('fine_tuning/model/MELD/best_roberta_embeddings.pt')
-TEXT_MODEL.load_state_dict(text_checkpoint['model_state_dict'], strict=False)
 TEXT_MODEL.eval()
+
 
 AUDIO_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
 AUDIO_MODEL = AudioEmbeddingModel().to(device)
