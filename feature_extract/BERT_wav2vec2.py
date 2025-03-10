@@ -26,7 +26,8 @@ class BERTEmbeddingModel(torch.nn.Module):
         )
 
     def forward(self, input_ids, attention_mask):
-        outputs = self.bert(input_ids, attention_mask=attention_mask)
+        with torch.no_grad():
+            outputs = self.bert(input_ids, attention_mask=attention_mask)
         pooled = outputs.pooler_output
         projection = self.projection(pooled)
         return pooled, projection
@@ -57,8 +58,6 @@ OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/fea
 
 TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
 TEXT_MODEL = BERTEmbeddingModel().to(device)
-text_checkpoint = torch.load('fine_tuning/model/ESD/best_bert_embeddings.pt')
-TEXT_MODEL.load_state_dict(text_checkpoint['model_state_dict'])
 TEXT_MODEL.eval()
 
 AUDIO_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
