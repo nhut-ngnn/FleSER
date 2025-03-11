@@ -10,22 +10,22 @@ class FlexibleMMSER(nn.Module):
         self.alpha = alpha
 
         self.text_projection = nn.Sequential(
-            nn.Linear(768, 256),
-            nn.BatchNorm1d(256),
+            nn.Linear(768, 512),
+            nn.BatchNorm1d(512),
             nn.ReLU(),
             nn.Dropout(dropout_rate)
         )
         self.audio_projection = nn.Sequential(
-            nn.Linear(768, 256),
-            nn.BatchNorm1d(256),
+            nn.Linear(768, 512),
+            nn.BatchNorm1d(512),
             nn.ReLU(),
             nn.Dropout(dropout_rate)
         )
 
-        self.multihead_attention = nn.MultiheadAttention(embed_dim=256, num_heads=4, batch_first=True)
+        self.multihead_attention = nn.MultiheadAttention(embed_dim=512, num_heads=4, batch_first=True)
 
         self.fc = nn.Sequential(
-            nn.Linear(256, 128),
+            nn.Linear(512, 128),
             nn.BatchNorm1d(128),
             nn.ReLU(),
             nn.Dropout(0.3),
@@ -115,11 +115,7 @@ class FlexibleMMSER(nn.Module):
         text_fuzzy_type = self.select_fuzzy_type(text_proj)
         audio_fuzzy_type = self.select_fuzzy_type(audio_proj)
 
-        text_fuzzy = self.fuzzy_membership(text_proj, method=text_fuzzy_type)
-        text_fuzzy = text_fuzzy.unsqueeze(1)  
-        attn_text_fuzzy, _ = self.multihead_attention(query=text_fuzzy, key=text_fuzzy, value=text_fuzzy)
-        text_fuzzy = attn_text_fuzzy.squeeze(1) 
-        
+        text_fuzzy = self.fuzzy_membership(text_proj, method=text_fuzzy_type)        
         audio_fuzzy = self.fuzzy_membership(audio_proj, method=audio_fuzzy_type)
 
         fused_fuzzy = self.fuzzy_fusion(text_fuzzy, audio_fuzzy)

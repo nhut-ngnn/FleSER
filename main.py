@@ -9,17 +9,17 @@ from ultis import *
 set_seed(42)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_metadata = "/Users/minhnhut.ngnn/Library/CloudStorage/GoogleDrive-minhnhut.ngnn@gmail.com/My Drive/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
-val_metadata = "/Users/minhnhut.ngnn/Library/CloudStorage/GoogleDrive-minhnhut.ngnn@gmail.com/My Drive/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
-test_metadata = "/Users/minhnhut.ngnn/Library/CloudStorage/GoogleDrive-minhnhut.ngnn@gmail.com/My Drive/FuzzyFusion-SER/feature/IEMOCAP_BERT_WAV2VEC_test.pkl"
+train_metadata = "feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
+val_metadata = "feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
+test_metadata = "feature/IEMOCAP_BERT_WAV2VEC_test.pkl"
 
 BATCH_SIZE = 128
 LEARNING_RATE = 0.0001
 NUM_EPOCHS = 150
 ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
-PROJECT_NAME = "IEMOCAP-FlexibleMMSER-Alpha-Experiment-cross"
+PROJECT_NAME = "IEMOCAP-FlexibleMMSER-Alpha-Experiment-self"
 MODEL_NAME = "BERT_WAV2VEC"
-FUZZY_METHOD = "cross_attention"
+FUZZY_METHOD = "self_attention"
 DATASET_NAME = "IEMOCAP" 
 K_FOLDS = 5
 NUM_CLASSES = 4
