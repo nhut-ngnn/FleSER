@@ -3,9 +3,9 @@
 > Please press ⭐ button and/or cite papers if you feel helpful.
 
 <p align="center">
-<img src="https://img.shields.io/github/stars/nhut-ngnn/FlexibleMMSER">
-<img src="https://img.shields.io/github/forks/nhut-ngnn/FlexibleMMSER">
-<img src="https://img.shields.io/github/watchers/nhut-ngnn/FlexibleMMSER">
+<img src="https://img.shields.io/github/stars/nhut-ngnn/FleSER">
+<img src="https://img.shields.io/github/forks/nhut-ngnn/FleSER">
+<img src="https://img.shields.io/github/watchers/nhut-ngnn/FleSER">
 </p>
 
 <div align="center">
@@ -41,13 +41,13 @@
 ## Install
 ### Clone this repository
 ```
-git clone https://github.com/nhut-ngnn/FlexibleMMSER.git
+git clone https://github.com/nhut-ngnn/FleSER.git
 ```
 
 ### Create Conda Enviroment and Install Requirement
 Navigate to the project directory and create a Conda environment:
 ```
-cd FlexibleMMSER
+cd FleSER
 conda create --name flexible_mmser python=3.8
 conda activate flexible_mmser
 ```
@@ -134,7 +134,80 @@ python Wav2Vec.py  # Fine-tune Wav2Vec
 
 ### Feature encoding
 
+<p>
+The feature encoding step extracts meaningful representations from raw audio and text data using pre-trained models such as <strong>HuBERT</strong>, <strong>Wav2Vec2</strong>, and <strong>RoBERTa</strong>.
+</p>
+
+<h4>📂 Feature Extraction Scripts</h4>
+<p>Navigate to the <code>feature_extract/</code> directory, which contains the following scripts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Script</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>BERT_HuBERT.py</code></td>
+      <td>Extracts text and audio features using BERT and HuBERT</td>
+    </tr>
+    <tr>
+      <td><code>BERT_wav2vec2.py</code></td>
+      <td>Extracts text and audio features using BERT and Wav2Vec2</td>
+    </tr>
+    <tr>
+      <td><code>RoBERTa-HuBERT.py</code></td>
+      <td>Extracts features using RoBERTa for text and HuBERT for audio</td>
+    </tr>
+    <tr>
+      <td><code>RoBERTa-wav2vec.py</code></td>
+      <td>Extracts features using RoBERTa for text and Wav2Vec2 for audio</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>🔧 Replace Metadata Path</h4>
+<p>Ensure that the correct dataset paths are set inside the script. Example:</p>
+
+<pre><code># Inside feature_extract/BERT_HuBERT.py
+metadata_path = "/kaggle/input/metadata1/metadata-1/IEMOCAP_metadata_train.csv"
+output_path = "./data/processed_features/"
+</code></pre>
+
+<p>Modify these paths to match your dataset location.</p>
+
+<h4>🚀 Running Feature Extraction</h4>
+<p>Execute the script to extract features:</p>
+
+<pre><code>cd feature_extract
+python BERT_HuBERT.py
+# or
+python RoBERTa-wav2vec.py
+</code></pre>
+
+<h4>🛠️ Expected Output</h4>
+<ul>
+  <li>Encoded features will be saved in the <code>data/processed_features/</code> directory.</li>
+  <li>These features will be used as inputs for the training step.</li>
+</ul>
+
 ### Training objective 
+
+To train the FleSER model, use the main Python script located in the root directory. The following command runs the training process:
+
+<pre><code>python main.py --config configs/config.yaml --device cuda</code></pre>
+
+Parameters
+
+--config: Path to the configuration file containing training hyperparameters and model settings.
+
+--device: Specify the device to use (e.g., cuda for GPU training).
+
+Training progress, including loss and accuracy, will be logged using WandB. Ensure your WandB account is properly set up by running:
+
+<pre><code>wandb login</code></pre>
 
 ## References
 
