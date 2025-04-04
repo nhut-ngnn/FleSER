@@ -48,8 +48,7 @@ class AudioEmbeddingModel(torch.nn.Module):
         projection = self.projection(pooled)
         return pooled, projection
 
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = torch.device('cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 MELD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_train.csv"
 MELD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_val.csv"
@@ -137,27 +136,27 @@ def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_proc
     print(f"Processed data saved to {output_path}")
 
 def main():
-    # print("Processing training set...")
-    # process_dataset(
-    #     MELD_TRAIN_PATH,
-    #     f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_train.pkl",
-    #     TOKENIZER,
-    #     TEXT_MODEL,
-    #     AUDIO_PROCESSOR,
-    #     AUDIO_MODEL,
-    #     device
-    # )
+    print("Processing training set...")
+    process_dataset(
+        MELD_TRAIN_PATH,
+        f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_train.pkl",
+        TOKENIZER,
+        TEXT_MODEL,
+        AUDIO_PROCESSOR,
+        AUDIO_MODEL,
+        device
+    )
 
-    # print("Processing validation set...")
-    # process_dataset(
-    #     MELD_VAL_PATH,
-    #     f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_val.pkl",
-    #     TOKENIZER,
-    #     TEXT_MODEL,
-    #     AUDIO_PROCESSOR,
-    #     AUDIO_MODEL,
-    #     device
-    # )
+    print("Processing validation set...")
+    process_dataset(
+        MELD_VAL_PATH,
+        f"{OUTPUT_DIR}MELD_RoBERTa_WAV2VEC_val.pkl",
+        TOKENIZER,
+        TEXT_MODEL,
+        AUDIO_PROCESSOR,
+        AUDIO_MODEL,
+        device
+    )
 
     print("Processing testing set...")
     process_dataset(
