@@ -21,6 +21,12 @@ def calculate_metrics(y_pred, y_true):
     wf1 = f1_score(y_true, y_pred, average='weighted')
     return wa, ua, mf1, wf1
 
+def print_model_parameters(model):
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"Total Parameters: {total_params}")
+    print(f"Trainable Parameters: {trainable_params}")
+
 # Training step
 def train_step(model, dataloader, optim, loss_fn):
     model.train()
@@ -49,12 +55,6 @@ def train_step(model, dataloader, optim, loss_fn):
             train_ua / len(dataloader), 
             train_mf1 / len(dataloader), 
             train_wf1 / len(dataloader))
-
-def print_model_parameters(model):
-    total_params = sum(p.numel() for p in model.parameters())
-    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print(f"Total Parameters: {total_params}")
-    print(f"Trainable Parameters: {trainable_params}")
     
 def eval_step(model, dataloader, loss_fn):
     model.eval()
@@ -95,21 +95,6 @@ def train_and_evaluate(model, train_loader, val_loader, num_epochs, lr=0.0001, s
         val_loss, val_wa, val_ua, val_mf1, val_wf1 = eval_step(model, val_loader, criterion)
 
         lr_scheduler.step()
-
-        wandb.log({
-            "train_loss": train_loss,
-            "val_loss": val_loss,
-            "train_wa": train_wa * 100,
-            "val_wa": val_wa * 100,
-            "train_ua": train_ua * 100,
-            "val_ua": val_ua * 100,
-            "train_mf1": train_mf1 * 100,
-            "val_mf1": val_mf1 * 100,
-            "train_wf1": train_wf1 * 100,
-            "val_wf1": val_wf1 * 100,
-            "learning_rate": lr_scheduler.get_last_lr()[0],
-            "epoch": epoch + 1,
-        })
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
