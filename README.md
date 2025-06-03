@@ -33,9 +33,9 @@
 </div>
 
 ## Abstract 
-> 
+> Multimodal learning has been demonstrated to improve classification outcomes in speech emotion recognition (SER). Despite this advantage, multimodal approaches in SER often face key challenges such as limited robustness in handling uncertainty, difficulties in generalizing across diverse emotional contexts, and inefficiencies in integrating heterogeneous modalities. To overcome these constraints, we propose FleSER, a multimodal emotion recognition framework that utilizes dynamic fuzzy membership and attention fusion. In this architecture, we introduce a rule-based dynamic fuzzy membership mechanism that adaptively transforms features. The FleSER architecture leverages audio and textual modalities, employing self-modality and cross-modality attention mechanisms with the $\alpha$ interpolation to capture complementary emotional cues. The $\alpha$ interpolation-based feature fusion mechanism adaptively emphasizes the more informative modality in varying contexts, ensuring robust multimodal integration. This comprehensive design improves the model's recognition accuracy. We evaluate the FleSER architecture on the three benchmark datasets: IEMOCAP, ESD, and MELD. FleSER surpasses the previous state-of-the-art (SOTA) by 1.92\% on IEMOCAP and an impressive 6.37\% on ESD, demonstrating its superior effectiveness in enhancing emotion recognition accuracy across various datasets. Ablation studies further validate the effectiveness of each key component, including unimodal and multimodal input effectiveness, fuzzy membership functions, fusion strategies, and projection dimension on FleSER architecture performance. 
 >
-> Index Terms:
+> Index Terms: Speech emotion recognition, Dynamic fuzzy membership, Attention-based feature fusion, Multimodal emotion recognition, Feature fusion.
 
 
 ## Install
@@ -210,6 +210,11 @@ Training progress, including loss and accuracy, will be logged using WandB. Ensu
 <pre><code>wandb login</code></pre>
 
 ## References
+[1] Nhat Truong Pham, SERVER: Multi-modal Speech Emotion Recognition using Transformer-based and Vision-based Embeddings (ICIIT), 2023. Available https://github.com/nhattruongpham/mmser.git.
+
+[2] Mustaqeem Khan, MemoCMT: Cross-Modal Transformer-Based Multimodal Emotion Recognition System (Scientific Reports), 2025. Available https://github.com/tpnam0901/MemoCMT.
+
+[3] Nhat Truong Pham, SER-Fuse: An Emotion Recognition Application Utilizing Multi-Modal, Multi-Lingual, and Multi-Feature Fusion (SOICT), 2023. Available https://github.com/nhattruongpham/SER-Fuse.
 
 ## Citation
 If you use this code or part of it, please cite the following papers:
