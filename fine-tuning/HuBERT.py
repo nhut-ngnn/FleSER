@@ -77,7 +77,7 @@ class AudioDataset(Dataset):
 
 
 class AudioEmbeddingModel(nn.Module):
-    def __init__(self, embedding_dim=768, projection_dim=256):
+    def __init__(self, embedding_dim=768, projection_dim=512):
         super().__init__()
         self.hubert = HubertModel.from_pretrained("facebook/hubert-base-ls960")
         self.projection = nn.Sequential(
@@ -162,7 +162,7 @@ def train_embeddings(metadata_path, num_epochs=10, batch_size=32, learning_rate=
                 'model_state_dict': model.state_dict(),
                 'loss': best_loss,
                 'epoch': epoch
-            }, 'best_hubert_embeddings.pt')
+            }, 'fine-tuning/model/MELD/best_hubert_embeddings.pt')
     
     return model
 
@@ -188,10 +188,10 @@ def extract_embeddings(model, audio_path, feature_extractor):
     return embeddings
 
 if __name__ == "__main__":
-    metadata_path = "/kaggle/input/metadata1/metadata-1/IEMOCAP_metadata_train.csv"
+    metadata_path = "metadata/MELD_metadata_train.csv"
     model = train_embeddings(
         metadata_path=metadata_path,
-        num_epochs=10,
+        num_epochs=5,
         batch_size=32,
         learning_rate=1e-4
     )

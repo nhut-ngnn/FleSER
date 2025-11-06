@@ -19,7 +19,7 @@ from ultis import set_seed
 set_seed(42)
 
 class RoBERTaEmbeddingModel(torch.nn.Module):
-    def __init__(self, embedding_dim=768, projection_dim=256):
+    def __init__(self, embedding_dim=768, projection_dim=512):
         super().__init__()
         self.roberta = RobertaModel.from_pretrained('FacebookAI/roberta-base')
         self.projection = torch.nn.Sequential(
@@ -35,7 +35,7 @@ class RoBERTaEmbeddingModel(torch.nn.Module):
         return pooled, projection
 
 class AudioEmbeddingModel(torch.nn.Module):
-    def __init__(self, embedding_dim=768, projection_dim=256):
+    def __init__(self, embedding_dim=768, projection_dim=512):
         super().__init__()
         self.hubert = HubertModel.from_pretrained("facebook/hubert-base-ls960")
         self.projection = torch.nn.Sequential(
@@ -53,20 +53,22 @@ class AudioEmbeddingModel(torch.nn.Module):
     
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-MELD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_train.csv"
-MELD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_val.csv"
-MELD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_test.csv"
+MELD_TRAIN_PATH = "metadata/MELD_metadata_train.csv"
+MELD_VAL_PATH = "metadata/MELD_metadata_val.csv"
+MELD_TEST_PATH = "metadata/MELD_metadata_test.csv"
 
-OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
+OUTPUT_DIR = "feature/"
 
 TOKENIZER = RobertaTokenizer.from_pretrained('FacebookAI/roberta-base')
 TEXT_MODEL = RoBERTaEmbeddingModel().to(device)
+checkpoint = torch.load('fine-tuning/model/MELD/best_roberta_embeddings.pt', map_location=device)
+TEXT_MODEL.load_state_dict(checkpoint['model_state_dict'], strict=False)
 TEXT_MODEL.eval()
 
 
 WAV2VEC_PROCESSOR = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
 HUBERT_MODEL = AudioEmbeddingModel().to(device)
-checkpoint = torch.load('fine_tuning/model/MELD/best_hubert_embeddings.pt')
+checkpoint = torch.load('fine-tuning/model/MELD/best_hubert_embeddings.pt')
 HUBERT_MODEL.load_state_dict(checkpoint['model_state_dict'], strict=False)
 HUBERT_MODEL.eval()
 

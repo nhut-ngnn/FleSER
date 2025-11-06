@@ -8,6 +8,7 @@ import torch.nn.functional as F
 from tqdm import tqdm
 import pandas as pd
 import numpy as np
+import soundfile as sf
 
 class AudioDataset(Dataset):
     def __init__(self, metadata_path, processor, segment_length=16000):
@@ -20,19 +21,16 @@ class AudioDataset(Dataset):
     
     def _load_and_preprocess_audio(self, file_path):
         try:
-            waveform, sample_rate = torchaudio.load(file_path)
-            
+            waveform, sample_rate = sf.read(file_path)
+            waveform = torch.tensor(waveform).float()
+            if len(waveform.shape) > 1:
+                waveform = torch.mean(waveform, dim=1)
             if sample_rate != 16000:
                 resampler = torchaudio.transforms.Resample(sample_rate, 16000)
-                waveform = resampler(waveform)
-                
-            if waveform.shape[0] > 1:
-                waveform = torch.mean(waveform, dim=0, keepdim=True)
-            
-            return waveform.squeeze()
+                waveform = resampler(waveform.unsqueeze(0)).squeeze()
+            return waveform
         except Exception as e:
             print(f"Error loading file {file_path}: {e}")
-            # Return silent audio of the segment length
             return torch.zeros(self.segment_length)
     
     def _get_random_segment(self, waveform):
@@ -78,7 +76,7 @@ class AudioDataset(Dataset):
 
 
 class AudioEmbeddingModel(nn.Module):
-    def __init__(self, embedding_dim=768, projection_dim=256):
+    def __init__(self, embedding_dim=768, projection_dim=768):
         super().__init__()
         self.wav2vec = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base")
         self.projection = nn.Sequential(
@@ -163,7 +161,7 @@ def train_embeddings(metadata_path, num_epochs=10, batch_size=32, learning_rate=
                 'model_state_dict': model.state_dict(),
                 'loss': best_loss,
                 'epoch': epoch
-            }, 'best_wav2vec_embeddings.pt')
+            }, '/home/tri.pm/polyp/fptu/MinhNhut/model/MELD/best_wav2vec_embeddings.pt')
     
     return model
 
@@ -188,7 +186,7 @@ def extract_embeddings(model, audio_path, processor):
     return embeddings
 
 if __name__ == "__main__":
-    metadata_path = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/MELD_metadata_train.csv"
+    metadata_path = "metadata/MELD_metadata_train.csv"
     model = train_embeddings(
         metadata_path=metadata_path,
         num_epochs=10,

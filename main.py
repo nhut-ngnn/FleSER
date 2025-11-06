@@ -9,20 +9,20 @@ from ultis import *
 set_seed(42)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_metadata = "feature/IEMOCAP_BERT_WAV2VEC_train.pkl"
-val_metadata = "feature/IEMOCAP_BERT_WAV2VEC_val.pkl"
-test_metadata = "feature/IEMOCAP_BERT_WAV2VEC_test.pkl"
+train_metadata = "feature/MELD_BERT_WAV2VEC_train.pkl"
+val_metadata = "feature/MELD_BERT_WAV2VEC_val.pkl"
+test_metadata = "feature/MELD_BERT_WAV2VEC_test.pkl"
 
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 LEARNING_RATE = 0.0001
-NUM_EPOCHS = 150
-ALPHA_VALUES = [0.1, 0.3, 0.5, 0.7, 0.9]
-PROJECT_NAME = "IEMOCAP-FlexibleMMSER-Alpha-Experiment-self"
+NUM_EPOCHS = 100
+ALPHA_VALUES = [0.3]
+PROJECT_NAME = "MELD-FlexibleMMSER-Alpha-Experiment-gmu"
 MODEL_NAME = "BERT_WAV2VEC"
-FUZZY_METHOD = "self_attention"
-DATASET_NAME = "IEMOCAP" 
+FUZZY_METHOD = "gmu"
+DATASET_NAME = "MELD" 
 K_FOLDS = 5
-NUM_CLASSES = 4
+NUM_CLASSES = 7
 
 train_dataset = CustomizedDataset(train_metadata)
 val_dataset = CustomizedDataset(val_metadata)
@@ -54,16 +54,34 @@ for alpha in ALPHA_VALUES:
     for fold, (train_idx, val_idx) in enumerate(kfold.split(train_dataset)):
         print(f"Fold {fold + 1}/{K_FOLDS} - Training with alpha = {alpha}")
         
-        train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-        val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
-        test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+        train_loader = DataLoader(
+            train_dataset,
+            batch_size=BATCH_SIZE,
+            shuffle=True,
+            collate_fn=collate_skip_none
+        )
+        
+        val_loader = DataLoader(
+            val_dataset,
+            batch_size=BATCH_SIZE,
+            shuffle=False,
+            collate_fn=collate_skip_none
+        )
+        
+        test_loader = DataLoader(
+            test_dataset,
+            batch_size=BATCH_SIZE,
+            shuffle=False,
+            collate_fn=collate_skip_none
+        )
 
-        model = FlexibleMMSER(num_classes=NUM_CLASSES).to(device)       # Change num_classes to classses in the dataset
+
+        model = FlexibleMMSER(num_classes=NUM_CLASSES).to(device)    
         model.alpha = alpha
         model.fusion_method = FUZZY_METHOD
         print_model_parameters(model)
 
-        save_path = f"saved_models/{DATASET_NAME}_{MODEL_NAME}_fold{fold + 1}_alpha_{alpha}.pt"
+        save_path = f"saved_models/{DATASET_NAME}_{MODEL_NAME}_{FUZZY_METHOD}_fold{fold + 1}_alpha_{alpha}.pt"
 
         train_and_evaluate(
             model=model,
@@ -74,15 +92,16 @@ for alpha in ALPHA_VALUES:
             save_path=save_path
         )
         
-        val_wa, val_ua, val_wf1, val_uf1, _, _ = model_prediction(model, val_loader, calculate_accuracy)
+        val_wa, val_ua, val_wf1, val_uf1, _, _ = model_prediction(model, val_loader, calculate_metrics)
         fold_results.append((val_wa, val_ua, val_wf1, val_uf1))
         print(f"Fold {fold + 1} Results: WA: {val_wa:.4f}, UA: {val_ua:.4f}, WF1: {val_wf1:.4f}, UF1: {val_uf1:.4f}")
         print("=" * 50)
 
-        model.load_state_dict(torch.load(save_path, map_location=device))
+        model.load_state_dict(torch.load(save_path, map_location=device, weights_only=True))
+
         model.eval()
 
-        test_wa, test_ua, test_wf1, test_uf1, _, _ = model_prediction(model, test_loader, calculate_accuracy)
+        test_wa, test_ua, test_wf1, test_uf1, _, _ = model_prediction(model, test_loader, calculate_metrics)
         test_results.append((test_wa, test_ua, test_wf1, test_uf1))
         print(f"Fold {fold + 1} Test Results: WA: {test_wa:.4f}, UA: {test_ua:.4f}, WF1: {test_wf1:.4f}, UF1: {test_uf1:.4f}")
         print("=" * 50)

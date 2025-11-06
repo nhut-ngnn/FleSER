@@ -7,16 +7,19 @@ import pickle
 import pandas as pd
 from transformers import BertTokenizer, BertModel, Wav2Vec2Processor, Wav2Vec2Model
 from tqdm import tqdm
+from fvcore.nn import FlopCountAnalysis, parameter_count_table
+import numpy as np
+import time
 
-import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from ultis import set_seed
+from collections import OrderedDict
 
-set_seed(42)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# ==================== Models ====================
 
 class BERTEmbeddingModel(torch.nn.Module):
-    def __init__(self, embedding_dim=768, projection_dim=256):
+    def __init__(self, embedding_dim=768, projection_dim=512):
         super().__init__()
         self.bert = BertModel.from_pretrained('bert-base-uncased')
         self.projection = torch.nn.Sequential(
@@ -26,14 +29,13 @@ class BERTEmbeddingModel(torch.nn.Module):
         )
 
     def forward(self, input_ids, attention_mask):
-        with torch.no_grad():
-            outputs = self.bert(input_ids, attention_mask=attention_mask)
+        outputs = self.bert(input_ids, attention_mask=attention_mask)
         pooled = outputs.pooler_output
         projection = self.projection(pooled)
         return pooled, projection
 
 class AudioEmbeddingModel(torch.nn.Module):
-    def __init__(self, embedding_dim=768, projection_dim=256):
+    def __init__(self, embedding_dim=768, projection_dim=512):
         super().__init__()
         self.wav2vec = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base")
         self.projection = torch.nn.Sequential(
@@ -49,130 +51,143 @@ class AudioEmbeddingModel(torch.nn.Module):
         projection = self.projection(pooled)
         return pooled, projection
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# ==================== Utility Functions ====================
 
-ESD_TRAIN_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_train.csv"
-ESD_VAL_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_val.csv"
-ESD_TEST_PATH = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/metadata/ESD_metadata_test.csv"
-OUTPUT_DIR = "/home/nhut-minh-nguyen/Documents/FuzzyFusion-SER/FlexibleMMSER/feature/"
+def measure_params(models_dict):
+    total_params = 0
+    for name, model in models_dict.items():
+        print(f"\n{name} Parameters:")
+        print(parameter_count_table(model))
+        params = sum(p.numel() for p in model.parameters())
+        total_params += params
+    print(f"\nTotal Parameters: {total_params/1e6:.3f} M")
+    return total_params
 
-TOKENIZER = BertTokenizer.from_pretrained('bert-base-uncased')
-TEXT_MODEL = BERTEmbeddingModel().to(device)
-TEXT_MODEL.eval()
+def measure_flops(model, inputs):
+    flops = FlopCountAnalysis(model, inputs)
+    gflops = flops.total() / 1e9
+    print(f"FLOPs: {gflops:.4f} GFLOPs")
+    return gflops
 
-AUDIO_PROCESSOR = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
-AUDIO_MODEL = AudioEmbeddingModel().to(device)
-audio_checkpoint = torch.load('fine_tuning/model/ESD/best_wav2vec_embeddings.pt')
-AUDIO_MODEL.load_state_dict(audio_checkpoint['model_state_dict'])
-AUDIO_MODEL.eval()
+def measure_latency(forward_fn, repetitions=20):
+    timings = []
+    with torch.no_grad():
+        for _ in range(repetitions):
+            start = time.time()
+            forward_fn()
+            end = time.time()
+            timings.append((end - start) * 1000)
+    mean_latency = np.mean(timings)
+    print(f"Average Latency per inference: {mean_latency:.3f} ms")
+    return mean_latency
 
-def extract_text_features(text, tokenizer, text_model, device):
-    try:
-        if not isinstance(text, str) or len(text.strip()) == 0:
-            raise ValueError("Invalid or empty text input.")
-        text_token = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
+# ==================== Main Feature Extraction ====================
+def extract_features_and_save(input_csv, output_pkl, tokenizer, text_model, processor, audio_model, device):
+    df = pd.read_csv(input_csv)
+    extracted_data = []
+
+    for idx, row in tqdm(df.iterrows(), total=len(df), desc=f"Processing {output_pkl}"):
+        raw_text = row['raw_text']
+        audio_file = row['audio_file']
+        label = int(row['label'])
+
+        # === Text Feature ===
+        text_token = tokenizer(raw_text, return_tensors="pt", padding=True, truncation=True, max_length=512)
         text_token = {k: v.to(device) for k, v in text_token.items()}
 
-        with torch.no_grad():
-            text_embed, _ = text_model(
-                text_token['input_ids'],
-                text_token['attention_mask']
-            )
-        return text_embed.squeeze().cpu()
-    except Exception as e:
-        print(f"Error extracting text features: {e}")
-        return None
+        try:
+            with torch.no_grad():
+                text_embed, _ = text_model(text_token['input_ids'], text_token['attention_mask'])
+            text_embed = text_embed.squeeze(0).cpu()
+        except Exception as e:
+            print(f"[Skip] Text processing failed at index {idx} ({audio_file}): {e}")
+            continue
 
-def extract_audio_features(audio_file, wav2vec_processor, wav2vec_model, device):
-    try:
-        waveform, sample_rate = torchaudio.load(audio_file)
+        # === Audio Feature ===
+        try:
+            waveform, sr = torchaudio.load(audio_file)
+            if sr != 16000:
+                waveform = torchaudio.functional.resample(waveform, sr, 16000)
+            if waveform.shape[0] > 1:
+                waveform = torch.mean(waveform, dim=0, keepdim=True)
 
-        if sample_rate != 16000:
-            resampler = torchaudio.transforms.Resample(sample_rate, 16000)
-            waveform = resampler(waveform)
+            input_values = processor(
+                waveform.squeeze().numpy(),
+                sampling_rate=16000,
+                return_tensors="pt"
+            ).input_values.to(device)
 
-        if waveform.shape[0] > 1:
-            waveform = torch.mean(waveform, dim=0, keepdim=True)
+            with torch.no_grad():
+                audio_embed, _ = audio_model(input_values)
+            audio_embed = audio_embed.squeeze(0).cpu()
 
-        input_values = wav2vec_processor(
-            waveform.squeeze().numpy(),
-            sampling_rate=16000,
-            return_tensors="pt"
-        ).input_values.to(device)
+        except Exception as e:
+            print(f"[Skip] Audio file error at index {idx} ({audio_file}): {e}")
+            continue
 
-        with torch.no_grad():
-            embeddings, _ = wav2vec_model(input_values)
-        return embeddings.squeeze().cpu()
-    except Exception as e:
-        print(f"Error extracting audio features: {e}")
-        return None
+        extracted_data.append({
+            "text_embed": text_embed,
+            "audio_embed": audio_embed,
+            "label": torch.tensor(label, dtype=torch.long)
+        })
 
-def process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
-    try:
-        text_embed = extract_text_features(row.get('raw_text', ''), tokenizer, text_model, device)
-        audio_embed = extract_audio_features(row.get('audio_file', ''), wav2vec_processor, wav2vec_model, device)
-        label = torch.tensor(row.get('label', -1))  # Default to -1 if label is missing
+    with open(output_pkl, "wb") as f:
+        pickle.dump(extracted_data, f)
+    print(f"Saved extracted features to {output_pkl} (total {len(extracted_data)} samples)")
 
-        if text_embed is None or audio_embed is None:
-            raise ValueError("Failed to extract embeddings for row.")
+# ==================== Main ====================
 
-        return {
-            'text_embed': text_embed,
-            'audio_embed': audio_embed,
-            'label': label
-        }
-    except Exception as e:
-        print(f"Error processing row: {e}")
-        return None
-
-def process_dataset(input_path, output_path, tokenizer, text_model, wav2vec_processor, wav2vec_model, device):
-    data_list = pd.read_csv(input_path)
-    processed_data = []
-
-    for idx, row in tqdm(data_list.iterrows(), total=len(data_list), desc=f"Processing {output_path.split('/')[-1]}"):
-        result = process_row(row, tokenizer, text_model, wav2vec_processor, wav2vec_model, device)
-        if result is not None:
-            processed_data.append(result)
-
-    with open(output_path, "wb") as f:
-        pickle.dump(processed_data, f)
-
-    print(f"Processed data saved to {output_path}")
-
-# Main Execution
 def main():
-    print("Processing training set...")
-    process_dataset(
-        ESD_TRAIN_PATH,
-        f"{OUTPUT_DIR}ESD_BERT_WAV2VEC_train.pkl",
-        TOKENIZER,
-        TEXT_MODEL,
-        AUDIO_PROCESSOR,
-        AUDIO_MODEL,
-        device
-    )
+    ESD_TRAIN_PATH = "metadata/ESD_metadata_train.csv"
+    ESD_VAL_PATH = "metadata/ESD_metadata_val.csv"
+    ESD_TEST_PATH = "metadata/ESD_metadata_test.csv"
+    OUTPUT_DIR = "feature/"
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    print("Processing validation set...")
-    process_dataset(
-        ESD_VAL_PATH,
-        f"{OUTPUT_DIR}ESD_BERT_WAV2VEC_val.pkl",
-        TOKENIZER,
-        TEXT_MODEL,
-        AUDIO_PROCESSOR,
-        AUDIO_MODEL,
-        device
-    )
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base")
 
-    print("Processing testing set...")
-    process_dataset(
-        ESD_TEST_PATH,
-        f"{OUTPUT_DIR}ESD_BERT_WAV2VEC_test.pkl",
-        TOKENIZER,
-        TEXT_MODEL,
-        AUDIO_PROCESSOR,
-        AUDIO_MODEL,
-        device
-    )
+    # === Load BERT Model ===
+    text_model = BERTEmbeddingModel().to(device)
+    bert_ckpt = torch.load('/home/tri.pm/polyp/fptu/MinhNhut/model/ESD/best_bert_embeddings.pt', map_location=device)
+    new_state_dict = OrderedDict()
+    for k, v in bert_ckpt['model_state_dict'].items():
+        if k.startswith('module.'):
+            k = k[7:]
+        new_state_dict[k] = v
+    text_model.load_state_dict(new_state_dict, strict=False)
+    text_model.eval()
+
+    # === Load Wav2Vec2 Model ===
+    audio_model = AudioEmbeddingModel().to(device)
+    wav_ckpt = torch.load('/home/tri.pm/polyp/fptu/MinhNhut/model/ESD/best_wav2vec_embeddings.pt', map_location=device)
+    audio_model.load_state_dict(wav_ckpt['model_state_dict'], strict=False)
+    audio_model.eval()
+
+    # === Measure Params ===
+    print("\n=== Parameter Count ===")
+    measure_params({"BERTEmbeddingModel": text_model})
+    measure_params({"AudioEmbeddingModel": audio_model})
+    # === Measure FLOPs & Latency ===
+    print("\n=== FLOPs Measurement ===")
+    dummy_text = tokenizer("hello world", return_tensors="pt", padding=True, truncation=True).to(device)
+    measure_flops(text_model, (dummy_text['input_ids'], dummy_text['attention_mask']))
+
+    waveform = torch.randn(1, 16000).to(device)
+    measure_flops(audio_model, (waveform,))
+
+    print("\n=== Latency Measurement ===")
+    measure_latency(lambda: text_model(dummy_text['input_ids'], dummy_text['attention_mask']))
+    measure_latency(lambda: audio_model(waveform))
+
+    # === Extract and Save ===
+    print("\n=== Extracting Features ===")
+    extract_features_and_save(ESD_TRAIN_PATH, f"{OUTPUT_DIR}ESD_BERT_WAV2VEC_train.pkl",
+                              tokenizer, text_model, processor, audio_model, device)
+    extract_features_and_save(ESD_VAL_PATH, f"{OUTPUT_DIR}ESD_BERT_WAV2VEC_val.pkl",
+                              tokenizer, text_model, processor, audio_model, device)
+    extract_features_and_save(ESD_TEST_PATH, f"{OUTPUT_DIR}ESD_BERT_WAV2VEC_test.pkl",
+                              tokenizer, text_model, processor, audio_model, device)
 
 if __name__ == "__main__":
     main()
