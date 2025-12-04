@@ -2,7 +2,7 @@
 
 <i>
   Official code repository for the manuscript 
-  <b>"FleSER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion"</b>, 
+  <b>"Enhancing multimodal emotion recognition with dynamic fuzzy membership and attention fusion"</b>, 
   submitted to 
   <a href="https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence">The Engineering Applications of Artificial Intelligence Journal</a>.
 </i>
