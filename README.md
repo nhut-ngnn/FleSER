@@ -1,4 +1,5 @@
-# FleSER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion
+# Enhancing multimodal emotion recognition with dynamic fuzzy membership and attention fusion
+
 <i>
   Official code repository for the manuscript 
   <b>"FleSER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion"</b>, 
