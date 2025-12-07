@@ -226,7 +226,18 @@ Training progress, including loss and accuracy, will be logged using WandB. Ensu
 ## Citation
 If you use this code or part of it, please cite the following papers:
 ```
-Update soon
+@article{NGUYEN2026113396,
+title = {Enhancing multimodal emotion recognition with dynamic fuzzy membership and attention fusion},
+journal = {Engineering Applications of Artificial Intelligence},
+volume = {165},
+pages = {113396},
+year = {2026},
+issn = {0952-1976},
+doi = {https://doi.org/10.1016/j.engappai.2025.113396},
+url = {https://www.sciencedirect.com/science/article/pii/S095219762503427X},
+author = {Nhut Minh Nguyen and Trung Minh Nguyen and Thanh Trung Nguyen and Phuong-Nam Tran and Nhat Truong Pham and Linh Le and Alice Othmani and Abdulmotaleb {El Saddik} and Duc Ngoc Minh Dang},
+keywords = {Speech emotion recognition, Dynamic fuzzy membership, Attention-based feature fusion, Multimodal emotion recognition, Feature fusion},
+abstract = {Multimodal learning has been shown to enhance classification outcomes in speech emotion recognition (SER). Despite this advantage, multimodal approaches in SER often face key challenges, including limited robustness to uncertainty, difficulty generalizing across diverse emotional contexts, and inefficiencies in integrating heterogeneous modalities. To overcome these constraints, we propose a multimodal emotion recognition architecture, named FleSER, which leverages dynamic fuzzy membership and attention-based fusion. Unlike most previous SER studies that apply fuzzy logic at the decision level, FleSER introduces a feature-level, rule-based dynamic fuzzy membership mechanism that adaptively refines modality representations prior to fusion. The FleSER architecture leverages audio and textual modalities, employing self-modality and cross-modality attention mechanisms with the α interpolation to capture complementary emotional cues. The α interpolation-based feature fusion mechanism adaptively emphasizes the more informative modality across varying contexts, ensuring robust multimodal integration. This comprehensive design enhances recognition accuracy. We evaluate FleSER on multiple benchmark datasets, surpassing previous state-of-the-art (SOTA) approaches and demonstrating superior effectiveness in emotion recognition. Ablation studies further validate the effectiveness of each key component, including unimodal and multimodal input effectiveness, fuzzy membership functions, fusion strategies, and the projection dimension, on the performance of the FleSER architecture.}}
 ```
 ## Contact
 For any information, please contact the main author:
