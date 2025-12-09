@@ -3,7 +3,7 @@
 <i>
   Official code repository for the manuscript 
   <b>"Enhancing multimodal emotion recognition with dynamic fuzzy membership and attention fusion"</b>, 
-  submitted to 
+  accepted at
   <a href="https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence">The Engineering Applications of Artificial Intelligence Journal</a>.
 </i>
 
