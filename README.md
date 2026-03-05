@@ -1,7 +1,7 @@
-# FleSER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion
+# Enhancing multimodal emotion recognition with dynamic fuzzy membership and attention fusion
 <i>
   Official code repository for the manuscript 
-  <b>"FleSER: Multi-modal emotion recognition via dynamic fuzzy membership and attention fusion"</b>, 
+  <b>"Enhancing multimodal emotion recognition with dynamic fuzzy membership and attention fusion"</b>, 
   submitted to 
   <a href="https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence">The Engineering Applications of Artificial Intelligence Journal</a>.
 </i>
@@ -39,7 +39,8 @@
 </div>
 
 ## Abstract 
-> Multimodal learning has been demonstrated to improve classification outcomes in speech emotion recognition (SER). Despite this advantage, multimodal approaches in SER often face key challenges such as limited robustness in handling uncertainty, difficulties in generalizing across diverse emotional contexts, and inefficiencies in integrating heterogeneous modalities. To overcome these constraints, we propose FleSER, a multimodal emotion recognition framework that utilizes dynamic fuzzy membership and attention fusion. In this architecture, we introduce a rule-based dynamic fuzzy membership mechanism that adaptively transforms features. The FleSER architecture leverages audio and textual modalities, employing self-modality and cross-modality attention mechanisms with the $\alpha$ interpolation to capture complementary emotional cues. The $\alpha$ interpolation-based feature fusion mechanism adaptively emphasizes the more informative modality in varying contexts, ensuring robust multimodal integration. This comprehensive design improves the model's recognition accuracy. We evaluate the FleSER architecture on the three benchmark datasets: IEMOCAP, ESD, and MELD. FleSER surpasses the previous state-of-the-art (SOTA) by 1.92\% on IEMOCAP and an impressive 6.37\% on ESD, demonstrating its superior effectiveness in enhancing emotion recognition accuracy across various datasets. Ablation studies further validate the effectiveness of each key component, including unimodal and multimodal input effectiveness, fuzzy membership functions, fusion strategies, and projection dimension on FleSER architecture performance. 
+> Multimodal learning has been shown to enhance classification outcomes in speech emotion recognition (SER). Despite this advantage, multimodal approaches in SER often face key challenges, including limited robustness to uncertainty, difficulty generalizing across diverse emotional contexts, and inefficiencies in integrating heterogeneous modalities. To overcome these constraints, we propose a multimodal emotion recognition architecture, named FleSER, which leverages dynamic fuzzy membership and attention-based fusion. Unlike most previous SER studies that apply fuzzy logic at the decision level, FleSER introduces a feature-level, rule-based dynamic fuzzy membership mechanism that adaptively refines modality representations prior to fusion. The FleSER architecture leverages audio and textual modalities, employing self-modality and cross-modality attention mechanisms with the $\alpha$ interpolation to capture complementary emotional cues. The $\alpha$ interpolation-based feature fusion mechanism adaptively emphasizes the more informative modality across varying contexts, ensuring robust multimodal integration. This comprehensive design enhances recognition accuracy. We evaluate FleSER on multiple benchmark datasets, surpassing previous state-of-the-art (SOTA) approaches and demonstrating superior effectiveness in emotion recognition. Ablation studies further validate the effectiveness of each key component, including unimodal and multimodal input effectiveness, fuzzy membership functions, fusion strategies, and the projection dimension, on the performance of the FleSER architecture.
+
 >
 > Index Terms: Speech emotion recognition, Dynamic fuzzy membership, Attention-based feature fusion, Multimodal emotion recognition, Feature fusion.
 
@@ -225,7 +226,17 @@ Training progress, including loss and accuracy, will be logged using WandB. Ensu
 ## Citation
 If you use this code or part of it, please cite the following papers:
 ```
-Update soon
+@article{nguyen2025MSER,
+  bibtex_show = true,
+  title = {Multimodal fusion in speech emotion recognition: A comprehensive review of methods and technologies},
+  author = {Nguyen, Nhut Minh and Nguyen, Thanh Trung and Tran, Phuong-Nam and Lim, Chee Peng and Pham, Nhat Truong and Dang, Duc Ngoc Minh},
+  journal = {Engineering Applications of Artificial Intelligence},
+  year = {2026},
+  month = jan,
+  doi = {10.1016/j.engappai.2025.112624},
+  google_scholar_id = {UebtZRa9Y70C},
+  dimensions = {true}
+}
 ```
 ## Contact
 For any information, please contact the main author:
